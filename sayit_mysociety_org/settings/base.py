@@ -8,6 +8,7 @@ from .paths import *
 DEBUG = True
 TEMPLATE_DEBUG = DEBUG
 DEBUG_TOOLBAR = True
+DEBUG_TOOLBAR_PATCH_SETTINGS = False
 
 ALLOWED_HOSTS = [ '.sayit.mysociety.org' ]
 

@@ -1,3 +1,4 @@
+from django.conf import settings
 from django.conf.urls import patterns, include, url
 
 from tastypie.resources import ModelResource
@@ -37,3 +38,8 @@ urlpatterns = patterns('',
     (r'^', include('instances.urls')),
 )
 
+if settings.DEBUG and settings.DEBUG_TOOLBAR:
+    import debug_toolbar
+    urlpatterns += patterns('',
+        url(r'^__debug__/', include(debug_toolbar.urls)),
+    )

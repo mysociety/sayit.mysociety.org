@@ -39,3 +39,9 @@ urlpatterns += patterns('',
     (r'^about', include('about.urls')),
     url(r'^', include('speeches.urls', app_name='speeches', namespace='speeches')),
 )
+
+if settings.DEBUG and settings.DEBUG_TOOLBAR:
+    import debug_toolbar
+    urlpatterns += patterns('',
+        url(r'^__debug__/', include(debug_toolbar.urls)),
+    )
