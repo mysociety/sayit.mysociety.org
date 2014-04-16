@@ -8,7 +8,7 @@ source_file = speeches/locale/en/LC_MESSAGES/django.po
 source_lang = en
 
 [sayit.project]
-file_filter = spoke/locale/<lang>/LC_MESSAGES/django.po
-source_file = spoke/locale/en/LC_MESSAGES/django.po
+file_filter = sayit_mysociety_org/locale/<lang>/LC_MESSAGES/django.po
+source_file = sayit_mysociety_org/locale/en/LC_MESSAGES/django.po
 source_lang = en
 

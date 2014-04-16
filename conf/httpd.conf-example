@@ -20,8 +20,8 @@
 
 Alias /media /data/vhost/example.com/uploads
 Alias /static /data/vhost/example.com/collected_static
-Alias /robots.txt /data/vhost/example.com/sayit/web/robots.txt
-Alias /favicon.ico /data/vhost/example.com/sayit/web/favicon.ico
+Alias /robots.txt /data/vhost/example.com/sayit.mysociety.org/web/robots.txt
+Alias /favicon.ico /data/vhost/example.com/sayit.mysociety.org/web/favicon.ico
 
 WSGIDaemonProcess example.com \
     user=exampleuser \
@@ -29,8 +29,8 @@ WSGIDaemonProcess example.com \
     processes=5 \
     threads=1 \
     display-name=example.com \
-    python-path=/data/vhost/example.com/sayit:/data/vhost/example.com/virtualenv-sayit/lib/python2.6/site-packages
+    python-path=/data/vhost/example.com/sayit.mysociety.org:/data/vhost/example.com/virtualenv-sayit/lib/python2.7/site-packages
 
 WSGIProcessGroup example.com
 
-WSGIScriptAlias / /data/vhost/example.com/sayit/spoke/wsgi.py
+WSGIScriptAlias / /data/vhost/example.com/sayit.mysociety.org/sayit_mysociety_org/wsgi.py

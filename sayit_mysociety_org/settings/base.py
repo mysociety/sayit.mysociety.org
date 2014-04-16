@@ -1,4 +1,4 @@
-# Django settings for spoke project.
+# Django settings for sayit_mysociety_org project.
 
 import os
 import sys
@@ -87,7 +87,7 @@ MIDDLEWARE_CLASSES = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'pagination.middleware.PaginationMiddleware',
     'instances.middleware.MultiInstanceMiddleware',
-    'spoke.middleware.WhoDidMiddleware',
+    'sayit_mysociety_org.middleware.WhoDidMiddleware',
     'django.middleware.cache.FetchFromCacheMiddleware',
     # Uncomment the next line for simple clickjacking protection:
     # 'django.middleware.clickjacking.XFrameOptionsMiddleware',
@@ -97,11 +97,11 @@ if DEBUG_TOOLBAR:
 
 INTERNAL_IPS = ( '127.0.0.1', )
 
-ROOT_URLCONF = 'spoke.urls'
-ROOT_URLCONF_HOST = 'spoke.urls-host'
+ROOT_URLCONF = 'sayit_mysociety_org.urls'
+ROOT_URLCONF_HOST = 'sayit_mysociety_org.urls-host'
 
 # Python dotted path to the WSGI application used by Django's runserver.
-WSGI_APPLICATION = 'spoke.wsgi.application'
+WSGI_APPLICATION = 'sayit_mysociety_org.wsgi.application'
 
 TEMPLATE_DIRS = (
     # Put strings here, like "/home/html/django_templates" or "C:/www/django/templates".
@@ -112,8 +112,8 @@ TEMPLATE_DIRS = (
 
 TEMPLATE_CONTEXT_PROCESSORS = global_settings.TEMPLATE_CONTEXT_PROCESSORS + (
     "django.core.context_processors.request",
-    "spoke.context_processors.add_settings",
-    "spoke.context_processors.nav_section",
+    "sayit_mysociety_org.context_processors.add_settings",
+    "sayit_mysociety_org.context_processors.nav_section",
 )
 
 INSTALLED_APPS = [
@@ -226,12 +226,12 @@ if 'test' in sys.argv:
 
 HAYSTACK_CONNECTIONS = {
     'default': {
-        'ENGINE': 'spoke.search.backends.SayitElasticSearchEngine',
+        'ENGINE': 'sayit_mysociety_org.search.backends.SayitElasticSearchEngine',
         'URL': 'http://127.0.0.1:9200/',
         'INDEX_NAME': SEARCH_INDEX_NAME,
     },
     'write': {
-        'ENGINE': 'spoke.search.backends.SayitElasticSearchEngine',
+        'ENGINE': 'sayit_mysociety_org.search.backends.SayitElasticSearchEngine',
         'URL': 'http://127.0.0.1:9200/',
         'INDEX_NAME': '%s_write' % SEARCH_INDEX_NAME,
     },
