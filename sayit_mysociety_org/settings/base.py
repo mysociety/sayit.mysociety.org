@@ -9,6 +9,8 @@ DEBUG = True
 TEMPLATE_DEBUG = DEBUG
 DEBUG_TOOLBAR = True
 
+ALLOWED_HOSTS = [ '.sayit.mysociety.org' ]
+
 ADMINS = (
     # ('Your Name', 'your_email@example.com'),
 )
