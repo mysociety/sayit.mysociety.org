@@ -16,7 +16,19 @@ by [mySociety](http://www.mysociety.org/)
 Installation
 ------------
 
-You'll need to have pip, virtualenv and yui-compressor (Debian/Ubuntu
+You will need to have the following installed:
+
+* [elasticsearch](http://elasticsearch.org/)
+
+* a database that handles recursive SQL – we've so far only tested it on
+  PostgreSQL.
+
+* The compass and zurb-foundation gems. Something like the following should
+  install them, with the relevant gem bin directory then added to your `PATH`:
+
+        gem install --user-install --no-document zurb-foundation compass
+
+You'll also need to have pip, virtualenv and yui-compressor (Debian/Ubuntu
 packages python-pip, python-virtualenv and yui-compressor).
 
 Clone the repository:
@@ -36,7 +48,7 @@ Create a postgres database and user:
 Set up a python virtual environment, activate it, and install the required
 python packages:
 
-    virtualenv --no-site-packages virtualenv-sayit
+    virtualenv virtualenv-sayit
     source virtualenv-sayit/bin/activate
     cd sayit.mysociety.org
     pip install --requirement requirements.txt
