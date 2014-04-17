@@ -75,6 +75,7 @@ PIPELINE_JS = {
             'speeches/js/foundation/foundation.js',
             'speeches/js/foundation/foundation.dropdown.js',
             'javascripts/foundation/foundation.alerts.js',
+            'javascripts/fragmentions.js',
             'speeches/js/speeches.js',
             # 'javascripts/vendor/jquery.text-effects.js',
         ),
