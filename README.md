@@ -36,7 +36,7 @@ Create a postgres database and user:
 Set up a python virtual environment, activate it, and install the required
 python packages:
 
-    virtualenv --no-site-packages virtualenv-sayit
+    virtualenv virtualenv-sayit
     source virtualenv-sayit/bin/activate
     cd sayit.mysociety.org
     pip install --requirement requirements.txt
