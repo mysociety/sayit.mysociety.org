@@ -57,7 +57,7 @@ class LoginToken(InstanceMixin, models.Model):
 #   https://code.djangoproject.com/ticket/16073
 #   https://code.djangoproject.com/ticket/6707
 
-@transaction.commit_on_success
+@transaction.atomic
 def handle_instance_users_change(*args, **kwargs):
     '''Keep login_token_logintoken and instances_instance_users in sync
 
