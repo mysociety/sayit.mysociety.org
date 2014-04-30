@@ -1,18 +1,35 @@
 {% extends 'base.html' %}
 {% load i18n %}
 
-{% block title %}{% trans "Edit instance" %}{% endblock %}
+{% block title %}
+  {% if instance %}
+    {% trans "Edit instance" %}
+  {% else %}
+    {% trans "Add instance" %}
+  {% endif %}
+{% endblock %}
 
 {% block content %}
 
+  {% if instance %}
     <h1>{% trans "Edit instance" %}</h1>
-
     <p class="lead edit-instance">
         {% trans "Edit the title and description of your instance here." %}
     </p>
+  {% else %}
+    <h1>{% trans "Add instance" %}</h1>
+    <p class="lead">
+        {% trans "Create a new SayIt instance here." %}
+    </p>
+  {% endif %}
 
     <form id="instance-form" class="form-horizontal" method="post">
-        {% include 'speeches/form.html' with type='instance' submit='Update instance' %}
+        {% if instance %}
+            {% trans "Update instance" as submit_button %}
+        {% else %}
+            {% trans "Create instance" as submit_button %}
+        {% endif %}
+        {% include 'speeches/form.html' with type='instance' submit=submit_button %}
     </form>
 
 {% endblock %}

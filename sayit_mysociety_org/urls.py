@@ -36,8 +36,7 @@ if settings.DEBUG and settings.DEBUG_TOOLBAR:
 
 urlpatterns += patterns('',
 
-    url(r'^accounts/login/$', 'django.contrib.auth.views.login'),
-    url(r'^accounts/logout/$', 'django.contrib.auth.views.logout'),
+    (r'^accounts/', include('allauth.urls')),
 
     url(r'^instance/edit$', InstanceUpdate.as_view(), name='instance-edit'),
     url(r'^instance/token$', 'login_token.views.login_tokens_for_user', name='tokens'),

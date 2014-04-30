@@ -117,6 +117,8 @@ TEMPLATE_CONTEXT_PROCESSORS = global_settings.TEMPLATE_CONTEXT_PROCESSORS + (
     "django.core.context_processors.request",
     "sayit_mysociety_org.context_processors.add_settings",
     "sayit_mysociety_org.context_processors.nav_section",
+    "allauth.account.context_processors.account",
+    "allauth.socialaccount.context_processors.socialaccount",
 )
 
 INSTALLED_APPS = [
@@ -129,6 +131,10 @@ INSTALLED_APPS = [
     'django.contrib.humanize',
     'django.contrib.admin',
     'django.contrib.admindocs',
+    'allauth',
+    'allauth.account',
+    'allauth.socialaccount',
+    'allauth.socialaccount.providers.twitter',
     'haystack',
     'south',
     'django_select2',
@@ -205,7 +211,20 @@ APPEND_SLASH = False
 # errors with difference between sqlite and postgres
 SOUTH_TESTS_MIGRATE = False
 
-AUTHENTICATION_BACKENDS = ('login_token.auth_backend.LoginTokenBackend', 'django.contrib.auth.backends.ModelBackend')
+AUTHENTICATION_BACKENDS = (
+    'login_token.auth_backend.LoginTokenBackend',
+    'django.contrib.auth.backends.ModelBackend',
+    'allauth.account.auth_backends.AuthenticationBackend',
+)
+
+ACCOUNT_AUTHENTICATION_METHOD = 'username_email'
+ACCOUNT_CONFIRM_EMAIL_ON_GET = True
+ACCOUNT_LOGOUT_ON_GET = True
+ACCOUNT_SIGNUP_PASSWORD_VERIFICATION = False
+ACCOUNT_EMAIL_REQUIRED = True
+ACCOUNT_EMAIL_VERIFICATION = 'mandatory'
+SOCIALACCOUNT_EMAIL_REQUIRED = False
+SOCIALACCOUNT_EMAIL_VERIFICATION = 'optional'
 
 # Select2
 AUTO_RENDER_SELECT2_STATICS = False
