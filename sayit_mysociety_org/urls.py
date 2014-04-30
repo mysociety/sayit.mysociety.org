@@ -28,6 +28,12 @@ if 'test' in sys.argv:
         }),
     )
 
+if settings.DEBUG and settings.DEBUG_TOOLBAR:
+    import debug_toolbar
+    urlpatterns += patterns('',
+        url(r'^__debug__/', include(debug_toolbar.urls)),
+    )
+
 urlpatterns += patterns('',
 
     url(r'^accounts/login/$', 'django.contrib.auth.views.login'),
@@ -40,8 +46,3 @@ urlpatterns += patterns('',
     url(r'^', include('speeches.urls', app_name='speeches', namespace='speeches')),
 )
 
-if settings.DEBUG and settings.DEBUG_TOOLBAR:
-    import debug_toolbar
-    urlpatterns += patterns('',
-        url(r'^__debug__/', include(debug_toolbar.urls)),
-    )
