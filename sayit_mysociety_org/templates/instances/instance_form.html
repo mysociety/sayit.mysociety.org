@@ -9,27 +9,75 @@
   {% endif %}
 {% endblock %}
 
+{% block instanceheader %}{% endblock %}
+
 {% block content %}
 
-  {% if instance %}
-    <h1>{% trans "Edit instance" %}</h1>
-    <p class="lead edit-instance">
-        {% trans "Edit the title and description of your instance here." %}
-    </p>
-  {% else %}
-    <h1>{% trans "Add instance" %}</h1>
-    <p class="lead">
-        {% trans "Create a new SayIt instance here." %}
-    </p>
-  {% endif %}
+    <div class="page-header">
+      {% if instance %}
+        <h1>{% trans "Edit instance" %}</h1>
+      {% else %}
+        <h1>{% trans "Add instance" %}</h1>
+      {% endif %}
+    </div>
 
     <form id="instance-form" class="form-horizontal" method="post">
-        {% if instance %}
-            {% trans "Update instance" as submit_button %}
-        {% else %}
-            {% trans "Create instance" as submit_button %}
+
+        {% csrf_token %}
+
+        {% if form.non_field_errors %}
+            <div class="error">
+                {{ form.non_field_errors }}
+            </div>
         {% endif %}
-        {% include 'speeches/form.html' with type='instance' submit=submit_button %}
+
+        {% for hidden in form.hidden_fields %}
+            {{ hidden }}
+        {% endfor %}
+
+        <div {% if form.label.errors %}class="error"{% endif %}>
+            <label for="{{ form.label.id_for_label }}">URL:</label>
+            <div class="row collapse">
+              <div class="small-2 columns">
+                <span class="prefix">http://</span>
+              </div>
+              <div class="small-6 columns">
+                <input type="text" name="label" id="{{ form.label.id_for_label }}">
+              </div>
+              <div class="small-4 columns">
+                <span class="postfix">.sayit.mysociety.org</span>
+              </div>
+            </div>
+            {% if form.label.errors %}
+              <small class="error">{{ form.label.errors }}</small>
+            {% endif %}
+        </div>
+
+        <div {% if form.title.errors %}class="error"{% endif %}>
+            <label for="{{ form.title.id_for_label }}">{{ form.title.label }}:</label>
+            <input type="text" name="title" id="{{ form.title.id_for_label }}">
+            {% if form.title.errors %}
+              <small class="error">{{ form.title.errors }}</small>
+            {% endif %}
+        </div>
+
+        <div {% if form.description.errors %}class="error"{% endif %}>
+            <label for="{{ form.description.id_for_label }}">{{ form.description.label }}:</label>
+            <textarea cols="40" rows="3" name="description" id="{{ form.description.id_for_label }}"></textarea>
+            {% if form.description.errors %}
+              <small class="error">{{ form.description.errors }}</small>
+            {% endif %}
+        </div>
+
+        <div class="form-actions">
+            {% if instance %}
+                {% trans "Update instance" as submit_button %}
+            {% else %}
+                {% trans "Create instance" as submit_button %}
+            {% endif %}
+            <input type="submit" id="instance_submit" class="button" value="{{ submit_button }}">
+        </div>
+
     </form>
 
 {% endblock %}

@@ -179,15 +179,24 @@ a:focus {
 .errorlist {
     @include unstyled-list();
 }
-.error {
-    @include form-error-color;
-}
 .select2-container {
     margin-bottom: 1em;
 }
 
+small.error .errorlist {
+  margin-bottom: 0;
+}
+
 form {
     margin-bottom: 0;
+}
+
+label {
+  margin-bottom: 0.5em;
+}
+
+#instance-form {
+  max-width: 500px;
 }
 
 /* Staging alert-box */
@@ -1326,6 +1335,10 @@ form {
     }
     }
 }
+
+
+/* About pages */
+
 .questions-and-answers {
     dd {
         color: lighten($colour_dark_grey, 5%);
@@ -1363,6 +1376,10 @@ form {
 
     }
 }
+
+
+/* Footers */
+
 .footer {
     a {
         color: #fff;
@@ -1373,6 +1390,8 @@ form {
         }
     }
 }
+
+
 /* Instance footer */
 .instance-footer {
     background: darken($colour_black, 10%);
