@@ -58,15 +58,26 @@
 @import "speeches/sass/sayit-mixins";
 
 
+// Override Foundation defaults
+$body-bg: #222;
+$body-font-color: #fff;
+
+
 [fragmention] {
     background-color: #ffc;
 }
 
 html,
 body {
-    height: 100%;
+    // Body has a dark background and light font color, so that, when the page
+    // is short, the dark background extends below the dark footer, seamlessly,
+    // making the footer look infinitely long.
+    // The trade-off is that you need to remember to reset `background`
+    // and `color` on the body's children, where required. In this case:
+    // .brand-header, .instance-header, .full-page, and .brand-footer
     background: $body-bg;
     color: $body-font-color;
+    height: 100%;
 }
 
 strong, b {
@@ -1435,7 +1446,7 @@ form {
 .brand-footer {
     padding: 3em 0;
     color: $colour_light_grey;
-    background-color: #222;
+    background-color: $body-bg;
     h2 {
         color: #fff;
         font-size: emCalc(18);
