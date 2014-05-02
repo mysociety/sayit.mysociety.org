@@ -23,58 +23,60 @@
 
     <form id="instance-form" class="form-horizontal" method="post">
 
-        {% csrf_token %}
+      {% csrf_token %}
 
-        {% if form.non_field_errors %}
-            <div class="error">
-                {{ form.non_field_errors }}
-            </div>
-        {% endif %}
+      {% if form.non_field_errors %}
+        <div class="error">
+            {{ form.non_field_errors }}
+        </div>
+      {% endif %}
 
-        {% for hidden in form.hidden_fields %}
-            {{ hidden }}
-        {% endfor %}
+      {% for hidden in form.hidden_fields %}
+          {{ hidden }}
+      {% endfor %}
 
+      {% if not instance %}
         <div {% if form.label.errors %}class="error"{% endif %}>
             <label for="{{ form.label.id_for_label }}">URL:</label>
             <div class="row collapse">
-              <div class="small-2 columns">
-                <span class="prefix">http://</span>
-              </div>
-              <div class="small-6 columns">
-                <input type="text" name="label" id="{{ form.label.id_for_label }}">
-              </div>
-              <div class="small-4 columns">
-                <span class="postfix">.sayit.mysociety.org</span>
-              </div>
+                <div class="small-2 columns">
+                    <span class="prefix">http://</span>
+                </div>
+                <div class="small-6 columns">
+                    <input type="text" name="label" id="{{ form.label.id_for_label }}" value="{{ form.label.value|default_if_none:"" }}">
+                </div>
+                <div class="small-4 columns">
+                    <span class="postfix">.sayit.mysociety.org</span>
+                </div>
             </div>
-            {% if form.label.errors %}
-              <small class="error">{{ form.label.errors }}</small>
-            {% endif %}
+          {% if form.label.errors %}
+            <small class="error">{{ form.label.errors }}</small>
+          {% endif %}
         </div>
+      {% endif %}
 
         <div {% if form.title.errors %}class="error"{% endif %}>
             <label for="{{ form.title.id_for_label }}">{{ form.title.label }}:</label>
-            <input type="text" name="title" id="{{ form.title.id_for_label }}">
-            {% if form.title.errors %}
-              <small class="error">{{ form.title.errors }}</small>
-            {% endif %}
+            <input type="text" name="title" id="{{ form.title.id_for_label }}" value="{{ form.title.value|default_if_none:"" }}">
+          {% if form.title.errors %}
+            <small class="error">{{ form.title.errors }}</small>
+          {% endif %}
         </div>
 
         <div {% if form.description.errors %}class="error"{% endif %}>
             <label for="{{ form.description.id_for_label }}">{{ form.description.label }}:</label>
-            <textarea cols="40" rows="3" name="description" id="{{ form.description.id_for_label }}"></textarea>
-            {% if form.description.errors %}
-              <small class="error">{{ form.description.errors }}</small>
-            {% endif %}
+            <textarea cols="40" rows="3" name="description" id="{{ form.description.id_for_label }}" value="{{ form.description.value|default_if_none:"" }}"></textarea>
+          {% if form.description.errors %}
+            <small class="error">{{ form.description.errors }}</small>
+          {% endif %}
         </div>
 
         <div class="form-actions">
-            {% if instance %}
-                {% trans "Update instance" as submit_button %}
-            {% else %}
-                {% trans "Create instance" as submit_button %}
-            {% endif %}
+          {% if instance %}
+            {% trans "Update instance" as submit_button %}
+          {% else %}
+            {% trans "Create instance" as submit_button %}
+          {% endif %}
             <input type="submit" id="instance_submit" class="button" value="{{ submit_button }}">
         </div>
 
