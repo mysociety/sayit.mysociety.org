@@ -169,14 +169,20 @@
         </div>
       </header>
       {% endblock %}
+      {% if messages %}
+        <div class="full-page messages">
+          {% for message in messages %}
+            <div class="full-page__row alert alert-{{ message.tags }}">
+                <div class="full-page__unit">
+                    {{ message }}
+                </div>
+            </div>
+          {% endfor %}
+        </div>
+      {% endif %}
         <div class="full-page">
           <div class="full-page__row">
             <div class="full-page__unit">
-                {% for message in messages %}
-                  <div class="alert alert-{{ message.tags }}">
-                      {{ message }}
-                  </div>
-                {% endfor %}
                   {% block content %}{% endblock %}
             </div>
           </div>

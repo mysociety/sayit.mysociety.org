@@ -700,6 +700,19 @@ label {
     }
 }
 
+
+/* Message bar (eg: "You have signed out.") */
+
+.full-page.messages {
+  background: rgb(250, 246, 144);
+  position: relative;
+  border-bottom: 5px solid #EBE9B8;
+}
+
+.full-page.messages .alert {
+  padding: 1em 0.75em;
+}
+
 /* Marketing home page */
 
 .sayit-homepage {
