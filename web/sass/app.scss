@@ -290,6 +290,12 @@ label {
 
         font-weight: $weight_light;
     }
+
+    > a:focus,
+    > a:hover {
+      text-decoration: none;
+      opacity: 0.8;
+    }
 }
 
 .brand-header__navigation {
