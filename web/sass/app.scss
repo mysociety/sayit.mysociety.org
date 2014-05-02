@@ -1338,6 +1338,71 @@ label {
 }
 
 
+/* Log in and Sign up */
+
+.login-page {
+  margin: 4em auto;
+  max-width: 400px;
+}
+
+.login-page h1 {
+  text-align: center;
+  margin-bottom: 0.7em;
+}
+
+.login-page .non_field_errors {
+  text-align: center;
+  color: $alert-color;
+  margin-bottom: 2em;
+}
+
+.login-page__help-link {
+  float: right;
+  font-size: 0.875em; /* to match default label styling */
+  font-weight: 500;
+}
+
+.login-page__last label {
+  padding: 0.8em 0;
+  margin: 0;
+  width: 50%;
+}
+
+.login-page__last label input {
+  margin-right: 5px;
+  margin-bottom: 0;
+}
+
+.login-page__last .button {
+  padding: 0.4em 1.3em 0.5em;
+}
+
+.login-page .socialaccount_providers {
+  @include unstyled-list();
+  border-top: 1px solid #eee;
+  margin: 2em 0 0 0;
+  padding-top: 1.5em;
+}
+
+.login-page .socialaccount_providers li {
+  text-align: center;
+  color: #ccc;
+}
+
+.login-page .socialaccount_providers a {
+  margin-left: 0.4em;
+}
+
+.socialaccount_provider.twitter {
+  color: #55acee;
+}
+
+.socialaccount_provider.twitter:hover,
+.socialaccount_provider.twitter:focus {
+  color: darken(#55acee, 10%);
+}
+
+
 /* About pages */
 
 .questions-and-answers {

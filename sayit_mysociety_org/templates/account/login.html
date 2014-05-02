@@ -1,0 +1,66 @@
+{% extends "account/base.html" %}
+
+{# This file will be used instead of site-packages/allauth/templates/account/login.html #}
+{# We've forked it so that we can customise the login form and hide the green instance-header #}
+
+{% load i18n %}
+{% load account %}
+{% load url from future %}
+
+{% block head_title %}{% trans "Sign In" %}{% endblock %}
+
+{% block instanceheader %}{% endblock %}
+
+{% block content %}
+
+    <div class="login-page">
+      <h1>{% trans "Log In" %}</h1>
+      <form class="login" method="POST" action="{% url 'account_login' %}">
+          {% csrf_token %}
+
+        {% if redirect_field_value %}
+          <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
+        {% endif %}
+
+        {% if form.non_field_errors %}
+          <div class="error non_field_errors">
+              {{ form.non_field_errors }}
+          </div>
+        {% endif %}
+
+        {% for hidden in form.hidden_fields %}
+            {{ hidden }}
+        {% endfor %}
+
+          <div {% if form.login.errors %}class="error"{% endif %}>
+              <a href="{{ signup_url }}" class="login-page__help-link">{% trans "Need an account?" %}</a>
+              <label for="{{ form.login.id_for_label }}">Username or e-mail</label>
+              <input type="text" name="login" id="{{ form.login.id_for_label }}" value="{{ form.login.value|default_if_none:"" }}">
+            {% if form.login.errors %}
+              <small class="error">{{ form.login.errors }}</small>
+            {% endif %}
+          </div>
+
+          <div {% if form.password.errors %}class="error"{% endif %}>
+              <a href="{% url 'account_reset_password' %}" class="login-page__help-link">{% trans "Forgot password?" %}</a>
+              <label for="{{ form.password.id_for_label }}">{{ form.password.label }}</label>
+              <input type="password" name="password" id="{{ form.password.id_for_label }}">
+            {% if form.password.errors %}
+              <small class="error">{{ form.password.errors }}</small>
+            {% endif %}
+          </div>
+
+          <div class="login-page__last">
+              <button class="right button" type="submit">{% trans "Log In" %}</button>
+              <label><input type="checkbox" name="remember"> {{ form.remember.label }}</label>
+          </div>
+      </form>
+    {% if socialaccount.providers  %}
+      <ul class="socialaccount_providers">
+          {% include "socialaccount/snippets/provider_list.html" with process="login" %}
+      </ul>
+      {% include "socialaccount/snippets/login_extra.html" %}
+    {% endif %}
+    </div>
+
+{% endblock %}
