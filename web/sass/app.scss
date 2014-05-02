@@ -1338,70 +1338,70 @@ label {
 }
 
 
-/* Log in and Sign up */
+/* Pages with one big form (New Instance, Sign Up, Log In) */
 
-.account-page {
+.form-page {
   margin: 4em auto;
   max-width: 400px;
 }
 
-.account-page h1 {
+.form-page h1 {
   text-align: center;
   margin-bottom: 0.7em;
 }
 
-.account-page .non_field_errors {
+.form-page .non_field_errors {
   text-align: center;
   color: $alert-color;
   margin-bottom: 2em;
 }
 
-.account-page__label-tip {
+.form-page__label-tip {
   float: right;
   font-size: 0.875em; /* to match default label styling */
   font-weight: 500;
 }
 
-span.account-page__label-tip {
+span.form-page__label-tip {
   color: #999;
 }
 
-.account-page__last label {
+.form-page__last label {
   padding: 0.8em 0;
   margin: 0;
   width: 50%;
 }
 
-.account-page__last label input {
+.form-page__last label input {
   margin-right: 5px;
   margin-bottom: 0;
 }
 
-.account-page__last {
+.form-page__last {
   overflow: auto; /* clear the floating child button */
 }
 
-.account-page__last .button {
+.form-page__last .button {
   padding: 0.4em 1.3em 0.5em;
 }
 
-.signup-page .account-page__last .button {
+.signup-page .form-page__last .button {
   margin-top: 0.8em;
 }
 
-.account-page .socialaccount_providers {
+.form-page .socialaccount_providers {
   @include unstyled-list();
   border-top: 1px solid #eee;
   margin: 2em 0 0 0;
   padding-top: 1.5em;
 }
 
-.account-page .socialaccount_providers li {
+.form-page .socialaccount_providers li {
   text-align: center;
   color: #ccc;
 }
 
-.account-page .socialaccount_providers a {
+.form-page .socialaccount_providers a {
   margin-left: 0.4em;
 }
 

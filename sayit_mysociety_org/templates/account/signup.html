@@ -12,7 +12,7 @@
 
 {% block content %}
 
-    <div class="account-page signup-page">
+    <div class="form-page signup-page">
         <h1>{% trans "Sign Up" %}</h1>
 
         <form class="signup" id="signup_form" method="post" action="{% url 'account_signup' %}">
@@ -33,7 +33,7 @@
           {% endfor %}
 
             <div {% if form.username.errors %}class="error"{% endif %}>
-                <span class="account-page__label-tip">(No spaces please)</span>
+                <span class="form-page__label-tip">(No spaces please)</span>
                 <label for="{{ form.username.id_for_label }}">Pick a username:</label>
                 <input type="text" name="username" id="{{ form.username.id_for_label }}" value="{{ form.username.value|default_if_none:"" }}">
               {% if form.username.errors %}
@@ -57,7 +57,7 @@
               {% endif %}
             </div>
 
-            <div class="account-page__last">
+            <div class="form-page__last">
                 <button class="right button" type="submit">{% trans "Sign Up" %}</button>
             </div>
         </form>

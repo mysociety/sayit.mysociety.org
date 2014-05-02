@@ -13,20 +13,18 @@
 
 {% block content %}
 
-    <div class="page-header">
-      {% if instance %}
-        <h1>{% trans "Edit instance" %}</h1>
-      {% else %}
-        <h1>{% trans "Add instance" %}</h1>
-      {% endif %}
-    </div>
+<div class="form-page">
+  {% if instance %}
+    <h1>{% trans "Edit instance" %}</h1>
+  {% else %}
+    <h1>{% trans "Create instance" %}</h1>
+  {% endif %}
 
     <form id="instance-form" class="form-horizontal" method="post">
-
       {% csrf_token %}
 
       {% if form.non_field_errors %}
-        <div class="error">
+        <div class="error non_field_errors">
             {{ form.non_field_errors }}
         </div>
       {% endif %}
@@ -71,15 +69,15 @@
           {% endif %}
         </div>
 
-        <div class="form-actions">
+        <div class="form-page__last">
           {% if instance %}
             {% trans "Update instance" as submit_button %}
           {% else %}
             {% trans "Create instance" as submit_button %}
           {% endif %}
-            <input type="submit" id="instance_submit" class="button" value="{{ submit_button }}">
+            <button class="right button" type="submit" id="instance_submit">{{ submit_button }}</button>
         </div>
-
     </form>
+</div>
 
 {% endblock %}
