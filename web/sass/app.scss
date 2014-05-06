@@ -715,9 +715,14 @@ label {
   border-bottom: 5px solid #EBE9B8;
 }
 
-.full-page.messages .alert {
-  padding: 1em 0.75em;
+.instance-header + .full-page.messages {
+  margin-top: -5px; /* Butt up to green instance header, hiding cream border */
 }
+
+.full-page.messages .alert {
+  padding: 1em 0;
+}
+
 
 /* Marketing home page */
 
