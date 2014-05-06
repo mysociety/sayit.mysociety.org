@@ -304,45 +304,39 @@ label {
         display: block;
     }
     float: right;
-    margin-top: 0.95em;
+    margin-top: 0.2em;
     margin-right: 145px;
+
     a {
         display: inline-block;
         margin-right: 1em;
         font-size: 0.8125em;
         letter-spacing: 0.02em;
+        line-height: 3em;
     }
-}
 
-.admin-menu-container {
-    position: fixed;
-    top: 0;
-    left: 1em;
-    z-index: 500;
-    min-width: 280px;
-    a {
-        &:link {
+    .dropdown:after {
+        @include css-triangle(4px, #fff, top);
+        display: inline-block;
+        margin-left: 4px;
+        vertical-align: -2px;
+    }
+
+    .f-dropdown {
+        width: auto;
+        padding: 0.3em 0; /* Extra vertical breathing space in dropdowns */
+
+        a {
+            font-size: 1em;
+            line-height: 1.2em;
             color: $colour_primary;
-        }
-        &:hover,
-        &:active,
-        &:visited {
-            color: darken($colour_primary, 10%);
-        }
-    }
-}
+            padding: 0.5em 1em; /* More left-right padding to give links breathing space */
 
-.admin-menu-button {
-    margin-top: 1.1em;
-    /* show at all? */
-    &.button.secondary {
-        /* Override some Foundation stuff */
-        background: transparent;
-        color: #fff;
-        border-color: #333;
-        @include box-shadow(none);
-        &:before {
-            border-color: rgba(255,255,255,0.8) transparent transparent transparent;
+            &:hover,
+            &:active,
+            &:visited {
+                color: darken($colour_primary, 10%);
+            }
         }
     }
 }
