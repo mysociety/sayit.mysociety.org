@@ -723,6 +723,10 @@ label {
   padding: 1em 0;
 }
 
+.full-page.messages .alert + .alert {
+  padding-top: 0;
+}
+
 
 /* Marketing home page */
 
@@ -1402,7 +1406,7 @@ span.form-page__label-tip {
 }
 
 .form-page__last {
-  overflow: auto; /* clear the floating child button */
+  @include clearfix();
 }
 
 .form-page__last .button {
