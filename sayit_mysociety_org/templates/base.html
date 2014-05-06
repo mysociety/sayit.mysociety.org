@@ -157,14 +157,12 @@
                   {% endif %}
                 </ul>
             </nav>
-            {% if request.path != '/search/' and request.path != '/' %}
               <form class="site-search site-search--header" action="/search/" method="get" >
                 <div class="search-wrapper">
                     <input type="search" class="site-search__input" placeholder="{% trans "Search" %}" name="q"/>
                     <input type="submit" class="icon-search icon-search--white" value="{% trans "Go" %}"/>
                 </div>
               </form>
-            {% endif %}
             </div>
         </div>
       </header>

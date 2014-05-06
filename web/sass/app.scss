@@ -377,6 +377,10 @@ label {
 .instance-header__title {
     float: left;
     width: 100%;
+    margin-bottom: 0.5em;
+    @media (min-width: $medium-screen) {
+        margin-bottom: 0;
+    }
     @media (min-width: $large-screen) {
         width: 50%;
     }
@@ -389,6 +393,7 @@ label {
         margin-top: 0.2em;
         line-height: 1em;
         color: #fff;
+        margin-bottom: 0;
     }
     a {
         &:hover,
@@ -402,19 +407,38 @@ label {
 .instance-header__subtitle {
     width: 100%;
     float: left;
-    margin-bottom: .5em;
+    margin-bottom: 1em;
+    @media (min-width: $medium-screen) {
+        margin-bottom: 0;
+        margin-top: 0.5em;
+    }
     @media (min-width: $large-screen) {
         width: 49%;
+        margin-top: 0;
+        &:before {
+            /* clever trick to vertically align short instance descriptions */
+            content: '';
+            display: inline-block;
+            height: 1.9em;
+            vertical-align: bottom;
+            margin-right: -0.25em; /* Adjusts for spacing */
+        }
     }
     @media (min-width: $huge-screen) {
-        width: 61%;
-        margin-left: 2%;
+        width: 60%;
+        margin-left: 3%;
     }
     p {
         font-size: emCalc(13);
         color: #fff;
         line-height: 1.461538462em;
         margin-bottom: 0;
+
+        @media (min-width: $large-screen) {
+            /* clever trick to vertically align short instance descriptions */
+            display: inline-block;
+            vertical-align: middle;
+        }
     }
 }
 
@@ -440,7 +464,7 @@ label {
     float: left;
     width: 100%;
     @media (min-width: $medium-screen) {
-        margin-top: 2.8em;
+        width: 80%;
     }
     @media (min-width: $large-screen) {
         margin-top: 0;
@@ -502,7 +526,7 @@ label {
     .menu-dropdown {
         display: block;
         position: absolute;
-        top: 0.75em;
+        top: 0.55em;
         right: 0.75em;
         @media (min-width: $large-screen) {
             display: none;
@@ -567,7 +591,8 @@ label {
         }
         @media (min-width: $large-screen) {
             display: inline-block;
-            padding: 0.5em;
+            padding: 0 0.5em;
+            line-height: 2.2em; /* to match search box height */
             @include border-radius(3px);
             font-size: emCalc(15);
             &:hover,
