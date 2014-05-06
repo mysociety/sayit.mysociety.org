@@ -331,12 +331,20 @@ label {
             line-height: 1.2em;
             color: $colour_primary;
             padding: 0.5em 1em; /* More left-right padding to give links breathing space */
+            margin-right: 0; /* override parent style, above */
 
             &:hover,
             &:active,
             &:visited {
+                text-decoration: none;
                 color: darken($colour_primary, 10%);
             }
+        }
+
+        .divider {
+            font-size: 1em;
+            margin: 0.3em 0;
+            border-top: $f-dropdown-border-width $f-dropdown-border-style $f-dropdown-border-color;
         }
     }
 }
