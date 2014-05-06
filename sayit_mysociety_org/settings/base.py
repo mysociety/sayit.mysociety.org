@@ -81,7 +81,7 @@ TEMPLATE_LOADERS = loaders
 
 MIDDLEWARE_CLASSES = [
     'django.middleware.gzip.GZipMiddleware',
-    'django.middleware.cache.UpdateCacheMiddleware',
+    #'django.middleware.cache.UpdateCacheMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.locale.LocaleMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -91,7 +91,7 @@ MIDDLEWARE_CLASSES = [
     'pagination.middleware.PaginationMiddleware',
     'instances.middleware.MultiInstanceMiddleware',
     'sayit_mysociety_org.middleware.WhoDidMiddleware',
-    'django.middleware.cache.FetchFromCacheMiddleware',
+    #'django.middleware.cache.FetchFromCacheMiddleware',
     # Uncomment the next line for simple clickjacking protection:
     # 'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
@@ -117,6 +117,8 @@ TEMPLATE_CONTEXT_PROCESSORS = global_settings.TEMPLATE_CONTEXT_PROCESSORS + (
     "django.core.context_processors.request",
     "sayit_mysociety_org.context_processors.add_settings",
     "sayit_mysociety_org.context_processors.nav_section",
+    "allauth.account.context_processors.account",
+    "allauth.socialaccount.context_processors.socialaccount",
 )
 
 INSTALLED_APPS = [
@@ -129,6 +131,10 @@ INSTALLED_APPS = [
     'django.contrib.humanize',
     'django.contrib.admin',
     'django.contrib.admindocs',
+    'allauth',
+    'allauth.account',
+    'allauth.socialaccount',
+    'allauth.socialaccount.providers.twitter',
     'haystack',
     'south',
     'django_select2',
@@ -205,7 +211,21 @@ APPEND_SLASH = False
 # errors with difference between sqlite and postgres
 SOUTH_TESTS_MIGRATE = False
 
-AUTHENTICATION_BACKENDS = ('login_token.auth_backend.LoginTokenBackend', 'django.contrib.auth.backends.ModelBackend')
+AUTHENTICATION_BACKENDS = (
+    'login_token.auth_backend.LoginTokenBackend',
+    'django.contrib.auth.backends.ModelBackend',
+    'allauth.account.auth_backends.AuthenticationBackend',
+)
+
+ACCOUNT_AUTHENTICATION_METHOD = 'username_email'
+ACCOUNT_CONFIRM_EMAIL_ON_GET = True
+ACCOUNT_LOGOUT_ON_GET = True
+ACCOUNT_SIGNUP_PASSWORD_VERIFICATION = False
+ACCOUNT_EMAIL_REQUIRED = True
+SOCIALACCOUNT_EMAIL_REQUIRED = False
+
+# XXX This should be the user's profile page once such things exist
+LOGIN_REDIRECT_URL = '/'
 
 # Select2
 AUTO_RENDER_SELECT2_STATICS = False
@@ -239,6 +259,7 @@ HAYSTACK_CONNECTIONS = {
         'INDEX_NAME': '%s_write' % SEARCH_INDEX_NAME,
     },
 }
+HAYSTACK_SIGNAL_PROCESSOR = 'haystack.signals.RealtimeSignalProcessor'
 
 if DEBUG:
     cache = { 'BACKEND': 'django.core.cache.backends.dummy.DummyCache' }

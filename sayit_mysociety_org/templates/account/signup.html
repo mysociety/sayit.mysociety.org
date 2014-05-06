@@ -1,0 +1,68 @@
+{% extends "account/base.html" %}
+
+{# This file will be used instead of site-packages/allauth/templates/account/signup.html #}
+{# We've forked it so that we can customise the form and hide the green instance-header #}
+
+{% load url from future %}
+{% load i18n %}
+
+{% block title %}{% trans "Sign Up" %}{% endblock %}
+
+{% block instanceheader %}{% endblock %}
+
+{% block content %}
+
+    <div class="form-page signup-page">
+        <h1>{% trans "Sign Up" %}</h1>
+
+        <form class="signup" id="signup_form" method="post" action="{% url 'account_signup' %}">
+            {% csrf_token %}
+
+          {% if redirect_field_value %}
+            <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
+          {% endif %}
+
+          {% if form.non_field_errors %}
+            <div class="error non_field_errors">
+                {{ form.non_field_errors }}
+            </div>
+          {% endif %}
+
+          {% for hidden in form.hidden_fields %}
+              {{ hidden }}
+          {% endfor %}
+
+            <div {% if form.username.errors %}class="error"{% endif %}>
+                <span class="form-page__label-tip">(No spaces please)</span>
+                <label for="{{ form.username.id_for_label }}">Pick a username:</label>
+                <input type="text" name="username" id="{{ form.username.id_for_label }}" value="{{ form.username.value|default_if_none:"" }}">
+              {% if form.username.errors %}
+                <small class="error">{{ form.username.errors }}</small>
+              {% endif %}
+            </div>
+
+            <div {% if form.email.errors %}class="error"{% endif %}>
+                <label for="{{ form.email.id_for_label }}">Your e-mail address:</label>
+                <input type="text" name="email" id="{{ form.email.id_for_label }}" value="{{ form.email.value|default_if_none:"" }}">
+              {% if form.email.errors %}
+                <small class="error">{{ form.email.errors }}</small>
+              {% endif %}
+            </div>
+
+            <div {% if form.password1.errors %}class="error"{% endif %}>
+                <label for="{{ form.password1.id_for_label }}">Pick a password:</label>
+                <input type="password" name="password1" id="{{ form.password1.id_for_label }}" value="{{ form.password1.value|default_if_none:"" }}">
+              {% if form.password1.errors %}
+                <small class="error">{{ form.password1.errors }}</small>
+              {% endif %}
+            </div>
+
+            <div class="form-page__last">
+                <button class="right button" type="submit">{% trans "Sign Up" %}</button>
+            </div>
+        </form>
+    </div>
+
+{% endblock %}
+
+

@@ -98,7 +98,6 @@
                   <li{% if request.path == '/speech/add' %} class="active"{% endif %}><a href="{% url 'speeches:speech-add' %}">{% trans "Add speech" %}</a>
                   <li{% if request.path == '/sections/add' %} class="active"{% endif %}><a href="{% url 'speeches:section-add' %}">{% trans "Add section" %}</a>
                   <li{% if request.path == '/speaker/add' %} class="active"{% endif %}><a href="{% url 'speeches:speaker-add' %}">{% trans "Add speaker" %}</a>
-                  <li{% if request.path == '/speaker/popit' %} class="active"{% endif %}><a href="{% url 'speeches:speaker-popit' %}">{% trans "Add PopIt instance" %}</a>
                   <li{% if request.path == '/instance/edit' %} class="active"{% endif %}>
                       <a href="{% url 'instance-edit' %}">{% trans "Edit instance" %}</a>
                   </li>
@@ -109,7 +108,7 @@
                 {% elif not request.instance %}
                   <li><a href="{% url 'tokens' %}">{% trans "Tokens" %}</a></li>
                 {% endif %}
-                  <li><a href="{% url 'django.contrib.auth.views.logout' %}?next=/">{% trans "Log out" %}</a></li>
+                  <li><a href="{% url 'account_logout' %}?next=/">{% trans "Log out" %}</a></li>
               </ul>
             {% endif %}
         </div>
@@ -170,14 +169,20 @@
         </div>
       </header>
       {% endblock %}
+      {% if messages %}
+        <div class="full-page messages">
+          {% for message in messages %}
+            <div class="full-page__row alert alert-{{ message.tags }}">
+                <div class="full-page__unit">
+                    {{ message }}
+                </div>
+            </div>
+          {% endfor %}
+        </div>
+      {% endif %}
         <div class="full-page">
           <div class="full-page__row">
             <div class="full-page__unit">
-                {% for message in messages %}
-                  <div class="alert alert-{{ message.tags }}">
-                      {{ message }}
-                  </div>
-                {% endfor %}
                   {% block content %}{% endblock %}
             </div>
           </div>

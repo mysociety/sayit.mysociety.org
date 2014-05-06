@@ -6,6 +6,8 @@ from tastypie.api import Api
 
 from instances.models import Instance
 
+from views import InstanceCreate
+
 # Admin section
 from django.contrib import admin
 admin.autodiscover()
@@ -27,10 +29,11 @@ urlpatterns = patterns('',
     (r'^admin/doc/', include('django.contrib.admindocs.urls')),
     (r'^admin/', include(admin.site.urls)),
 
-    (r'^accounts/login/$', 'django.contrib.auth.views.login'),
-    (r'^accounts/logout/$', 'django.contrib.auth.views.logout'),
     url(r'^accounts/tokens/?$', 'login_token.views.login_tokens_for_user', name='tokens'),
     (r'^accounts/mobile-login', 'login_token.views.check_login_token'),
+    (r'^accounts/', include('allauth.urls')),
+
+    (r'^instances/add', InstanceCreate.as_view()),
 
     (r'^api/', include(v01_api.urls)),
     (r'^about', include('about.urls')),
