@@ -84,16 +84,9 @@
               <h1 class="brand-header__title"><a href="{{ settings.BASE_HOST }}">SayIt <span class="subtitle js-typewriter">&mdash; {% trans "Modern transcripts" %}</span></a></h1>
           </div>
           <nav class="brand-header__navigation">
-            {% if request.instance %}
-              <a href="{{ settings.BASE_HOST }}/#demos">{% trans "Other SayIt sites" %}</a>
-            {% endif %}
-          </nav>
-
-          <div class="admin-menu-container">
             {% if request.user.is_authenticated %}
-              <a href="#" data-dropdown="drop1" class="tiny secondary button dropdown admin-menu-button">{% trans "Admin" %}</a><br>
-
-              <ul id="drop1" class="f-dropdown admin-menu">
+              <a href="#" data-dropdown="user-menu" class="dropdown">{{ request.user.username }}</a>
+              <ul id="user-menu" class="f-dropdown" data-dropdown-content>
                 {% if request.is_user_instance %}
                   <li{% if request.path == '/speech/add' %} class="active"{% endif %}><a href="{% url 'speeches:speech-add' %}">{% trans "Add speech" %}</a>
                   <li{% if request.path == '/sections/add' %} class="active"{% endif %}><a href="{% url 'speeches:section-add' %}">{% trans "Add section" %}</a>
@@ -101,6 +94,7 @@
                   <li{% if request.path == '/instance/edit' %} class="active"{% endif %}>
                       <a href="{% url 'instance-edit' %}">{% trans "Edit instance" %}</a>
                   </li>
+                  <li class="divider"></li>
                   <li{% if request.path == '/recordings' %} class="active"{% endif %}><a href="{% url 'speeches:recording-list' %}">{% trans "Your recordings" %}</a>
                   <li{% if request.path == '/instance/token' %} class="active"{% endif %}>
                       <a href="{% url 'tokens' %}">{% trans "Your token" %}</a>
@@ -110,8 +104,13 @@
                 {% endif %}
                   <li><a href="{% url 'account_logout' %}?next=/">{% trans "Log out" %}</a></li>
               </ul>
+            {% else %}
+              <a href="{% url 'account_login' %}">Log in</a>
+                {% if request.instance %}
+                  <a href="{{ settings.BASE_HOST }}/#demos">{% trans "Other SayIt sites" %}</a>
+                {% endif %}
             {% endif %}
-        </div>
+          </nav>
         </div>
       </header>
       {% block instanceheader %}
@@ -157,14 +156,12 @@
                   {% endif %}
                 </ul>
             </nav>
-            {% if request.path != '/search/' and request.path != '/' %}
               <form class="site-search site-search--header" action="/search/" method="get" >
                 <div class="search-wrapper">
                     <input type="search" class="site-search__input" placeholder="{% trans "Search" %}" name="q"/>
                     <input type="submit" class="icon-search icon-search--white" value="{% trans "Go" %}"/>
                 </div>
               </form>
-            {% endif %}
             </div>
         </div>
       </header>

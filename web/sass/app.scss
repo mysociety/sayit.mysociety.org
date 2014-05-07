@@ -179,8 +179,38 @@ a:focus {
 .errorlist {
     @include unstyled-list();
 }
+
 .select2-container {
-    margin-bottom: 1em;
+    margin-bottom: 1em; /* match margin below normal text inputs */
+
+    .select2-choice {
+        height: 2em; /* match height of normal text inputs */
+
+        .select2-arrow b {
+            background-position: 0 3px;
+
+            .select2-dropdown-open & {
+                background-position: 0 3px;
+            }
+        }
+    }
+
+    .select2-chosen {
+        line-height: 1.8em;
+    }
+}
+
+.select2-container-multi .select2-choices .select2-search-field input {
+    /* try to match a normal text input */
+    font-size: 0.875em;
+    padding: 0.5em;
+    height: 2em;
+    color: rgba(0, 0, 0, 0.75) !important;
+    opacity: 0.6;
+}
+
+.select2-container-multi .select2-choices {
+    border-color: #ccc; /* match border of normal text inputs */
 }
 
 small.error .errorlist {
@@ -304,45 +334,47 @@ label {
         display: block;
     }
     float: right;
-    margin-top: 0.95em;
+    margin-top: 0.2em;
     margin-right: 145px;
+
     a {
         display: inline-block;
         margin-right: 1em;
         font-size: 0.8125em;
         letter-spacing: 0.02em;
+        line-height: 3em;
     }
-}
 
-.admin-menu-container {
-    position: fixed;
-    top: 0;
-    left: 1em;
-    z-index: 500;
-    min-width: 280px;
-    a {
-        &:link {
+    .dropdown:after {
+        @include css-triangle(4px, #fff, top);
+        display: inline-block;
+        margin-left: 4px;
+        vertical-align: -2px;
+    }
+
+    .f-dropdown {
+        width: auto;
+        padding: 0.3em 0; /* Extra vertical breathing space in dropdowns */
+
+        a {
+            font-size: 1em;
+            line-height: 1.2em;
             color: $colour_primary;
-        }
-        &:hover,
-        &:active,
-        &:visited {
-            color: darken($colour_primary, 10%);
-        }
-    }
-}
+            padding: 0.5em 1em; /* More left-right padding to give links breathing space */
+            margin-right: 0; /* override parent style, above */
 
-.admin-menu-button {
-    margin-top: 1.1em;
-    /* show at all? */
-    &.button.secondary {
-        /* Override some Foundation stuff */
-        background: transparent;
-        color: #fff;
-        border-color: #333;
-        @include box-shadow(none);
-        &:before {
-            border-color: rgba(255,255,255,0.8) transparent transparent transparent;
+            &:hover,
+            &:active,
+            &:visited {
+                text-decoration: none;
+                color: darken($colour_primary, 10%);
+            }
+        }
+
+        .divider {
+            font-size: 1em;
+            margin: 0.3em 0;
+            border-top: $f-dropdown-border-width $f-dropdown-border-style $f-dropdown-border-color;
         }
     }
 }
@@ -377,6 +409,10 @@ label {
 .instance-header__title {
     float: left;
     width: 100%;
+    margin-bottom: 0.5em;
+    @media (min-width: $medium-screen) {
+        margin-bottom: 0;
+    }
     @media (min-width: $large-screen) {
         width: 50%;
     }
@@ -389,6 +425,7 @@ label {
         margin-top: 0.2em;
         line-height: 1em;
         color: #fff;
+        margin-bottom: 0;
     }
     a {
         &:hover,
@@ -402,19 +439,38 @@ label {
 .instance-header__subtitle {
     width: 100%;
     float: left;
-    margin-bottom: .5em;
+    margin-bottom: 1em;
+    @media (min-width: $medium-screen) {
+        margin-bottom: 0;
+        margin-top: 0.5em;
+    }
     @media (min-width: $large-screen) {
         width: 49%;
+        margin-top: 0;
+        &:before {
+            /* clever trick to vertically align short instance descriptions */
+            content: '';
+            display: inline-block;
+            height: 1.9em;
+            vertical-align: bottom;
+            margin-right: -0.25em; /* Adjusts for spacing */
+        }
     }
     @media (min-width: $huge-screen) {
-        width: 61%;
-        margin-left: 2%;
+        width: 60%;
+        margin-left: 3%;
     }
     p {
         font-size: emCalc(13);
         color: #fff;
         line-height: 1.461538462em;
         margin-bottom: 0;
+
+        @media (min-width: $large-screen) {
+            /* clever trick to vertically align short instance descriptions */
+            display: inline-block;
+            vertical-align: middle;
+        }
     }
 }
 
@@ -440,7 +496,7 @@ label {
     float: left;
     width: 100%;
     @media (min-width: $medium-screen) {
-        margin-top: 2.8em;
+        width: 80%;
     }
     @media (min-width: $large-screen) {
         margin-top: 0;
@@ -502,7 +558,7 @@ label {
     .menu-dropdown {
         display: block;
         position: absolute;
-        top: 0.75em;
+        top: 0.55em;
         right: 0.75em;
         @media (min-width: $large-screen) {
             display: none;
@@ -567,7 +623,8 @@ label {
         }
         @media (min-width: $large-screen) {
             display: inline-block;
-            padding: 0.5em;
+            padding: 0 0.5em;
+            line-height: 2.2em; /* to match search box height */
             @include border-radius(3px);
             font-size: emCalc(15);
             &:hover,
@@ -691,18 +748,25 @@ label {
 
 .nothing-here-yet-message {
     @include grid-column(12);
-    @media (min-width: $medium-screen) {
-        @include grid-column(8, $center:true);
-    }
-    @media (min-width: $large-screen) {
-        @include grid-column(6, $center:true);
-    }
     text-align: center;
     margin-top: 1em;
-    margin-bottom: 1em;
+    margin-bottom: 1.5em;
     @media (min-width: $medium-screen) {
         margin-top: 4em;
-        margin-bottom: 4em;
+        margin-bottom: 4.5em;
+    }
+    @media (min-width: $medium-screen) and (min-height: 700px) {
+        margin-top: 6em;
+        margin-bottom: 7em;
+    }
+    .lead {
+        margin-bottom: 0;
+    }
+    .lead + .lead {
+        color: #bbb;
+    }
+    p:last-child {
+        margin-top: 1.5em; /* better balance against the very heavy looking buttons */
     }
 }
 
@@ -1442,6 +1506,39 @@ span.form-page__label-tip {
   color: darken(#55acee, 10%);
 }
 
+
+/* Other instance pages */
+
+#speaker-form,
+#speech-form,
+#section-form {
+    margin-bottom: 2em;
+
+    & > .row {
+        margin-bottom: 0.5em;
+        margin-top: 0.5em;
+    }
+}
+
+#speech-form #id_text {
+    height: 12em;
+}
+
+#speech-form #id_audio_controls label {
+    float: left;
+    margin-right: 10px;
+    margin-top: 0.3em;
+}
+
+.speech-form__primary-column {
+    margin-bottom: 1em;
+}
+
+@media (min-width: $medium-screen){
+    .speech-form__secondary-column {
+        padding-left: 4%;
+    }
+}
 
 /* About pages */
 
