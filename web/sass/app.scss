@@ -730,7 +730,13 @@ label {
         margin-bottom: 7em;
     }
     .lead {
-        margin-bottom: 1.2em; /* better balance against the very heavy looking buttons */
+        margin-bottom: 0;
+    }
+    .lead + .lead {
+        color: #bbb;
+    }
+    p:last-child {
+        margin-top: 1.5em; /* better balance against the very heavy looking buttons */
     }
 }
 
