@@ -1,0 +1,3 @@
+{% comment %}
+  This empty template disables the "Confirmation e-mail sent to..." message from django-allauth
+{% endcomment %}
