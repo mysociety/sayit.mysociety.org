@@ -105,8 +105,8 @@
                   <li><a href="{% url 'account_logout' %}?next=/">{% trans "Log out" %}</a></li>
               </ul>
             {% else %}
+              <a href="{% url 'account_login' %}">Log in</a>
                 {% if request.instance %}
-                  <a href="{% url 'account_login' %}">Log in</a>
                   <a href="{{ settings.BASE_HOST }}/#demos">{% trans "Other SayIt sites" %}</a>
                 {% endif %}
             {% endif %}
