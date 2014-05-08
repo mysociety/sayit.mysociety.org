@@ -1451,39 +1451,6 @@ span.form-page__label-tip {
 }
 
 
-/* Other instance pages */
-
-#speaker-form,
-#speech-form,
-#section-form {
-    margin-bottom: 2em;
-
-    & > .row {
-        margin-bottom: 0.5em;
-        margin-top: 0.5em;
-    }
-}
-
-#speech-form #id_text {
-    height: 12em;
-}
-
-#speech-form #id_audio_controls label {
-    float: left;
-    margin-right: 10px;
-    margin-top: 0.3em;
-}
-
-.speech-form__primary-column {
-    margin-bottom: 1em;
-}
-
-@media (min-width: $medium-screen){
-    .speech-form__secondary-column {
-        padding-left: 4%;
-    }
-}
-
 /* About pages */
 
 .questions-and-answers {
