@@ -1,3 +1,13 @@
+@import "compass/css3";
+@import "speeches/sass/settings";
+
+// Shakespeare instance has a different primary color (red)
 $colour_primary: #e14848;
 
-@import "project.scss";
+@import "_foundation.scss";
+@import "_speeches.scss";
+
+@import "speeches/sass/sayit-mixins"; // assumes foundation components have been loaded
+
+@import "_project.scss";
+
