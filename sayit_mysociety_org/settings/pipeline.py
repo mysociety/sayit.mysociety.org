@@ -47,6 +47,7 @@ PIPELINE_YUI_BINARY = '/usr/bin/env yui-compressor'
 PIPELINE_CSS = {
     'sayit-default': {
         'source_filenames': (
+            'sass/foundation.scss',
             'sass/speeches.scss',
             'sass/app.scss',
         ),
@@ -54,6 +55,7 @@ PIPELINE_CSS = {
     },
     'sayit-shakespeare': {
         'source_filenames': (
+            'sass/foundation.scss',
             'sass/speeches-shakespeare.scss',
             'sass/app-shakespeare.scss',
         ),
