@@ -1,9 +1,6 @@
-@import "compass/css3";
 @import "speeches/sass/settings";
 
 @import "_foundation.scss";
 @import "_speeches.scss";
-
-@import "speeches/sass/sayit-mixins"; // assumes foundation components have been loaded
 
 @import "_project.scss";
