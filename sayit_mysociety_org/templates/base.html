@@ -195,9 +195,11 @@
                   {% endif %}
               </ul>
             </div>
+          {% if request.path != '/speech/add' %}
             <div class="instance-footer__top-link">
               <a href="#top" class="button">{% trans "Back to top" %}</a>
             </div>
+          {% endif %}
           </div>
         </footer>
         {% endif %}

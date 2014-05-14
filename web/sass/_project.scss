@@ -1532,6 +1532,7 @@ span.form-page__label-tip {
         @extend .unstyled-list;
         @include inline-list;
         margin-top: 1.1em;
+        margin-bottom: 1.25em;
         text-align: center;
         @media (min-width: $medium-screen) {
             text-align: left;
