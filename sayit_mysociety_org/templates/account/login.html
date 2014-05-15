@@ -7,14 +7,14 @@
 {% load account %}
 {% load url from future %}
 
-{% block title %}{% trans "Log In" %}{% endblock %}
+{% block title %}{% trans "Log in" %}{% endblock %}
 
 {% block instanceheader %}{% endblock %}
 
 {% block content %}
 
     <div class="form-page">
-      <h1>{% trans "Log In" %}</h1>
+      <h1>{% trans "Log in" %}</h1>
 
       <form class="login" method="POST" action="{% url 'account_login' %}">
           {% csrf_token %}
@@ -52,7 +52,7 @@
           </div>
 
           <div class="form-page__last">
-              <button class="right button" type="submit" tabindex="4">{% trans "Log In" %}</button>
+              <button class="right button" type="submit" tabindex="4">{% trans "Log in" %}</button>
               <label><input type="checkbox" tabindex="3" name="remember"> {{ form.remember.label }}</label>
           </div>
       </form>

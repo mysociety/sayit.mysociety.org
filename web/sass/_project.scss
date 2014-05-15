@@ -1386,6 +1386,18 @@ label {
   margin-bottom: 0.7em;
 }
 
+.form-page__intro {
+  text-align: center;
+  border-top: 1px solid #ddd;
+  border-bottom: 1px solid #ddd;
+  margin: 2em 0;
+  padding: 2em 0;
+
+  & :last-child {
+    margin-bottom: 0;
+  }
+}
+
 .form-page .non_field_errors {
   text-align: center;
   color: $alert-color;
@@ -1394,12 +1406,21 @@ label {
 
 .form-page__label-tip {
   float: right;
-  font-size: 0.875em; /* to match default label styling */
+  font-size: 0.875em; // to match default label styling
   font-weight: 500;
 }
 
 span.form-page__label-tip {
   color: #999;
+}
+
+.form-page__last {
+  @include clearfix();
+  margin-top: 1.8em; // more than the default 1em, to match gap between vertically stacked inputs with labels
+
+  form.login & {
+    margin-top: 1.4em; // becuase there are .label-tips between inputs here, so less space is required to match them
+  }
 }
 
 .form-page__last label {
@@ -1413,41 +1434,47 @@ span.form-page__label-tip {
   margin-bottom: 0;
 }
 
-.form-page__last {
-  @include clearfix();
-}
-
 .form-page__last .button {
   padding: 0.4em 1.3em 0.5em;
+  margin-bottom: 0;
 }
 
-.signup-page .form-page__last .button {
-  margin-top: 0.8em;
+form.signup button[type="submit"] {
+  padding: 0.4em 1.3em 0.5em;
+  display: block;
+  width: 100%;
+  margin: 21px 0 0 0;
+  line-height: 1.15em;
 }
 
 .form-page .socialaccount_providers {
   @include unstyled-list();
   border-top: 1px solid #ddd;
-  margin: 2em 0 0 0;
-  padding-top: 1.5em;
+  margin: 3em 0 0 0;
+  padding-top: 2.5em;
 }
 
 .form-page .socialaccount_providers li {
   text-align: center;
-  color: #ccc;
 }
 
-.form-page .socialaccount_providers a {
-  margin-left: 0.4em;
+.socialaccount_provider {
+  @extend .button;
+  padding: 0.4em 1.1em 0.5em;
+
+  span {
+    opacity: 0.5;
+    margin-right: 0.2em;
+  }
 }
 
 .socialaccount_provider.twitter {
-  color: #55acee;
+  background-color: #55acee;
 }
 
 .socialaccount_provider.twitter:hover,
 .socialaccount_provider.twitter:focus {
-  color: darken(#55acee, 10%);
+  background-color: darken(#55acee, 10%);
 }
 
 
