@@ -5,7 +5,7 @@
   {% if instance %}
     {% trans "Edit instance" %}
   {% else %}
-    {% trans "Add instance" %}
+    {% trans "Sign up" %}
   {% endif %}
 {% endblock %}
 
@@ -17,7 +17,7 @@
   {% if instance %}
     <h1>{% trans "Edit instance" %}</h1>
   {% else %}
-    <h1>{% trans "Create instance" %}</h1>
+    <h1>{% trans "Sign up" %}</h1>
   {% endif %}
 
     <form id="instance-form" class="form-horizontal" method="post">
@@ -73,7 +73,7 @@
           {% if instance %}
             {% trans "Update instance" as submit_button %}
           {% else %}
-            {% trans "Create instance" as submit_button %}
+            {% trans "Sign up" as submit_button %}
           {% endif %}
             <button class="right button" type="submit" id="instance_submit">{{ submit_button }}</button>
         </div>
