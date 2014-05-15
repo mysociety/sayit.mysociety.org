@@ -6,14 +6,14 @@
 {% load url from future %}
 {% load i18n %}
 
-{% block title %}{% trans "Sign Up" %}{% endblock %}
+{% block title %}{% trans "Sign up" %}{% endblock %}
 
 {% block instanceheader %}{% endblock %}
 
 {% block content %}
 
     <div class="form-page signup-page">
-        <h1>{% trans "Sign Up" %}</h1>
+        <h1>{% trans "Sign up" %}</h1>
 
         <form class="signup" id="signup_form" method="post" action="{% url 'account_signup' %}">
             {% csrf_token %}
@@ -58,7 +58,7 @@
             </div>
 
             <div class="form-page__last">
-                <button class="right button" type="submit">{% trans "Sign Up" %}</button>
+                <button class="right button" type="submit">{% trans "Sign up" %}</button>
             </div>
         </form>
     </div>
