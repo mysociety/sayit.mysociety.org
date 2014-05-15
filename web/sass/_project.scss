@@ -1436,31 +1436,45 @@ span.form-page__label-tip {
 
 .form-page__last .button {
   padding: 0.4em 1.3em 0.5em;
+  margin-bottom: 0;
+}
+
+form.signup button[type="submit"] {
+  padding: 0.4em 1.3em 0.5em;
+  display: block;
+  width: 100%;
+  margin: 21px 0 0 0;
+  line-height: 1.15em;
 }
 
 .form-page .socialaccount_providers {
   @include unstyled-list();
   border-top: 1px solid #ddd;
-  margin: 2em 0 0 0;
-  padding-top: 1.5em;
+  margin: 3em 0 0 0;
+  padding-top: 2.5em;
 }
 
 .form-page .socialaccount_providers li {
   text-align: center;
-  color: #ccc;
 }
 
-.form-page .socialaccount_providers a {
-  margin-left: 0.4em;
+.socialaccount_provider {
+  @extend .button;
+  padding: 0.4em 1.1em 0.5em;
+
+  span {
+    opacity: 0.5;
+    margin-right: 0.2em;
+  }
 }
 
 .socialaccount_provider.twitter {
-  color: #55acee;
+  background-color: #55acee;
 }
 
 .socialaccount_provider.twitter:hover,
 .socialaccount_provider.twitter:focus {
-  color: darken(#55acee, 10%);
+  background-color: darken(#55acee, 10%);
 }
 
 
