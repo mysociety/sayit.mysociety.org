@@ -1394,12 +1394,21 @@ label {
 
 .form-page__label-tip {
   float: right;
-  font-size: 0.875em; /* to match default label styling */
+  font-size: 0.875em; // to match default label styling
   font-weight: 500;
 }
 
 span.form-page__label-tip {
   color: #999;
+}
+
+.form-page__last {
+  @include clearfix();
+  margin-top: 1.8em; // more than the default 1em, to match gap between vertically stacked inputs with labels
+
+  form.login & {
+    margin-top: 1.4em; // becuase there are .label-tips between inputs here, so less space is required to match them
+  }
 }
 
 .form-page__last label {
@@ -1413,16 +1422,8 @@ span.form-page__label-tip {
   margin-bottom: 0;
 }
 
-.form-page__last {
-  @include clearfix();
-}
-
 .form-page__last .button {
   padding: 0.4em 1.3em 0.5em;
-}
-
-.signup-page .form-page__last .button {
-  margin-top: 0.8em;
 }
 
 .form-page .socialaccount_providers {
