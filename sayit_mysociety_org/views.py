@@ -1,6 +1,7 @@
 from django.views.generic.edit import CreateView
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.views import redirect_to_login
+from django.core.urlresolvers import reverse
 
 from instances.models import Instance
 
@@ -31,4 +32,7 @@ class InstanceCreate(CreateView):
             return redirect
         else:
             self.request.session['instance'] = form.cleaned_data
-            return redirect_to_login(self.request.path + '?post=1')
+            return redirect_to_login(
+                self.request.path + '?post=1',
+                login_url = reverse("account_signup"),
+            )

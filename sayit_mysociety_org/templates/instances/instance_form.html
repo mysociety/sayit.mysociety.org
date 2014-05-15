@@ -5,7 +5,7 @@
   {% if instance %}
     {% trans "Edit instance" %}
   {% else %}
-    {% trans "Add instance" %}
+    {% trans "Sign up" %}
   {% endif %}
 {% endblock %}
 
@@ -17,7 +17,11 @@
   {% if instance %}
     <h1>{% trans "Edit instance" %}</h1>
   {% else %}
-    <h1>{% trans "Create instance" %}</h1>
+    <h1>{% trans "Sign up" %}</h1>
+    <div class="form-page__intro">
+      <p>{% trans 'SayIt gives you your own site for publishing and sharing speeches and statements.' %}</p>
+      <p>{% trans 'You could use it to publish transcripts of individual meetings, or rag-bag databases of everything said by a certain person or group of people (i.e statements by political candidates). It&rsquo;s free and constantly improving.' %}</p>
+    </div>
   {% endif %}
 
     <form id="instance-form" class="form-horizontal" method="post">
@@ -41,7 +45,7 @@
                     <span class="prefix">http://</span>
                 </div>
                 <div class="small-6 columns">
-                    <input type="text" name="label" id="{{ form.label.id_for_label }}" value="{{ form.label.value|default_if_none:"" }}">
+                    <input type="text" name="label" id="{{ form.label.id_for_label }}" value="{{ form.label.value|default_if_none:"" }}" placeholder="{% trans 'roman-senate' %}">
                 </div>
                 <div class="small-4 columns">
                     <span class="postfix">.sayit.mysociety.org</span>
@@ -55,7 +59,7 @@
 
         <div {% if form.title.errors %}class="error"{% endif %}>
             <label for="{{ form.title.id_for_label }}">{{ form.title.label }}:</label>
-            <input type="text" name="title" id="{{ form.title.id_for_label }}" value="{{ form.title.value|default_if_none:"" }}">
+            <input type="text" name="title" id="{{ form.title.id_for_label }}" value="{{ form.title.value|default_if_none:"" }}" placeholder="{% trans 'Speeches by Ancient Roman Senators' %}">
           {% if form.title.errors %}
             <small class="error">{{ form.title.errors }}</small>
           {% endif %}
@@ -63,7 +67,7 @@
 
         <div {% if form.description.errors %}class="error"{% endif %}>
             <label for="{{ form.description.id_for_label }}">{{ form.description.label }}:</label>
-            <textarea cols="40" rows="3" name="description" id="{{ form.description.id_for_label }}" value="{{ form.description.value|default_if_none:"" }}"></textarea>
+            <textarea cols="40" rows="3" name="description" id="{{ form.description.id_for_label }}" value="{{ form.description.value|default_if_none:"" }}" placeholder="{% trans 'Selected speeches from roughly 700 BC to 400 AD' %}"></textarea>
           {% if form.description.errors %}
             <small class="error">{{ form.description.errors }}</small>
           {% endif %}
@@ -73,7 +77,7 @@
           {% if instance %}
             {% trans "Update instance" as submit_button %}
           {% else %}
-            {% trans "Create instance" as submit_button %}
+            {% trans "Sign up" as submit_button %}
           {% endif %}
             <button class="right button" type="submit" id="instance_submit">{{ submit_button }}</button>
         </div>

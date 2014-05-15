@@ -6,14 +6,14 @@
 {% load url from future %}
 {% load i18n %}
 
-{% block title %}{% trans "Sign Up" %}{% endblock %}
+{% block title %}{% trans "Sign up" %}{% endblock %}
 
 {% block instanceheader %}{% endblock %}
 
 {% block content %}
 
     <div class="form-page signup-page">
-        <h1>{% trans "Sign Up" %}</h1>
+        <h1>{% trans "Sign up" %}</h1>
 
         <form class="signup" id="signup_form" method="post" action="{% url 'account_signup' %}">
             {% csrf_token %}
@@ -32,6 +32,15 @@
               {{ hidden }}
           {% endfor %}
 
+            <div {% if form.email.errors %}class="error"{% endif %}>
+                <a href="{{ login_url }}" class="form-page__label-tip">Already got an account?</a>
+                <label for="{{ form.email.id_for_label }}">Your e-mail address:</label>
+                <input type="text" name="email" id="{{ form.email.id_for_label }}" value="{{ form.email.value|default_if_none:"" }}">
+              {% if form.email.errors %}
+                <small class="error">{{ form.email.errors }}</small>
+              {% endif %}
+            </div>
+
             <div {% if form.username.errors %}class="error"{% endif %}>
                 <span class="form-page__label-tip">(No spaces please)</span>
                 <label for="{{ form.username.id_for_label }}">Pick a username:</label>
@@ -41,26 +50,28 @@
               {% endif %}
             </div>
 
-            <div {% if form.email.errors %}class="error"{% endif %}>
-                <label for="{{ form.email.id_for_label }}">Your e-mail address:</label>
-                <input type="text" name="email" id="{{ form.email.id_for_label }}" value="{{ form.email.value|default_if_none:"" }}">
-              {% if form.email.errors %}
-                <small class="error">{{ form.email.errors }}</small>
-              {% endif %}
+            <div class="row">
+                <div class="{% if form.password1.errors %}error{% endif %} small-8 columns">
+                    <label for="{{ form.password1.id_for_label }}">Pick a password:</label>
+                    <input type="password" name="password1" id="{{ form.password1.id_for_label }}" value="{{ form.password1.value|default_if_none:"" }}">
+                  {% if form.password1.errors %}
+                    <small class="error">{{ form.password1.errors }}</small>
+                  {% endif %}
+                </div>
+                <div class="small-4 columns">
+                    <button class="button" type="submit">{% trans "Sign up" %}</button>
+                </div>
             </div>
 
-            <div {% if form.password1.errors %}class="error"{% endif %}>
-                <label for="{{ form.password1.id_for_label }}">Pick a password:</label>
-                <input type="password" name="password1" id="{{ form.password1.id_for_label }}" value="{{ form.password1.value|default_if_none:"" }}">
-              {% if form.password1.errors %}
-                <small class="error">{{ form.password1.errors }}</small>
-              {% endif %}
-            </div>
-
-            <div class="form-page__last">
-                <button class="right button" type="submit">{% trans "Sign Up" %}</button>
-            </div>
         </form>
+
+      {% if socialaccount.providers  %}
+        <ul class="socialaccount_providers">
+            {% include "socialaccount/snippets/provider_list.html" with process="login" %}
+        </ul>
+        {% include "socialaccount/snippets/login_extra.html" %}
+      {% endif %}
+
     </div>
 
 {% endblock %}
