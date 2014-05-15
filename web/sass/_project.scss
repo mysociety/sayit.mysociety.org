@@ -1386,6 +1386,18 @@ label {
   margin-bottom: 0.7em;
 }
 
+.form-page__intro {
+  text-align: center;
+  border-top: 1px solid #ddd;
+  border-bottom: 1px solid #ddd;
+  margin: 2em 0;
+  padding: 2em 0;
+
+  & :last-child {
+    margin-bottom: 0;
+  }
+}
+
 .form-page .non_field_errors {
   text-align: center;
   color: $alert-color;
