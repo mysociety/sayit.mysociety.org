@@ -111,7 +111,7 @@ example showing the basic structure:
 
 <pre>
 &lt;akomaNtoso&gt;
-  &lt;debate name="The Tempest"&gt;
+  &lt;debate&gt;
     &lt;meta&gt;
       &lt;references source="#"&gt;
         &lt;TLCPerson id="caliban" href="/ontology/person/shakespeare.caliban" showAs="Caliban"/&gt;
@@ -124,10 +124,10 @@ example showing the basic structure:
     &lt;/preface&gt;
     &lt;debateBody&gt;
       &hellip;
-      &lt;debateSection name="act" id="act2"&gt;
+      &lt;debateSection id="act2"&gt;
         &lt;heading id="act2-head"&gt;Act 2&lt;/heading&gt;
         &hellip;
-        &lt;debateSection name="scene" id="act2-scene2"&gt;
+        &lt;debateSection id="act2-scene2"&gt;
           &lt;heading id="act2-scene2-head"&gt;Scene 2&lt;/heading&gt;
           &lt;subheading&gt;Another part of the island.&lt;/subheading&gt;
           &lt;narrative&gt;Enter CALIBAN with a burden of wood. A noise of thunder heard&lt;/narrative&gt;
@@ -186,8 +186,7 @@ about these too much, you might only need <code>id</code>):</p>
 <h4>akomaNtoso and debate</h4>
 
 <p>The <code>akomaNtoso</code> and <code>debate</code> element wrap the entire
-document. The debate element has a <code>name</code> attribute providing the
-name of the overall content.
+document.
 
 <h4>preface</h4>
 
@@ -232,15 +231,13 @@ main content of the document, containing the hierarchy of speech sections.</p>
 
 <p>The following elements (which all require an <code>id</code> attribute) can be used to
 create a hierarchy of speech-like elements. The generic element is
-<code>debateSection</code>, which requires a <code>name</code> attribute to
-describe what type of section it is. Most of the specific elements are only useful in
+<code>debateSection</code>. Most of the specific elements are only useful in
 a Parliamentary-style debate context; do use them if applicable, but generally you may find
 <code>debateSection</code> is what you use. SayIt doesn't handle different
 types of section differently at present.</p>
 
 <ul>
-    <li>debateSection (additionally requires a <code>name</code> attribute to
-    describe the type of section)
+    <li>debateSection
     <li>administrationOfOath, rollCall, prayers
     <li>oralStatements, writtenStatements, personalStatements, ministerialStatements
     <li>resolutions, nationalInterest
