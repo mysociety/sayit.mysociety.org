@@ -121,6 +121,9 @@
                 <h1>
                   {% if request.instance %}
                     <a href="/">{% filter force_escape %}{% firstof request.instance.title request.instance.label %}{% endfilter %}</a>
+                    {% if request.is_user_instance %}
+                      <a class="instance-header__edit-instance" href="{% url 'instance-edit' %}">{% trans 'Edit' %}</a>
+                    {% endif %}
                   {% else %}
                     <a href="{{ settings.BASE_HOST }}">SayIt</a>
                   {% endif %}

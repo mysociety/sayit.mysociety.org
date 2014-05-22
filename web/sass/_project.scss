@@ -380,6 +380,17 @@ label {
     }
 }
 
+.instance-header__edit-instance {
+  font-size: 0.6em;
+  opacity: 0.5;
+  margin-left: 0.3em;
+  padding: 0.2em 0.4em; // larger click target
+
+  &:hover, &:focus {
+    opacity: 1;
+  }
+}
+
 .instance-header__subtitle {
     width: 100%;
     float: left;
