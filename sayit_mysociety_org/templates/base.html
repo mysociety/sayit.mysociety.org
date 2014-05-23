@@ -87,21 +87,6 @@
             {% if request.user.is_authenticated %}
               <a href="#" data-dropdown="user-menu" class="dropdown">{{ request.user.username }}</a>
               <ul id="user-menu" class="f-dropdown" data-dropdown-content>
-                {% if request.is_user_instance %}
-                  <li{% if request.path == '/speech/add' %} class="active"{% endif %}><a href="{% url 'speeches:speech-add' %}">{% trans "Add speech" %}</a>
-                  <li{% if request.path == '/sections/add' %} class="active"{% endif %}><a href="{% url 'speeches:section-add' %}">{% trans "Add section" %}</a>
-                  <li{% if request.path == '/speaker/add' %} class="active"{% endif %}><a href="{% url 'speeches:speaker-add' %}">{% trans "Add speaker" %}</a>
-                  <li{% if request.path == '/instance/edit' %} class="active"{% endif %}>
-                      <a href="{% url 'instance-edit' %}">{% trans "Edit instance" %}</a>
-                  </li>
-                  <li class="divider"></li>
-                  <li{% if request.path == '/recordings' %} class="active"{% endif %}><a href="{% url 'speeches:recording-list' %}">{% trans "Your recordings" %}</a>
-                  <li{% if request.path == '/instance/token' %} class="active"{% endif %}>
-                      <a href="{% url 'tokens' %}">{% trans "Your token" %}</a>
-                  </li>
-                {% elif not request.instance %}
-                  <li><a href="{% url 'tokens' %}">{% trans "Tokens" %}</a></li>
-                {% endif %}
                   <li><a href="{% url 'account_logout' %}?next=/">{% trans "Log out" %}</a></li>
               </ul>
             {% else %}
@@ -121,6 +106,9 @@
                 <h1>
                   {% if request.instance %}
                     <a href="/">{% filter force_escape %}{% firstof request.instance.title request.instance.label %}{% endfilter %}</a>
+                    {% if request.is_user_instance %}
+                      <a class="instance-header__edit-instance" href="{% url 'instance-edit' %}">{% trans 'Edit' %}</a>
+                    {% endif %}
                   {% else %}
                     <a href="{{ settings.BASE_HOST }}">SayIt</a>
                   {% endif %}
