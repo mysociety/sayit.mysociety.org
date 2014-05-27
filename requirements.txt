@@ -1,4 +1,6 @@
 Django==1.6.4
 django-allauth==0.16.1
+beautifulsoup4
+requests_cache
 
 -e git+https://github.com/mysociety/sayit#egg=django-sayit
