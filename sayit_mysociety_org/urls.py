@@ -12,6 +12,8 @@ from instances.views import InstanceUpdate
 from django.contrib import admin
 admin.autodiscover()
 
+from views import ShareWithCollaborators, AcceptInvite
+
 urlpatterns = staticfiles_urlpatterns()
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
@@ -40,6 +42,14 @@ urlpatterns += patterns('',
 
     url(r'^instance/edit$', InstanceUpdate.as_view(), name='instance-edit'),
     url(r'^instance/token$', 'login_token.views.login_tokens_for_user', name='tokens'),
+
+    url(r'^instance/share$', ShareWithCollaborators.as_view()),
+    url(r'^instance/shared$',
+        TemplateView.as_view(template_name='share_instance_confirmation.html'),
+        name='instance_shared'),
+    url(r'^instance/invite/(?P<uidb36>[0-9A-Za-z]+)-(?P<key>.+)/$',
+        AcceptInvite.as_view(),
+        name='instance_accept_invite'),
 
     (r'^about', include('about.urls')),
     url(r'^', include('speeches.urls', app_name='speeches', namespace='speeches')),

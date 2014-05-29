@@ -1,9 +1,22 @@
-from django.views.generic.edit import CreateView
+import hashlib
+
+from django.core.urlresolvers import reverse, reverse_lazy
+from django.utils.http import int_to_base36
+from django.views.generic.edit import CreateView, FormView
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.views import redirect_to_login
-from django.core.urlresolvers import reverse
+from django.contrib.auth.models import User
+from django.contrib.auth.tokens import default_token_generator
+from django.contrib.sites.models import Site
+
+from allauth.account import app_settings
+from allauth.account.adapter import get_adapter
+from allauth.account.views import PasswordResetFromKeyView
 
 from instances.models import Instance
+
+from forms import ShareForm
+
 
 class InstanceCreate(CreateView):
     model = Instance
@@ -36,3 +49,60 @@ class InstanceCreate(CreateView):
                 self.request.path + '?post=1',
                 login_url = reverse("account_signup"),
             )
+
+class ShareWithCollaborators(FormView):
+    template_name = 'share_instance_with_collaborators.html'
+
+    # FIXME - should be replaced with a formset.
+    form_class = ShareForm
+    success_url = reverse_lazy('instance_shared')
+
+    # substantially cargo-culted from allauth.account.forms.ResetPasswordForm
+    def form_valid(self, form):
+        email = form.cleaned_data["email"]
+
+        user_ids = [x.id for x in form.users]
+
+        if not user_ids:
+            # Create a new user with email address as username
+            # or a bit of a hash of the email address if it's longer
+            # than Django's 30 character username limit.
+            if len(email) > 30:
+                username = hashlib.md5(email).hexdigest()[:10]
+            else:
+                username = email
+
+            # Let's try creating a new user and sending an email to them
+            # with a link to the password reset page.
+            # FIXME - should probably try/catch the very unlikely situation
+            # where we have a duplicate username, I guess.
+            user = User.objects.create_user(username, email=email)
+            user_ids = (user.id,)
+
+            temp_key = default_token_generator.make_token(user)
+            current_site = Site.objects.get_current()
+
+            # send the password reset email
+            path = reverse("instance_accept_invite",
+                           kwargs=dict(uidb36=int_to_base36(user.id),
+                                       key=temp_key))
+            url = '%s://%s%s' % (app_settings.DEFAULT_HTTP_PROTOCOL,
+                                 current_site.domain,
+                                 path)
+            context = {"site": current_site,
+                       "user": user,
+                       "password_reset_url": url}
+            get_adapter().send_mail('accept_invite',
+                                    email,
+                                    context)
+
+        self.request.instance.users.add(*user_ids)
+
+        return super(ShareWithCollaborators, self).form_valid(form)
+
+
+class AcceptInvite(PasswordResetFromKeyView):
+    template_name = 'accept_invitation.html'
+
+    def get_success_url(self):
+        return reverse('speeches:home')

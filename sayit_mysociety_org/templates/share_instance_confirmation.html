@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+{% load i18n %}
+
+{% block title %}
+{% endblock %}
+
+{% block instanceheader %}{% endblock %}
+
+{% block content %}
+
+  <div class="form-page">
+    <h1>{% trans "A problem shared is a problem halved" %}</h1>
+    <div class="form-page__intro">
+      <p>{% trans 'You have successfully shared your SayIt instance, so now other people can help add speeches.' %}</p>
+      <p><a href='{% url "speeches:home" %}'>Return to your your instance</a></p>
+    </div>
+  </div>
+
+{% endblock %}

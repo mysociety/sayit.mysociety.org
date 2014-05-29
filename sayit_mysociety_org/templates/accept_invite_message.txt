@@ -1,0 +1,9 @@
+{% load i18n %}{% blocktrans with site.domain as site_domain and user.username as username and user.email as email %}You have been invited to edit a SayIt instance. Click the link below
+
+{{password_reset_url}}
+
+You can log in with either your email address {{ email }}
+or the username {{ username }}
+
+Thanks for using our site!
+{% endblocktrans %}

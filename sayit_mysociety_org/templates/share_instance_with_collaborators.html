@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+{% load i18n %}
+
+{% block title %}
+{% endblock %}
+
+{% block instanceheader %}{% endblock %}
+
+{% block content %}
+
+  <div class="form-page">
+    <h1>{% trans "Share your instance" %}</h1>
+    <div class="form-page__intro">
+      <p>{% trans 'Let your friends help you edit your instance.' %}</p>
+    </div>
+
+    <form id="instance-form" class="form-horizontal" method="post">
+      {% csrf_token %}
+
+      {{ form.as_p }}
+
+      <div class="form-page__last">
+        <button class="right button" type="submit" id="instance_submit">{% trans 'Send invites' %}</button>
+      </div>
+    </form>
+  </div>
+
+{% endblock %}
