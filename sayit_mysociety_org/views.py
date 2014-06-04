@@ -3,7 +3,6 @@ import hashlib
 from django.core.urlresolvers import reverse, reverse_lazy
 from django.utils.http import int_to_base36
 from django.views.generic.edit import CreateView, FormView
-from django.contrib.auth.decorators import login_required
 from django.contrib.auth.views import redirect_to_login
 from django.contrib.auth.models import User
 from django.contrib.auth.tokens import default_token_generator
@@ -14,6 +13,7 @@ from allauth.account.adapter import get_adapter
 from allauth.account.views import PasswordResetFromKeyView
 
 from instances.models import Instance
+from instances.views import InstanceFormMixin
 
 from forms import ShareForm
 
@@ -50,7 +50,8 @@ class InstanceCreate(CreateView):
                 login_url = reverse("account_signup"),
             )
 
-class ShareWithCollaborators(FormView):
+
+class ShareWithCollaborators(FormView, InstanceFormMixin):
     template_name = 'share_instance_with_collaborators.html'
 
     # FIXME - should be replaced with a formset.
