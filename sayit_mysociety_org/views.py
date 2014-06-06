@@ -1,4 +1,5 @@
 import hashlib
+import urlparse
 
 from django.core.urlresolvers import reverse, reverse_lazy
 from django.utils.http import int_to_base36
@@ -83,13 +84,13 @@ class ShareWithCollaborators(FormView, InstanceFormMixin):
             temp_key = default_token_generator.make_token(user)
             current_site = Site.objects.get_current()
 
+            instance_url = self.request.instance.get_absolute_url()
+
             # send the password reset email
             path = reverse("instance_accept_invite",
                            kwargs=dict(uidb36=int_to_base36(user.id),
                                        key=temp_key))
-            url = '%s://%s%s' % (app_settings.DEFAULT_HTTP_PROTOCOL,
-                                 current_site.domain,
-                                 path)
+            url = urlparse.urljoin(instance_url, path)
             context = {"site": current_site,
                        "user": user,
                        "password_reset_url": url}

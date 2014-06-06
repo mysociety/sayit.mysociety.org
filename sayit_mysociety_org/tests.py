@@ -39,14 +39,16 @@ class ShareInstanceTests(InstanceTestCase):
 
         # Get the link out of the invitation email
         link = re.search(r'http://.*/\n', invite_message.body).group(0)
-        path = urlparse.urlsplit(link).path
+        parsed_link = urlparse.urlsplit(link)
+
+        self.assertEqual(parsed_link.netloc, self.client.defaults['HTTP_HOST'])
 
         self.client.logout()
-        resp = self.client.get(path)
+        resp = self.client.get(parsed_link.path)
         self.assertContains(resp, 'Accept invitation')
 
         resp = self.client.post(
-            path,
+            parsed_link.path,
             {'password1': 'password', 'password2': 'password'},
             )
         self.assertRedirects(resp, '/', status_code=302)
