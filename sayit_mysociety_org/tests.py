@@ -53,6 +53,10 @@ class ShareInstanceTests(InstanceTestCase):
             )
         self.assertRedirects(resp, '/', status_code=302)
 
+        # Check that sharee is now logged in, following
+        # http://stackoverflow.com/a/6013115/517418
+        self.assertEqual(self.client.session['_auth_user_id'], sharee.pk)
+
         # Check we can log out and in again with the new credentials
         self.client.logout()
         self.assertTrue(

@@ -108,3 +108,18 @@ class AcceptInvite(PasswordResetFromKeyView):
 
     def get_success_url(self):
         return reverse('speeches:home')
+
+
+from allauth.account.signals import password_reset
+from django.dispatch import receiver
+
+@receiver(password_reset, dispatch_uid="invite_accepted")
+def login_on_invite_accepted_callback(sender, **kwargs):
+    request = kwargs['request']
+
+    # It's very ugly to be using the path here, but I can't
+    # see any other easy way to make this signal handler work
+    # only for invite related password resets
+    if request.path_info.startswith('/instance/invite/'):
+        user = kwargs['user']
+        get_adapter().login(request, user)
