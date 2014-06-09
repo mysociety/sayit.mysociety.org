@@ -9,9 +9,9 @@ from utils import ParserSpeech as Speech, ParserSection as Section
 
 class PhilaParser(BaseParser):
     instance = 'philadelphia'
+    base_url = 'http://legislation.phila.gov/transcripts/Stated%%20Meetings/%d/sm%s.pdf'
 
     def get_transcripts(self):
-        base_url = 'http://legislation.phila.gov/transcripts/Stated%%20Meetings/%d/sm%s.pdf'
         # List manually got from http://legislation.phila.gov/council-transcriptroom/transroom_date.aspx
         transcripts = [
             '2014-03-27', '2014-03-20', '2014-03-13', '2014-03-06',
@@ -33,11 +33,11 @@ class PhilaParser(BaseParser):
         ]
         for date in transcripts:
             date = datetime.datetime.strptime(date, '%Y-%m-%d').date()
-            url = base_url % (date.year, date.strftime('%m%d%y'))
+            url = self.base_url % (date.year, date.strftime('%m%d%y'))
             if date.isoformat() == '2013-03-21':
-                url = base_url % (date.year, '0321b3')
+                url = self.base_url % (date.year, '0321b3')
                 yield { 'date': date, 'url': url, 'text': self.get_pdf(url) }
-                url = base_url % (date.year, '0321a3')
+                url = self.base_url % (date.year, '0321a3')
             yield { 'date': date, 'url': url, 'text': self.get_pdf(url) }
 
     def top_section_title(self, data):
