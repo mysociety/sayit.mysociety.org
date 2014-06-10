@@ -4,6 +4,8 @@ import sys
 sys.path.append(os.path.join(os.path.dirname(__file__), '..'))
 os.environ['DJANGO_SETTINGS_MODULE'] = 'sayit_mysociety_org.settings'
 
+from exceptions import NotImplementedError
+
 from optparse import OptionParser
 import re
 
@@ -33,6 +35,16 @@ class BaseParser(object):
 
         self.requests = requests_cache.core.CachedSession(os.path.join(BASE_DIR, 'data', self.instance))
         self.instance = self.get_or_create(Instance, label=self.instance)
+
+    def get_transcripts(self):
+        """Returns an iterator of dictionaries representing single transcripts.
+
+        Each dictionary should be of the form
+        { 'year': y, 'title': title, 'url': url, 'text': the_content }
+
+        OVERRIDE IN SUBCLASS.
+        """
+        raise NotImplementedError
 
     def get_pdf(self, pdf_url, name=None):
         cache_dir = self.instance.label
@@ -80,6 +92,16 @@ class BaseParser(object):
 
     def top_section_title(self, data):
         return 'Hearing, %s' % data['date'].strftime('%d %B %Y').lstrip('0')
+
+    def parse_transcript(self, data):
+        """Takes transcript and returns an iterator of Speech objects.
+
+        Find all the speeches in the transcript represented by the dictionary
+        data and return an iterator of them as Speech objects.
+
+        OVERRIDE IN SUBCLASS.
+        """
+        raise NotImplementedError
 
     def parse(self, data):
         if self.skip_transcript(data):
