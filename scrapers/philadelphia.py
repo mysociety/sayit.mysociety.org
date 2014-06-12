@@ -14,37 +14,29 @@ from utils import ParserSpeech as Speech, ParserSection as Section
 
 class PhilaParser(BaseParser):
     instance = 'philadelphia'
-    # base_url = 'http://legislation.phila.gov/transcripts/Stated%%20Meetings/%d/sm%s.pdf'
-    index_url = 'http://legislation.phila.gov/council-transcriptroom/transroom_date.aspx'
 
-    # def get_transcripts(self):
-    #     # List manually got from http://legislation.phila.gov/council-transcriptroom/transroom_date.aspx
-    #     transcripts = [
-    #         '2014-03-27', '2014-03-20', '2014-03-13', '2014-03-06',
-    #         '2014-02-27', '2014-02-20', '2014-02-06',
-    #         '2014-01-30', '2014-01-23',
-    #         '2013-12-12', '2013-12-05',
-    #         '2013-11-21', '2013-11-14',
-    #         '2013-10-31', '2013-10-24', '2013-10-17', '2013-10-10', '2013-10-03',
-    #         '2013-09-26', '2013-09-19', '2013-09-12',
-    #         # '2013-06-20', Won't download
-    #         # '2013-06-13', Broken PDF
-    #         '2013-06-06',
-    #         '2013-05-23', '2013-05-16', '2013-05-09', '2013-05-02',
-    #         # '2013-04-25', Broken PDF
-    #         '2013-04-18', '2013-04-11', '2013-04-04',
-    #         '2013-03-21', '2013-03-14', '2013-03-07',
-    #         '2013-02-28', '2013-02-21', '2013-02-14', '2013-02-07',
-    #         '2013-01-31', '2013-01-24',
-    #     ]
-    #     for date in transcripts:
-    #         date = datetime.datetime.strptime(date, '%Y-%m-%d').date()
-    #         url = self.base_url % (date.year, date.strftime('%m%d%y'))
-    #         if date.isoformat() == '2013-03-21':
-    #             url = self.base_url % (date.year, '0321b3')
-    #             yield { 'date': date, 'url': url, 'text': self.get_pdf(url) }
-    #             url = self.base_url % (date.year, '0321a3')
-    #         yield { 'date': date, 'url': url, 'text': self.get_pdf(url) }
+    def __init__(
+        self,
+        year,
+        month=None, # None will represent all months
+        day=None, # There is no point in setting day unless month is also set.
+        index_url=None,
+        committee_name=None,
+        ):
+
+        self.year = year
+
+        if month:
+            self.month = month
+            self.day = '{0:02d}'.format(day) if day else 'ALL_DAYS'
+        else:
+            self.month = 'ALL MONTHS'
+            self.day = None
+
+        self.index_url = index_url
+        self.committee_name = committee_name
+
+        super(PhilaParser, self).__init__()
 
     def get_transcripts(self):
         get_resp = self.requests.get(self.index_url)
@@ -53,15 +45,20 @@ class PhilaParser(BaseParser):
         form = soup.find('form', id='Form1')
 
         # FIXME - don't cache the index page.
-        # FIXME - hardcoded year
         post_data = {
             '__VIEWSTATE': form.find('input', id='__VIEWSTATE')['value'],
             '__EVENTVALIDATION': form.find('input', id='__EVENTVALIDATION')['value'],
             'Button3': 'submit',
-            # 'ddlCommittee': 'Committee Of The Whole',
-            'ddlMonth': 'ALL MONTHS',
-            'ddlYear': 2014,
+            'ddlYear': self.year,
+            'ddlMonth': self.month,
             }
+
+        if self.committee_name:
+            post_data['ddCommittee'] = self.committee_name
+
+        if self.day:
+            post_data['ddlDay'] = self.day
+
         resp = self.requests.post(self.index_url, data=post_data)
 
         soup = bs4.BeautifulSoup(resp.content)
@@ -179,6 +176,10 @@ class PhilaParser(BaseParser):
 
         yield speech
 
-parser = PhilaParser()
+
+parser = PhilaParser(
+    2013,
+    index_url='http://legislation.phila.gov/council-transcriptroom/transroom_date.aspx',
+    )
 parser.run()
 
