@@ -118,7 +118,8 @@ class PhilaParser(BaseParser):
                 continue
 
             # Start of certificate/index
-            if re.match(' *\d+ *(CERTIFICATE|- - -)$', line):
+            if re.match(
+                ' *\d+ *(CERTIFICATE|C E R T I F I C A T I O N|- - -)$', line):
                 state = 'index'
             if state == 'index':
                 continue
