@@ -3,42 +3,86 @@
 import datetime
 import os
 import re
+import urlparse
+import urllib
+import socket
+
+import bs4
 
 from utils import BaseParser, prevnext
 from utils import ParserSpeech as Speech, ParserSection as Section
 
 class PhilaParser(BaseParser):
     instance = 'philadelphia'
-    base_url = 'http://legislation.phila.gov/transcripts/Stated%%20Meetings/%d/sm%s.pdf'
+    # base_url = 'http://legislation.phila.gov/transcripts/Stated%%20Meetings/%d/sm%s.pdf'
+    index_url = 'http://legislation.phila.gov/council-transcriptroom/transroom_date.aspx'
+
+    # def get_transcripts(self):
+    #     # List manually got from http://legislation.phila.gov/council-transcriptroom/transroom_date.aspx
+    #     transcripts = [
+    #         '2014-03-27', '2014-03-20', '2014-03-13', '2014-03-06',
+    #         '2014-02-27', '2014-02-20', '2014-02-06',
+    #         '2014-01-30', '2014-01-23',
+    #         '2013-12-12', '2013-12-05',
+    #         '2013-11-21', '2013-11-14',
+    #         '2013-10-31', '2013-10-24', '2013-10-17', '2013-10-10', '2013-10-03',
+    #         '2013-09-26', '2013-09-19', '2013-09-12',
+    #         # '2013-06-20', Won't download
+    #         # '2013-06-13', Broken PDF
+    #         '2013-06-06',
+    #         '2013-05-23', '2013-05-16', '2013-05-09', '2013-05-02',
+    #         # '2013-04-25', Broken PDF
+    #         '2013-04-18', '2013-04-11', '2013-04-04',
+    #         '2013-03-21', '2013-03-14', '2013-03-07',
+    #         '2013-02-28', '2013-02-21', '2013-02-14', '2013-02-07',
+    #         '2013-01-31', '2013-01-24',
+    #     ]
+    #     for date in transcripts:
+    #         date = datetime.datetime.strptime(date, '%Y-%m-%d').date()
+    #         url = self.base_url % (date.year, date.strftime('%m%d%y'))
+    #         if date.isoformat() == '2013-03-21':
+    #             url = self.base_url % (date.year, '0321b3')
+    #             yield { 'date': date, 'url': url, 'text': self.get_pdf(url) }
+    #             url = self.base_url % (date.year, '0321a3')
+    #         yield { 'date': date, 'url': url, 'text': self.get_pdf(url) }
 
     def get_transcripts(self):
-        # List manually got from http://legislation.phila.gov/council-transcriptroom/transroom_date.aspx
-        transcripts = [
-            '2014-03-27', '2014-03-20', '2014-03-13', '2014-03-06',
-            '2014-02-27', '2014-02-20', '2014-02-06',
-            '2014-01-30', '2014-01-23',
-            '2013-12-12', '2013-12-05',
-            '2013-11-21', '2013-11-14',
-            '2013-10-31', '2013-10-24', '2013-10-17', '2013-10-10', '2013-10-03',
-            '2013-09-26', '2013-09-19', '2013-09-12',
-            # '2013-06-20', Won't download
-            # '2013-06-13', Broken PDF
-            '2013-06-06',
-            '2013-05-23', '2013-05-16', '2013-05-09', '2013-05-02',
-            # '2013-04-25', Broken PDF
-            '2013-04-18', '2013-04-11', '2013-04-04',
-            '2013-03-21', '2013-03-14', '2013-03-07',
-            '2013-02-28', '2013-02-21', '2013-02-14', '2013-02-07',
-            '2013-01-31', '2013-01-24',
-        ]
-        for date in transcripts:
-            date = datetime.datetime.strptime(date, '%Y-%m-%d').date()
-            url = self.base_url % (date.year, date.strftime('%m%d%y'))
-            if date.isoformat() == '2013-03-21':
-                url = self.base_url % (date.year, '0321b3')
-                yield { 'date': date, 'url': url, 'text': self.get_pdf(url) }
-                url = self.base_url % (date.year, '0321a3')
-            yield { 'date': date, 'url': url, 'text': self.get_pdf(url) }
+        get_resp = self.requests.get(self.index_url)
+
+        soup = bs4.BeautifulSoup(get_resp.content)
+        form = soup.find('form', id='Form1')
+
+        # FIXME - don't cache the index page.
+        # FIXME - hardcoded year
+        post_data = {
+            '__VIEWSTATE': form.find('input', id='__VIEWSTATE')['value'],
+            '__EVENTVALIDATION': form.find('input', id='__EVENTVALIDATION')['value'],
+            'Button3': 'submit',
+            # 'ddlCommittee': 'Committee Of The Whole',
+            'ddlMonth': 'ALL MONTHS',
+            'ddlYear': 2014,
+            }
+        resp = self.requests.post(self.index_url, data=post_data)
+
+        soup = bs4.BeautifulSoup(resp.content)
+
+        # I'm not really happy with this, but it seems like the least bad option
+        # available for finding all these documents. Let's hope the text doesn't
+        # change!
+        trs = [x.find_parent('tr') for x in soup.findAll(text='Retrieve Document')]
+
+        for tr in trs:
+            tds = tr.findAll('td')
+
+            date = datetime.datetime.strptime(
+                tds[1].font.text.strip(), '%m/%d/%Y').date()
+            url = urlparse.urljoin(self.index_url, tds[2].a['href'])
+            try:
+                text = self.get_pdf(url)
+            except socket.error:
+                print "SKIPPING {} - error downloading".format(url)
+            else:
+                yield {'date': date, 'url': url, 'text': text}
 
     def top_section_title(self, data):
         return 'Council meeting, %s' % data['date'].strftime('%d %B %Y').lstrip('0')
