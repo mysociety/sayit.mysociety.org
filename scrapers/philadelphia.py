@@ -15,28 +15,33 @@ from utils import ParserSpeech as Speech, ParserSection as Section
 class PhilaParser(BaseParser):
     instance = 'philadelphia'
 
-    def __init__(
-        self,
-        year,
-        month=None, # None will represent all months
-        day=None, # There is no point in setting day unless month is also set.
-        index_url=None,
-        committee_name=None,
-        ):
+    def _add_parser_options(self):
+        super(PhilaParser, self)._add_parser_options()
 
-        self.year = year
+        self.parser.add_option('--year', dest='year', help='Year to search for', action='store', type='int')
+        self.parser.add_option('--month', dest='month', help='Month to search for', action='store', type='string')
+        self.parser.add_option('--day', dest='day', help='Day of month to search for', action='store', type='int')
+        self.parser.add_option('--index-url', dest='index_url', help="URL of the search page for this type of transcript.", action='store', type='string')
+        self.parser.add_option('--committee-name', dest='committee_name', help='Name of the committee to fetch', action='store', type='string')
 
+    def _process_parser_options(self):
+        super(PhilaParser, self)._process_parser_options()
+
+        self.year = self.options.year
+        self.month = self.options.month
+        self.day = self.options.day
+
+        self.index_url = self.options.index_url
+        self.committee_name = self.options.committee_name
+
+        month = self.options.month
         if month:
             self.month = month
-            self.day = '{0:02d}'.format(day) if day else 'ALL_DAYS'
+            day = self.options.day
+            self.day = '{0:02d}'.format(day) if day else 'All Days'
         else:
             self.month = 'ALL MONTHS'
             self.day = None
-
-        self.index_url = index_url
-        self.committee_name = committee_name
-
-        super(PhilaParser, self).__init__()
 
     def get_transcripts(self):
         get_resp = self.requests.get(self.index_url)
@@ -54,7 +59,7 @@ class PhilaParser(BaseParser):
             }
 
         if self.committee_name:
-            post_data['ddCommittee'] = self.committee_name
+            post_data['ddlCommittee'] = self.committee_name
 
         if self.day:
             post_data['ddlDay'] = self.day
@@ -177,9 +182,6 @@ class PhilaParser(BaseParser):
         yield speech
 
 
-parser = PhilaParser(
-    2013,
-    index_url='http://legislation.phila.gov/council-transcriptroom/transroom_date.aspx',
-    )
+parser = PhilaParser()
 parser.run()
 
