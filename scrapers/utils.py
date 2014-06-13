@@ -28,13 +28,19 @@ class BaseParser(object):
     name_fixes = {}
 
     def __init__(self):
-        parser = OptionParser()
-        parser.add_option('--commit', dest='commit', help='commit to database', action='store_true')
-        (options, args) = parser.parse_args()
-        self.commit = options.commit
+        self.parser = OptionParser()
+        self._add_parser_options()
+        (self.options, self.args) = self.parser.parse_args()
+        self._process_parser_options()
 
         self.requests = requests_cache.core.CachedSession(os.path.join(BASE_DIR, 'data', self.instance))
         self.instance = self.get_or_create(Instance, label=self.instance)
+
+    def _add_parser_options(self):
+        self.parser.add_option('--commit', dest='commit', help='commit to database', action='store_true')
+
+    def _process_parser_options(self):
+        self.commit = self.options.commit
 
     def get_transcripts(self):
         """Returns an iterator of dictionaries representing single transcripts.
