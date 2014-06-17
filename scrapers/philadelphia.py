@@ -9,8 +9,10 @@ import socket
 
 import bs4
 
-from utils import BaseParser, prevnext
-from utils import ParserSpeech as Speech, ParserSection as Section
+import utils
+
+from speeches.utils.scraping import BaseParser, prevnext
+from speeches.utils.scraping import ParserSpeech as Speech, ParserSection as Section
 
 class PhilaParser(BaseParser):
     instance = 'philadelphia'
@@ -182,6 +184,6 @@ class PhilaParser(BaseParser):
         yield speech
 
 
-parser = PhilaParser()
+parser = PhilaParser(base_dir=utils.BASE_DIR)
 parser.run()
 
