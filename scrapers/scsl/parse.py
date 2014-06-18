@@ -2,7 +2,8 @@ import datetime
 import re
 
 from scsl.names import fix_name
-from utils import ParserSpeech, ParserSection as Section
+from speeches.utils.scraping import ParserSpeech, ParserSection as Section
+
 
 class Speech(ParserSpeech):
     presiding = None

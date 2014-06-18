@@ -5,8 +5,10 @@ import os
 import re
 import urlparse
 
-from utils import BaseParser, prevnext
-from utils import ParserSpeech as Speech, ParserSection as Section
+import utils
+
+from speeches.utils.scraping import BaseParser, prevnext
+from speeches.utils.scraping import ParserSpeech as Speech, ParserSection as Section
 
 months = '(?:January|February|March|April|May|June|July|August|September|October|November|December)'
 
@@ -158,6 +160,6 @@ class FedParser(BaseParser):
             return ('Chairman Bernanke', name)
         return (name, None)
 
-parser = FedParser()
+parser = FedParser(cache_dir=utils.CACHE_DIR)
 parser.run()
 

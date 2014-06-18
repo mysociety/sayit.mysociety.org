@@ -6,11 +6,11 @@ import re
 import subprocess
 
 import bs4
+
+import utils
 import requests
 import requests_cache
-
-BASE_DIR = os.path.dirname(__file__)
-requests_cache.install_cache(os.path.join(BASE_DIR, 'data', 'leveson'))
+requests_cache.install_cache(os.path.join(utils.CACHE_DIR, 'leveson'))
 
 def get_url(url, type='none'):
     """Fetches a URL from the Leveson Inquiry website, and returns either its
@@ -71,10 +71,10 @@ def convert_four_up_pdf(text):
         text += '    %d\n\014\n' % num
     return text
 
-def convert_pdf_transcript(transcripts, url):
+def convert_pdf_transcript(transcripts, url, cache_dir):
     pdf_transcript = [ t for t in transcripts if 'pdf' in t.get('href') ][0]
     pdf_url = pdf_transcript.get('href')
-    file_pdf = os.path.join(BASE_DIR, 'data', os.path.basename(pdf_url))
+    file_pdf = os.path.join(cache_dir, os.path.basename(pdf_url))
     file_text = file_pdf.replace('.pdf', '.txt')
     if not os.path.exists(file_text):
         pdf_transcript = get_url(pdf_url, 'binary')
@@ -100,7 +100,7 @@ def convert_pdf_transcript(transcripts, url):
 
     return text
 
-def get_transcript(url):
+def get_transcript(url, cache_dir):
     hearing = get_url(url, 'html')
     transcripts = hearing.find(id='transcript-col').find_all('a')
     text_transcripts = [ t for t in transcripts if 'txt' in t.get('href') ]
@@ -108,12 +108,12 @@ def get_transcript(url):
         text = get_url( text_transcripts[0].get('href') )
     else:
         # Three oldest do not have text transcripts
-        text = convert_pdf_transcript(transcripts, url)
+        text = convert_pdf_transcript(transcripts, url, cache_dir)
 
     # Return an array of lines
     return re.split('\r?\n', text)
 
-def get_transcripts():
+def get_transcripts(cache_dir):
     hearings = get_url('/hearings/', 'html')
     # Loop through the rows in reverse order (so oldest first)
     for row in reversed(hearings('tr')):
@@ -125,5 +125,5 @@ def get_transcripts():
             yield {
                 'date': date,
                 'url': url,
-                'text': get_transcript(url),
+                'text': get_transcript(url, cache_dir),
             }

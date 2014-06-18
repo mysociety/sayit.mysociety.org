@@ -2,8 +2,9 @@ from datetime import datetime
 import re
 import string
 
+from speeches.utils.scraping import ParserSection as Section, ParserSpeech as Speech
+
 from leveson.names import fix_name
-from utils import ParserSection as Section, ParserSpeech as Speech
 
 def parse_transcript(text, url):
     print "PARSING %s" % url

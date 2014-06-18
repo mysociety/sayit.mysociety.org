@@ -4,7 +4,10 @@
 import datetime
 import re
 
-from utils import BaseParser, ParserSpeech as Speech
+import utils
+
+from speeches.utils.scraping import BaseParser, ParserSpeech as Speech
+
 
 class CLSenadoParser(BaseParser):
     instance = 'senado-de-chile'
@@ -53,7 +56,9 @@ class CLSenadoParser(BaseParser):
             # New speaker
             if '.-' in line:
                 yield speech
-                m = re.match(u'((?:La señora|El señor) [^ ]*)( \([^)]*\))?\.-(.*)', line)
+                m = re.match(
+                    u'((?:La señora|El señor) [^ ]*)( \([^)]*\))?\.-(.*)',
+                    line)
                 speaker = self.fix_name(m.group(1))
                 speaker_display = None
                 if m.group(2):
@@ -61,13 +66,17 @@ class CLSenadoParser(BaseParser):
                         speaker += m.group(2)
                     else:
                         speaker_display = speaker + m.group(2)
-                speech = Speech( speaker=speaker, text=m.group(3).strip(), speaker_display=speaker_display )
+                speech = Speech(
+                    speaker=speaker,
+                    text=m.group(3).strip(),
+                    speaker_display=speaker_display,
+                    )
                 continue
 
             # Narrative
             if re.match('--', line):
                 yield speech
-                speech = Speech( speaker=None, text=line )
+                speech = Speech(speaker=None, text=line)
                 continue
 
             # We must now already have a speech by the time we're here
@@ -78,6 +87,6 @@ class CLSenadoParser(BaseParser):
 
         yield speech
 
-parser = CLSenadoParser()
+parser = CLSenadoParser(cache_dir=utils.CACHE_DIR)
 parser.run()
 

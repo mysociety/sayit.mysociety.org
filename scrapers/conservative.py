@@ -1,11 +1,17 @@
 #!/usr/bin/env python
 
-from utils import *
+import os
 
+import requests_cache
+
+import utils
+
+from speeches.utils.scraping import BaseParser, prevnext
 from speeches.models import Speaker, Speech
 
 from conservative.scrape import get_speeches
 from conservative.parse import parse_speech
+
 
 class Parser(BaseParser):
     instance = 'old-conservative-speeches'
@@ -21,5 +27,6 @@ class Parser(BaseParser):
         if self.commit:
             speech.save()
 
-parser = Parser()
+
+parser = Parser(cache_dir=utils.CACHE_DIR)
 parser.run()

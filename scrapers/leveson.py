@@ -1,8 +1,12 @@
 #!/usr/bin/env python
 
+import utils
+
+from speeches.utils.scraping import BaseParser
+
 from leveson.scrape import get_transcripts
 from leveson.parse import parse_transcript
-from utils import *
+
 
 class LevesonParser(BaseParser):
     instance = 'leveson'
@@ -13,10 +17,11 @@ class LevesonParser(BaseParser):
         return False
 
     def get_transcripts(self):
-        return get_transcripts()
+        return get_transcripts(self.cache_dir)
 
     def parse_transcript(self, data):
         return parse_transcript(data['text'], data['url'])
 
-parser = LevesonParser()
+
+parser = LevesonParser(cache_dir=utils.CACHE_DIR)
 parser.run()

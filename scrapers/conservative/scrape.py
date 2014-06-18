@@ -2,11 +2,11 @@ from datetime import datetime
 import os
 
 import bs4
+
+import utils
 import requests
 import requests_cache
-
-BASE_DIR = os.path.dirname(__file__)
-requests_cache.install_cache(os.path.join(BASE_DIR, 'data', 'conservatives'))
+requests_cache.install_cache(os.path.join(utils.CACHE_DIR, 'conservatives'))
 
 def get_url(url, type='none'):
     """Fetches a URL from the WebArchive of the Conservatives website, and
