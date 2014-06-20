@@ -143,6 +143,7 @@ INSTALLED_APPS = [
     'django_bleach',
     'pipeline',
     'popit',
+    'popolo',
     'instances',
     'speeches',
     'about',
