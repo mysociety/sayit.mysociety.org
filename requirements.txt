@@ -1,5 +1,17 @@
 Django==1.6.4
 django-allauth==0.16.1
+
+PyYAML
+django-pipeline
+django-pipeline-compass-rubygem
+python-memcached
+django-tastypie
+
+# Database migrations
+South
+popit-django==0.0.3
+
+# Scrapers
 beautifulsoup4
 requests_cache
 

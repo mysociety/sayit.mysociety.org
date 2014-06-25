@@ -1,5 +1,6 @@
 # Django settings for sayit_mysociety_org project.
 
+import imp
 import os
 import sys
 from django.conf import global_settings
@@ -95,8 +96,6 @@ MIDDLEWARE_CLASSES = [
     # Uncomment the next line for simple clickjacking protection:
     # 'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
-if DEBUG_TOOLBAR:
-    MIDDLEWARE_CLASSES.append( 'debug_toolbar.middleware.DebugToolbarMiddleware' )
 
 INTERNAL_IPS = ( '127.0.0.1', )
 
@@ -138,7 +137,6 @@ INSTALLED_APPS = [
     'haystack',
     'south',
     'django_select2',
-    'django_nose',
     'tastypie',
     'django_bleach',
     'pipeline',
@@ -148,12 +146,15 @@ INSTALLED_APPS = [
     'speeches',
     'about',
     'login_token',
-    'pagination',
 ]
-if DEBUG_TOOLBAR:
-    INSTALLED_APPS.append( 'debug_toolbar' )
 
-TEST_RUNNER = 'django_nose.NoseTestSuiteRunner'
+try:
+    # Find rather than import, as that circular imports settings
+    imp.find_module('django_nose')
+    INSTALLED_APPS.append('django_nose')
+    TEST_RUNNER = 'django_nose.NoseTestSuiteRunner'
+except:
+    pass
 
 # Log WARN and above to stderr; ERROR and above by email when DEBUG is False.
 LOGGING = {
@@ -276,3 +277,7 @@ else:
 CACHES = {
     'default': cache
 }
+
+if DEBUG_TOOLBAR:
+    MIDDLEWARE_CLASSES.append( 'debug_toolbar.middleware.DebugToolbarMiddleware' )
+    INSTALLED_APPS.append( 'debug_toolbar' )

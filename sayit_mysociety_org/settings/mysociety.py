@@ -12,6 +12,7 @@ with open(config_file) as f:
 
 DEBUG = bool(int(config.get('STAGING')))
 TEMPLATE_DEBUG = DEBUG
+DEBUG_TOOLBAR = DEBUG
 
 DATABASES = {
     'default': {
