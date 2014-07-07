@@ -9,7 +9,6 @@ from django.contrib.auth.models import User
 from django.contrib.auth.tokens import default_token_generator
 from django.contrib import messages
 
-from allauth.account import app_settings
 from allauth.account.adapter import get_adapter
 from allauth.account.views import PasswordResetFromKeyView
 
@@ -21,7 +20,7 @@ from forms import ShareForm
 
 class InstanceCreate(CreateView):
     model = Instance
-    fields = [ 'label', 'title', 'description' ]
+    fields = ['label', 'title', 'description']
 
     def is_stashed(self):
         return self.request.GET.get('post') and self.request.session.get('instance')
@@ -48,7 +47,7 @@ class InstanceCreate(CreateView):
             self.request.session['instance'] = form.cleaned_data
             return redirect_to_login(
                 self.request.path + '?post=1',
-                login_url = reverse("account_signup"),
+                login_url=reverse("account_signup"),
             )
 
 

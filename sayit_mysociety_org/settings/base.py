@@ -185,7 +185,7 @@ LOGGING = {
         'speeches': {
             'handlers': [ 'mail_admins', 'console' ],
             'level': 'DEBUG',
-            'propagate': True,  
+            'propagate': True,
         },
         'pyelasticsearch': {
             'handlers': ['console'],
