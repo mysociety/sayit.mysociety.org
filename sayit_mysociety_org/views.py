@@ -8,6 +8,7 @@ from django.contrib.auth.views import redirect_to_login
 from django.contrib.auth.models import User
 from django.contrib.auth.tokens import default_token_generator
 from django.contrib.sites.models import Site
+from django.contrib import messages
 
 from allauth.account import app_settings
 from allauth.account.adapter import get_adapter
@@ -55,9 +56,8 @@ class InstanceCreate(CreateView):
 class ShareWithCollaborators(FormView, InstanceFormMixin):
     template_name = 'share_instance_with_collaborators.html'
 
-    # FIXME - should be replaced with a formset.
     form_class = ShareForm
-    success_url = reverse_lazy('instance_shared')
+    success_url = reverse_lazy('share_instance')
 
     # substantially cargo-culted from allauth.account.forms.ResetPasswordForm
     def form_valid(self, form):
@@ -100,6 +100,11 @@ class ShareWithCollaborators(FormView, InstanceFormMixin):
 
         self.request.instance.users.add(*user_ids)
 
+        messages.add_message(
+            self.request,
+            messages.SUCCESS,
+            'Your invitation has been sent. Would you like to send another?',
+            )
         return super(ShareWithCollaborators, self).form_valid(form)
 
 

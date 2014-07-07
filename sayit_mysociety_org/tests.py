@@ -16,10 +16,13 @@ class ShareInstanceTests(InstanceTestCase):
         sharee = get_user_model().objects.create_user(
             'sharee', email='sharee@example.com')
         resp = self.client.post('/instance/share',
-                                {'email': 'sharee@example.com'})
+                                {'email': 'sharee@example.com'},
+                                follow=True)
 
         self.instance.users.get(pk=sharee.id)
-        self.assertRedirects(resp, '/instance/shared', status_code=302)
+        self.assertRedirects(resp, '/instance/share', status_code=302)
+
+        self.assertContains(resp, 'invitation has been sent')
 
     def test_share_with_unknown_user(self):
         resp = self.client.post('/instance/share',
@@ -27,7 +30,7 @@ class ShareInstanceTests(InstanceTestCase):
 
         sharee = get_user_model().objects.get(email='newsharee@example.com')
         self.instance.users.get(pk=sharee.id)
-        self.assertRedirects(resp, '/instance/shared', status_code=302)
+        self.assertRedirects(resp, '/instance/share', status_code=302)
 
         invite_message = mail.outbox[0]
 
@@ -73,7 +76,7 @@ class ShareInstanceTests(InstanceTestCase):
         sharee = get_user_model().objects.get(
             email='what_a_long_email_address@example.com')
         self.instance.users.get(pk=sharee.id)
-        self.assertRedirects(resp, '/instance/shared', status_code=302)
+        self.assertRedirects(resp, '/instance/share', status_code=302)
 
         # Verify that the subject of the first message is correct.
         self.assertEqual(
