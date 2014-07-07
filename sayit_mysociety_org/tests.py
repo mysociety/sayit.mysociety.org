@@ -10,7 +10,7 @@ from instances.tests import InstanceTestCase
 class ShareInstanceTests(InstanceTestCase):
     def test_share_form_exists(self):
         resp = self.client.get('/instance/share')
-        self.assertContains(resp, 'Share your instance', status_code=200)
+        self.assertContains(resp, 'Share your SayIt', status_code=200)
 
     def test_share_with_existing_user(self):
         sharee = get_user_model().objects.create_user(
