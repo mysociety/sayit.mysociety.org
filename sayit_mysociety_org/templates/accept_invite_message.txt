@@ -1,9 +1,10 @@
-{% load i18n %}{% blocktrans with site.domain as site_domain and user.username as username and user.email as email %}You have been invited to edit a SayIt instance. Click the link below
+{% load i18n %}{% blocktrans with site.domain as site_domain and user.username as username and user.email as email and instance.title as instance_title %}You have been invited to edit a SayIt instance.
 
-{{password_reset_url}}
+Title: {{ instance_title }}
 
-You can log in with either your email address {{ email }}
-or the username {{ username }}
+Please go to
 
-Thanks for using our site!
+{{ password_reset_url }}
+
+to set up your account and start adding speeches.
 {% endblocktrans %}

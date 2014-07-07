@@ -1,0 +1,7 @@
+{% load i18n %}{% blocktrans with instance.get_absolute_url as instance_url and user.username as username and user.email as email and instance.title as instance_title %}You have been invited to edit a new SayIt instance.
+
+Title: {{ instance_title }}
+
+{{ instance_url }}
+
+{% endblocktrans %}

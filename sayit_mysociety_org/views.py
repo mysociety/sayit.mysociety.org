@@ -7,7 +7,6 @@ from django.views.generic.edit import CreateView, FormView
 from django.contrib.auth.views import redirect_to_login
 from django.contrib.auth.models import User
 from django.contrib.auth.tokens import default_token_generator
-from django.contrib.sites.models import Site
 from django.contrib import messages
 
 from allauth.account import app_settings
@@ -63,9 +62,15 @@ class ShareWithCollaborators(FormView, InstanceFormMixin):
     def form_valid(self, form):
         email = form.cleaned_data["email"]
 
-        user_ids = [x.id for x in form.users]
+        users = form.users
+        if users:
+            context = {"instance": self.request.instance}
+            get_adapter().send_mail('instance_invite_existing',
+                                    email,
+                                    context)
+            user_ids = [x.id for x in users]
 
-        if not user_ids:
+        else:
             # Create a new user with email address as username
             # or a bit of a hash of the email address if it's longer
             # than Django's 30 character username limit.
@@ -82,7 +87,6 @@ class ShareWithCollaborators(FormView, InstanceFormMixin):
             user_ids = (user.id,)
 
             temp_key = default_token_generator.make_token(user)
-            current_site = Site.objects.get_current()
 
             instance_url = self.request.instance.get_absolute_url()
 
@@ -91,9 +95,11 @@ class ShareWithCollaborators(FormView, InstanceFormMixin):
                            kwargs=dict(uidb36=int_to_base36(user.id),
                                        key=temp_key))
             url = urlparse.urljoin(instance_url, path)
-            context = {"site": current_site,
-                       "user": user,
-                       "password_reset_url": url}
+            context = {
+                "instance": self.request.instance,
+                "user": user,
+                "password_reset_url": url,
+                }
             get_adapter().send_mail('accept_invite',
                                     email,
                                     context)

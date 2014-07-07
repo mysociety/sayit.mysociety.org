@@ -24,6 +24,12 @@ class ShareInstanceTests(InstanceTestCase):
 
         self.assertContains(resp, 'invitation has been sent')
 
+        # Verify that the subject of the first message is correct.
+        self.assertIn(
+            'You have been invited to a SayIt',
+            mail.outbox[0].subject,
+            )
+
     def test_share_with_unknown_user(self):
         resp = self.client.post('/instance/share',
                                 {'email': 'newsharee@example.com'})
@@ -35,9 +41,9 @@ class ShareInstanceTests(InstanceTestCase):
         invite_message = mail.outbox[0]
 
         # Verify that the subject of the first message is correct.
-        self.assertEqual(
+        self.assertIn(
+            'You have been invited to a SayIt',
             invite_message.subject,
-            '[example.com] You have been invited to SayIt'
             )
 
         # Get the link out of the invitation email
@@ -79,7 +85,7 @@ class ShareInstanceTests(InstanceTestCase):
         self.assertRedirects(resp, '/instance/share', status_code=302)
 
         # Verify that the subject of the first message is correct.
-        self.assertEqual(
+        self.assertIn(
+            'You have been invited to a SayIt',
             mail.outbox[0].subject,
-            '[example.com] You have been invited to SayIt'
             )
