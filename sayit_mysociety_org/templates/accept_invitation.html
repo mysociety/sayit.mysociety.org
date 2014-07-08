@@ -2,21 +2,22 @@
 
 {% load url from future %}
 {% load i18n %}
-{% block title %}{% trans "Accept invitation" %}{% endblock %}
+{% block title %}{% trans "Welcome to SayIt" %}{% endblock %}
 
 {% block content %}
-
-    <h1>{% if token_fail %}{% trans "Bad Token" %}{% else %}{% trans "Change Password" %}{% endif %}</h1>
+    <h1>{% trans "Welcome to SayIt" %}</h1>
 
     {% if token_fail %}
+        <p>{% trans "Bad Token" %}</p>
         {% url 'account_reset_password' as passwd_reset_url %}
-        <p>{% blocktrans %}The password reset link was invalid, possibly because it has already been used.  Please request a <a href="{{ passwd_reset_url }}">new password reset</a>.{% endblocktrans %}</p>
+        <p>{% blocktrans %}The invite link was invalid, possibly because it has already been used.  Please try requesting a <a href="{{ passwd_reset_url }}">password reset</a>.{% endblocktrans %}</p>
     {% else %}
         {% if form %}
+            <p>{% trans "Please set a password" %}</p>
             <form method="POST" action=".">
                 {% csrf_token %}
                 {{ form.as_p }}
-                <input type="submit" name="action" value="{% trans "change password" %}"/>
+                <input type="submit" name="action" value="{% trans "Take me to the speeches!" %}" class="button" />
             </form>
         {% else %}
             <p>{% trans 'Your password is now changed.' %}</p>
