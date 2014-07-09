@@ -54,13 +54,19 @@ class ShareInstanceTests(InstanceTestCase):
 
         self.client.logout()
         resp = self.client.get(parsed_link.path)
-        self.assertContains(resp, 'Accept invitation')
+        self.assertContains(resp, 'Welcome to SayIt')
 
         resp = self.client.post(
             parsed_link.path,
             {'password1': 'password', 'password2': 'password'},
+            follow=True,
             )
         self.assertRedirects(resp, '/', status_code=302)
+
+        self.assertContains(
+            resp,
+            'You can now create and edit speeches and sections',
+            )
 
         # Check that sharee is now logged in, following
         # http://stackoverflow.com/a/6013115/517418

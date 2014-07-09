@@ -11,6 +11,7 @@ from django.contrib import messages
 
 from allauth.account.adapter import get_adapter
 from allauth.account.views import PasswordResetFromKeyView
+from allauth.account.signals import password_reset
 
 from instances.models import Instance
 from instances.views import InstanceFormMixin
@@ -115,21 +116,19 @@ class ShareWithCollaborators(FormView, InstanceFormMixin):
 
 class AcceptInvite(PasswordResetFromKeyView):
     template_name = 'accept_invitation.html'
+    success_message_template = 'messages/accept_invite_success.txt'
 
     def get_success_url(self):
         return reverse('speeches:home')
 
+    def form_valid(self, form):
+        form.save()
+        get_adapter().add_message(self.request,
+                                  messages.SUCCESS,
+                                  self.success_message_template)
+        password_reset.send(sender=self.reset_user.__class__,
+                            request=self.request,
+                            user=self.reset_user)
+        get_adapter().login(self.request, self.reset_user)
 
-from allauth.account.signals import password_reset
-from django.dispatch import receiver
-
-@receiver(password_reset, dispatch_uid="invite_accepted")
-def login_on_invite_accepted_callback(sender, **kwargs):
-    request = kwargs['request']
-
-    # It's very ugly to be using the path here, but I can't
-    # see any other easy way to make this signal handler work
-    # only for invite related password resets
-    if request.path_info.startswith('/instance/invite/'):
-        user = kwargs['user']
-        get_adapter().login(request, user)
+        return super(PasswordResetFromKeyView, self).form_valid(form)
