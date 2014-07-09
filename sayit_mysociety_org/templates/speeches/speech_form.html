@@ -1,0 +1,7 @@
+{% extends 'speeches:speeches/speech_form.html' %}
+{% load i18n %}
+
+{% block page-header %}
+  <a href="{% url 'share_instance' %}" class="button right small">{% trans 'Invite some friends to help you' %}</a>
+  {{ block.super }}
+{% endblock %}

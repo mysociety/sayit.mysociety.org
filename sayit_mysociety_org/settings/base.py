@@ -73,6 +73,7 @@ FILE_UPLOAD_PERMISSIONS = 0644
 loaders = (
     'django.template.loaders.filesystem.Loader',
     'django.template.loaders.app_directories.Loader',
+    'apptemplates.Loader',
 #     'django.template.loaders.eggs.Loader',
 )
 if not DEBUG:

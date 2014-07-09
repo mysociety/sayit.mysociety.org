@@ -14,5 +14,6 @@ popit-django==0.0.3
 # Scrapers
 beautifulsoup4
 requests_cache
+django-apptemplates==0.0.1
 
 -e git+https://github.com/mysociety/sayit#egg=django-sayit
