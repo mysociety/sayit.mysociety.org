@@ -90,7 +90,6 @@ MIDDLEWARE_CLASSES = [
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
-    'pagination.middleware.PaginationMiddleware',
     'instances.middleware.MultiInstanceMiddleware',
     'sayit_mysociety_org.middleware.WhoDidMiddleware',
     #'django.middleware.cache.FetchFromCacheMiddleware',
@@ -202,10 +201,7 @@ LOGGING = {
 }
 
 # pagination related settings
-PAGINATION_DEFAULT_PAGINATION = 10
 PAGINATION_DEFAULT_WINDOW = 2
-PAGINATION_DEFAULT_ORPHANS = 2
-PAGINATION_INVALID_PAGE_RAISES_404 = True
 
 APPEND_SLASH = False
 
