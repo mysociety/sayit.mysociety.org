@@ -1,6 +1,8 @@
-{% load i18n %}{% blocktrans with instance.get_absolute_url as instance_url and user.username as username and user.email as email and instance.title as instance_title %}You have been invited to edit a new SayIt instance.
+{% load i18n %}{% blocktrans with instance.get_absolute_url as instance_url and user.username as username and user.email as email and instance.title as instance_title %}You have been invited to edit a SayIt instance.
 
 Title: {{ instance_title }}
+
+You can log in and start creating and editing speeches immediately at:
 
 {{ instance_url }}
 
