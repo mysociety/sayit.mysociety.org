@@ -30,6 +30,7 @@ class Parser(BaseParser):
             start_date=date,
             title=title,
             source_url=url,
+            type='speech',
             )
         if self.commit:
             speech.save()
