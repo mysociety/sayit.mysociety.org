@@ -1,6 +1,5 @@
 # load the mySociety config from its special file
 
-import sys
 import yaml
 from .paths import *
 
@@ -37,3 +36,5 @@ BASE_PORT = config.get('BASE_PORT')
 # Content formatting
 # How many characters of speech text to show
 SPEECH_SUMMARY_LENGTH = config.get('SPEECH_SUMMARY_LENGTH')
+
+ALLOWED_HOSTS = config.get('ALLOWED_HOSTS')

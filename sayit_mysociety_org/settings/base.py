@@ -6,35 +6,14 @@ import sys
 from django.conf import global_settings
 from .paths import *
 
-DEBUG = True
-TEMPLATE_DEBUG = DEBUG
-DEBUG_TOOLBAR = True
-DEBUG_TOOLBAR_PATCH_SETTINGS = False
-
-ALLOWED_HOSTS = [ '.sayit.mysociety.org' ]
+# Get the changeable configuration
+from .mysociety import *
 
 ADMINS = (
     # ('Your Name', 'your_email@example.com'),
 )
 
 MANAGERS = ADMINS
-
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(PARENT_DIR, 'sqlite.db'),
-        'USER': '',
-        'PASSWORD': '',
-        'HOST': '',
-        'PORT': '',
-    }
-}
-
-# Local time zone for this installation. Choices can be found here:
-# http://en.wikipedia.org/wiki/List_of_tz_zones_by_name
-# although not all choices may be available on all operating systems.
-# In a Windows environment this must be set to your system time zone.
-TIME_ZONE = 'Europe/London'
 
 # Language code for this installation. All choices can be found here:
 # http://www.i18nguy.com/unicode/language-identifiers.html
@@ -229,19 +208,17 @@ LOGIN_REDIRECT_URL = '/'
 # Select2
 AUTO_RENDER_SELECT2_STATICS = False
 
-# Now get the mySociety configuration
-from .mysociety import *
-
 # django-pipeline and static file configuration
 from .pipeline import *
 
 # django-bleach configuration
 from .bleach import *
 
-# Cookies, after because we need BASE_HOST from mysociety.py
+# Cookies
 SESSION_COOKIE_DOMAIN = BASE_HOST
 SESSION_COOKIE_NAME = 's'
 
+# Search database
 SEARCH_INDEX_NAME = DATABASES['default']['NAME']
 if 'test' in sys.argv:
     SEARCH_INDEX_NAME += '_test'
@@ -260,6 +237,7 @@ HAYSTACK_CONNECTIONS = {
 }
 HAYSTACK_SIGNAL_PROCESSOR = 'haystack.signals.RealtimeSignalProcessor'
 
+# Caching
 if DEBUG:
     cache = { 'BACKEND': 'django.core.cache.backends.dummy.DummyCache' }
     CACHE_MIDDLEWARE_SECONDS = 0
@@ -276,5 +254,6 @@ CACHES = {
 }
 
 if DEBUG_TOOLBAR:
+    DEBUG_TOOLBAR_PATCH_SETTINGS = False
     MIDDLEWARE_CLASSES.append( 'debug_toolbar.middleware.DebugToolbarMiddleware' )
     INSTALLED_APPS.append( 'debug_toolbar' )
