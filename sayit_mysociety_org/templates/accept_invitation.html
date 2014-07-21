@@ -5,6 +5,7 @@
 {% block title %}{% trans "Welcome to SayIt" %}{% endblock %}
 
 {% block content %}
+<div class="form-page">
     <h1>{% trans "Welcome to SayIt" %}</h1>
 
     {% if token_fail %}
@@ -23,5 +24,6 @@
             <p>{% trans 'Your password is now changed.' %}</p>
         {% endif %}
     {% endif %}
+</div>
 
 {% endblock %}

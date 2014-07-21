@@ -109,7 +109,7 @@ class ShareWithCollaborators(FormView, InstanceFormMixin):
         messages.add_message(
             self.request,
             messages.SUCCESS,
-            'Your invitation has been sent. Would you like to send another?',
+            'Your invitation has been sent.',
             )
         return super(ShareWithCollaborators, self).form_valid(form)
 
