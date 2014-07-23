@@ -165,6 +165,7 @@
           {% endfor %}
         </div>
       {% endif %}
+      {% block fullpage %}
         <div class="full-page">
           <div class="full-page__row">
             <div class="full-page__unit">
@@ -172,7 +173,8 @@
             </div>
           </div>
         </div>
-        {% if request.instance %}
+      {% endblock %}
+      {% if request.instance %}
         <footer class="footer instance-footer">
           <div class="instance-footer__row">
             <div class="instance-footer__links">
@@ -190,7 +192,7 @@
           {% endif %}
           </div>
         </footer>
-        {% endif %}
+      {% endif %}
         <footer class="footer brand-footer">
           <div class="brand-footer__row">
               <div class="about-sayit">
