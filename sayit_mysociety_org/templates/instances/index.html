@@ -2,23 +2,89 @@
 {% load i18n %}
 
 {% block fulltitle %}{% trans "SayIt: Bringing transcripts into the Internet age" %}{% endblock %}
-{% block body_class %}sayit-homepage{% endblock %}
 {% block instanceheader %}{% endblock %}
 
 {% block fullpage %}
-<div class="full-page">
-  <div>
+<div class="full-page sayit-homepage">
+  <div class="sayit-homepage__hero">
     <div class="full-page__row">
       <div class="full-page__unit">
-        <h1>{% trans 'Bringing transcripts into the Internet age' %}</h1>
-        <p>{% trans 'SayIt is a whole new way to organise, publish, and share your transcripts - and it’s free' %}</p>
+        <h1>{% trans 'Bringing transcripts into the Internet&nbsp;age' %}</h1>
+        <p class="lead">{% trans 'SayIt is a whole new way to organise, publish, and share your transcripts – and it’s free.' %}</p>
+        <p><a href="/instances/add" class="button">{% trans 'Start using SayIt <span class="muted">– you’ll love it</span>' %}</a></p>
       </div>
     </div>
   </div>
-  <div>
+  <div class="sayit-homepage__use-cases">
+    <div class="full-page__row">
+      <div class="medium-10 medium-centered large-8 columns">
+        <p>{% trans 'Whether you want to <b>upload whole transcripts</b>, or throw together a <b>collection of individual quotes</b>, SayIt&nbsp;takes the hassle out of organizing and browsing your spoken and written&nbsp;content.' %}</p>
+      </div>
+    </div>
+  </div>
+  <div class="sayit-homepage__campaigners">
+    <div class="full-page__row">
+      <div class="large-6 large-push-6 columns">
+        <h2>{% trans 'For campaigners and community&nbsp;groups' %}</h2>
+        <p>{% trans 'Publish transcripts from meetings or share statements from those in power. Anyone can use SayIt, alone or in collaboration with others.' %}</p>
+        <p>{% trans 'With SayIt, it’s easy to browse, search or share any statement online – helping you spread your message further.' %}</p>
+      </div>
+      <div class="large-6 large-pull-6 columns">
+        (screenshots)
+      </div>
+    </div>
+  </div>
+  <div class="sayit-homepage__councils">
+    <div class="full-page__row">
+      <div class="large-6 columns">
+        <h2>{% trans 'For councils and organisations that hold public&nbsp;meetings' %}</h2>
+        <p>{% trans 'Still publishing meeting transcripts on PDFs? SayIt makes it easier for your readers to find the parts that really interest them.' %}</p>
+        <p>{% trans 'Unlike crusty old PDFs, SayIt works beautifully on every device from a phone to a tablet to a desktop. And it’s acccessible for screenreaders and assistive devices.' %}</p>
+      </div>
+      <div class="large-6 columns">
+        (screenshots)
+      </div>
+    </div>
+  </div>
+  <div class="sayit-homepage__researchers">
+    <div class="full-page__row">
+      <div class="large-6 large-push-6 columns">
+        <h2>{% trans 'For researchers, historians, and&nbsp;journalists' %}</h2>
+        <p>{% trans 'Forget those dusty folders – SayIt organises your interviews for you.' %}</p>
+        <p>{% trans 'Search by keyword, across your entire canon or within just one interview. Browse by date, speaker or segment. Link to and share one statement, or entire interviews, with ease.' %}</p>
+      </div>
+      <div class="large-6 large-pull-6 columns">
+        (screenshots)
+      </div>
+    </div>
+  </div>
+  <div class="sayit-homepage__other-users">
+    <div class="full-page__row">
+      <h2 class="large-4 columns">{% trans 'And lots, lots more!' %}</h2>
+      <p class="large-4 columns">{% trans 'SayIt isn’t just for work: it’s for anyone who wants to collect statements on any subject, or publish any form of spoken word.' %}</p>
+      <p class="large-4 columns">{% trans 'From wartime love-letters to local history projects, SayIt is a wonderful, easy-access way to organise transcripts.' %}</p>
+    </div>
+  </div>
+  <div class="sayit-homepage__start">
     <div class="full-page__row">
       <div class="full-page__unit">
-        <p>{% trans 'People all over the world are using SayIt…' %}</p>
+        <h2>{% trans 'Create your own SayIt and get started in seconds!' %}</h2>
+        <p><a href="/instances/add" class="button">{% trans 'Start collecting speeches with SayIt' %}</a></p>
+      </div>
+    </div>
+  </div>
+  <div class="sayit-homepage__developers">
+    <div class="full-page__row">
+      <div class="full-page__unit">
+        <h2>{% trans 'Or integrate the SayIt Component into your own website' %}</h2>
+      </div>
+    </div>
+    <div class="full-page__row">
+      <div class="medium-6 large-5 large-offset-2 columns">
+        <p>{% trans 'The code that runs SayIt is also a <a href="http://poplus.org">Poplus Component</a>, which means you can quickly host it on your own server, customise the look and feel, or build it into an existing website.' %}</p>
+      </div>
+      <div class="medium-6 large-3 columns end">
+        <p><a href="http://sayit.poplus.org/" class="button">{% trans 'Develop with SayIt' %}</a></p>
       </div>
     </div>
   </div>

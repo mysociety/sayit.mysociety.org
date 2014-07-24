@@ -751,7 +751,105 @@ label {
 /* TODO(zarino): Remember to delete unusued images from /web/img */
 
 .sayit-homepage {
+  h2:first-child {
+    margin-top: 0;
+  }
 
+  h2:last-child, p:last-child {
+    margin-bottom: 0;
+  }
+
+  .button:first-child:last-child {
+    margin-bottom: 0;
+  }
+
+  .button .muted {
+    opacity: 0.7;
+  }
+}
+
+.sayit-homepage__hero {
+  padding: 4em 0;
+
+  .lead {
+    margin-bottom: 1.5em;
+  }
+
+  @media (min-width: $medium-screen) {
+      padding: 6em 0;
+
+      .lead {
+        font-size: 1.1em;
+      }
+  }
+
+  @media (min-width: $large-screen) and (min-height: 48em) {
+      padding: 8em 0;
+
+      .lead {
+        font-size: 1.2em;
+      }
+  }
+
+}
+
+.sayit-homepage__use-cases,
+.sayit-homepage__campaigners,
+.sayit-homepage__councils,
+.sayit-homepage__researchers,
+.sayit-homepage__other-users,
+.sayit-homepage__start,
+.sayit-homepage__developers {
+  padding: 2em 0;
+
+  @media (min-width: $medium-screen) {
+      padding: 3em 0;
+  }
+
+  @media (min-width: $large-screen) {
+      padding: 4em 0;
+  }
+}
+
+.sayit-homepage__hero {
+  background-color: #eee;
+  text-align: center;
+}
+
+.sayit-homepage__use-cases {
+  background-color: #f6f6f6;
+  text-align: center;
+  font-size: 1.1em;
+}
+
+.sayit-homepage__councils,
+.sayit-homepage__other-users {
+  background-color: #f3f3f3;
+}
+
+.sayit-homepage__start {
+  text-align: center;
+
+  h2 {
+    margin-bottom: 1em;
+  }
+}
+
+.sayit-homepage__developers {
+  border-top: 1px solid #ddd;
+
+  h2 {
+    text-align: center;
+    margin-bottom: 1em !important;
+  }
+
+  .columns + .columns.end {
+    text-align: center;
+
+    @media (min-width: $medium-screen) {
+      text-align: right;
+    }
+  }
 }
 
 
