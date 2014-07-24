@@ -21,11 +21,11 @@ class CLSenadoParser(BaseParser):
             'text': self.get_url(url, 'html'),
         }
 
-    def top_section_title(self, data):
+    def top_section_heading(self, data):
         text = data['text'].find('div', 'texto')
-        title = text.find('p').text.strip().title()
-        title = '%s, %s' % (title, data['date'].strftime('%d-%m-%Y'))
-        return title
+        heading = text.find('p').text.strip().title()
+        heading = '%s, %s' % (heading, data['date'].strftime('%d-%m-%Y'))
+        return heading
 
     def fix_name(self, name):
         name = name.title().replace('El S', 'El s').replace('La S', 'La s')

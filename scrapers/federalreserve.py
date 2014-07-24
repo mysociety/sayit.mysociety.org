@@ -29,12 +29,12 @@ class FedParser(BaseParser):
             for sesh in reversed(index(class_='year')):
                 url = sesh.find_parent('table').find(text=re.compile('Transcript')).parent['href']
                 url = urlparse.urljoin(url_index, url)
-                title = sesh.find(text=True).split(None, 2)
-                title = '%s, %s %s %s' % (title[2], title[1], title[0], y)
-                yield { 'year': y, 'title': title, 'url': url, 'text': self.get_pdf(url) }
+                heading = sesh.find(text=True).split(None, 2)
+                heading = '%s, %s %s %s' % (heading[2], heading[1], heading[0], y)
+                yield { 'year': y, 'heading': heading, 'url': url, 'text': self.get_pdf(url) }
 
-    def top_section_title(self, data):
-        return data['title']
+    def top_section_heading(self, data):
+        return data['heading']
 
     def parse_transcript(self, data):
         print "PARSING %s" % data['url']
@@ -91,7 +91,7 @@ class FedParser(BaseParser):
                     if d == 'December 15, 2008' and s == 'Morning Session':
                         d = 'December 16, 2008'
                     Speech.current_date = datetime.datetime.strptime(d, '%B %d, %Y')
-                    Speech.current_section = Section( title='%s, %s' % (s, d) )
+                    Speech.current_section = Section( heading='%s, %s' % (s, d) )
                     continue
 
             if not started:
@@ -150,7 +150,7 @@ class FedParser(BaseParser):
                 new_page = False
 
         if not started:
-            raise Exception, 'Never found the title to begin'
+            raise Exception, 'Never found the heading to begin'
 
         yield speech
 

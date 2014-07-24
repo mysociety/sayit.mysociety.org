@@ -131,14 +131,14 @@ def parse_transcript(text, url):
         # Headings
         m = re.match('Reply to the Responses to his Application by [A-Z ]*$|Response to .* Application$|Directions [Hh]earing.*$|Application by [A-Z ]*$|Application to become a core participant$|Reading of evidence of [A-Z ]*$|RULING$|Ruling$|(Opening|Closing|Reply) submissions ((on|for) Module 3 )?by [A-Z ]*$|Statement by ([A-Z ]*|Lord Justice Leveson)$|Submissions? by ([A-Z ]*|Mr Garnham)$|Discussion$|Discussion re (procedure|timetable|administrative matters)$|Housekeeping$', line.strip())
         if m:
-            Speech.current_section = Section( title=string.capwords(line.strip()) )
+            Speech.current_section = Section( heading=string.capwords(line.strip()) )
             continue
 
         # Witness arriving
         m = re.match(" *((?:[A-Z]|Mr)(?:[A-Z' ,-]|Mc|Mr|and)+?)\s+(\(.*\))$", line)
         if m:
-            title = fix_name(m.group(1))
-            Speech.witness = title
+            heading = fix_name(m.group(1))
+            Speech.witness = heading
             if Speech.witness == 'Dr Gerald Patrick McCann and Dr Kate Marie McCann':
                 Speech.witness = 'Mr McCann' # All the A.s are him
             if Speech.witness == 'Mr James Watson and Mrs Margaret Watson':
@@ -148,11 +148,11 @@ def parse_transcript(text, url):
                 Speech.witness = 'Mr Piers Pughe-Morgan'
             narrative = '%s %s.' % (m.group(1), m.group(2))
             if state == 'witness':
-                Speech.current_section.title += ' / ' + Speech.witness
+                Speech.current_section.heading += ' / ' + Speech.witness
                 speech.add_text( narrative )
             else:
                 yield speech
-                Speech.current_section = Section( title=title )
+                Speech.current_section = Section( heading=heading )
                 speech = Speech( speaker=None, text=narrative )
                 state = 'witness'
             continue

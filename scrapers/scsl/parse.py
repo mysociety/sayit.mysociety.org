@@ -170,7 +170,7 @@ def parse_transcript(text, date):
         # TODO - Are there any?
         #m = re.match('', line.strip())
         #if m:
-        #    Speech.current_section = Section( title=line.strip() )
+        #    Speech.current_section = Section( heading=line.strip() )
         #    continue
 
         # Continuation of multiline message
@@ -218,13 +218,13 @@ def parse_transcript(text, date):
         m = re.match("(DANKPANNAH DR CHARLES GHANKAY TAYLOR):(?: \[Affirmed\])?$", line.strip())
         if m:
             Speech.witness = fix_name(m.group(1))
-            Speech.current_section = Section( title=line.strip() )
+            Speech.current_section = Section( heading=line.strip() )
             continue
         # TODO Witness is an ID number, needs list finding/ matching to name
         m = re.match("WITNESS: *([A-Z0-9- ]+):? \[(.*)\]\.?$", line.strip())
         if m:
             Speech.witness = fix_name(m.group(1).strip())
-            Speech.current_section = Section( title=line.strip() )
+            Speech.current_section = Section( heading=line.strip() )
             continue
 
         #if len(line)-len(line.lstrip()) > 11:

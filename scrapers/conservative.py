@@ -16,7 +16,7 @@ class Parser(BaseParser):
         return get_speeches()
 
     def parse(self, data):
-        url, date, title, speaker, text = data
+        url, date, heading, speaker, text = data
         text, speaker = parse_speech(text, speaker)
         speaker = self.get_or_create(
             Speaker,
@@ -28,7 +28,7 @@ class Parser(BaseParser):
             text=text,
             speaker=speaker,
             start_date=date,
-            title=title,
+            heading=heading,
             source_url=url,
             type='speech',
             )
