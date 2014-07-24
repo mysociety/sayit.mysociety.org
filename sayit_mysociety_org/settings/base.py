@@ -257,3 +257,10 @@ if DEBUG_TOOLBAR:
     DEBUG_TOOLBAR_PATCH_SETTINGS = False
     MIDDLEWARE_CLASSES.append( 'debug_toolbar.middleware.DebugToolbarMiddleware' )
     INSTALLED_APPS.append( 'debug_toolbar' )
+
+# Allow local changes of settings
+try:
+    with open(SETTINGS_DIR + '/local.py') as f:
+        exec(compile(f.read(), 'local.py', 'exec'))
+except IOError:
+    pass

@@ -3,6 +3,7 @@
 /conf/general.yml.deployed
 /conf/httpd.conf
 /conf/httpd.conf.deployed
+/sayit_mysociety_org/settings/local.py
 .sass-cache
 /web/sass/*.css
 /speeches/static/speeches/sass/*.css
