@@ -5,8 +5,57 @@ from bs4 import Comment
 class ParsingError(Exception):
     pass
 
+skip_names = set([
+    'Independent Commission - Police',
+    'children',
+    'Tory failure receipt',
+    'rose30',
+    'Poster 2',
+    'labour rose',
+    'Labour Rose',
+    'Rose',
+    ])
+
+name_corrections = {
+    'EdV2': 'Ed Miliband',
+    'Ed Miliband04/08': 'Ed Miliband',
+    'Ed_LOU': 'Ed Miliband',
+    'Ed_LOU1': 'Ed Miliband',
+    'ed_miliband_speech': 'Ed Miliband',
+    'edm': 'Ed Miliband',
+    'Rob_Flello1': 'Rob Flello',
+    'Robert Flello': 'Rob Flello',
+    'John_Healey_use': 'John Healey',
+    'Healey': 'John Healey',
+    'Hanson': 'David Hanson',
+    'hid': 'Huw Irranca-Davies',
+    'Catherine McKinnell 2': 'Catherine McKinnell',
+    'Catherine McKinnell 1': 'Catherine McKinnell',
+    'Kevan_Jones': 'Kevan Jones',
+    'owen_smith': 'Owen Smith',
+    'Jenny_Chapman': 'Jenny Chapman',
+    'Ann Mc': 'Ann McKechin',
+    'Anne Mc': 'Ann McKechin',
+    'ken': 'Ken Livingstone',
+    'Clive_Efford': 'Clive Efford',
+    'Gemma_Doyle': 'Gemma Doyle',
+    'Diana Johnson MP': 'Diana Johnson',
+    'Steve Rotheram1': 'Steve Rotheram',
+    'Gloria': 'Gloria De Piero',
+    'Angela Eagle MP': 'Angela Eagle',
+    'Angela Smith MP': 'Angela Smith',
+    'ann at labour': 'Ed Miliband',
+    'iain': 'Iain McNicol',
+    }
 
 def normalize_speaker_name(name):
+    name = name.strip()
+    if name in skip_names:
+        raise ParsingError('Skipping article with name: {}'.format(name))
+
+    name = name_corrections.get(name, name)
+    if name.islower():
+        name = name.title()
     return name
 
 def parse_speech(soup):
