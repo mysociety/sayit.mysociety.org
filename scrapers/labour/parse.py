@@ -10,7 +10,8 @@ def normalize_speaker_name(name):
     return name
 
 def parse_speech(soup):
-    speech = soup.find('div', {'class': 'post-wrapper'})
+    speech = (soup.find('div', {'class': 'post-wrapper'}) or
+              soup.find('div', {'class': 'articles-alt'}))
 
     if not speech:
         raise ParsingError('Speech fragment not found')
@@ -31,11 +32,12 @@ def parse_speech(soup):
     else:
         raise ParsingError('No img found - used for speaker name')
 
-    # Remove comments from the speech fragment
+    # Remove some stuff from the speech that we don't need:
+    # comments - the heading, if it's there, and social sharing stuff.
     [x.extract() for x in
      speech.findAll(text=lambda text:isinstance(text, Comment))]
-    speech.find('h2').extract()
-    speech.find('div', {'class': 'social-share'}).extract()
+    [x.extract() for x in speech.findAll('h2')]
+    [x.extract() for x in speech.findAll('div', {'class': 'social-share'})]
 
     # Change these tags to things allowed in Akoma Ntoso
     for tag in speech.findAll('strong'):
