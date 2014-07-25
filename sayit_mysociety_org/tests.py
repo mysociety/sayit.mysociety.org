@@ -7,6 +7,14 @@ from django.contrib.auth import get_user_model
 from instances.tests import InstanceTestCase
 
 
+class SmokeTests(InstanceTestCase):
+    """Very basic tests to make sure we can see anything at all."""
+    def test_homepage(self):
+        """Check that the home page for an empty instance returns OK."""
+        resp = self.client.get('/')
+        self.assertEquals(resp.status_code, 200)
+
+
 class ShareInstanceTests(InstanceTestCase):
     def test_share_form_exists(self):
         resp = self.client.get('/instance/share')

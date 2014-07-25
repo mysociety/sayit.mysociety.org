@@ -138,7 +138,7 @@
                       {% if instance_about_page %}
                         <a href="/about">{% trans "Speeches" %}</a>
                       {% else %}
-                        <a href="{% url 'speeches:section-list' %}">{% trans "Speeches" %}</a>
+                        <a href="{% url 'speeches:parentless-list' %}">{% trans "Speeches" %}</a>
                       {% endif %}
                     </li>
                   {% endif %}
