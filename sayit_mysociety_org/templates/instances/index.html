@@ -1,4 +1,5 @@
 {% extends 'base.html' %}
+{% load staticfiles %}
 {% load i18n %}
 
 {% block fulltitle %}{% trans "SayIt: Bringing transcripts into the Internet age" %}{% endblock %}
@@ -31,7 +32,7 @@
         <p class="example">{% trans 'See an example:' %} <a href="http://westpier.sayit.mysociety.org/speeches">{% trans 'Quotes about West Pier, Brighton' %}</a></p>
       </div>
       <div class="large-6 large-pull-6 columns">
-        <img class="screenshot" src="/static/img/screenshot-west-pier.png" width="550" height="365" alt="SayIt comtaining individual quotes about West Pier in Brighton">
+        <img class="screenshot" src="{% static 'img/screenshot-west-pier.png' %}" width="550" height="365" alt="{% trans 'SayIt containing individual quotes about West Pier in Brighton' %}">
       </div>
     </div>
   </div>
@@ -44,7 +45,7 @@
         <p class="example">{% trans 'See an example:' %} <a href="http://leveson.sayit.mysociety.org/">{% trans 'The Leveson Inquiry transcripts' %}</a></p>
       </div>
       <div class="large-6 columns">
-        <img class="screenshot" src="/static/img/screenshot-editor.png" width="550" height="333" alt="Screenshot of the SayIt speech editing interface">
+        <img class="screenshot" src="{% static 'img/screenshot-editor.png' %}" width="550" height="333" alt="{% trans 'Screenshot of the SayIt speech editing interface' %}">
       </div>
     </div>
   </div>
@@ -57,7 +58,7 @@
         <p class="example">{% trans 'See an example:' %} <a href="http://watergatetapes.sayit.mysociety.org/speaker/president-nixon">{% trans 'The Nixon Watergate tapes' %}</a></p>
       </div>
       <div class="large-6 large-pull-6 columns">
-        <img class="screenshot" src="/static/img/screenshot-nixon.png" width="550" height="324" alt="President Nixon’s profile page in the Watergate Tapes SayIt">
+        <img class="screenshot" src="{% static 'img/screenshot-nixon.png' %}" width="550" height="324" alt="{% trans 'President Nixon’s profile page in the Watergate Tapes SayIt' %}">
       </div>
     </div>
   </div>
