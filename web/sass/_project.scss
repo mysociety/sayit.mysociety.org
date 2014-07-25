@@ -766,34 +766,95 @@ label {
   .button .muted {
     opacity: 0.7;
   }
+
+  @media (min-width: $large-screen) {
+    p {
+      font-size: 1.1em;
+    }
+  }
+
+  .example a {
+    text-decoration: none;
+    border-bottom: 1px solid;
+  }
+
+  .screenshot {
+    margin-top: 1em;
+    margin-bottom: -2em;
+
+    @media (min-width: $medium-screen) {
+        margin-bottom: -3em;
+        margin-top: 0;
+    }
+
+    @media (min-width: $large-screen) {
+        margin-bottom: -4em;
+    }
+  }
 }
 
 .sayit-homepage__hero {
-  padding: 4em 0;
+  padding: 3em 0;
+  text-align: center;
+  color: #fff;
+  text-shadow: 0 0 10px rgba(0,0,0,0.2);
 
-  .lead {
+  background: #382f21 url('../img/hero-small.jpg') bottom center no-repeat;
+  background-size: cover;
+  padding-bottom: 40%;
+
+  h1 {
+    line-height: 1.2em;
+    color: inherit;
+  }
+
+  h1 + p {
     margin-bottom: 1.5em;
+    font-size: 0.9em;
+  }
+
+  .button {
+    padding-top: 0.6em;
+    padding-bottom: 0.6em;
+  }
+
+  @media (min-width: 30em) {
+    h1 + p {
+      font-size: 1.2em;
+    }
   }
 
   @media (min-width: $medium-screen) {
-      padding: 6em 0;
+      padding: 5em 0;
 
-      .lead {
+      background-image: url('../img/hero-large.jpg');
+
+      h1 + p {
         font-size: 1.1em;
       }
   }
 
   @media (min-width: $large-screen) and (min-height: 48em) {
-      padding: 8em 0;
+      font-size: 1.1em; // make everything in hero a bit larger than normal
 
-      .lead {
+      h1 + p {
         font-size: 1.2em;
       }
   }
 
 }
 
-.sayit-homepage__use-cases,
+.sayit-homepage__use-cases {
+  padding: 2em 0;
+  background-color: #f6f6f6;
+  text-align: center;
+  font-size: 1.1em;
+
+  @media (min-width: $medium-screen) {
+      padding: 3em 0;
+  }
+}
+
 .sayit-homepage__campaigners,
 .sayit-homepage__councils,
 .sayit-homepage__researchers,
@@ -811,20 +872,17 @@ label {
   }
 }
 
-.sayit-homepage__hero {
-  background-color: #eee;
-  text-align: center;
-}
-
-.sayit-homepage__use-cases {
-  background-color: #f6f6f6;
-  text-align: center;
-  font-size: 1.1em;
-}
-
 .sayit-homepage__councils,
 .sayit-homepage__other-users {
   background-color: #f3f3f3;
+}
+
+.sayit-homepage__campaigners,
+.sayit-homepage__councils,
+.sayit-homepage__researchers {
+  @media (min-width: $medium-screen) {
+    border-bottom: 1px solid #eee;
+  }
 }
 
 .sayit-homepage__start {
@@ -836,19 +894,52 @@ label {
 }
 
 .sayit-homepage__developers {
-  border-top: 1px solid #ddd;
+  @extend .inverse-section;
+  font-size: 1em;
+  text-align: center;
 
+  text-shadow: 0 0 10px darken($colour_primary, 10%);
+
+  background-image: url(../img/dev-bg.png);
+  @media (-webkit-min-device-pixel-ratio: 1.5), (min-resolution: 144dpi) {
+      background-image: url('../img/dev-bg@2.png');
+  }
+  @include background-size(250px);
+  background-repeat: repeat;
+  background-position: -18px -24px;
+
+  .button {
+    color: $colour_primary;
+    background-color: #fff;
+    text-shadow: none;
+
+    &:hover, &:focus {
+      color: darken($colour_primary, 10%);
+      background-color: $colour_off_white;
+    }
+  }
+}
+
+.inverse-section {
+  background-color: $colour_primary;
+  color: #fff;
+  @include clearfix;
+
+  a,
   h2 {
-    text-align: center;
-    margin-bottom: 1em !important;
+    color: #fff;
   }
 
-  .columns + .columns.end {
-    text-align: center;
+  a {
+    text-decoration: underline;
+  }
 
-    @media (min-width: $medium-screen) {
-      text-align: right;
-    }
+  .button {
+    text-decoration: none;
+  }
+
+  h3 {
+    color: lighten($colour_primary, 33%);
   }
 }
 
