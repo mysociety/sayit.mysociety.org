@@ -7,14 +7,13 @@ import requests
 import requests_cache
 requests_cache.install_cache(os.path.join(utils.CACHE_DIR, 'labour'))
 
+
 def get_url(url):
     resp = requests.get(url)
     return bs4.BeautifulSoup(resp.text)
 
-def get_speeches():
-    index_url = 'http://www.labour.org.uk/news-archive'
-    # index_url = 'http://www.labour.org.uk/news-archive?c076b2da-a7a5-f434-9d91-aa2dc9db98cc=683'
 
+def get_speeches(index_url):
     while index_url:
         print 'Accessing {}'.format(index_url)
         index_soup = get_url(index_url)
