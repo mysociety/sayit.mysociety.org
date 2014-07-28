@@ -48,6 +48,7 @@ name_corrections = {
     'iain': 'Iain McNicol',
     }
 
+
 def normalize_speaker_name(name):
     name = name.strip()
     if name in skip_names:
@@ -57,6 +58,7 @@ def normalize_speaker_name(name):
     if name.islower():
         name = name.title()
     return name
+
 
 def parse_speech(soup):
     speech = (soup.find('div', {'class': 'post-wrapper'}) or
@@ -77,6 +79,7 @@ def parse_speech(soup):
     img_element = speech.img
     if img_element:
         speaker_name = normalize_speaker_name(img_element['alt'])
+        image_url = img_element['src']
         img_element.extract()
     else:
         raise ParsingError('No img found - used for speaker name')
@@ -96,4 +99,4 @@ def parse_speech(soup):
 
     text = (u'\n'.join([unicode(x) for x in speech.contents if x])).strip()
 
-    return text, speaker_name, date
+    return text, speaker_name, image_url, date
