@@ -1,0 +1,369 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# 
+# Translators:
+# johnfelipe <ingenierofelipeurrego@gmail.com>, 2014
+msgid ""
+msgstr ""
+"Project-Id-Version: sayit\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2014-04-09 15:54+0100\n"
+"PO-Revision-Date: 2014-07-28 22:22+0000\n"
+"Last-Translator: johnfelipe <ingenierofelipeurrego@gmail.com>\n"
+"Language-Team: Spanish (http://www.transifex.com/projects/p/sayit/language/es/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: es\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: templates/base.html:73
+msgid ""
+"This is a staging site &ndash; any data saved here <strong>may be "
+"deleted</strong>."
+msgstr "Se trata de un sitio de ensayo - todos los datos guardados aquí <strong> pueden ser borrados </ strong>."
+
+#: templates/base.html:85
+msgid "Modern transcripts"
+msgstr "Transcripciones modernas"
+
+#: templates/base.html:89
+msgid "Other SayIt sites"
+msgstr "Otros sitios web Sayit"
+
+#: templates/base.html:95
+msgid "Admin"
+msgstr "Administrador"
+
+#: templates/base.html:99
+msgid "Add speech"
+msgstr "Agregar transcripcion"
+
+#: templates/base.html:100
+msgid "Add section"
+msgstr "Agregar sección"
+
+#: templates/base.html:101
+msgid "Add speaker"
+msgstr "Agregar ponente"
+
+#: templates/base.html:102
+msgid "Add PopIt instance"
+msgstr "Agregar instancia Popit"
+
+#: templates/base.html:104 templates/instances/instance_form.html:4
+#: templates/instances/instance_form.html:8
+msgid "Edit instance"
+msgstr "Editar instancia"
+
+#: templates/base.html:106
+msgid "Your recordings"
+msgstr "Tus registros"
+
+#: templates/base.html:108
+msgid "Your token"
+msgstr "Tu token"
+
+#: templates/base.html:111
+msgid "Tokens"
+msgstr "Tokens"
+
+#: templates/base.html:113
+msgid "Log out"
+msgstr "Cerrar sesión"
+
+#: templates/base.html:137
+msgid "More&hellip;"
+msgstr "Más ..."
+
+#: templates/base.html:146
+msgid "Menu"
+msgstr "Menu"
+
+#: templates/base.html:150
+msgid "Home"
+msgstr "Inicio"
+
+#: templates/base.html:151
+msgid "Speakers"
+msgstr "Ponente"
+
+#: templates/base.html:154 templates/base.html.py:156
+msgid "Speeches"
+msgstr "Discursos"
+
+#: templates/base.html:165
+msgid "Search"
+msgstr "Buscar"
+
+#: templates/base.html:166
+msgid "Go"
+msgstr "Ir"
+
+#: templates/base.html:193
+msgid "About"
+msgstr "Acerca"
+
+#: templates/base.html:198
+msgid "Back to top"
+msgstr "Ir arriba"
+
+#: templates/base.html:206
+msgid "SayIt"
+msgstr "SayIt"
+
+#: templates/base.html:207
+msgid ""
+"An open source tool for making transcripts really easy to read, search and "
+"share on the modern web"
+msgstr "Una herramienta de código abierto para hacer transcripciones muy fácil de leer, buscar y compartir en la web moderna"
+
+#: templates/base.html:212
+msgid "Blog"
+msgstr "Blog"
+
+#: templates/base.html:213
+msgid "Twitter"
+msgstr "Twitter"
+
+#: templates/base.html:214
+msgid "Facebook"
+msgstr "Facebook"
+
+#: templates/base.html:215
+msgid "GitHub"
+msgstr "GitHub"
+
+#: templates/base.html:220 templates/instances/index.html:111
+msgid "Get involved"
+msgstr "Involúcrese"
+
+#: templates/base.html:221
+msgid "Help"
+msgstr "Ayuda"
+
+#: templates/base.html:222 templates/instances/index.html:95
+msgid "Developers"
+msgstr "Desarrolladores"
+
+#: templates/base.html:223
+msgid "Transcripts"
+msgstr "Transcripciones"
+
+#: templates/base.html:228
+msgid "The Leveson Inquiry"
+msgstr "La investigación Leveson"
+
+#: templates/base.html:229
+msgid "Charles Taylor Trial"
+msgstr "Juicio Charles Taylor"
+
+#: templates/base.html:230
+msgid "Plays of Shakespeare"
+msgstr "Obras de Shakespeare"
+
+#: templates/base.html:236
+msgid "mySociety"
+msgstr "mySociety"
+
+#: templates/base.html:237
+msgid "A mySociety project"
+msgstr "Un proyecto mySociety"
+
+#: templates/base.html:240
+msgid "Poplus"
+msgstr "Poplus"
+
+#: templates/base.html:241
+msgid "A Poplus component"
+msgstr "Un componente de Poplus"
+
+#: templates/about/community.html:7
+msgid "Community"
+msgstr "Comunidad"
+
+#: templates/admin/base_site.html:28 templates/admin/base_site.html.py:31
+msgid "SayIt administration"
+msgstr "Administración SayIt"
+
+#: templates/instances/index.html:4
+msgid "Welcome to SayIt"
+msgstr "Bienvenido a SayIt"
+
+#: templates/instances/index.html:18
+msgid ""
+"Transcripts of political debates, campaign speeches, and trials are stuck in"
+" the last century"
+msgstr "Las transcripciones de los debates políticos, los discursos de campaña, y los ensayos están atrapados en el siglo pasado"
+
+#: templates/instances/index.html:19
+msgid "We think the public deserve better"
+msgstr "Creemos que el público merece algo mejor"
+
+#: templates/instances/index.html:28
+msgid "So we are building <strong>SayIt</strong>"
+msgstr "Así que estamos construyendo <strong> SayIt </ strong>"
+
+#: templates/instances/index.html:29
+msgid ""
+"Free, open source technology to bring searchable transcripts to your "
+"website."
+msgstr "Libre, con tecnología de código abierto con funciones de búsqueda en las transcripciones para tu web"
+
+#: templates/instances/index.html:32
+msgid "Now in Alpha"
+msgstr "Ahora Alpha"
+
+#: templates/instances/index.html:42
+msgid "SayIt makes it easy to search, browse and share transcripts"
+msgstr "SayIt hace que sea fácil de buscar, explorar y compartir las transcripciones"
+
+#: templates/instances/index.html:43
+msgid "See our demos"
+msgstr "Vea nuestras demostraciones"
+
+#: templates/instances/index.html:46
+msgid "Read the <strong>Leveson Inquiry</strong> transcripts"
+msgstr "Lea las transcripciones de la <strong> Investigación Leveson </strong> "
+
+#: templates/instances/index.html:47
+msgid "Read the <strong>Charles Taylor Trial</strong> transcripts"
+msgstr "Lea las transcripciones de la <strong> Juicio Charles Taylor </strong> "
+
+#: templates/instances/index.html:48
+msgid "Read the <strong>Plays of Shakespeare</strong>"
+msgstr "Lea las <strong> Obras de Shakespeare </ strong>"
+
+#: templates/instances/index.html:59
+msgid "Build sites with SayIt"
+msgstr "Construir sitios con SayIt"
+
+#: templates/instances/index.html:60
+msgid ""
+"SayIt is a Django application that can be integrated into your own sites or "
+"apps, or run as a standalone site"
+msgstr "SayIt es una aplicación Django que se puede integrar en sus propios sitios o aplicaciones, o ejecuta como un sitio independiente"
+
+#: templates/instances/index.html:68
+msgid "SayIt is a Poplus component"
+msgstr "SayIt es un componente Poplus"
+
+#: templates/instances/index.html:69
+msgid ""
+"Poplus is an international network of civic hackers building open source "
+"components. The aim? To decrease the cost of running services that help "
+"drive accountability."
+msgstr "Poplus es una red internacional de hackers cívicos que construyen componentes de código abierto. El objetivo? Reducir el costo de funcionamiento de los servicios que ayudan a la rendición de cuentas en coche."
+
+#: templates/instances/index.html:77
+msgid "We need your help"
+msgstr "Necesitamos su ayuda"
+
+#: templates/instances/index.html:78
+msgid "We are sharing SayIt early because we need help from:"
+msgstr "Estamos compartiendo SayIt temprano porque necesitamos la ayuda de:"
+
+#: templates/instances/index.html:81
+msgid "Reporters"
+msgstr "Reporteros"
+
+#: templates/instances/index.html:82
+msgid "To make sure SayIt supports newsmakers"
+msgstr "Para asegurarse SayIt apoya protagonistas de las noticias"
+
+#: templates/instances/index.html:85
+msgid "Campaigners"
+msgstr "Los activistas"
+
+#: templates/instances/index.html:86
+msgid "To make SayIt work for change-makers"
+msgstr "Para hacer el trabajo SayIt para agentes de cambio"
+
+#: templates/instances/index.html:89
+msgid "Public Servants"
+msgstr "Servidores Públicos"
+
+#: templates/instances/index.html:90
+msgid "To start getting standardised official data published"
+msgstr "Para empezar a recibir datos oficiales normalizados publicados"
+
+#: templates/instances/index.html:96
+msgid "To help convert transcripts and test integration"
+msgstr "Para ayudar a convertir las transcripciones y las pruebas de integración"
+
+#: templates/instances/index.html:99
+msgid "Interested people"
+msgstr "Las personas interesadas"
+
+#: templates/instances/index.html:100
+msgid "To help make SayIt&rsquo;s user experience great"
+msgstr "Para ayudar a que la experiencia de usuario sea genial"
+
+#: templates/instances/index.html:109
+msgid "Developers!"
+msgstr "Desarrolladores!"
+
+#: templates/instances/index.html:110
+msgid "SayIt is open source and built on open standards"
+msgstr "SayIt es de código abierto y basado en estándares abiertos"
+
+#: templates/instances/index.html:114
+msgid "Campaigners, Reporters, Public servants, Citizens, Everyone!"
+msgstr "Los activistas, periodistas, funcionarios públicos, ciudadanos, todos!"
+
+#: templates/instances/index.html:115
+msgid "We really want to know what you want from SayIt"
+msgstr "Tenemos muchas ganas de saber lo que quiere de SayIt"
+
+#: templates/instances/index.html:116
+msgid "Get in touch"
+msgstr "Mantente en contacto"
+
+#: templates/instances/index.html:123
+msgid "And we’re not done yet"
+msgstr "Y nosotros no hemos terminado todavía"
+
+#: templates/instances/index.html:124
+msgid "The Alpha is complete, but SayIt is still in development"
+msgstr "La version Alpha esta completa, pero Sayit aun esta en desarrollo"
+
+#: templates/instances/index.html:128
+msgid "Alpha"
+msgstr "Alpha"
+
+#: templates/instances/index.html:129
+msgid "Done"
+msgstr "Hecho"
+
+#: templates/instances/index.html:130
+msgid ""
+"Publish transcripts that have been converted into an open standard we have "
+"adopted."
+msgstr "Publicar transcripciones que se han convertido en un estándar abierto que hemos adoptado."
+
+#: templates/instances/index.html:135
+msgid "Beta"
+msgstr "Beta"
+
+#: templates/instances/index.html:136
+msgid "Next"
+msgstr "Siguiente"
+
+#: templates/instances/index.html:137
+msgid ""
+"The ability to directly author new transcripts through a web-based user "
+"interface."
+msgstr "La capacidad de crear directamente nuevas transcripciones a través de una interfaz de usuario basada en la web."
+
+#: templates/instances/index.html:148
+msgid "We're sure you have questions"
+msgstr "Estamos seguros que usted tiene preguntas"
+
+#: templates/instances/instance_form.html:11
+msgid "Edit the title and description of your instance here."
+msgstr "Edita aquí el titulo y la descripción de tu instancia"
+
+#: templates/registration/login.html:6
+msgid "Log in"
+msgstr "Iniciar Sesion"
