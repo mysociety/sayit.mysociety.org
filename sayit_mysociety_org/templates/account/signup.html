@@ -34,7 +34,7 @@
 
             <div {% if form.email.errors %}class="error"{% endif %}>
                 <a href="{{ login_url }}" class="form-page__label-tip">Already got an account?</a>
-                <label for="{{ form.email.id_for_label }}">Your e-mail address:</label>
+                <label for="{{ form.email.id_for_label }}">{% trans "Your e-mail address:" %}</label>
                 <input type="text" name="email" id="{{ form.email.id_for_label }}" value="{{ form.email.value|default_if_none:"" }}">
               {% if form.email.errors %}
                 <small class="error">{{ form.email.errors }}</small>
@@ -42,8 +42,8 @@
             </div>
 
             <div {% if form.username.errors %}class="error"{% endif %}>
-                <span class="form-page__label-tip">(No spaces please)</span>
-                <label for="{{ form.username.id_for_label }}">Pick a username:</label>
+                <span class="form-page__label-tip">{% trans "(No spaces please)" %}</span>
+                <label for="{{ form.username.id_for_label }}">{% trans "Pick a username:" %}</label>
                 <input type="text" name="username" id="{{ form.username.id_for_label }}" value="{{ form.username.value|default_if_none:"" }}">
               {% if form.username.errors %}
                 <small class="error">{{ form.username.errors }}</small>
@@ -52,7 +52,7 @@
 
             <div class="row">
                 <div class="{% if form.password1.errors %}error{% endif %} small-8 columns">
-                    <label for="{{ form.password1.id_for_label }}">Pick a password:</label>
+                    <label for="{{ form.password1.id_for_label }}">{% trans "Pick a password:" %}</label>
                     <input type="password" name="password1" id="{{ form.password1.id_for_label }}" value="{{ form.password1.value|default_if_none:"" }}">
                   {% if form.password1.errors %}
                     <small class="error">{{ form.password1.errors }}</small>
