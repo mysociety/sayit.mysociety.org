@@ -1,10 +1,11 @@
 from django import forms
 from django.db.models import Q
 from django.contrib.auth.models import User
+from django.utils.translation import ugettext_lazy as _
 
 
 class ShareForm(forms.Form):
-    email = forms.EmailField()
+    email = forms.EmailField(label=_('E-mail'))
 
     # largely cargo-culted from allauth.account.forms.ResetPasswordForm
     def clean_email(self):

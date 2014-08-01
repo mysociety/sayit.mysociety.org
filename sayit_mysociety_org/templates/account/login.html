@@ -35,7 +35,7 @@
 
           <div {% if form.login.errors %}class="error"{% endif %}>
               <a href="{{ signup_url }}" class="form-page__label-tip">{% trans "Need an account?" %}</a>
-              <label for="{{ form.login.id_for_label }}">Username or e-mail</label>
+              <label for="{{ form.login.id_for_label }}">{% trans "Username or e-mail" %}</label>
               <input type="text" tabindex="1" name="login" id="{{ form.login.id_for_label }}" value="{{ form.login.value|default_if_none:"" }}">
             {% if form.login.errors %}
               <small class="error">{{ form.login.errors }}</small>

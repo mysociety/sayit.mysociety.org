@@ -39,7 +39,7 @@
 
       {% if not instance %}
         <div {% if form.label.errors %}class="error"{% endif %}>
-            <label for="{{ form.label.id_for_label }}">URL:</label>
+            <label for="{{ form.label.id_for_label }}">{{ form.label.label }}:</label>
             <div class="row collapse">
                 <div class="small-2 columns">
                     <span class="prefix">http://</span>

@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: sayit\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-07-31 16:51+0100\n"
-"PO-Revision-Date: 2014-07-28 22:22+0000\n"
+"POT-Creation-Date: 2014-08-01 12:30+0100\n"
+"PO-Revision-Date: 2014-07-31 17:17+0000\n"
 "Last-Translator: johnfelipe <ingenierofelipeurrego@gmail.com>\n"
 "Language-Team: Spanish (http://www.transifex.com/projects/p/sayit/language/"
 "es/)\n"
@@ -19,14 +19,17 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
+#: forms.py:8
+msgid "E-mail"
+msgstr ""
+
 #: templates/accept_invitation.html:5 templates/accept_invitation.html.py:9
 msgid "Welcome to SayIt"
 msgstr "Bienvenido a SayIt"
 
 #: templates/accept_invitation.html:12
-#, fuzzy
 msgid "Bad Token"
-msgstr "Tokens"
+msgstr "Mal Token"
 
 #: templates/accept_invitation.html:14
 #, python-format
@@ -34,18 +37,21 @@ msgid ""
 "The invite link was invalid, possibly because it has already been used.  "
 "Please try requesting a <a href=\"%(passwd_reset_url)s\">password reset</a>."
 msgstr ""
+"El enlace de invitar no era válida, posiblemente debido a que ya se ha "
+"utilizado. Por favor, intente solicitar un <a href=\"%(passwd_reset_url)s"
+"\">restablecimiento de contraseña</a>."
 
 #: templates/accept_invitation.html:17
 msgid "Please set a password"
-msgstr ""
+msgstr "Por favor, establecer una contraseña"
 
 #: templates/accept_invitation.html:21
 msgid "Take me to the speeches!"
-msgstr ""
+msgstr "Llévame a los discursos / Actas!"
 
 #: templates/accept_invitation.html:24
 msgid "Your password is now changed."
-msgstr ""
+msgstr "Su contraseña ha sido cambiada."
 
 #: templates/accept_invite_message.txt:1
 #, python-format
@@ -60,12 +66,21 @@ msgid ""
 "\n"
 "to set up your account and start adding speeches.\n"
 msgstr ""
+"You have been invited to edit a SayIt instance.\n"
+"\n"
+"Title: %(instance_title)s\n"
+"\n"
+"Please go to\n"
+"\n"
+"%(password_reset_url)s\n"
+"\n"
+"to set up your account and start adding speeches.\n"
 
 #: templates/accept_invite_subject.txt:3
 #: templates/instance_invite_existing_subject.txt:3
 #, python-format
 msgid "You have been invited to a SayIt: %(instance_title)s"
-msgstr ""
+msgstr "Usted ha sido invitado a un SayIt: %(instance_title)s"
 
 #: templates/base.html:72
 msgid ""
@@ -85,11 +100,11 @@ msgstr "Acerca"
 
 #: templates/base.html:88
 msgid "Contact"
-msgstr ""
+msgstr "contacto"
 
 #: templates/base.html:89
 msgid "Create New SayIt"
-msgstr ""
+msgstr "Crear nuevo SayIt"
 
 #: templates/base.html:93
 msgid "Log out"
@@ -97,7 +112,7 @@ msgstr "Cerrar sesión"
 
 #: templates/base.html:96 templates/account/login.html:10
 #: templates/account/login.html.py:17 templates/account/login.html:55
-#: templates/registration/login.html:6
+#: templates/registration/login.html:6 templates/registration/login.html:10
 msgid "Log in"
 msgstr "Iniciar Sesion"
 
@@ -107,7 +122,7 @@ msgstr "Otros sitios web Sayit"
 
 #: templates/base.html:113
 msgid "Edit"
-msgstr ""
+msgstr "Editar"
 
 #: templates/base.html:125
 msgid "More&hellip;"
@@ -225,20 +240,31 @@ msgid ""
 "%(instance_url)s\n"
 "\n"
 msgstr ""
+"Usted ha sido invitado a editar una instancia SayIt.\n"
+"\n"
+"Titulo: %(instance_title)s\n"
+"\n"
+"Puede iniciar sesión y comenzar a crear y editar los discursos de inmediato "
+"al:\n"
+"\n"
+"%(instance_url)s\n"
 
 #: templates/share_instance_with_collaborators.html:12
 msgid "Share your SayIt"
-msgstr ""
+msgstr "Comparte tu SayIt"
 
 #: templates/share_instance_with_collaborators.html:14
+#, fuzzy
 msgid ""
-"Enter the email address of someone you&rsquo;d like to be able to create and "
-"edit speeches and sections"
+"Enter the e-mail address of someone you&rsquo;d like to be able to create "
+"and edit speeches and sections"
 msgstr ""
+"Introduzca la dirección de correo electrónico de alguien a quien le gustaría "
+"ser capaz de crear y editar los discursos y las secciones"
 
 #: templates/share_instance_with_collaborators.html:23
 msgid "Send invite"
-msgstr ""
+msgstr "Enviar invitación"
 
 #: templates/about/community.html:7
 msgid "Community"
@@ -246,34 +272,38 @@ msgstr "Comunidad"
 
 #: templates/account/login.html:37
 msgid "Need an account?"
+msgstr "¿Necesitas una cuenta?"
+
+#: templates/account/login.html:38
+msgid "Username or e-mail"
 msgstr ""
 
 #: templates/account/login.html:46
 msgid "Forgot password?"
-msgstr ""
+msgstr "¿Has olvidado tu contraseña?"
 
 #: templates/account/signup.html:9 templates/account/signup.html.py:16
 #: templates/account/signup.html:62 templates/instances/instance_form.html:8
 #: templates/instances/instance_form.html:20
 #: templates/instances/instance_form.html:80
 msgid "Sign up"
-msgstr ""
+msgstr "contratar"
 
 #: templates/account/signup.html:37
 msgid "Your e-mail address:"
-msgstr ""
+msgstr "Tu e-mail:"
 
 #: templates/account/signup.html:45
 msgid "(No spaces please)"
-msgstr ""
+msgstr "(Sin espacios)"
 
 #: templates/account/signup.html:46
 msgid "Pick a username:"
-msgstr ""
+msgstr "Elige un nombre de usuario:"
 
 #: templates/account/signup.html:55
 msgid "Pick a password:"
-msgstr ""
+msgstr "Elija una clave:"
 
 #: templates/admin/base_site.html:28 templates/admin/base_site.html.py:31
 msgid "SayIt administration"
@@ -281,21 +311,23 @@ msgstr "Administración SayIt"
 
 #: templates/instances/index.html:5
 msgid "SayIt: Bringing transcripts into the Internet age"
-msgstr ""
+msgstr "Sayit: Traer transcripciones a la era de la Internet"
 
 #: templates/instances/index.html:13
 msgid "Bringing transcripts<br>into the Internet&nbsp;age"
-msgstr ""
+msgstr "Traer Transcripciones <br> en la era de Internet"
 
 #: templates/instances/index.html:14
 msgid ""
 "SayIt is a whole new way to organise, publish,<br>and share your transcripts "
 "– and it’s free."
 msgstr ""
+"SayIt es una nueva forma de organizar, publicar, <br> y compartir sus "
+"transcripciones - y es gratis."
 
 #: templates/instances/index.html:15
 msgid "Start using SayIt"
-msgstr ""
+msgstr "Comience a usar SayIt"
 
 #: templates/instances/index.html:22
 msgid ""
@@ -303,45 +335,58 @@ msgid ""
 "<b>collection of individual quotes</b>, SayIt&nbsp;takes the hassle out of "
 "organizing and browsing your spoken and written&nbsp;content."
 msgstr ""
+"Si usted quiere <b> cargar toda transcripciones < b>, o lanzar <b>una "
+"colección de citas individuales </b>, SayIt se toma la molestia de organizar "
+"y navegar por su contenido hablado y escrito."
 
 #: templates/instances/index.html:29
 msgid "For campaigners and community&nbsp;groups"
-msgstr ""
+msgstr "Para los activistas y grupos comunitarios"
 
 #: templates/instances/index.html:30
 msgid ""
 "Publish transcripts from meetings or share statements from those in power. "
 "Anyone can use SayIt, alone or in collaboration with others."
 msgstr ""
+"Publicar transcripciones de las reuniones o declaraciones de acciones de "
+"quienes están en el poder. Cualquier persona puede utilizar SayIt, solo o en "
+"colaboración con otros."
 
 #: templates/instances/index.html:31
 msgid ""
 "With SayIt, it’s easy to browse, search or share any statement online – "
 "helping you spread your message further."
 msgstr ""
+"Con SayIt, es fácil de navegar, buscar o compartir cualquier declaración en "
+"línea - ayudando a difundir su mensaje más allá."
 
 #: templates/instances/index.html:32 templates/instances/index.html.py:45
 #: templates/instances/index.html:58 templates/instances/index.html.py:70
 msgid "See an example:"
-msgstr ""
+msgstr "Véase un ejemplo:"
 
 #: templates/instances/index.html:32
 msgid "Quotes about West Pier, Brighton"
-msgstr ""
+msgstr "Citas sobre West Pier, Brighton"
 
 #: templates/instances/index.html:35
 msgid "SayIt containing individual quotes about West Pier in Brighton"
-msgstr ""
+msgstr "Sayit contiene citas individuales sobre West Pier de Brighton"
 
 #: templates/instances/index.html:42
 msgid "For councils and organisations that hold public&nbsp;meetings"
 msgstr ""
+"Para concejos, asambleas, senados y organizaciones que celebran reuniones "
+"públicas"
 
 #: templates/instances/index.html:43
 msgid ""
 "Still publishing meeting transcripts on PDFs? SayIt makes it easier for your "
 "readers to find the parts that really interest them."
 msgstr ""
+"Aún publicas transcripciones de reuniones en archivos PDF? SayIt hace que "
+"sea más fácil para sus lectores el encontrar las partes que realmente les "
+"interesan."
 
 #: templates/instances/index.html:44
 msgid ""
@@ -349,23 +394,28 @@ msgid ""
 "to a tablet to a desktop. And it’s acccessible for screenreaders and "
 "assistive devices."
 msgstr ""
+"A diferencia de los viejos archivos PDF, SayIt funciona de maravilla en "
+"todos los dispositivos desde un teléfono a una tableta a un PC escritorio. Y "
+"es acccessible para los lectores de pantalla y los dispositivos de "
+"asistencia."
 
 #: templates/instances/index.html:45
-#, fuzzy
 msgid "The Leveson Inquiry transcripts"
-msgstr "La investigación Leveson"
+msgstr "Las transcripciones The Leveson Inquiry"
 
 #: templates/instances/index.html:48
 msgid "Screenshot of the SayIt speech editing interface"
-msgstr ""
+msgstr "Captura de pantalla de la interfaz de edición de SayIt"
 
 #: templates/instances/index.html:55
 msgid "For researchers, historians, and&nbsp;journalists"
-msgstr ""
+msgstr "Para los investigadores, historiadores y periodistas"
 
 #: templates/instances/index.html:56
 msgid "Forget those dusty folders – SayIt organises your interviews for you."
 msgstr ""
+"Olvídese de esas carpetas polvorientas - SayIt organiza sus entrevistas para "
+"usted."
 
 #: templates/instances/index.html:57
 msgid ""
@@ -373,47 +423,55 @@ msgid ""
 "Browse by date, speaker or segment. Link to and share one statement, or "
 "entire interviews, with ease."
 msgstr ""
+"Buscar por palabra clave, a través de toda su canon o dentro de una sola "
+"entrevista. Navegar por fecha, el ponente o segmento. Link a y compartir una "
+"declaración, o entrevistas enteras, con facilidad."
 
 #: templates/instances/index.html:58
 msgid "The Nixon Watergate tapes"
-msgstr ""
+msgstr "Las cintas de Nixon de Watergate"
 
 #: templates/instances/index.html:61
 msgid "President Nixon’s profile page in the Watergate Tapes SayIt"
-msgstr ""
+msgstr "Página de perfil del presidente Nixon en las cintas del caso Watergate"
 
 #: templates/instances/index.html:67
 msgid "And lots, lots more!"
-msgstr ""
+msgstr "Y mucho, mucho más!"
 
 #: templates/instances/index.html:68
 msgid ""
 "SayIt isn’t just for work: it’s for anyone who wants to collect statements "
 "on any subject, or publish any form of spoken word."
 msgstr ""
+"SayIt no es sólo para el trabajo: es para cualquier persona que quiere "
+"recoger declaraciones sobre cualquier tema, o publicar cualquier tipo de "
+"palabra hablada."
 
 #: templates/instances/index.html:69
 msgid ""
 "From wartime love-letters to local history projects, SayIt is a wonderful, "
 "easy-access way to organise transcripts."
 msgstr ""
+"Desde tiempos de guerra cartas de amor a los proyectos de historia local, "
+"SayIt es una manera maravillosa, de fácil acceso, para organizar "
+"transcripciones."
 
 #: templates/instances/index.html:70
-#, fuzzy
 msgid "The complete works of Shakespeare"
-msgstr "Obras de Shakespeare"
+msgstr "Las obras completas de Shakespeare"
 
 #: templates/instances/index.html:76
 msgid "Create your own SayIt and get started in seconds!"
-msgstr ""
+msgstr "Crea tu propio SayIt y empeza en cuestión de segundos!"
 
 #: templates/instances/index.html:77
 msgid "Start collecting speeches with SayIt"
-msgstr ""
+msgstr "Comience a recoger discursos con SayIt"
 
 #: templates/instances/index.html:84
 msgid "Or integrate the SayIt Component into your own website"
-msgstr ""
+msgstr "O integra el componente SayIt en su propio sitio web"
 
 #: templates/instances/index.html:89
 msgid ""
@@ -421,11 +479,14 @@ msgid ""
 "Component</a>, which means you can quickly host it on your own server, "
 "customise the look and feel, or build it into an existing website."
 msgstr ""
+"El código que se ejecuta SayIt es también un <a href=\"http://poplus.org\"> "
+"Componente Poplus </ a>, lo que significa que puede rápidamente alojarlo en "
+"su propio servidor, personalizar el aspecto y la sensación, o construirlo en "
+"un sitio web existente."
 
 #: templates/instances/index.html:92
-#, fuzzy
 msgid "Develop with SayIt"
-msgstr "Bienvenido a SayIt"
+msgstr "Desarrollar con SayIt"
 
 #: templates/instances/instance_form.html:6
 #: templates/instances/instance_form.html:18
@@ -437,6 +498,8 @@ msgid ""
 "SayIt gives you your own site for publishing and sharing speeches and "
 "statements."
 msgstr ""
+"SayIt le da su propio sitio para publicar y compartir discursos / actas y "
+"declaraciones."
 
 #: templates/instances/instance_form.html:23
 msgid ""
@@ -445,210 +508,44 @@ msgid ""
 "statements by political candidates). It&rsquo;s free and constantly "
 "improving."
 msgstr ""
+"Usted puede usarlo para publicar transcripciones de las reuniones "
+"individuales, o las rag-bag / bases de datos de todo lo dicho por una "
+"persona o grupo de personas (por ejemplo, declaraciones de los candidatos "
+"políticos). Es gratis y se esta mejorando constantemente."
 
 #: templates/instances/instance_form.html:48
 msgid "roman-senate"
-msgstr ""
+msgstr "Senado Romano"
 
 #: templates/instances/instance_form.html:62
 msgid "Speeches by Ancient Roman Senators"
-msgstr ""
+msgstr "Los discursos de los antiguos senadores romanos"
 
 #: templates/instances/instance_form.html:70
 msgid "Selected speeches from roughly 700 BC to 400 AD"
-msgstr ""
+msgstr "Discursos seleccionados desde aproximadamente el año 700 aC al 400 dC"
 
 #: templates/instances/instance_form.html:78
-#, fuzzy
 msgid "Update instance"
-msgstr "Editar instancia"
+msgstr "actualizar instancia"
 
 #: templates/messages/accept_invite_success.txt:2
 msgid "Password set. You can now create and edit speeches and sections."
 msgstr ""
+"Fijar contraseña. Ahora puede crear y editar los discursos y las secciones."
 
 #: templates/speeches/home.html:9
-#, fuzzy
 msgid "Add a new speech"
-msgstr "Agregar transcripcion"
+msgstr "Añadir un nuevo discurso"
 
 #: templates/speeches/home.html:10
-#, fuzzy
 msgid "Add a section"
-msgstr "Agregar sección"
+msgstr "Añadir una sección"
 
 #: templates/speeches/home.html:11
 msgid "Invite friends to help"
-msgstr ""
+msgstr "Invita a tus amigos para ayudar"
 
 #: templates/speeches/speech_form.html:5
 msgid "Invite some friends to help you"
-msgstr ""
-
-#~ msgid "Admin"
-#~ msgstr "Administrador"
-
-#~ msgid "Add speaker"
-#~ msgstr "Agregar ponente"
-
-#~ msgid "Add PopIt instance"
-#~ msgstr "Agregar instancia Popit"
-
-#~ msgid "Your recordings"
-#~ msgstr "Tus registros"
-
-#~ msgid "Your token"
-#~ msgstr "Tu token"
-
-#~ msgid ""
-#~ "Transcripts of political debates, campaign speeches, and trials are stuck "
-#~ "in the last century"
-#~ msgstr ""
-#~ "Las transcripciones de los debates políticos, los discursos de campaña, y "
-#~ "los ensayos están atrapados en el siglo pasado"
-
-#~ msgid "We think the public deserve better"
-#~ msgstr "Creemos que el público merece algo mejor"
-
-#~ msgid "So we are building <strong>SayIt</strong>"
-#~ msgstr "Así que estamos construyendo <strong> SayIt </ strong>"
-
-#~ msgid ""
-#~ "Free, open source technology to bring searchable transcripts to your "
-#~ "website."
-#~ msgstr ""
-#~ "Libre, con tecnología de código abierto con funciones de búsqueda en las "
-#~ "transcripciones para tu web"
-
-#~ msgid "Now in Alpha"
-#~ msgstr "Ahora Alpha"
-
-#~ msgid "SayIt makes it easy to search, browse and share transcripts"
-#~ msgstr ""
-#~ "SayIt hace que sea fácil de buscar, explorar y compartir las "
-#~ "transcripciones"
-
-#~ msgid "See our demos"
-#~ msgstr "Vea nuestras demostraciones"
-
-#~ msgid "Read the <strong>Leveson Inquiry</strong> transcripts"
-#~ msgstr ""
-#~ "Lea las transcripciones de la <strong> Investigación Leveson </strong> "
-
-#~ msgid "Read the <strong>Charles Taylor Trial</strong> transcripts"
-#~ msgstr ""
-#~ "Lea las transcripciones de la <strong> Juicio Charles Taylor </strong> "
-
-#~ msgid "Read the <strong>Plays of Shakespeare</strong>"
-#~ msgstr "Lea las <strong> Obras de Shakespeare </ strong>"
-
-#~ msgid "Build sites with SayIt"
-#~ msgstr "Construir sitios con SayIt"
-
-#~ msgid ""
-#~ "SayIt is a Django application that can be integrated into your own sites "
-#~ "or apps, or run as a standalone site"
-#~ msgstr ""
-#~ "SayIt es una aplicación Django que se puede integrar en sus propios "
-#~ "sitios o aplicaciones, o ejecuta como un sitio independiente"
-
-#~ msgid "SayIt is a Poplus component"
-#~ msgstr "SayIt es un componente Poplus"
-
-#~ msgid ""
-#~ "Poplus is an international network of civic hackers building open source "
-#~ "components. The aim? To decrease the cost of running services that help "
-#~ "drive accountability."
-#~ msgstr ""
-#~ "Poplus es una red internacional de hackers cívicos que construyen "
-#~ "componentes de código abierto. El objetivo? Reducir el costo de "
-#~ "funcionamiento de los servicios que ayudan a la rendición de cuentas en "
-#~ "coche."
-
-#~ msgid "We need your help"
-#~ msgstr "Necesitamos su ayuda"
-
-#~ msgid "We are sharing SayIt early because we need help from:"
-#~ msgstr "Estamos compartiendo SayIt temprano porque necesitamos la ayuda de:"
-
-#~ msgid "Reporters"
-#~ msgstr "Reporteros"
-
-#~ msgid "To make sure SayIt supports newsmakers"
-#~ msgstr "Para asegurarse SayIt apoya protagonistas de las noticias"
-
-#~ msgid "Campaigners"
-#~ msgstr "Los activistas"
-
-#~ msgid "To make SayIt work for change-makers"
-#~ msgstr "Para hacer el trabajo SayIt para agentes de cambio"
-
-#~ msgid "Public Servants"
-#~ msgstr "Servidores Públicos"
-
-#~ msgid "To start getting standardised official data published"
-#~ msgstr "Para empezar a recibir datos oficiales normalizados publicados"
-
-#~ msgid "To help convert transcripts and test integration"
-#~ msgstr ""
-#~ "Para ayudar a convertir las transcripciones y las pruebas de integración"
-
-#~ msgid "Interested people"
-#~ msgstr "Las personas interesadas"
-
-#~ msgid "To help make SayIt&rsquo;s user experience great"
-#~ msgstr "Para ayudar a que la experiencia de usuario sea genial"
-
-#~ msgid "Developers!"
-#~ msgstr "Desarrolladores!"
-
-#~ msgid "SayIt is open source and built on open standards"
-#~ msgstr "SayIt es de código abierto y basado en estándares abiertos"
-
-#~ msgid "Campaigners, Reporters, Public servants, Citizens, Everyone!"
-#~ msgstr ""
-#~ "Los activistas, periodistas, funcionarios públicos, ciudadanos, todos!"
-
-#~ msgid "We really want to know what you want from SayIt"
-#~ msgstr "Tenemos muchas ganas de saber lo que quiere de SayIt"
-
-#~ msgid "Get in touch"
-#~ msgstr "Mantente en contacto"
-
-#~ msgid "And we’re not done yet"
-#~ msgstr "Y nosotros no hemos terminado todavía"
-
-#~ msgid "The Alpha is complete, but SayIt is still in development"
-#~ msgstr "La version Alpha esta completa, pero Sayit aun esta en desarrollo"
-
-#~ msgid "Alpha"
-#~ msgstr "Alpha"
-
-#~ msgid "Done"
-#~ msgstr "Hecho"
-
-#~ msgid ""
-#~ "Publish transcripts that have been converted into an open standard we "
-#~ "have adopted."
-#~ msgstr ""
-#~ "Publicar transcripciones que se han convertido en un estándar abierto que "
-#~ "hemos adoptado."
-
-#~ msgid "Beta"
-#~ msgstr "Beta"
-
-#~ msgid "Next"
-#~ msgstr "Siguiente"
-
-#~ msgid ""
-#~ "The ability to directly author new transcripts through a web-based user "
-#~ "interface."
-#~ msgstr ""
-#~ "La capacidad de crear directamente nuevas transcripciones a través de una "
-#~ "interfaz de usuario basada en la web."
-
-#~ msgid "We're sure you have questions"
-#~ msgstr "Estamos seguros que usted tiene preguntas"
-
-#~ msgid "Edit the title and description of your instance here."
-#~ msgstr "Edita aquí el titulo y la descripción de tu instancia"
+msgstr "Invite a algunos amigos que te ayuden"
