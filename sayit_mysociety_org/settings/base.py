@@ -5,6 +5,7 @@ import os
 import sys
 from django.conf import global_settings
 from .paths import *
+from slugify import slugify
 
 # Get the changeable configuration
 from .mysociety import *
@@ -257,6 +258,8 @@ if DEBUG_TOOLBAR:
     DEBUG_TOOLBAR_PATCH_SETTINGS = False
     MIDDLEWARE_CLASSES.append( 'debug_toolbar.middleware.DebugToolbarMiddleware' )
     INSTALLED_APPS.append( 'debug_toolbar' )
+
+SLUGGABLE_SLUGIFY_FUNCTION = slugify
 
 # Allow local changes of settings
 try:
