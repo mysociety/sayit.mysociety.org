@@ -10,7 +10,7 @@ from conservative.parse import parse_speech
 
 
 class Parser(BaseParser):
-    instance = 'old-conservative-speeches'
+    instance = 'party-speeches'
 
     def get_transcripts(self):
         return get_speeches()

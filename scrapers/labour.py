@@ -11,7 +11,7 @@ from labour.parse import parse_speech, ParsingError
 
 
 class Parser(BaseParser):
-    instance = 'old-labour-speeches'
+    instance = 'party-speeches'
 
     index_url = 'http://www.labour.org.uk/news-archive'
     # If you want to start on a later page, the index url looks something
