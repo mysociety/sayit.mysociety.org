@@ -117,6 +117,7 @@ INSTALLED_APPS = [
     'haystack',
     'south',
     'django_select2',
+    'easy_thumbnails',
     'tastypie',
     'django_bleach',
     'pipeline',
@@ -189,6 +190,10 @@ APPEND_SLASH = False
 # Don't use migrations in testing - makes things faster and avoids
 # errors with difference between sqlite and postgres
 SOUTH_TESTS_MIGRATE = False
+
+SOUTH_MIGRATION_MODULES = {
+    'easy_thumbnails': 'easy_thumbnails.south_migrations',
+}
 
 AUTHENTICATION_BACKENDS = (
     'login_token.auth_backend.LoginTokenBackend',
