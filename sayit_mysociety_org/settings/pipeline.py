@@ -57,6 +57,18 @@ PIPELINE_CSS = {
         ),
         'output_filename': 'css/project-shakespeare.css',
     },
+    'sayit-labour': {
+        'source_filenames': (
+            'sass/project-labour.scss',
+        ),
+        'output_filename': 'css/project-labour.css',
+    },
+    'sayit-conservative': {
+        'source_filenames': (
+            'sass/project-conservative.scss',
+        ),
+        'output_filename': 'css/project-conservative.css',
+    },
 }
 
 PIPELINE_JS = {

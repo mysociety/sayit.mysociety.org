@@ -33,6 +33,10 @@
         {% block extra_css %}
         {% if request.instance.label == 'shakespeare' %}
             {% compressed_css 'sayit-shakespeare' %}
+        {% elif request.instance.label == 'labour-speeches' %}
+            {% compressed_css 'sayit-labour' %}
+        {% elif request.instance.label == 'conservative-speeches' %}
+            {% compressed_css 'sayit-conservative' %}
         {% else %}
             {% compressed_css 'sayit-default' %}
         {% endif %}

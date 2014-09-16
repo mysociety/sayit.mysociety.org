@@ -1,0 +1,9 @@
+@import "speeches/sass/settings";
+
+// Labour Party Speeches instance has a different primary color (red)
+$colour_primary: #e14848;
+
+@import "_foundation.scss";
+@import "_speeches.scss";
+
+@import "_project.scss";

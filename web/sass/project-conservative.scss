@@ -1,0 +1,9 @@
+@import "speeches/sass/settings";
+
+// Conservative Party Speeches instance has a different primary color (blue)
+$colour_primary: #3e75c2;
+
+@import "_foundation.scss";
+@import "_speeches.scss";
+
+@import "_project.scss";
