@@ -16,7 +16,4 @@ beautifulsoup4
 requests_cache
 django-apptemplates==0.0.1
 
-# A slugify that deals with all-non-Latin characters:
-python-slugify==0.0.7
-
 -e git+https://github.com/mysociety/sayit#egg=django-sayit
