@@ -219,6 +219,9 @@ from .pipeline import *
 # django-bleach configuration
 from .bleach import *
 
+# easy-thumbnails configuration
+from .thumbnails import *
+
 # Cookies
 SESSION_COOKIE_DOMAIN = BASE_HOST
 SESSION_COOKIE_NAME = 's'

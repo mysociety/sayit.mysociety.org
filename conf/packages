@@ -14,6 +14,9 @@ postgresql
 python-psycopg2
 libpq-dev
 
+# Face recognition thumbnails
+python-opencv
+
 # MPG/OGG/3GP -> WAV conversion tools
 # Note that these both need to be relatively recent versions
 # The versions from squeeze-backports or ubuntu 12.04 (0.8.3 and 0.8.4) are good
