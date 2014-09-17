@@ -7,10 +7,8 @@ set -e
 cd `dirname $0`/..
 
 # create/update the virtual environment
-# NOTE: some packages are difficult to install if they are not site packages,
-# for example xapian. If using these you might want to add the
-# '--enable-site-packages' argument.
-virtualenv --no-site-packages ../virtualenv-sayit
+# --system-site-packages is present so we can use python-opencv with ease.
+virtualenv --system-site-packages ../virtualenv-sayit
 source ../virtualenv-sayit/bin/activate
 pip install --requirement requirements.txt
 
