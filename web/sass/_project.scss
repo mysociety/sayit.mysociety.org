@@ -633,6 +633,17 @@ label {
     }
 }
 
+.homepage-description {
+  text-align: center;
+  font-size: emCalc(18);
+  max-width: 42em;
+  margin: 2em auto 0 auto;
+
+  @media (min-width: $medium-screen) {
+      margin-top: 0;
+  }
+}
+
 .homepage-stats {
     text-align: center;
     padding: 1em 0 3em;
