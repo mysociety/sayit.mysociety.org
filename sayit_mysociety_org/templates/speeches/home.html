@@ -1,8 +1,6 @@
 {% extends 'speeches/_home.html' %}
 {% load i18n %}
 
-{% block title %}{{ request.instance.title }}{% endblock %}
-
 {% block content %}
   {% if request.is_user_instance %}
     <div class="page-header">

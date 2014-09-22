@@ -1,13 +1,17 @@
 {% load staticfiles %}{% load url from future %}{% load i18n %}{% load compressed %}<!DOCTYPE html>
 <html class="no-js">
     <head>
-        <title>{% block fulltitle %}{% block title %}{% endblock %} :: SayIt{% endblock %}</title>
+        <title>{% block fulltitle %}{% block title %}{{ title }}{% endblock %}
+          {% if request.instance %}
+            :: {% filter force_escape %}{% firstof request.instance.title request.instance.label %}{% endfilter %}
+          {% endif %}
+            :: SayIt{% endblock %}</title>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-        <meta property="og:url" content="http://sayit.mysociety.org/">
-        <meta property="og:title" content="Sayit">
-        <meta property="og:site_name" content="Sayit">
+        <meta property="og:url" content="{{ request.build_absolute_uri }}">
+        <meta property="og:title" content="{% if title %}{{ title }} ::{% endif %}{% if request.instance %}{% filter force_escape %}{% firstof request.instance.title request.instance.label %}{% endfilter %} :: {% endif %}SayIt</title>
+        <meta property="og:site_name" content="SayIt">
         <meta property="og:description" content="Transcripts for the modern internet">
         <meta property="og:type" content="website">
         <meta property="og:image" content="{% static "img/apple-touch-icon-152x152.png" %}">
