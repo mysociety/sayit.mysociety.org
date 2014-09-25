@@ -9,15 +9,22 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-        <meta property="og:url" content="{{ request.build_absolute_uri }}">
-        <meta property="og:title" content="{% if title %}{{ title }} ::{% endif %}{% if request.instance %}{% filter force_escape %}{% firstof request.instance.title request.instance.label %}{% endfilter %} :: {% endif %}SayIt">
-        <meta property="og:site_name" content="SayIt">
-        <meta property="og:description" content="Transcripts for the modern internet">
-        <meta property="og:type" content="website">
-        <meta property="og:image" content="{% static "img/apple-touch-icon-152x152.png" %}">
-        <meta property="og:image:type" content="image/png">
-        <meta property="og:image:width" content="152">
-        <meta property="og:image:height" content="152">
+        {% block opengraph %}
+          <meta property="og:url" content="{% block og_url %}{{ request.build_absolute_uri }}{% endblock %}">
+          <meta property="og:title" content="{% block og_title %}{% if title %}{{ title }} ::{% endif %}{% if request.instance %}{% filter force_escape %}{% firstof request.instance.title request.instance.label %}{% endfilter %} :: {% endif %}SayIt{% endblock %}">
+          <meta property="og:site_name" content="{% block og_site_name %}SayIt{% endblock %}">
+          <meta property="og:description" content="{% block og_description %}Transcripts for the modern internet{% endblock %}">
+          <meta property="og:type" content="{% block og_type %}website{% endblock %}">
+          <meta property="og:image" content="{% block og_image %}http{% if request.is_secure %}s{% endif %}://{{ request.get_host }}{% static "speeches/img/apple-touch-icon-152x152.png" %}{% endblock %}">
+
+          {% block og_image_details %}
+            <meta property="og:image:type" content="{% block og_image_type %}image/png{% endblock %}">
+            {% block og_image_dimensions %}
+              <meta property="og:image:width" content="{% block og_image_width %}152{% endblock %}">
+              <meta property="og:image:height" content="{% block og_image_height %}152{% endblock %}">
+            {% endblock og_image_dimensions %}
+          {% endblock og_image_details %}
+        {% endblock opengraph %}
 
         {% if 'sayit.staging.mysociety.org' in request.get_host %}
             {% if request.instance %}
