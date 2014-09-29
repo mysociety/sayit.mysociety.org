@@ -231,7 +231,7 @@ class ShareInstanceTests(InstanceTestCase):
 
         # Verify that the subject of the first message is correct.
         self.assertIn(
-            'You have been invited to a SayIt',
+            'You\'ve been invited to help edit "Test Instance"',
             mail.outbox[0].subject,
             )
 
@@ -247,12 +247,12 @@ class ShareInstanceTests(InstanceTestCase):
 
         # Verify that the subject of the first message is correct.
         self.assertIn(
-            'You have been invited to a SayIt',
+            'You\'ve been invited to help edit "Test Instance"',
             invite_message.subject,
             )
 
         # Get the link out of the invitation email
-        link = re.search(r'http://.*/\n', invite_message.body).group(0)
+        link = re.search(r'http://[^ ]*', invite_message.body).group(0)
         parsed_link = urlparse.urlsplit(link)
 
         self.assertEqual(parsed_link.netloc, self.client.defaults['HTTP_HOST'])
@@ -297,6 +297,6 @@ class ShareInstanceTests(InstanceTestCase):
 
         # Verify that the subject of the first message is correct.
         self.assertIn(
-            'You have been invited to a SayIt',
+            'You\'ve been invited to help edit "Test Instance"!',
             mail.outbox[0].subject,
             )

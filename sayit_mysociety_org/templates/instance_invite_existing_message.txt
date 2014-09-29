@@ -1,9 +1,10 @@
-{% load i18n %}{% blocktrans with instance.get_absolute_url as instance_url and user.username as username and user.email as email and instance.title as instance_title %}You have been invited to edit a SayIt instance.
+{% load i18n %}{% blocktrans with instance.get_absolute_url as instance_url and inviter.username as inviter and instance.title as instance_title %}{{ inviter }} has invited you to help edit "{{ instance_title }}" on SayIt.
 
-Title: {{ instance_title }}
-
-You can log in and start creating and editing speeches immediately at:
+As you're already a SayIt user, you can log in with your existing credentials,
+and get stuck in immediately. Just go to:
 
 {{ instance_url }}
 
+Yours,
+The SayIt Team
 {% endblocktrans %}

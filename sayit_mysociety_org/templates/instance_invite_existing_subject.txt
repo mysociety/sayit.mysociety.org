@@ -1,4 +1,4 @@
 {% load i18n %}
 {% autoescape off %}
-{% blocktrans with instance.title as instance_title %}You have been invited to a SayIt: {{ instance_title }}{% endblocktrans %}
+{% blocktrans with instance.title as instance_title %}You've been invited to help edit "{{ instance_title }}" on SayIt!{% endblocktrans %}
 {% endautoescape %}

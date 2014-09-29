@@ -64,7 +64,11 @@ class ShareWithCollaborators(InstanceFormMixin, FormView):
 
         users = form.users
         if users:
-            context = {"instance": self.request.instance}
+            context = {
+                "instance": self.request.instance,
+                "inviter": self.request.user,
+                "invitee": users[0],
+                }
             get_adapter().send_mail('instance_invite_existing',
                                     email,
                                     context)
@@ -97,7 +101,8 @@ class ShareWithCollaborators(InstanceFormMixin, FormView):
             url = urlparse.urljoin(instance_url, path)
             context = {
                 "instance": self.request.instance,
-                "user": user,
+                "inviter": self.request.user,
+                "invitee": user,
                 "password_reset_url": url,
                 }
             get_adapter().send_mail('accept_invite',

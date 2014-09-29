@@ -1,10 +1,14 @@
-{% load i18n %}{% blocktrans with site.domain as site_domain and user.username as username and user.email as email and instance.title as instance_title %}You have been invited to edit a SayIt instance.
+{% load i18n %}{% blocktrans with invitee.username as invitee and inviter.username as inviter and instance.title as instance_title %}Hello {{ invitee }},
 
-Title: {{ instance_title }}
+Here's something - {{ inviter }} has invited you to help edit
+"{{ instance_title }}" on SayIt.
 
-Please go to
+SayIt is a very simple way of storing and publishing speeches and transcripts
+online. Getting started is easy.
 
-{{ password_reset_url }}
+As a first step, please go to {{ password_reset_url }} to set up your account,
+and then you can start adding speeches.
 
-to set up your account and start adding speeches.
+Yours,
+The SayIt Team
 {% endblocktrans %}
