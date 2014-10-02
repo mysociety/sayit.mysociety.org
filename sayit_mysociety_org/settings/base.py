@@ -272,3 +272,6 @@ try:
         exec(compile(f.read(), 'local.py', 'exec'))
 except IOError:
     pass
+
+if BASE_HOST is None:
+    raise ImproperlyConfigured, "BASE_HOST setting is required"

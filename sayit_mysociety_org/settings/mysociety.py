@@ -33,8 +33,6 @@ SECRET_KEY = config.get('DJANGO_SECRET_KEY')
 GOOGLE_ANALYTICS_ACCOUNT = config.get('GOOGLE_ANALYTICS_ACCOUNT')
 
 BASE_HOST = config.get('BASE_HOST')
-if BASE_HOST is None:
-    raise ImproperlyConfigured, "BASE_HOST must be defined in %s" % (config_file,)
 BASE_PORT = config.get('BASE_PORT')
 
 # Content formatting
