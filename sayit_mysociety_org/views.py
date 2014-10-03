@@ -52,7 +52,7 @@ class InstanceCreate(CreateView):
             )
 
 
-class ShareWithCollaborators(FormView, InstanceFormMixin):
+class ShareWithCollaborators(InstanceFormMixin, FormView):
     template_name = 'share_instance_with_collaborators.html'
 
     form_class = ShareForm

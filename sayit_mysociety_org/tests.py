@@ -20,6 +20,11 @@ class SmokeTests(InstanceTestCase):
 
 
 class ShareInstanceTests(InstanceTestCase):
+    def test_share_form_only_logged_in(self):
+        self.client.logout()
+        resp = self.client.get('/instance/share')
+        self.assertRedirects(resp, '/accounts/login/?next=/instance/share')
+
     def test_share_form_exists(self):
         resp = self.client.get('/instance/share')
         self.assertContains(resp, 'Share your SayIt', status_code=200)
