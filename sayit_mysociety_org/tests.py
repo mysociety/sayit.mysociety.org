@@ -5,11 +5,18 @@ import urlparse
 
 from django.core import mail
 from django.contrib.auth import get_user_model
+from django.test import TestCase
 
 from instances.tests import InstanceTestCase
 
-from speeches.models import Speaker, Section
-from instances.models import Instance
+
+class SmokeTestsNoInstance(TestCase):
+    """Very basic tests for non-instance pages"""
+    def test_homepage(self):
+        """Check that the home page returns OK."""
+        resp = self.client.get('/')
+        self.assertEquals(resp.status_code, 200)
+
 
 class SmokeTests(InstanceTestCase):
     """Very basic tests to make sure we can see anything at all."""
