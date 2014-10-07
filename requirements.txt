@@ -16,4 +16,5 @@ beautifulsoup4
 requests_cache
 django-apptemplates==0.0.1
 
+django-subdomain-instances==0.9
 -e git+https://github.com/mysociety/sayit#egg=django-sayit
