@@ -1,0 +1,56 @@
+{% extends 'base.html' %}
+{% load i18n %}
+
+{% block title %}{% trans "Your Instances" %}{% endblock %}
+
+{% block instanceheader %}{% endblock %}
+
+{% block content %}
+  <div class="page-header">
+      <h1>{% trans "Your Instances" %}</h1>
+  </div>
+
+  {% if object_list %}
+    <ul class="instance-list">
+      {% for instance in object_list %}
+        <li>
+          <a href='{{ instance.get_absolute_url }}'>
+            <div class='instance-card'>
+              <h3 class='instance-card__title'>{{ instance.title }}</h3>
+              {% if instance.description %}
+                <span class='instance-card__description'>
+                  {{ instance.description|truncatechars:100 }}
+                </span>
+              {% else %}
+                <span class='instance-card__description--missing'>
+                  {% trans "(no description)" %}
+                </span>
+              {% endif %}
+              {% comment %}
+                This is really just a placeholder for someone with design skills.
+                We can't currently display the username, as it might be generated
+                and ugly, and we can't currently display firstname/lastname,
+                as we probably don't have them.
+
+                I guess we could display the creator's email address if that's
+                already been made known to someone invited to use an instance.
+              {% endcomment %}
+              {% if instance.created_by == request.user %}
+                <span class='instance-card__created-by'>
+                  {% trans "(created by you)" %}
+                </span>
+              {% endif %}
+            </div>
+          </a>
+        </li>
+      {% endfor %}
+    </ul>
+  {% else %}
+    <p>
+      {% url 'create_instance' as create_instance_url %}
+      {% blocktrans %}
+        You have don't yet have any instances. Would you like to <a href='{{ create_instance_url }}'>create one</a>?" %}
+      {% endblocktrans %}
+    </p>
+  {% endif %}
+{% endblock %}

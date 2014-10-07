@@ -8,6 +8,7 @@ from django.contrib.auth import get_user_model
 from django.test import TestCase
 
 from instances.tests import InstanceTestCase
+from instances.models import Instance
 
 
 class SmokeTestsNoInstance(TestCase):
@@ -16,6 +17,186 @@ class SmokeTestsNoInstance(TestCase):
         """Check that the home page returns OK."""
         resp = self.client.get('/')
         self.assertEquals(resp.status_code, 200)
+
+
+class NoInstanceLoginRedirect(TestCase):
+    def test_login_redirects_to_your_instances(self):
+        alice = get_user_model().objects.create_user(
+            'alice', email='alice@example.com', password='foo')
+
+        resp = self.client.post(
+            '/accounts/login/',
+            {'login': 'alice', 'password': 'foo'},
+            )
+
+        self.assertRedirects(resp, '/accounts/profile/')
+
+
+class InstanceLoginRedirect(InstanceTestCase):
+    def test_login_redirects_to_instance_home(self):
+        alice = get_user_model().objects.create_user(
+            'alice', email='alice@example.com', password='foo')
+
+        resp = self.client.post(
+            '/accounts/login/',
+            {'login': 'alice', 'password': 'foo'},
+            follow=True,
+            )
+
+        self.assertRedirects(resp, '/')
+
+
+class YourInstancesTests(TestCase):
+    @classmethod
+    def setUpClass(cls):
+        cls.alice = get_user_model().objects.create_user(
+            'alice', email='alice@example.com', password='foo')
+
+        cls.bob = get_user_model().objects.create_user(
+            'bob', email='bob@example.com', password='foo')
+
+        return super(YourInstancesTests, cls).setUpClass()
+
+    @classmethod
+    def tearDownClass(cls):
+        cls.alice.delete()
+        cls.bob.delete()
+        return super(YourInstancesTests, cls).tearDownClass()
+
+    def test_not_logged_in(self):
+        self.client.logout()
+        resp = self.client.get('/accounts/profile/')
+        self.assertRedirects(resp, '/accounts/login/?next=/accounts/profile/')
+
+    def test_no_instances(self):
+        self.client.login(username='alice', password='foo')
+        resp = self.client.get('/accounts/profile/')
+        self.assertContains(
+            resp,
+            "You have don't yet have any instances",
+            status_code=200,
+            )
+        self.assertContains(resp, "<a href='/instances/add'>create one")
+
+    def test_instance_no_description(self):
+        instance_no_description = Instance.objects.create(
+            label='bob-no-description',
+            title="Bob's Mystery Instance",
+            created_by=self.bob,
+            )
+        instance_no_description.users.add(self.bob)
+
+        self.client.login(username='bob', password='foo')
+        resp = self.client.get('/accounts/profile/')
+
+        self.assertContains(resp, "Bob&#39;s Mystery Instance", status_code=200)
+        self.assertContains(resp, "(created by you)")
+        self.assertContains(resp, "(no description)")
+
+        self.assertNotContains(
+            resp,
+            "You have don't yet have any instances",
+            )
+        self.assertNotContains(resp, "<a href='/instances/add'>create one")
+
+        instance_no_description.delete()
+        self.client.logout()
+
+    def test_instance_with_description(self):
+        instance_with_description = Instance.objects.create(
+            label='bob-with-description',
+            title="Bob's Quotes",
+            description="Quotes go here.",
+            created_by=self.bob,
+            )
+        instance_with_description.users.add(self.bob)
+
+        self.client.login(username='bob', password='foo')
+        resp = self.client.get('/accounts/profile/')
+
+        self.assertContains(resp, "Bob&#39;s Quotes", status_code=200)
+        self.assertContains(resp, "(created by you)")
+        self.assertNotContains(resp, "(no description)")
+        self.assertContains(resp, "Quotes go here.")
+
+        instance_with_description.delete()
+        self.client.logout()
+
+    def test_instance_long_description(self):
+        instance_long_description = Instance.objects.create(
+            label='bob-with-long-description',
+            # http://www.gutenberg.org/cache/epub/1064/pg1064.txt
+            title="The Masque of the Red Death",
+            description="""
+The "Red Death" had long devastated the country.  No pestilence had
+ever been so fatal, or so hideous.  Blood was its Avatar and its
+seal--the redness and the horror of blood.  There were sharp pains, and
+sudden dizziness, and then profuse bleeding at the pores, with
+dissolution.  The scarlet stains upon the body and especially upon the
+face of the victim, were the pest ban which shut him out from the aid
+and from the sympathy of his fellow-men. And the whole seizure,
+progress and termination of the disease, were the incidents of half an
+hour.
+
+But the Prince Prospero was happy and dauntless and sagacious. When his
+dominions were half depopulated, he summoned to his presence a thousand
+hale and light-hearted friends from among the knights and dames of his
+court, and with these retired to the deep seclusion of one of his
+castellated abbeys.  This was an extensive and magnificent structure,
+the creation of the prince's own eccentric yet august taste.  A strong
+and lofty wall girdled it in. This wall had gates of iron.  The
+courtiers, having entered, brought furnaces and massy hammers and
+welded the bolts.  They resolved to leave means neither of ingress nor
+egress to the sudden impulses of despair or of frenzy from within.  The
+abbey was amply provisioned.  With such precautions the courtiers might
+bid defiance to contagion.  The external world could take care of
+itself.  In the meantime it was folly to grieve, or to think.  The
+prince had provided all the appliances of pleasure.  There were
+buffoons, there were improvisatori, there were ballet-dancers, there
+were musicians, there was Beauty, there was wine.  All these and
+security were within.  Without was the "Red Death".
+
+It was towards the close of the fifth or sixth month of his seclusion,
+and while the pestilence raged most furiously abroad, that the Prince
+Prospero entertained his thousand friends at a masked ball of the most
+unusual magnificence.
+""",
+            created_by=self.bob,
+            )
+        instance_long_description.users.add(self.bob)
+
+        self.client.login(username='bob', password='foo')
+        resp = self.client.get('/accounts/profile/')
+
+        self.assertContains(resp, "The Masque of the Red Death", status_code=200)
+        self.assertContains(
+            resp,
+            """The &quot;Red Death&quot; had long devastated the country.  No pestilence had
+ever been so fatal, or so hi...""")
+
+        instance_long_description.delete()
+        self.client.logout()
+
+    def test_someone_elses_instance(self):
+        instance = Instance.objects.create(
+            label='bobs-instance',
+            title="Bob's Instance",
+            created_by=self.bob,
+            )
+        instance.users.add(self.alice)
+
+        self.client.login(username='alice', password='foo')
+        resp = self.client.get('/accounts/profile/')
+
+        self.assertContains(
+            resp,
+            "Bob&#39;s Instance",
+            status_code=200,
+            )
+        self.assertNotContains(resp, '(created by you)')
+
+        instance.delete()
+        self.client.logout()
 
 
 class SmokeTests(InstanceTestCase):

@@ -5,6 +5,7 @@ from tastypie.resources import ModelResource
 from tastypie.api import Api
 
 from instances.models import Instance
+from instances.views import YourInstances
 
 from views import InstanceCreate
 
@@ -31,9 +32,10 @@ urlpatterns = patterns('',
 
     url(r'^accounts/tokens/?$', 'login_token.views.login_tokens_for_user', name='tokens'),
     (r'^accounts/mobile-login', 'login_token.views.check_login_token'),
+    url(r'^accounts/profile/', YourInstances.as_view(), name='your_instances'),
     (r'^accounts/', include('allauth.urls')),
 
-    (r'^instances/add', InstanceCreate.as_view()),
+    url(r'^instances/add', InstanceCreate.as_view(), name='create_instance'),
 
     (r'^api/', include(v01_api.urls)),
     (r'^about', include('about.urls')),
