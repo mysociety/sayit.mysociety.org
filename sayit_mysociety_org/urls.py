@@ -5,6 +5,7 @@ from django.conf import settings
 from django.conf.urls.static import static
 from django.conf.urls import patterns, include, url
 from django.contrib.staticfiles.urls import staticfiles_urlpatterns
+from django.views.generic.base import RedirectView
 
 from instances.views import InstanceUpdate
 
@@ -42,6 +43,8 @@ if settings.DEBUG and settings.DEBUG_TOOLBAR:
 urlpatterns += patterns(
     '',
 
+    # For an instance domain, redirect to the instance home on login.
+    ('^accounts/profile/', RedirectView.as_view(url='/', permanent=False)),
     (r'^accounts/', include('allauth.urls')),
 
     url(r'^instance/edit$', InstanceUpdate.as_view(), name='instance-edit'),
