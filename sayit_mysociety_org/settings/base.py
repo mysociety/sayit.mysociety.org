@@ -207,9 +207,6 @@ ACCOUNT_SIGNUP_PASSWORD_VERIFICATION = False
 ACCOUNT_EMAIL_REQUIRED = True
 SOCIALACCOUNT_EMAIL_REQUIRED = False
 
-# XXX This should be the user's profile page once such things exist
-LOGIN_REDIRECT_URL = '/'
-
 # Select2
 AUTO_RENDER_SELECT2_STATICS = False
 
