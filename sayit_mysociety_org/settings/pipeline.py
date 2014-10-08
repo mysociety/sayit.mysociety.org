@@ -38,6 +38,7 @@ PIPELINE_COMPILERS = (
     'pipeline_compass.compass.CompassCompiler',
 )
 import speeches
+PIPELINE_COMPASS_BINARY = os.path.join(PARENT_DIR, 'gem-bin', 'compass')
 PIPELINE_COMPASS_ARGUMENTS = '-I %s -r zurb-foundation' % os.path.join(speeches.__path__[0], 'static')
 
 # On some platforms this might be called "yuicompressor", so it may be
