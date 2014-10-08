@@ -98,6 +98,7 @@
             {% if request.user.is_authenticated %}
               <a href="#" data-dropdown="user-menu" class="dropdown">{{ request.user.username }}</a>
               <ul id="user-menu" class="f-dropdown" data-dropdown-content>
+                  <li><a href="{{ settings.BASE_HOST }}/accounts/profile/">{% trans "Your Instances" %}</a>
                   <li><a href="{% url 'account_logout' %}?next=/">{% trans "Log out" %}</a></li>
               </ul>
             {% else %}
