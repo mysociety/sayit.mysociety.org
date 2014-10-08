@@ -97,11 +97,6 @@ a {
     overflow-wrap: break-word;
     word-wrap: break-word;
 
-    -webkit-hyphens: auto;
-       -moz-hyphens: auto;
-        -ms-hyphens: auto;
-            hyphens: auto;
-
     color: $colour_primary;
 }
 
@@ -381,12 +376,11 @@ label {
 
 .instance-header__edit-instance {
   font-size: 0.6em;
-  opacity: 0.5;
   margin-left: 0.3em;
   padding: 0.2em 0.4em; // larger click target
 
   &:hover, &:focus {
-    opacity: 1;
+    text-decoration: underline;
   }
 }
 
@@ -661,10 +655,6 @@ label {
     display: block;
     margin: .75em 0;
     position: relative;
-    -webkit-hyphens: manual;
-       -moz-hyphens: manual;
-        -ms-hyphens: manual;
-            hyphens: manual;
     &:hover {
         text-decoration: none;
         @include box-shadow(0 0 2px 1px rgba(0, 0, 0, 0.1));
