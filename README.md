@@ -20,8 +20,7 @@ You will need to have the following installed:
 
 * [elasticsearch](http://elasticsearch.org/)
 
-* a database that handles recursive SQL – we've so far only tested it on
-  PostgreSQL.
+* PostgreSQL
 
 * The compass and zurb-foundation gems. Something like the following should
   install them, with the relevant gem bin directory then added to your `PATH`:
@@ -37,7 +36,7 @@ Clone the repository:
     cd sayit.mysociety.org
     git clone https://github.com/mysociety/sayit.mysociety.org
 
-Create a postgres database and user:
+Create a PostgreSQL database and user:
 
     sudo -u postgres psql
     postgres=# CREATE USER sayit WITH password 'sayit';
