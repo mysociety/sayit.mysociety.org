@@ -76,6 +76,7 @@ PIPELINE_JS = {
     'sayit-default-head': {
         'source_filenames': (
             'speeches/js/jquery.js',
+            'speeches/js/select2-override.js',
         ),
         'output_filename': 'js/sayit.head.min.js',
     },
