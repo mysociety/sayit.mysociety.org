@@ -3,10 +3,8 @@ python-dev
 python-pip
 python-virtualenv
 
-# Some dependencies in requirements.txt are listed as repos, so we need the
-# various repo management tools to fetch them
-# mercurial
-
+# Things needed to compile the CSS
+bundler
 yui-compressor
 
 # Database stuff
@@ -16,6 +14,10 @@ libpq-dev
 
 # Face recognition thumbnails
 python-opencv
+# Needed for Pillow to be able to handle various image types.
+libjpeg8-dev
+zlib1g-dev
+libpng12-dev
 
 # MPG/OGG/3GP -> WAV conversion tools
 # Note that these both need to be relatively recent versions
@@ -27,8 +29,3 @@ libavcodec-extra-53
 # you'll also need a browser and a display setup too
 # iceweasel
 # xvfb
-
-# Needed for Pillow to be able to handle various image types.
-libjpeg8-dev
-zlib1g-dev
-libpng12-dev
