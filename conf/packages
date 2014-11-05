@@ -29,3 +29,7 @@ libavcodec-extra-53
 # you'll also need a browser and a display setup too
 # iceweasel
 # xvfb
+
+# Needed for certificate verificition by python requests
+libffi-dev
+libssl-dev
