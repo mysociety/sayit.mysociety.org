@@ -27,8 +27,13 @@ You will need to have the following installed:
 
         gem install --user-install --no-document zurb-foundation compass
 
-You'll also need to have pip, virtualenv and yui-compressor (Debian/Ubuntu
-packages python-pip, python-virtualenv and yui-compressor).
+* pip, virtualenv and yui-compressor.
+
+* The development files for libffi and libssl
+  (if you're installing on a Mac, you might want to look at
+  https://cryptography.io/en/latest/installation/)
+
+There is a list of the required Debian/Ubuntu packages in conf/packages.
 
 Clone the repository:
 
