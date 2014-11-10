@@ -48,7 +48,7 @@
                     <input type="text" name="label" id="{{ form.label.id_for_label }}" value="{{ form.label.value|default_if_none:"" }}" placeholder="{% trans 'roman-senate' %}">
                 </div>
                 <div class="small-4 columns">
-                    <span class="postfix">.sayit.mysociety.org</span>
+                    <span class="postfix">.{{ settings.BASE_HOST }}</span>
                 </div>
             </div>
           {% if form.label.errors %}
