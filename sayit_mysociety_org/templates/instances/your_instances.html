@@ -48,9 +48,7 @@
   {% else %}
     <p>
       {% url 'create_instance' as create_instance_url %}
-      {% blocktrans %}
-        You have don't yet have any instances. Would you like to <a href='{{ create_instance_url }}'>create one</a>?" %}
-      {% endblocktrans %}
+      {% blocktrans %}You have don't yet have any instances. Would you like to <a href='{{ create_instance_url }}'>create one</a>?{% endblocktrans %}
     </p>
   {% endif %}
 {% endblock %}

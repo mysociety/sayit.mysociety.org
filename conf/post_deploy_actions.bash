@@ -37,3 +37,5 @@ bundle install --deployment --path ../gems --binstubs ../gem-bin
 
 # gather all the static files in one place
 ./manage.py collectstatic --noinput
+
+./manage.py compilemessages
