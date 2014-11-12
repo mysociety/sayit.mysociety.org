@@ -3,7 +3,9 @@
 # This file is distributed under the same license as the PACKAGE package.
 #
 # Translators:
-# Marietta Le <marietta@boun.cr>, 2014
+# Chia-liang Kao <clkao@clkao.org>, 2014
+# Hsin-lin Cheng <lancetw@gmail.com>, 2014
+# venev <venev.chao@gmail.com>, 2014
 msgid ""
 msgstr ""
 "Project-Id-Version: sayit.mysociety.org\n"
@@ -11,21 +13,21 @@ msgstr ""
 "POT-Creation-Date: 2014-11-12 18:01+0000\n"
 "PO-Revision-Date: 2014-11-10 17:21+0000\n"
 "Last-Translator: mySociety <transifex@mysociety.org>\n"
-"Language-Team: Hungarian (Hungary) (http://www.transifex.com/projects/p/"
-"sayitmysocietyorg/language/hu_HU/)\n"
-"Language: hu_HU\n"
+"Language-Team: Chinese (Taiwan) (http://www.transifex.com/projects/p/"
+"sayitmysocietyorg/language/zh_TW/)\n"
+"Language: zh_TW\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
 
 #: forms.py:8
 msgid "E-mail"
-msgstr ""
+msgstr "電子郵件"
 
 #: templates/accept_invitation.html:5 templates/accept_invitation.html.py:9
 msgid "Welcome to SayIt"
-msgstr ""
+msgstr "歡迎來到 SayIt"
 
 #: templates/accept_invitation.html:12
 msgid "Bad Token"
@@ -40,15 +42,15 @@ msgstr ""
 
 #: templates/accept_invitation.html:17
 msgid "Please set a password"
-msgstr ""
+msgstr "請選擇密碼"
 
 #: templates/accept_invitation.html:21
 msgid "Take me to the speeches!"
-msgstr ""
+msgstr "讓我看看談話記錄！"
 
 #: templates/accept_invitation.html:24
 msgid "Your password is now changed."
-msgstr ""
+msgstr "您的密碼現在已經更換。"
 
 #: templates/accept_invite_message.txt:1
 #, python-format
@@ -87,11 +89,11 @@ msgstr ""
 
 #: templates/base.html:102 templates/base.html.py:207
 msgid "About"
-msgstr ""
+msgstr "關於"
 
 #: templates/base.html:103
 msgid "Contact"
-msgstr ""
+msgstr "聯絡"
 
 #: templates/base.html:104
 msgid "Create New SayIt"
@@ -104,45 +106,45 @@ msgstr ""
 
 #: templates/base.html:109
 msgid "Log out"
-msgstr ""
+msgstr "登出"
 
 #: templates/base.html:112 templates/account/login.html:10
 #: templates/account/login.html.py:17 templates/account/login.html:55
 #: templates/registration/login.html:6 templates/registration/login.html:10
 msgid "Log in"
-msgstr ""
+msgstr "登入"
 
 #: templates/base.html:114
 msgid "Other SayIt sites"
-msgstr "További SayIt oldalak"
+msgstr ""
 
 #: templates/base.html:129
 msgid "Edit"
-msgstr ""
+msgstr "編輯"
 
 #: templates/base.html:141
 msgid "More&hellip;"
-msgstr ""
+msgstr "詳細⋯"
 
 #: templates/base.html:150
 msgid "Menu"
-msgstr ""
+msgstr "選單"
 
 #: templates/base.html:154
 msgid "Home"
-msgstr ""
+msgstr "首頁"
 
 #: templates/base.html:155
 msgid "Speakers"
-msgstr ""
+msgstr "講者"
 
 #: templates/base.html:160 templates/base.html.py:162 templates/base.html:164
 msgid "Speeches"
-msgstr ""
+msgstr "談話"
 
 #: templates/base.html:172
 msgid "Search"
-msgstr ""
+msgstr "搜尋"
 
 #: templates/base.html:173
 msgid "Go"
@@ -150,11 +152,11 @@ msgstr ""
 
 #: templates/base.html:213
 msgid "Back to top"
-msgstr ""
+msgstr "回到頂端"
 
 #: templates/base.html:222
 msgid "SayIt"
-msgstr ""
+msgstr "SayIt"
 
 #: templates/base.html:223
 msgid ""
@@ -164,35 +166,35 @@ msgstr ""
 
 #: templates/base.html:228
 msgid "Blog"
-msgstr ""
+msgstr "部落格"
 
 #: templates/base.html:229
 msgid "Twitter"
-msgstr ""
+msgstr "Twitter"
 
 #: templates/base.html:230
 msgid "Facebook"
-msgstr ""
+msgstr "Facebook"
 
 #: templates/base.html:231
 msgid "GitHub"
-msgstr ""
+msgstr "GitHub"
 
 #: templates/base.html:236
 msgid "Get involved"
-msgstr ""
+msgstr "參加"
 
 #: templates/base.html:237
 msgid "Help"
-msgstr ""
+msgstr "說明文件"
 
 #: templates/base.html:238
 msgid "Developers"
-msgstr ""
+msgstr "開發者"
 
 #: templates/base.html:239
 msgid "Transcripts"
-msgstr ""
+msgstr "逐字稿"
 
 #: templates/base.html:244
 msgid "The Leveson Inquiry"
@@ -244,7 +246,7 @@ msgstr ""
 
 #: templates/share_instance_with_collaborators.html:12
 msgid "Share your SayIt"
-msgstr ""
+msgstr "分享你的 SayIt"
 
 #: templates/share_instance_with_collaborators.html:14
 msgid ""
@@ -254,46 +256,46 @@ msgstr ""
 
 #: templates/share_instance_with_collaborators.html:23
 msgid "Send invite"
-msgstr ""
+msgstr "送出邀請"
 
 #: templates/about/community.html:7
 msgid "Community"
-msgstr ""
+msgstr "社群"
 
 #: templates/account/login.html:37
 msgid "Need an account?"
-msgstr ""
+msgstr "需要帳號？"
 
 #: templates/account/login.html:38
 msgid "Username or e-mail"
-msgstr ""
+msgstr "使用者名稱或是電子郵件"
 
 #: templates/account/login.html:46
 msgid "Forgot password?"
-msgstr ""
+msgstr "忘記密碼？"
 
 #: templates/account/signup.html:9 templates/account/signup.html.py:16
 #: templates/account/signup.html:62 templates/instances/instance_form.html:8
 #: templates/instances/instance_form.html:20
 #: templates/instances/instance_form.html:80
 msgid "Sign up"
-msgstr ""
+msgstr "註冊"
 
 #: templates/account/signup.html:37
 msgid "Your e-mail address:"
-msgstr ""
+msgstr "您的電子郵件地址："
 
 #: templates/account/signup.html:45
 msgid "(No spaces please)"
-msgstr ""
+msgstr "(請勿留空)"
 
 #: templates/account/signup.html:46
 msgid "Pick a username:"
-msgstr ""
+msgstr "挑個使用者名稱："
 
 #: templates/account/signup.html:55
 msgid "Pick a password:"
-msgstr ""
+msgstr "設定密碼："
 
 #: templates/admin/base_site.html:28 templates/admin/base_site.html.py:31
 msgid "SayIt administration"
@@ -500,16 +502,16 @@ msgstr ""
 
 #: templates/speeches/home.html:7
 msgid "Add a new speech"
-msgstr ""
+msgstr "增加談話"
 
 #: templates/speeches/home.html:8
 msgid "Add a section"
-msgstr ""
+msgstr "增加小節"
 
 #: templates/speeches/home.html:9
 msgid "Invite friends to help"
-msgstr ""
+msgstr "邀請朋友來幫忙"
 
 #: templates/speeches/speech_form.html:5
 msgid "Invite some friends to help you"
-msgstr ""
+msgstr "邀請一些朋友來幫忙"
