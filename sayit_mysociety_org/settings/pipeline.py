@@ -1,4 +1,5 @@
 import os
+import sys
 from .paths import PROJECT_ROOT, PARENT_DIR
 
 # Absolute path to the directory static files should be collected to.
@@ -19,7 +20,8 @@ STATICFILES_DIRS = (
     os.path.join(PROJECT_ROOT, 'web'),
 )
 
-STATICFILES_STORAGE = 'pipeline.storage.PipelineCachedStorage'
+if 'test' not in sys.argv:
+    STATICFILES_STORAGE = 'pipeline.storage.PipelineCachedStorage'
 
 # List of finder classes that know how to find static files in
 # various locations.
