@@ -2,7 +2,8 @@ import os
 
 from django.conf import settings
 
-def add_settings( request ):
+
+def add_settings(request):
     """Add some selected settings values to the context"""
 
     url = 'http://' + settings.BASE_HOST
@@ -17,6 +18,7 @@ def add_settings( request ):
             'BASE_HOST': url,
         }
     }
+
 
 def nav_section(request):
     instance_about_page = False

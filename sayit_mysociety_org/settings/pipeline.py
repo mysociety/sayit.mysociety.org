@@ -26,9 +26,9 @@ STATICFILES_STORAGE = 'pipeline.storage.PipelineCachedStorage'
 STATICFILES_FINDERS = (
     'django.contrib.staticfiles.finders.FileSystemFinder',
     'django.contrib.staticfiles.finders.AppDirectoriesFinder',
-#    'django.contrib.staticfiles.finders.DefaultStorageFinder',
-    #'pipeline.finders.PipelineFinder',
-    #'pipeline.finders.CachedFileFinder',
+    # 'django.contrib.staticfiles.finders.DefaultStorageFinder',
+    # 'pipeline.finders.PipelineFinder',
+    # 'pipeline.finders.CachedFileFinder',
 )
 
 # Compress the css and js using yui-compressor.
@@ -118,4 +118,3 @@ PIPELINE_JS = {
         'output_filename': 'javascripts/sayit.upload.min.js',
     },
 }
-

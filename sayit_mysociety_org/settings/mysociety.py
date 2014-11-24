@@ -1,7 +1,7 @@
 # load the mySociety config from its special file
 
 import yaml
-from .paths import *
+from .paths import *  # noqa
 
 from django.core.exceptions import ImproperlyConfigured
 
@@ -12,7 +12,7 @@ with open(config_file) as f:
 DEBUG = bool(int(config.get('STAGING')))
 TEMPLATE_DEBUG = DEBUG
 try:
-    import debug_toolbar
+    import debug_toolbar  # noqa
     DEBUG_TOOLBAR = DEBUG
 except:
     DEBUG_TOOLBAR = False
@@ -34,7 +34,7 @@ GOOGLE_ANALYTICS_ACCOUNT = config.get('GOOGLE_ANALYTICS_ACCOUNT')
 
 BASE_HOST = config.get('BASE_HOST')
 if BASE_HOST is None:
-    raise ImproperlyConfigured, "BASE_HOST must be defined in %s" % (config_file,)
+    raise ImproperlyConfigured("BASE_HOST must be defined in %s" % (config_file,))
 BASE_PORT = config.get('BASE_PORT')
 
 # Content formatting

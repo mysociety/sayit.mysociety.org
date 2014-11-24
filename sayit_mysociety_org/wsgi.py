@@ -17,7 +17,7 @@ import os
 import sys
 import yaml
 
-config_path = os.path.abspath( os.path.join( os.path.dirname(__file__), '..', 'conf', 'general.yml' ) )
+config_path = os.path.abspath(os.path.join(os.path.dirname(__file__), '..', 'conf', 'general.yml'))
 config = yaml.load(open(config_path))
 
 if int(config.get('STAGING')) and sys.argv[1:2] != ['runserver']:

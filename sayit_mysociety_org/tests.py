@@ -21,7 +21,7 @@ class SmokeTestsNoInstance(TestCase):
 
 class NoInstanceLoginRedirect(TestCase):
     def test_login_redirects_to_your_instances(self):
-        alice = get_user_model().objects.create_user(
+        get_user_model().objects.create_user(
             'alice', email='alice@example.com', password='foo')
 
         resp = self.client.post(
@@ -34,7 +34,7 @@ class NoInstanceLoginRedirect(TestCase):
 
 class InstanceLoginRedirect(InstanceTestCase):
     def test_login_redirects_to_instance_home(self):
-        alice = get_user_model().objects.create_user(
+        get_user_model().objects.create_user(
             'alice', email='alice@example.com', password='foo')
 
         resp = self.client.post(

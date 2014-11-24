@@ -13,20 +13,22 @@ from views import InstanceCreate
 from django.contrib import admin
 admin.autodiscover()
 
+
 class InstanceResource(ModelResource):
     class Meta:
         queryset = Instance.objects.all()
-        allowed_methods = [ 'get' ]
-        excludes = [ 'id' ]
+        allowed_methods = ['get']
+        excludes = ['id']
         include_resource_uri = False
         include_absolute_url = True
         detail_uri_name = 'label'
-        filtering = { 'label': [ 'exact' ] }
+        filtering = {'label': ['exact']}
 
 v01_api = Api(api_name='v0.1')
 v01_api.register(InstanceResource())
 
-urlpatterns = patterns('',
+urlpatterns = patterns(
+    '',
     (r'^admin/doc/', include('django.contrib.admindocs.urls')),
     (r'^admin/', include(admin.site.urls)),
 
@@ -45,6 +47,7 @@ urlpatterns = patterns('',
 
 if settings.DEBUG and settings.DEBUG_TOOLBAR:
     import debug_toolbar
-    urlpatterns += patterns('',
+    urlpatterns += patterns(
+        '',
         url(r'^__debug__/', include(debug_toolbar.urls)),
     )

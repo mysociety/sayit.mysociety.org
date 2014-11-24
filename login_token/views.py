@@ -1,5 +1,4 @@
 import json
-import sys
 
 from django.conf import settings
 from django.contrib.auth import authenticate, login
@@ -7,10 +6,8 @@ from django.http import HttpResponse
 from django.shortcuts import render
 from django.views.decorators.csrf import csrf_exempt
 
-from instances.models import Instance
 from login_token.models import LoginToken, clean_token
 
-from datetime import timedelta
 
 def login_tokens_for_user(request):
     logged_in = request.user.is_authenticated()
@@ -20,7 +17,7 @@ def login_tokens_for_user(request):
             token, created = LoginToken.objects.get_or_create(instance=request.instance, user=request.user)
             if request.method == 'POST':
                 token.regenerate()
-            tokens = [ token ]
+            tokens = [token]
         else:
             tokens = LoginToken.objects.filter(user=request.user).order_by('instance__label')
             if request.method == 'POST':
@@ -35,6 +32,7 @@ def login_tokens_for_user(request):
                    'particular_instance': bool(request.instance),
                    'instances_and_tokens': instances_and_tokens,
                    'BASE_HOST': settings.BASE_HOST})
+
 
 @csrf_exempt
 def check_login_token(request):

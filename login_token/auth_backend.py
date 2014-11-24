@@ -2,6 +2,7 @@ from django.contrib.auth.models import User
 
 from .models import LoginToken, clean_token
 
+
 class LoginTokenBackend(object):
     supports_inactive_user = True
 

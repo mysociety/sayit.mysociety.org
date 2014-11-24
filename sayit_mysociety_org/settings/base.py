@@ -4,10 +4,10 @@ import imp
 import os
 import sys
 from django.conf import global_settings
-from .paths import *
+from .paths import *  # noqa
 
 # Get the changeable configuration
-from .mysociety import *
+from .mysociety import *  # noqa
 
 ADMINS = (
     # ('Your Name', 'your_email@example.com'),
@@ -53,16 +53,16 @@ loaders = (
     'django.template.loaders.filesystem.Loader',
     'django.template.loaders.app_directories.Loader',
     'apptemplates.Loader',
-#     'django.template.loaders.eggs.Loader',
+    # 'django.template.loaders.eggs.Loader',
 )
 if not DEBUG:
-    loaders = ( ('django.template.loaders.cached.Loader', loaders), )
+    loaders = (('django.template.loaders.cached.Loader', loaders),)
 
 TEMPLATE_LOADERS = loaders
 
 MIDDLEWARE_CLASSES = [
     'django.middleware.gzip.GZipMiddleware',
-    #'django.middleware.cache.UpdateCacheMiddleware',
+    # 'django.middleware.cache.UpdateCacheMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.locale.LocaleMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -71,12 +71,12 @@ MIDDLEWARE_CLASSES = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'instances.middleware.MultiInstanceMiddleware',
     'sayit_mysociety_org.middleware.WhoDidMiddleware',
-    #'django.middleware.cache.FetchFromCacheMiddleware',
+    # 'django.middleware.cache.FetchFromCacheMiddleware',
     # Uncomment the next line for simple clickjacking protection:
     # 'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-INTERNAL_IPS = ( '127.0.0.1', )
+INTERNAL_IPS = ('127.0.0.1', )
 
 ROOT_URLCONF = 'sayit_mysociety_org.urls'
 ROOT_URLCONF_HOST = 'sayit_mysociety_org.urls-host'
@@ -158,12 +158,12 @@ LOGGING = {
     },
     'loggers': {
         'django.request': {
-            'handlers': [ 'mail_admins', 'console' ],
+            'handlers': ['mail_admins', 'console'],
             'level': 'WARN',
             'propagate': True,
         },
         'speeches': {
-            'handlers': [ 'mail_admins', 'console' ],
+            'handlers': ['mail_admins', 'console'],
             'level': 'DEBUG',
             'propagate': True,
         },
@@ -212,13 +212,13 @@ ACCOUNT_EMAIL_SUBJECT_PREFIX = ''
 AUTO_RENDER_SELECT2_STATICS = False
 
 # django-pipeline and static file configuration
-from .pipeline import *
+from .pipeline import *  # noqa
 
 # django-bleach configuration
-from .bleach import *
+from .bleach import *  # noqa
 
 # easy-thumbnails configuration
-from .thumbnails import *
+from .thumbnails import *  # noqa
 
 # Cookies
 SESSION_COOKIE_DOMAIN = BASE_HOST
@@ -245,7 +245,7 @@ HAYSTACK_SIGNAL_PROCESSOR = 'haystack.signals.RealtimeSignalProcessor'
 
 # Caching
 if DEBUG:
-    cache = { 'BACKEND': 'django.core.cache.backends.dummy.DummyCache' }
+    cache = {'BACKEND': 'django.core.cache.backends.dummy.DummyCache'}
     CACHE_MIDDLEWARE_SECONDS = 0
 else:
     cache = {
@@ -261,8 +261,8 @@ CACHES = {
 
 if DEBUG_TOOLBAR:
     DEBUG_TOOLBAR_PATCH_SETTINGS = False
-    MIDDLEWARE_CLASSES.append( 'debug_toolbar.middleware.DebugToolbarMiddleware' )
-    INSTALLED_APPS.append( 'debug_toolbar' )
+    MIDDLEWARE_CLASSES.append('debug_toolbar.middleware.DebugToolbarMiddleware')
+    INSTALLED_APPS.append('debug_toolbar')
 
 # Allow local changes of settings
 try:

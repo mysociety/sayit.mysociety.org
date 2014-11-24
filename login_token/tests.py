@@ -7,6 +7,7 @@ from django.contrib.auth.models import User
 
 from django.test import TestCase
 
+
 class LoginTokenTests(TestCase):
 
     def setUp(self):
@@ -34,9 +35,9 @@ class LoginTokenTests(TestCase):
 
     def test_login_token_auths(self):
         lt = LoginToken.objects.create(user=self.user_a, instance=self.instance_a)
-        self.assertTrue( self.client.login(token=lt.token) )
-        self.assertTrue( self.client.login(token=lt.token.title()) )
-        self.assertTrue( self.client.login(token=lt.token.replace(' ', '  ')) )
+        self.assertTrue(self.client.login(token=lt.token))
+        self.assertTrue(self.client.login(token=lt.token.title()))
+        self.assertTrue(self.client.login(token=lt.token.replace(' ', '  ')))
 
     def test_instance_users_changes(self):
 
@@ -78,5 +79,6 @@ class LoginTokenTests(TestCase):
 
         self.instance_b.users.clear()
 
-        self.assertTrue(1 == len(LoginToken.objects.filter(instance=self.instance_b)),
-                        "After clearing users from example-b, there should still be the object left, as we're not removing")
+        self.assertTrue(
+            1 == len(LoginToken.objects.filter(instance=self.instance_b)),
+            "After clearing users from example-b, there should still be the object left, as we're not removing")

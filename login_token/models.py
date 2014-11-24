@@ -15,11 +15,14 @@ NUMBER_OF_TOKEN_WORDS = 3
 with open(os.path.join(os.path.abspath(os.path.dirname(__file__)), 'words')) as fp:
     words = fp.read().splitlines()
 
+
 def generate_token():
     return " ".join(random.sample(words, NUMBER_OF_TOKEN_WORDS))
 
+
 def clean_token(token):
     return re.sub('\s+', ' ', token).strip().lower()
+
 
 class LoginToken(InstanceMixin, models.Model):
     '''Represents a readable login token for mobile devices
@@ -43,6 +46,7 @@ class LoginToken(InstanceMixin, models.Model):
         return repr_format % (self.token,
                               self.user.username,
                               self.instance.label)
+
 
 # FIXME: The big problem with this scheme is when you remove a user
 # from an instance in the admin interface, there are actually two
@@ -88,8 +92,9 @@ def handle_instance_users_change(*args, **kwargs):
             for user_id in primary_keys:
                 LoginToken.objects.get_or_create(instance=instance,
                                                  user=User.objects.get(pk=user_id))
+
     elif action == 'post_clear' or action == 'post_remove':
-        pass # See the FIXME comment above
+        pass  # See the FIXME comment above
 
         # # We don't get primary keys from pre_clear, post_clear, pre_remove
         # # or post_remove, so in both removal cases, we try to work out
