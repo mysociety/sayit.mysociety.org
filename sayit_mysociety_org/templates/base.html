@@ -96,22 +96,22 @@
       <header class="brand-header">
         <div class="brand-header__row">
           <div class="brand-header__title-unit">
-              <h1 class="brand-header__title"><a href="{{ settings.BASE_HOST }}">SayIt <span class="subtitle js-typewriter">&mdash; {% trans "Modern transcripts" %}</span></a></h1>
+              <h1 class="brand-header__title"><a href="{{ BASE_URL }}">SayIt <span class="subtitle js-typewriter">&mdash; {% trans "Modern transcripts" %}</span></a></h1>
           </div>
           <nav class="brand-header__navigation">
-            <a href="{{ settings.BASE_HOST }}/about/questions">{% trans 'About' %}</a>
-            <a href="{{ settings.BASE_HOST }}/about/community">{% trans 'Contact' %}</a>
-            <a href="{{ settings.BASE_HOST }}/instances/add">{% trans 'Create New SayIt' %}</a>
+            <a href="{{ BASE_URL }}/about/questions">{% trans 'About' %}</a>
+            <a href="{{ BASE_URL }}/about/community">{% trans 'Contact' %}</a>
+            <a href="{{ BASE_URL }}/instances/add">{% trans 'Create New SayIt' %}</a>
             {% if request.user.is_authenticated %}
               <a href="#" data-dropdown="user-menu" class="dropdown">{{ request.user.username }}</a>
               <ul id="user-menu" class="f-dropdown" data-dropdown-content>
-                  <li><a href="{{ settings.BASE_HOST }}/accounts/profile/">{% trans "Your Instances" %}</a>
+                  <li><a href="{{ BASE_URL }}/accounts/profile/">{% trans "Your Instances" %}</a>
                   <li><a href="{% url 'account_logout' %}?next=/">{% trans "Log out" %}</a></li>
               </ul>
             {% else %}
               <a href="{% url 'account_login' %}">{% trans 'Log in' %}</a>
                 {% if request.instance %}
-                  <a href="{{ settings.BASE_HOST }}/#demos">{% trans "Other SayIt sites" %}</a>
+                  <a href="{{ BASE_URL }}/#demos">{% trans "Other SayIt sites" %}</a>
                 {% endif %}
             {% endif %}
           </nav>
@@ -129,7 +129,7 @@
                       <a class="instance-header__edit-instance" href="{% url 'instance-edit' %}">{% trans 'Edit' %}</a>
                     {% endif %}
                   {% else %}
-                    <a href="{{ settings.BASE_HOST }}">SayIt</a>
+                    <a href="{{ BASE_URL }}">SayIt</a>
                   {% endif %}
                 </h1>
               </div>
@@ -233,10 +233,10 @@
                 </div>
                 <div class="footer-links__column">
                   <ul>
-                    <li><a href="{{ settings.BASE_HOST }}/about/community">{% trans "Get involved" %}</a></li>
-                    <li><a href="{{ settings.BASE_HOST }}/about/questions">{% trans "Help" %}</a></li>
-                    <li><a href="{{ settings.BASE_HOST }}/about/developers">{% trans "Developers" %}</a></li>
-                    <li><a href="{{ settings.BASE_HOST }}/about/transcripts">{% trans "Transcripts" %}</a></li>
+                    <li><a href="{{ BASE_URL }}/about/community">{% trans "Get involved" %}</a></li>
+                    <li><a href="{{ BASE_URL }}/about/questions">{% trans "Help" %}</a></li>
+                    <li><a href="{{ BASE_URL }}/about/developers">{% trans "Developers" %}</a></li>
+                    <li><a href="{{ BASE_URL }}/about/transcripts">{% trans "Transcripts" %}</a></li>
                   </ul>
                 </div>
                 <div class="footer-links__column">

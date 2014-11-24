@@ -6,7 +6,8 @@ from django.conf import settings
 def add_settings(request):
     """Add some selected settings values to the context"""
 
-    url = 'http://' + settings.BASE_HOST
+    url = 'https' if request.is_secure() else 'http'
+    url += '://' + settings.BASE_HOST
     s = request.get_host().rsplit(':', 1)
     if len(s) == 2:
         url += ':' + s[1]
@@ -15,8 +16,9 @@ def add_settings(request):
         'settings': {
             'GOOGLE_ANALYTICS_ACCOUNT': settings.GOOGLE_ANALYTICS_ACCOUNT,
             'DEBUG': settings.DEBUG,
-            'BASE_HOST': url,
-        }
+            'BASE_HOST': settings.BASE_HOST,
+        },
+        'BASE_URL': url,
     }
 
 

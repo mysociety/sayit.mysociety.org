@@ -6,17 +6,23 @@ import urlparse
 from django.core import mail
 from django.contrib.auth import get_user_model
 from django.test import TestCase
+from django.test.utils import override_settings
 
 from instances.tests import InstanceTestCase
 from instances.models import Instance
 
 
+@override_settings(BASE_HOST='example.org')
 class SmokeTestsNoInstance(TestCase):
     """Very basic tests for non-instance pages"""
     def test_homepage(self):
         """Check that the home page returns OK."""
         resp = self.client.get('/')
-        self.assertEquals(resp.status_code, 200)
+        self.assertContains(resp, 'Bringing transcripts into the Internet age')
+
+    def test_add_page(self):
+        resp = self.client.get('/instances/add')
+        self.assertContains(resp, '<span class="postfix">.example.org</span>')
 
 
 class NoInstanceLoginRedirect(TestCase):
