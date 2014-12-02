@@ -3,6 +3,7 @@
 
 from django.db.models import signals
 from django.utils.functional import curry
+from django.middleware.cache import UpdateCacheMiddleware as DjangoUpdateCacheMiddleware
 
 
 class WhoDidMiddleware(object):
@@ -23,3 +24,17 @@ class WhoDidMiddleware(object):
     def mark_whodid(self, user, sender, instance, **kwargs):
         if 'created_by_id' in instance.__dict__ and not instance.created_by:
             instance.created_by = user
+
+
+class UpdateCacheMiddleware(DjangoUpdateCacheMiddleware):
+    cached = ('ferguson', 'leveson', 'charles-taylor', 'shakespeare')
+
+    def cached_instance(self, request):
+        if getattr(request, 'instance', None) and request.instance.label in self.cached:
+            return True
+        return False
+
+    def process_response(self, request, response):
+        if not self.cached_instance(request):
+            return response
+        return super(UpdateCacheMiddleware, self).process_response(request, response)
