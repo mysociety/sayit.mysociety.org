@@ -16,6 +16,8 @@
 <div class="form-page">
   {% if instance %}
     <h1>{% trans "Edit instance" %}</h1>
+  {% elif request.user.is_authenticated %}
+    <h1>{% trans "Start a new SayIt" %}</h1>
   {% else %}
     <h1>{% trans "Sign up" %}</h1>
     <div class="form-page__intro">
