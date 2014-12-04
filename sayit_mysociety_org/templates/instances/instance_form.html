@@ -4,6 +4,8 @@
 {% block title %}
   {% if instance %}
     {% trans "Edit instance" %}
+  {% elif request.user.is_authenticated %}
+    {% trans "New instance" %}
   {% else %}
     {% trans "Sign up" %}
   {% endif %}
@@ -78,6 +80,8 @@
         <div class="form-page__last">
           {% if instance %}
             {% trans "Update instance" as submit_button %}
+          {% elif request.user.is_authenticated %}
+            {% trans "Create New SayIt" as submit_button %}
           {% else %}
             {% trans "Sign up" as submit_button %}
           {% endif %}
