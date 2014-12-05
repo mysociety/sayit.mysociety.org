@@ -29,10 +29,9 @@ You will need to have the following installed:
 
 * PostgreSQL
 
-* The compass and zurb-foundation gems. Something like the following should
-  install them, with the relevant gem bin directory then added to your `PATH`:
-
-        gem install --user-install --no-document zurb-foundation compass
+* The compass and zurb-foundation gems. It's easiest if you install bundler,
+  and run something like the following, which places binaries in the expected
+  place: `bundle install --deployment --path ../gems --binstubs ../gem-bin`
 
 * pip, virtualenv and yui-compressor.
 
@@ -83,3 +82,7 @@ e.g. http://default.127.0.0.1.xip.io:8000/
 To gather all the static files together in deployment, you'll use:
 
     ./manage.py collectstatic --noinput
+
+And to compile language .mo files:
+
+    ./manage.py compilemessages
