@@ -598,35 +598,6 @@ label {
     }
 }
 
-.homepage-search {
-    @include grid-column(12);
-    .site-search__input,
-    .site-search__button {
-        font-size: 1.125em;
-    }
-    @media (min-width: $medium-screen) {
-        margin-top: 4em;
-        margin-bottom: 4em;
-    }
-
-    @media (min-width: $large-screen) {
-        @include grid-column(8, $center:true);
-    }
-
-    h2 {
-        font-weight: $weight_light;
-        font-size: 2em;
-        margin-top: 1em;
-        @media (min-width: $medium-screen) {
-            font-size: 2.5em;
-        }
-        @media (min-width: $huge-screen) {
-            font-size: 2.8em;
-        }
-        text-align: center;
-    }
-}
-
 .homepage-description {
   text-align: center;
   font-size: emCalc(18);
@@ -636,14 +607,6 @@ label {
   @media (min-width: $medium-screen) {
       margin-top: 0;
   }
-}
-
-.homepage-stats {
-    text-align: center;
-    padding: 1em 0 3em;
-    font-size: emCalc(24);
-    font-weight: $weight_light;
-    line-height: 1.4em;
 }
 
 .featured-block {
