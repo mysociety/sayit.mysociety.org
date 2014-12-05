@@ -71,7 +71,9 @@
 
         <div {% if form.description.errors %}class="error"{% endif %}>
             <label for="{{ form.description.id_for_label }}">{{ form.description.label }}:</label>
-            <textarea cols="40" rows="3" name="description" id="{{ form.description.id_for_label }}" value="{{ form.description.value|default_if_none:"" }}" placeholder="{% trans 'Selected speeches from roughly 700 BC to 400 AD' %}"></textarea>
+            <textarea cols="40" rows="3" name="description" id="{{ form.description.id_for_label }}"
+                placeholder="{% trans 'Selected speeches from roughly 700 BC to 400 AD' %}"
+                >{{ form.description.value|default_if_none:"" }}</textarea>
           {% if form.description.errors %}
             <small class="error">{{ form.description.errors }}</small>
           {% endif %}
