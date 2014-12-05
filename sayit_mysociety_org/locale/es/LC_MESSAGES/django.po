@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: sayit.mysociety.org\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-11-12 18:01+0000\n"
+"POT-Creation-Date: 2014-12-05 11:54+0000\n"
 "PO-Revision-Date: 2014-11-10 21:19+0000\n"
 "Last-Translator: johnfelipe <ingenierofelipeurrego@gmail.com>\n"
 "Language-Team: Spanish (http://www.transifex.com/projects/p/"
@@ -110,7 +110,7 @@ msgstr "Acerca"
 msgid "Contact"
 msgstr "contacto"
 
-#: templates/base.html:104
+#: templates/base.html:104 templates/instances/instance_form.html:86
 msgid "Create New SayIt"
 msgstr "Crear nuevo SayIt"
 
@@ -304,9 +304,9 @@ msgid "Forgot password?"
 msgstr "¿Has olvidado tu contraseña?"
 
 #: templates/account/signup.html:9 templates/account/signup.html.py:16
-#: templates/account/signup.html:62 templates/instances/instance_form.html:8
-#: templates/instances/instance_form.html:20
-#: templates/instances/instance_form.html:80
+#: templates/account/signup.html:62 templates/instances/instance_form.html:10
+#: templates/instances/instance_form.html:24
+#: templates/instances/instance_form.html:88
 msgid "Sign up"
 msgstr "contratar"
 
@@ -510,11 +510,21 @@ msgid "Develop with SayIt"
 msgstr "Desarrollar con SayIt"
 
 #: templates/instances/instance_form.html:6
-#: templates/instances/instance_form.html:18
+#: templates/instances/instance_form.html:20
 msgid "Edit instance"
 msgstr "Editar instancia"
 
+#: templates/instances/instance_form.html:8
+#, fuzzy
+msgid "New instance"
+msgstr "actualizar instancia"
+
 #: templates/instances/instance_form.html:22
+#, fuzzy
+msgid "Start a new SayIt"
+msgstr "Comience a usar SayIt"
+
+#: templates/instances/instance_form.html:26
 msgid ""
 "SayIt gives you your own site for publishing and sharing speeches and "
 "statements."
@@ -522,7 +532,7 @@ msgstr ""
 "SayIt le da su propio sitio para publicar y compartir discursos / actas y "
 "declaraciones."
 
-#: templates/instances/instance_form.html:23
+#: templates/instances/instance_form.html:27
 msgid ""
 "You could use it to publish transcripts of individual meetings, or rag-bag "
 "databases of everything said by a certain person or group of people (e.g. "
@@ -534,19 +544,19 @@ msgstr ""
 "persona o grupo de personas (por ejemplo, declaraciones de los candidatos "
 "políticos). Es gratis y se esta mejorando constantemente."
 
-#: templates/instances/instance_form.html:48
+#: templates/instances/instance_form.html:52
 msgid "roman-senate"
 msgstr "Senado Romano"
 
-#: templates/instances/instance_form.html:62
+#: templates/instances/instance_form.html:66
 msgid "Speeches by Ancient Roman Senators"
 msgstr "Los discursos de los antiguos senadores romanos"
 
-#: templates/instances/instance_form.html:70
+#: templates/instances/instance_form.html:75
 msgid "Selected speeches from roughly 700 BC to 400 AD"
 msgstr "Discursos seleccionados desde aproximadamente el año 700 aC al 400 dC"
 
-#: templates/instances/instance_form.html:78
+#: templates/instances/instance_form.html:84
 msgid "Update instance"
 msgstr "actualizar instancia"
 
@@ -572,18 +582,16 @@ msgid "Password set. You can now create and edit speeches and sections."
 msgstr ""
 "Fijar contraseña. Ahora puede crear y editar los discursos y las secciones."
 
-#: templates/speeches/home.html:7
-msgid "Add a new speech"
-msgstr "Añadir un nuevo discurso"
-
-#: templates/speeches/home.html:8
-msgid "Add a section"
-msgstr "Añadir una sección"
-
-#: templates/speeches/home.html:9
+#: templates/speeches/home.html:6
 msgid "Invite friends to help"
 msgstr "Invita a tus amigos para ayudar"
 
 #: templates/speeches/speech_form.html:5
 msgid "Invite some friends to help you"
 msgstr "Invite a algunos amigos que te ayuden"
+
+#~ msgid "Add a new speech"
+#~ msgstr "Añadir un nuevo discurso"
+
+#~ msgid "Add a section"
+#~ msgstr "Añadir una sección"

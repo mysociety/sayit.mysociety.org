@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: sayit.mysociety.org\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-11-12 18:01+0000\n"
+"POT-Creation-Date: 2014-12-05 11:54+0000\n"
 "PO-Revision-Date: 2014-11-10 17:21+0000\n"
 "Last-Translator: mySociety <transifex@mysociety.org>\n"
 "Language-Team: Hungarian (Hungary) (http://www.transifex.com/projects/p/"
@@ -93,7 +93,7 @@ msgstr ""
 msgid "Contact"
 msgstr ""
 
-#: templates/base.html:104
+#: templates/base.html:104 templates/instances/instance_form.html:86
 msgid "Create New SayIt"
 msgstr ""
 
@@ -273,9 +273,9 @@ msgid "Forgot password?"
 msgstr ""
 
 #: templates/account/signup.html:9 templates/account/signup.html.py:16
-#: templates/account/signup.html:62 templates/instances/instance_form.html:8
-#: templates/instances/instance_form.html:20
-#: templates/instances/instance_form.html:80
+#: templates/account/signup.html:62 templates/instances/instance_form.html:10
+#: templates/instances/instance_form.html:24
+#: templates/instances/instance_form.html:88
 msgid "Sign up"
 msgstr ""
 
@@ -445,17 +445,25 @@ msgid "Develop with SayIt"
 msgstr ""
 
 #: templates/instances/instance_form.html:6
-#: templates/instances/instance_form.html:18
+#: templates/instances/instance_form.html:20
 msgid "Edit instance"
 msgstr ""
 
+#: templates/instances/instance_form.html:8
+msgid "New instance"
+msgstr ""
+
 #: templates/instances/instance_form.html:22
+msgid "Start a new SayIt"
+msgstr ""
+
+#: templates/instances/instance_form.html:26
 msgid ""
 "SayIt gives you your own site for publishing and sharing speeches and "
 "statements."
 msgstr ""
 
-#: templates/instances/instance_form.html:23
+#: templates/instances/instance_form.html:27
 msgid ""
 "You could use it to publish transcripts of individual meetings, or rag-bag "
 "databases of everything said by a certain person or group of people (e.g. "
@@ -463,19 +471,19 @@ msgid ""
 "improving."
 msgstr ""
 
-#: templates/instances/instance_form.html:48
+#: templates/instances/instance_form.html:52
 msgid "roman-senate"
 msgstr ""
 
-#: templates/instances/instance_form.html:62
+#: templates/instances/instance_form.html:66
 msgid "Speeches by Ancient Roman Senators"
 msgstr ""
 
-#: templates/instances/instance_form.html:70
+#: templates/instances/instance_form.html:75
 msgid "Selected speeches from roughly 700 BC to 400 AD"
 msgstr ""
 
-#: templates/instances/instance_form.html:78
+#: templates/instances/instance_form.html:84
 msgid "Update instance"
 msgstr ""
 
@@ -498,15 +506,7 @@ msgstr ""
 msgid "Password set. You can now create and edit speeches and sections."
 msgstr ""
 
-#: templates/speeches/home.html:7
-msgid "Add a new speech"
-msgstr ""
-
-#: templates/speeches/home.html:8
-msgid "Add a section"
-msgstr ""
-
-#: templates/speeches/home.html:9
+#: templates/speeches/home.html:6
 msgid "Invite friends to help"
 msgstr ""
 
