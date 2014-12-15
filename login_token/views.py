@@ -63,7 +63,7 @@ def check_login_token(request):
                        if i != lt.instance]
 
     login(request, user)
-    request.session['instance'] = lt.instance
+    request.session['instance'] = instance_dict(lt.instance)
 
     data = {'result': {'user': lt.user.username,
                        'session-token': request.session.session_key,
