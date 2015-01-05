@@ -33,3 +33,6 @@ libavcodec-extra-53
 # Needed for certificate verificition by python requests
 libffi-dev
 libssl-dev
+
+# Used by RQ to queue import jobs.
+redis-server

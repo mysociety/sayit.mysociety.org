@@ -58,6 +58,18 @@ loaders = (
 if not DEBUG:
     loaders = (('django.template.loaders.cached.Loader', loaders),)
 
+
+# FIXME - think about these (currently lifted from the tutorial) settings
+RQ_QUEUES = {
+    'default': {
+        'HOST': 'localhost',
+        'PORT': 6379,
+        'DB': 0,
+        #  'PASSWORD': 'some-password',
+        'DEFAULT_TIMEOUT': 36000,
+        },
+    }
+
 TEMPLATE_LOADERS = loaders
 
 MIDDLEWARE_CLASSES = [
@@ -126,6 +138,7 @@ INSTALLED_APPS = [
     'speeches',
     'about',
     'login_token',
+    'django_rq',
 ]
 
 try:
@@ -258,6 +271,7 @@ else:
 CACHES = {
     'default': cache
 }
+
 
 if DEBUG_TOOLBAR:
     DEBUG_TOOLBAR_PATCH_SETTINGS = False
