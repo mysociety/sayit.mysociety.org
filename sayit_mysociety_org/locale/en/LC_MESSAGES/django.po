@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-12-05 11:54+0000\n"
+"POT-Creation-Date: 2015-01-06 09:55+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -180,7 +180,7 @@ msgstr ""
 msgid "Get involved"
 msgstr ""
 
-#: templates/base.html:237
+#: templates/base.html:237 templates/about/questions.html:12
 msgid "Help"
 msgstr ""
 
@@ -256,6 +256,268 @@ msgstr ""
 
 #: templates/about/community.html:7
 msgid "Community"
+msgstr ""
+
+#: templates/about/questions.html:6
+msgid "Questions about SayIt"
+msgstr ""
+
+#: templates/about/questions.html:16
+msgid "What is SayIt?"
+msgstr ""
+
+#: templates/about/questions.html:20
+msgid ""
+"It’s an open source tool for making transcripts easy to read, search and "
+"share on the modern internet."
+msgstr ""
+
+#: templates/about/questions.html:23
+msgid "What is a Poplus Component?"
+msgstr ""
+
+#: templates/about/questions.html:28
+msgid ""
+"<a href=\"http://poplus.org/\">Poplus</a> is a global collaboration of "
+"groups that believe it is currently too difficult and expensive to build "
+"effective new digital tools to help citizens exert power over institutions. "
+"Poplus Components are loosely joined tools, mostly structured as web "
+"services, that can be used to radically decrease the development time of "
+"empowerment sites and apps."
+msgstr ""
+
+#: templates/about/questions.html:32
+msgid "Why try to make transcripts better?"
+msgstr ""
+
+#: templates/about/questions.html:37
+msgid ""
+"Transcripts are a kind of oil that greases the wheels of well-functioning "
+"societies. They let people discover when powerful people have made "
+"pronouncements that affect less powerful people. We believe that by making "
+"transcripts function better, more people will end up learning about "
+"decisions and opinions that affect their lives."
+msgstr ""
+
+#: templates/about/questions.html:41
+msgid "What sort of people or organisations can SayIt help?"
+msgstr ""
+
+#: templates/about/questions.html:45
+msgid "Lots, including:"
+msgstr ""
+
+#: templates/about/questions.html:47
+msgid ""
+"Journalists, who want to store, search and publish both the transcripts of "
+"specific events, and databases of speeches and statements by politicians."
+msgstr ""
+
+#: templates/about/questions.html:48
+msgid ""
+"Officials in courts, who want to produce transcripts that are quicker and "
+"easier to use."
+msgstr ""
+
+#: templates/about/questions.html:49
+msgid ""
+"Official in parliaments and other assemblies, who want to make transcripts "
+"that the public and politicians can more easily make use of."
+msgstr ""
+
+#: templates/about/questions.html:50
+msgid ""
+"Researchers who have records of interviews with subjects, who want that data "
+"to be quick and easy to access, even if private."
+msgstr ""
+
+#: templates/about/questions.html:51
+msgid ""
+"Campaigners and activists who want to track what certain people say about "
+"key issues."
+msgstr ""
+
+#: templates/about/questions.html:55
+msgid "Why is a SayIt transcript better than a PDF version?"
+msgstr ""
+
+#: templates/about/questions.html:59
+msgid "SayIt has several advantages over classic paper or PDF versions:"
+msgstr ""
+
+#: templates/about/questions.html:61
+msgid ""
+"The design is mobile responsive to make reading and navigation pleasant "
+"across devices, large and small"
+msgstr ""
+
+#: templates/about/questions.html:62
+msgid ""
+"Search within an entire database of speeches, for example a whole trial, or "
+"everything said by an elected assembly &ndash; better than opening hundreds "
+"of PDFs and searching manually."
+msgstr ""
+
+#: templates/about/questions.html:63
+msgid ""
+"Search within one person’s speeches, even if they only speak occasionally; "
+"and each speech is linked to a person, making it easy to see everything "
+"someone has said."
+msgstr ""
+
+#: templates/about/questions.html:64
+msgid ""
+"Easily share links to a single session (for example at a trial), or even a "
+"single speech within a session."
+msgstr ""
+
+#: templates/about/questions.html:65
+msgid "Make your transcripts more likely to show up clearly in search engines."
+msgstr ""
+
+#: templates/about/questions.html:66
+msgid "There’s an API for people who want to do more advanced text processing."
+msgstr ""
+
+#: templates/about/questions.html:70
+msgid "How do I get a transcript online using SayIt?"
+msgstr ""
+
+#: templates/about/questions.html:75
+msgid ""
+"You could convert your data to the right format, and work with us to get it "
+"uploaded to an instance here on sayit.mysociety.org. You could log in and "
+"author transcripts directly through this web interface, sharing your "
+"instance with others to help. Or you could install SayIt on your own server "
+"in your own project. <a href=\"/about/transcripts\">More details</a>."
+msgstr ""
+
+#: templates/about/questions.html:79
+msgid "Why do you call this a Beta?"
+msgstr ""
+
+#: templates/about/questions.html:84
+msgid ""
+"In web development, ‘Beta’ is the name for a release of a piece of software "
+"which is in progress. In the case of SayIt, we are launching early so that "
+"we can learn more about what features people want us to build, and which are "
+"less important."
+msgstr ""
+
+#: templates/about/questions.html:89
+msgid "Aren’t transcripts sort of old fashioned? Isn’t everything video now?"
+msgstr ""
+
+#: templates/about/questions.html:94
+msgid ""
+"Online video is definitely amazing stuff. But text transcripts offer certain "
+"virtues too, which makes them valuable in different ways. If you want to "
+"know whether a committee has been talking about you, or you want to "
+"subscribe to be sent alerts when your street gets mentioned by powerful "
+"people, then written transcripts, made of nicely structured data, are hard "
+"to beat. The ideal system would clearly mix written words, audio and video, "
+"and being open source we hope that SayIt can be integrated with other "
+"systems that specialise in AV. We&rsquo;re keen to talk to people running "
+"projects in this field."
+msgstr ""
+
+#: templates/about/questions.html:98
+msgid "Is SayIt open source? Does it use open standards or open data?"
+msgstr ""
+
+#: templates/about/questions.html:103
+msgid ""
+"SayIt is open source, licensed under the Affero GPL, and you can check out "
+"the code in <a href=\"https://github.com/mysociety/sayit\">our GitHub repo</"
+"a>. The data standard we use is a <a href=\"/about/developers\">subset of "
+"the Akoma Ntoso</a> data standard  &ndash; a standard developed specifically "
+"for use in parliaments and assemblies."
+msgstr ""
+
+#: templates/about/questions.html:107
+msgid ""
+"Can I write a parser that loads data directly into SayIt on a daily or "
+"weekly basis?"
+msgstr ""
+
+#: templates/about/questions.html:111
+msgid ""
+"Yes &ndash; we’re keen to see people use the site like this. Please contact "
+"us so we can discuss how best to implement this so it works well for you and "
+"us."
+msgstr ""
+
+#: templates/about/questions.html:114
+msgid "Does SayIt support languages other than English?"
+msgstr ""
+
+#: templates/about/questions.html:119
+msgid ""
+"Yes. Transcripts can be authored in any language, and we welcome "
+"translations of the interface at <a href=\"https://www.transifex.com/"
+"projects/p/sayit/\">our project on Transifex</a>. Do <a href=\"/about/"
+"community\">contact us</a> if you want to help us launch a non-English SayIt "
+"site."
+msgstr ""
+
+#: templates/about/questions.html:123
+msgid ""
+"I’m a developer who thinks this is cool. What’s the best thing for me to do?"
+msgstr ""
+
+#: templates/about/questions.html:128
+msgid ""
+"There are plenty of options! Please see our dedicated <a href=\"/about/"
+"developers\">page for developers</a>."
+msgstr ""
+
+#: templates/about/questions.html:131
+msgid "Can SayIt sites be made private?"
+msgstr ""
+
+#: templates/about/questions.html:136
+msgid ""
+"Yes, please <a href=\"/about/community\">contact us</a> if you want to "
+"discuss this feature. We understand that some organisations, for example "
+"newspapers, might want to run private databases of speeches for business "
+"purposes."
+msgstr ""
+
+#: templates/about/questions.html:140
+msgid "Can SayIt be used to track speeches made in more than one place?"
+msgstr ""
+
+#: templates/about/questions.html:145
+msgid ""
+"Yes, you don’t just have to record one event, like a trial or a focus group. "
+"You can build up nicely structured database of quotes made by people across "
+"media sources, or from books and papers. We would like to see people use "
+"SayIt to build sites like ‘all public statements by the Prime Minister’."
+msgstr ""
+
+#: templates/about/questions.html:149
+msgid "Who built this?"
+msgstr ""
+
+#: templates/about/questions.html:154
+msgid ""
+"SayIt was mainly built by <a href=\"http://mysociety.org\">mySociety</a>, "
+"and more specifically by Matthew Somerville, a senior developer. It was "
+"designed by Martin Wright and project managed by Tom Steinberg."
+msgstr ""
+
+#: templates/about/questions.html:158
+msgid "Who funded it?"
+msgstr ""
+
+#: templates/about/questions.html:163
+msgid ""
+"mySociety gets funding from various places, such as the <a href=\"http://www."
+"opensocietyfoundations.org/\">Open Society Foundation</a>, the <a href="
+"\"http://www.omidyar.com/\">Omidyar Network</a> and profits from our own "
+"commercial work. SayIt was mostly funded by a grant from <a href=\"http://"
+"www.google.com/giving/\">Google.org</a>, though, for which we are very "
+"grateful."
 msgstr ""
 
 #: templates/account/login.html:37
@@ -506,6 +768,22 @@ msgstr ""
 
 #: templates/speeches/home.html:6
 msgid "Invite friends to help"
+msgstr ""
+
+#: templates/speeches/home.html:13 templates/speeches/parentless_list.html:8
+#: templates/speeches/speaker_list.html:8
+msgid "This is a brand new SayIt site."
+msgstr ""
+
+#: templates/speeches/home.html:14 templates/speeches/parentless_list.html:9
+#: templates/speeches/speaker_list.html:9
+msgid ""
+"Its creator hasn&rsquo;t yet added any speeches or statements for you to see."
+msgstr ""
+
+#: templates/speeches/home.html:15 templates/speeches/parentless_list.html:10
+#: templates/speeches/speaker_list.html:10
+msgid "Learn more about SayIt"
 msgstr ""
 
 #: templates/speeches/speech_form.html:5
