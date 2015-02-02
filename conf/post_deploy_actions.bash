@@ -23,6 +23,11 @@ if [ "$(echo -e 'pip 1.4\n'"$pip_version" | sort -V | head -1)" = "$pip_version"
     curl -L -s https://bootstrap.pypa.io/get-pip.py | python
 fi
 
+# cryptography's install finds the system setuptools, which finds the
+# system six, which is too old. To avoid this, update setuptools in the
+# virtualenv.
+pip install -U setuptools
+
 pip install --requirement requirements.txt
 
 # make sure that there is no old code (the .py files may have been git deleted)
