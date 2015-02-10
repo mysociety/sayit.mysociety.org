@@ -2,8 +2,8 @@
 
 ### BEGIN INIT INFO
 # Provides:          !!(*= $daemon_name *)!!
-# Required-Start:    $network $named postgresql redis-server
-# Required-Stop:     $network $named postgresql redis-server
+# Required-Start:    $network $named postgresql !!(*= $vhost *)!!-redis
+# Required-Stop:     $network $named postgresql !!(*= $vhost *)!!-redis
 # Default-Start:     2 3 4 5
 # Default-Stop:      0 1 6
 # Short-Description: Start RQ workers for SayIt.

@@ -62,8 +62,9 @@ if not DEBUG:
 # FIXME - think about these (currently lifted from the tutorial) settings
 RQ_QUEUES = {
     'default': {
-        'HOST': 'localhost',
-        'PORT': 6379,
+        'UNIX_SOCKET_PATH': os.path.join(PROJECT_DIR, 'redis.sock'),
+#        'HOST': 'localhost',
+#        'PORT': 6379,
         'DB': 0,
         #  'PASSWORD': 'some-password',
         'DEFAULT_TIMEOUT': 36000,
