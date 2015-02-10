@@ -19,7 +19,7 @@ DUSER=!!(*= $user *)!!
 
 PATH=/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin
 DAEMON=/usr/bin/redis-server
-DAEMON_ARGS=$DIR/conf/redis.conf
+DAEMON_ARGS=$DIR/sayit.mysociety.org/conf/redis.conf
 NAME=!!(*= $daemon_name *)!!
 DESC=!!(*= $daemon_name *)!!
 
