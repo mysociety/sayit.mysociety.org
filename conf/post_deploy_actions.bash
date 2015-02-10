@@ -44,3 +44,6 @@ bundle install --deployment --path ../gems --binstubs ../gem-bin
 ./manage.py collectstatic --noinput
 
 ./manage.py compilemessages
+
+# Make the redis working directory
+mkdir -p '../redis'
