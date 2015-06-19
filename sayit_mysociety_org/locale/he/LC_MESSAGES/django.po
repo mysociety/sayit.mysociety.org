@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: sayit.mysociety.org\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-06-19 15:08+0100\n"
+"POT-Creation-Date: 2015-06-19 22:22+0100\n"
 "PO-Revision-Date: 2015-01-24 22:01+0000\n"
 "Last-Translator: noamoss <noamoss@gmail.com>\n"
 "Language-Team: Hebrew (http://www.transifex.com/projects/p/sayitmysocietyorg/"
@@ -476,6 +476,16 @@ msgstr "בחרו סיסמה:"
 msgid "SayIt administration"
 msgstr "ניהול SayIt"
 
+#: templates/base.html:8 templates/base.html.py:14 templates/base.html:15
+#: templates/base.html.py:99 templates/base.html:132
+#: templates/base.html.py:222
+msgid "SayIt"
+msgstr "SayIt"
+
+#: templates/base.html:16
+msgid "Transcripts for the modern internet"
+msgstr ""
+
 #: templates/base.html:87
 msgid ""
 "This is a staging site &ndash; any data saved here <strong>may be deleted</"
@@ -547,10 +557,6 @@ msgstr "קדימה"
 #: templates/base.html:213
 msgid "Back to top"
 msgstr "חזרה למעלה"
-
-#: templates/base.html:222
-msgid "SayIt"
-msgstr "SayIt"
 
 #: templates/base.html:223
 msgid ""

@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: sayit.mysociety.org\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-06-19 15:08+0100\n"
+"POT-Creation-Date: 2015-06-19 22:22+0100\n"
 "PO-Revision-Date: 2015-01-07 21:40+0000\n"
 "Last-Translator: johnfelipe <ingenierofelipeurrego@gmail.com>\n"
 "Language-Team: Spanish (http://www.transifex.com/projects/p/"
@@ -31,10 +31,6 @@ msgstr "Comunidad"
 #: templates/about/questions.html:6
 msgid "Questions about SayIt"
 msgstr "Preguntas sobre SayIt"
-
-#: templates/about/questions.html:12 templates/base.html:237
-msgid "Help"
-msgstr "Ayuda"
 
 #: templates/about/questions.html:12 templates/base.html:237
 msgid "Help"
