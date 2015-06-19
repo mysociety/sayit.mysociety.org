@@ -4,15 +4,16 @@
 #
 # Translators:
 # Chia-liang Kao <clkao@clkao.org>, 2014
+# Chi-Hsun Tsai <chihsun.tsai@gmail.com>, 2015
 # Hsin-lin Cheng <lancetw@gmail.com>, 2014
 # venev <venev.chao@gmail.com>, 2014
 msgid ""
 msgstr ""
 "Project-Id-Version: sayit.mysociety.org\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-01-06 09:55+0000\n"
-"PO-Revision-Date: 2014-11-10 17:21+0000\n"
-"Last-Translator: mySociety <transifex@mysociety.org>\n"
+"POT-Creation-Date: 2015-06-19 15:08+0100\n"
+"PO-Revision-Date: 2015-03-26 14:35+0000\n"
+"Last-Translator: Chi-Hsun Tsai <chihsun.tsai@gmail.com>\n"
 "Language-Team: Chinese (Taiwan) (http://www.transifex.com/projects/p/"
 "sayitmysocietyorg/language/zh_TW/)\n"
 "Language: zh_TW\n"
@@ -24,6 +25,401 @@ msgstr ""
 #: forms.py:8
 msgid "E-mail"
 msgstr "電子郵件"
+
+#: templates/about/community.html:7
+msgid "Community"
+msgstr "社群"
+
+#: templates/about/questions.html:6
+msgid "Questions about SayIt"
+msgstr "SayIt相關問題　"
+
+#: templates/about/questions.html:12 templates/base.html:237
+msgid "Help"
+msgstr "說明文件"
+
+#: templates/about/questions.html:12 templates/base.html:237
+msgid "Help"
+msgstr "說明文件"
+
+#: templates/about/questions.html:16
+msgid "What is SayIt?"
+msgstr "什麼是SayIt？"
+
+#: templates/about/questions.html:20
+msgid ""
+"It’s an open source tool for making transcripts easy to read, search and "
+"share on the modern internet."
+msgstr ""
+"它是一個開放碼工具，在網路時代中它可以用於製作文字抄本，以方便閱讀，搜尋和分"
+"享。"
+
+#: templates/about/questions.html:23
+msgid "What is a Poplus Component?"
+msgstr "什麼是Poplus元件?"
+
+#: templates/about/questions.html:28
+msgid ""
+"<a href=\"http://poplus.org/\">Poplus</a> is a global collaboration of "
+"groups that believe it is currently too difficult and expensive to build "
+"effective new digital tools to help citizens exert power over institutions. "
+"Poplus Components are loosely joined tools, mostly structured as web "
+"services, that can be used to radically decrease the development time of "
+"empowerment sites and apps."
+msgstr ""
+"<a href=\"http://poplus.org/\">Poplus</a> 是一個全球合作團體。目前因難度與經"
+"費限制，而不能建立一套新興有效的數位工具協助公民發揮力量監督政府。Poplus 元件"
+"是為一彈性的結合工具，主要是網路服務結構，可用於協助快速地減少網站與應用程式"
+"的開發時間。"
+
+#: templates/about/questions.html:32
+msgid "Why try to make transcripts better?"
+msgstr "何不試著讓文字記錄更完善"
+
+#: templates/about/questions.html:37
+msgid ""
+"Transcripts are a kind of oil that greases the wheels of well-functioning "
+"societies. They let people discover when powerful people have made "
+"pronouncements that affect less powerful people. We believe that by making "
+"transcripts function better, more people will end up learning about "
+"decisions and opinions that affect their lives."
+msgstr ""
+"文字記錄像一種讓社會之輪運作順利的潤滑油，它讓人們若當權者的言行如何影響了無"
+"力小民。我們深信讓文字言論記錄的功能更好，更多人可以了解這些影響一般人生活的"
+"決定與意見是如何産生的。"
+
+#: templates/about/questions.html:41
+msgid "What sort of people or organisations can SayIt help?"
+msgstr "SayIt可以協助哪些人或組織?"
+
+#: templates/about/questions.html:45
+msgid "Lots, including:"
+msgstr "可多了，包括:"
+
+#: templates/about/questions.html:47
+msgid ""
+"Journalists, who want to store, search and publish both the transcripts of "
+"specific events, and databases of speeches and statements by politicians."
+msgstr ""
+"新聞記者，想要儲存，搜尋，發表特定活動的文字記錄或是政治人物發言與聲明的資料"
+"庫"
+
+#: templates/about/questions.html:48
+msgid ""
+"Officials in courts, who want to produce transcripts that are quicker and "
+"easier to use."
+msgstr "法庭上的書記官，想要做出又快又好用的文字記錄　"
+
+#: templates/about/questions.html:49
+msgid ""
+"Official in parliaments and other assemblies, who want to make transcripts "
+"that the public and politicians can more easily make use of."
+msgstr ""
+"國會議員或其它地方議會民代，想要有會議發言記錄，讓公眾或政治人物更方便使用。"
+
+#: templates/about/questions.html:50
+msgid ""
+"Researchers who have records of interviews with subjects, who want that data "
+"to be quick and easy to access, even if private."
+msgstr ""
+"研究者在某些研究主題上的訪談記錄，希望有一個方便簡單的私人資料庫來取用。"
+
+#: templates/about/questions.html:51
+msgid ""
+"Campaigners and activists who want to track what certain people say about "
+"key issues."
+msgstr "社運人士與倡議者要想追踪某些人物在重要議題上的發言。"
+
+#: templates/about/questions.html:55
+msgid "Why is a SayIt transcript better than a PDF version?"
+msgstr "為何SayIt的文字記錄更優於PDF檔案格式？"
+
+#: templates/about/questions.html:59
+msgid "SayIt has several advantages over classic paper or PDF versions:"
+msgstr "比起PDF檔案或傳統文件，SayIt有許多優點"
+
+#: templates/about/questions.html:61
+msgid ""
+"The design is mobile responsive to make reading and navigation pleasant "
+"across devices, large and small"
+msgstr "它為反應式介面，因此讓不同大小尺寸的平台都能方便閱覧　"
+
+#: templates/about/questions.html:62
+msgid ""
+"Search within an entire database of speeches, for example a whole trial, or "
+"everything said by an elected assembly &ndash; better than opening hundreds "
+"of PDFs and searching manually."
+msgstr ""
+"在資料庫中搜尋任何文字記錄，例如審訊譯文或者任何民選代表說過的發言，勝過要開"
+"啟數百個PDF檔案手動搜尋"
+
+#: templates/about/questions.html:63
+msgid ""
+"Search within one person’s speeches, even if they only speak occasionally; "
+"and each speech is linked to a person, making it easy to see everything "
+"someone has said."
+msgstr ""
+"搜尋某人的演說，即使是他們即興的發言，每一段發言都可連結到某一位人物，讓他/她"
+"說過什麼呈現的一清二楚。"
+
+#: templates/about/questions.html:64
+msgid ""
+"Easily share links to a single session (for example at a trial), or even a "
+"single speech within a session."
+msgstr "便於分享連結到單一會議(例如某件審訊)，或者某一會議的一個演說。"
+
+#: templates/about/questions.html:65
+msgid "Make your transcripts more likely to show up clearly in search engines."
+msgstr "讓你的文字抄本更容易出現在搜尋引擊的前頁"
+
+#: templates/about/questions.html:66
+msgid "There’s an API for people who want to do more advanced text processing."
+msgstr "這裏有API讓想要有更多進階文字處理者可以使用。"
+
+#: templates/about/questions.html:70
+msgid "How do I get a transcript online using SayIt?"
+msgstr "我如何利用SayIt取得文字抄本?　"
+
+#: templates/about/questions.html:75
+msgid ""
+"You could convert your data to the right format, and work with us to get it "
+"uploaded to an instance here on sayit.mysociety.org. You could log in and "
+"author transcripts directly through this web interface, sharing your "
+"instance with others to help. Or you could install SayIt on your own server "
+"in your own project. <a href=\"/about/transcripts\">More details</a>."
+msgstr ""
+"你可以將資料轉換成正確格式，協助我們上傳到sayit.m面ysociety.org。你可在登入"
+"後，直接透過網頁介面成為這份文字記錄的作者，分享你的引述給別人一起協助。或者"
+"你可以在自己的伺服器上安裝SayIt進行自己的專案。更多<a href=\"/about/"
+"transcripts\">說明請　見</a>."
+
+#: templates/about/questions.html:79
+msgid "Why do you call this a Beta?"
+msgstr "你為何稱其為測試？"
+
+#: templates/about/questions.html:84
+msgid ""
+"In web development, ‘Beta’ is the name for a release of a piece of software "
+"which is in progress. In the case of SayIt, we are launching early so that "
+"we can learn more about what features people want us to build, and which are "
+"less important."
+msgstr ""
+"網頁開發中，'Beta'表示某一個軟體仍在發展階段，以SayIt為例，我們早已啟動因此更"
+"了解人們需不需要哪些功能　"
+
+#: templates/about/questions.html:88
+msgid "Aren’t transcripts sort of old fashioned? Isn’t everything video now?"
+msgstr "文字副本不是老派了嗎？現在不都影像化了？"
+
+#: templates/about/questions.html:93
+msgid ""
+"Online video is definitely amazing stuff. But text transcripts offer certain "
+"virtues too, which makes them valuable in different ways. If you want to "
+"know whether a committee has been talking about you, or you want to "
+"subscribe to be sent alerts when your street gets mentioned by powerful "
+"people, then written transcripts, made of nicely structured data, are hard "
+"to beat. The ideal system would clearly mix written words, audio and video, "
+"and being open source we hope that SayIt can be integrated with other "
+"systems that specialise in AV. We&rsquo;re keen to talk to people running "
+"projects in this field."
+msgstr ""
+"線上影音絕對是一個驚奇的玩意。但是文字記錄提供我們一些好處，展現出它們不同的"
+"價值魅力。如果你想知道某個委員會是否有提及此事或是你想要訂閱自己選區中政治人"
+"物的相關發言通知，利用文字記錄以良好的資料結構呈現，將難以擊敗。一個理想的系"
+"統可以清楚的包含文字，聲音以及影像，而且是開放碼。我們希望SayIt 可以整合其它"
+"系統尤其是影音，我們熱切盼望有人經營這領域的專案項目"
+
+#: templates/about/questions.html:97
+msgid "Is SayIt open source? Does it use open standards or open data?"
+msgstr "SayIt 是否為開放碼？使用開放標準與開放資料？"
+
+#: templates/about/questions.html:102
+msgid ""
+"SayIt is open source, licensed under the Affero GPL, and you can check out "
+"the code in <a href=\"https://github.com/mysociety/sayit\">our GitHub repo</"
+"a>. The data standard we use is a <a href=\"/about/developers\">subset of "
+"the Akoma Ntoso</a> data standard  &ndash; a standard developed specifically "
+"for use in parliaments and assemblies."
+msgstr ""
+"SayIt為開放碼，依Affero GPL方式授權，本專案<a href=\"https://github.com/"
+"mysociety/sayit\">放在GitHub 上</a>。我們使用的資料標準是依 <a href=\"/about/"
+"developers\">Akoma Ntoso</a>規範，這是為了國會與議會用途的開發標準。"
+
+#: templates/about/questions.html:106
+msgid ""
+"Can I write a parser that loads data directly into SayIt on a daily or "
+"weekly basis?"
+msgstr "我可以依據SayIt 每日或每週所收集之資料撰寫解析嗎？"
+
+#: templates/about/questions.html:110
+msgid ""
+"Yes &ndash; we’re keen to see people use the site like this. Please contact "
+"us so we can discuss how best to implement this so it works well for you and "
+"us."
+msgstr "是的，我們急需這類人才，請聯繫我們以進一步討論如何促成最佳實踐。"
+
+#: templates/about/questions.html:113
+msgid "Does SayIt support languages other than English?"
+msgstr "SayIt 支援其它語言嗎？"
+
+#: templates/about/questions.html:118
+msgid ""
+"Yes. Transcripts can be authored in any language, and we welcome "
+"translations of the interface at <a href=\"https://www.transifex.com/"
+"projects/p/sayit/\">our project on Transifex</a>. Do <a href=\"/about/"
+"community\">contact us</a> if you want to help us launch a non-English SayIt "
+"site."
+msgstr ""
+"是的，文字抄本可以用於任何語言，我們歡迎協助本軟體使用介面的翻譯工作<a href="
+"\"https://www.transifex.com/projects/p/sayit/\">在Transifex的多語專案</a>.請 "
+"<a href=\"/about/community\">通知我們</a> 如果你想要發起任一個非英語SayIt 網"
+"站"
+
+#: templates/about/questions.html:122
+msgid ""
+"I’m a developer who thinks this is cool. What’s the best thing for me to do?"
+msgstr "我是一名程式開發者覺得這東西很酷，我可以為它做什麼嗎"
+
+#: templates/about/questions.html:127
+msgid ""
+"There are plenty of options! Please see our dedicated <a href=\"/about/"
+"developers\">page for developers</a>."
+msgstr ""
+"有許多豐富的選項！請見<a href=\"/about/developers\">這群奉獻投入者的介紹</a>."
+
+#: templates/about/questions.html:130
+msgid "Can SayIt sites be made private?"
+msgstr "SayIt 網站可否設定成私密不公開？"
+
+#: templates/about/questions.html:135
+msgid ""
+"Yes, please <a href=\"/about/community\">contact us</a> if you want to "
+"discuss this feature. We understand that some organisations, for example "
+"newspapers, might want to run private databases of speeches for business "
+"purposes."
+msgstr ""
+"是的，請 <a href=\"/about/community\">聯絡我們</a> 討論此功能。我們了解某些組"
+"織，例如報社，也許想要建置一個商用的言論資料庫。　"
+
+#: templates/about/questions.html:139
+msgid "Can SayIt be used to track speeches made in more than one place?"
+msgstr "SayIt可以用來追踪多處的發言嗎？"
+
+#: templates/about/questions.html:144
+msgid ""
+"Yes, you don’t just have to record one event, like a trial or a focus group. "
+"You can build up nicely structured database of quotes made by people across "
+"media sources, or from books and papers. We would like to see people use "
+"SayIt to build sites like ‘all public statements by the Prime Minister’."
+msgstr ""
+"是的，你不只是記錄某個活動，如審訊或焦點團體會議。你可以建置一個結構化的資　"
+"料庫來收集來自媒體，著作或報紙的政治人物言論。我們樂見更多人使用SayIt來建置　"
+"網站，像做行政院長/總統所有的言論記錄。"
+
+#: templates/about/questions.html:148
+msgid "Who built this?"
+msgstr "誰架設本站"
+
+#: templates/about/questions.html:153
+msgid ""
+"SayIt was mainly built by <a href=\"http://mysociety.org\">mySociety</a>, "
+"and more specifically by Matthew Somerville, a senior developer. It was "
+"designed by Martin Wright and project managed by Tom Steinberg."
+msgstr ""
+"SayIt由 <a href=\"http://mysociety.org\">mySociety</a>創建，特別是資深程式開"
+"發師Matthew Somerville,　設計者為Martin Wright ，Tom Steinberg負責專案管控。"
+
+#: templates/about/questions.html:157
+msgid "Who funded it?"
+msgstr "誰資助本計畫?"
+
+#: templates/about/questions.html:162
+msgid ""
+"mySociety gets funding from various places, such as the <a href=\"http://www."
+"opensocietyfoundations.org/\">Open Society Foundation</a>, the <a href="
+"\"http://www.omidyar.com/\">Omidyar Network</a> and profits from our own "
+"commercial work. SayIt was mostly funded by a grant from <a href=\"http://"
+"www.google.com/giving/\">Google.org</a>, though, for which we are very "
+"grateful."
+msgstr ""
+"mySociety 從許多地方得到計畫贊助，例如<a href=\"http://www."
+"opensocietyfoundations.org/\">開放社會基金會</a>, the <a href=\"http://www."
+"omidyar.com/\">Omidyar Network</a>以及來自我們商業作品的利潤。 SayIt 資金主要"
+"來自<a href=\"http://www.google.com/giving/\">Google.org贊助</a>, 對此我們表"
+"示感謝。"
+
+#: templates/accept_invitation.html:5 templates/accept_invitation.html.py:9
+msgid "Welcome to SayIt"
+msgstr "歡迎來到 SayIt"
+
+#: templates/accept_invitation.html:12
+msgid "Bad Token"
+msgstr "錯誤代號"
+
+#: templates/accept_invitation.html:14
+#, python-format
+msgid ""
+"The invite link was invalid, possibly because it has already been used.  "
+"Please try requesting a <a href=\"%(passwd_reset_url)s\">password reset</a>."
+msgstr ""
+"這個邀請連結無效，可能是已使用過。請再重申請 <a href=\"%(passwd_reset_url)s"
+"\">密碼要求</a>.　　"
+
+#: templates/accept_invitation.html:17
+msgid "Please set a password"
+msgstr "請選擇密碼"
+
+#: templates/accept_invitation.html:21
+msgid "Take me to the speeches!"
+msgstr "讓我看看談話記錄！"
+
+#: templates/accept_invitation.html:24
+msgid "Your password is now changed."
+msgstr "您的密碼現在已經更換。"
+
+#: templates/accept_invite_message.txt:1
+#, python-format
+msgid ""
+"Hello %(invitee)s,\n"
+"\n"
+"Here's something - %(inviter)s has invited you to help edit\n"
+"\"%(instance_title)s\" on SayIt.\n"
+"\n"
+"SayIt is a very simple way of storing and publishing speeches and "
+"transcripts\n"
+"online. Getting started is easy.\n"
+"\n"
+"As a first step, please go to %(password_reset_url)s to set up your "
+"account,\n"
+"and then you can start adding speeches.\n"
+"\n"
+"Yours,\n"
+"The SayIt Team\n"
+msgstr ""
+"你好 %(invitee)s,\n"
+"\n"
+"這封信是SayIt - %(inviter)s 邀請你來協助編輯　\n"
+"\"%(instance_title)s\" \n"
+"\n"
+"SayIt 可以方便地在線上儲存與出版人物言論與文字抄本\n"
+"它非常容易使用\n"
+"\n"
+"首先，請到 %(password_reset_url)s 設定你的帳戶\n"
+"你就可以開始加入言論編輯　\n"
+"\n"
+"SayIt 團隊\n"
+"敬上\n"
+
+#: templates/accept_invite_subject.txt:3
+#, python-format
+msgid "You've been invited to help edit \"%(instance_title)s\"!"
+msgstr "你受邀一起協助編輯\"%(instance_title)s\"!"
+
+#: templates/account/login.html:10 templates/account/login.html.py:17
+#: templates/account/login.html:55 templates/base.html:112
+#: templates/registration/login.html:6 templates/registration/login.html:10
+msgid "Log in"
+msgstr "登入"
 
 #: templates/accept_invitation.html:5 templates/accept_invitation.html.py:9
 msgid "Welcome to SayIt"
@@ -77,6 +473,229 @@ msgstr ""
 msgid "You've been invited to help edit \"%(instance_title)s\"!"
 msgstr ""
 
+#: templates/account/login.html:10 templates/account/login.html.py:17
+#: templates/account/login.html:55 templates/base.html:112
+#: templates/registration/login.html:6 templates/registration/login.html:10
+msgid "Log in"
+msgstr "登入"
+
+#: templates/account/login.html:37
+msgid "Need an account?"
+msgstr "需要帳號？"
+
+#: templates/account/login.html:38
+msgid "Username or e-mail"
+msgstr "使用者名稱或是電子郵件"
+
+#: templates/account/login.html:46
+msgid "Forgot password?"
+msgstr "忘記密碼？"
+
+#: templates/account/signup.html:9 templates/account/signup.html.py:16
+#: templates/account/signup.html:62 templates/instances/instance_form.html:10
+#: templates/instances/instance_form.html:24
+#: templates/instances/instance_form.html:88
+msgid "Sign up"
+msgstr "註冊"
+
+#: templates/account/signup.html:37
+msgid "Your e-mail address:"
+msgstr "您的電子郵件地址："
+
+#: templates/account/signup.html:45
+msgid "(No spaces please)"
+msgstr "(請勿留空)"
+
+#: templates/account/signup.html:46
+msgid "Pick a username:"
+msgstr "挑個使用者名稱："
+
+#: templates/account/signup.html:55
+msgid "Pick a password:"
+msgstr "設定密碼："
+
+#: templates/admin/base_site.html:28 templates/admin/base_site.html.py:31
+msgid "SayIt administration"
+msgstr "SayIt 管理台"
+
+#: templates/base.html:87
+msgid ""
+"This is a staging site &ndash; any data saved here <strong>may be deleted</"
+"strong>."
+msgstr "本站為測試中，任何在此保存的資料<strong>可能遭到刪除</strong>."
+
+#: templates/base.html:99
+msgid "Modern transcripts"
+msgstr "現代的文字抄本"
+
+#: templates/base.html:102 templates/base.html.py:207
+msgid "About"
+msgstr "關於"
+
+#: templates/base.html:103
+msgid "Contact"
+msgstr "聯絡"
+
+#: templates/base.html:104 templates/instances/instance_form.html:86
+msgid "Create New SayIt"
+msgstr "創建一個新的SayIt"
+
+#: templates/base.html:108 templates/instances/your_instances.html:4
+#: templates/instances/your_instances.html:10
+msgid "Your Instances"
+msgstr "你的引述"
+
+#: templates/base.html:109
+msgid "Log out"
+msgstr "登出"
+
+#: templates/base.html:114
+msgid "Other SayIt sites"
+msgstr "其它SayIt 網站"
+
+#: templates/base.html:129
+msgid "Edit"
+msgstr "編輯"
+
+#: templates/base.html:141
+msgid "More&hellip;"
+msgstr "詳細⋯"
+
+#: templates/base.html:150
+msgid "Menu"
+msgstr "選單"
+
+#: templates/base.html:154
+msgid "Home"
+msgstr "首頁"
+
+#: templates/base.html:155
+msgid "Speakers"
+msgstr "講者"
+
+#: templates/base.html:160 templates/base.html.py:162 templates/base.html:164
+msgid "Speeches"
+msgstr "談話"
+
+#: templates/base.html:172
+msgid "Search"
+msgstr "搜尋"
+
+#: templates/base.html:173
+msgid "Go"
+msgstr "開始"
+
+#: templates/base.html:213
+msgid "Back to top"
+msgstr "回到頂端"
+
+#: templates/base.html:222
+msgid "SayIt"
+msgstr "SayIt"
+
+#: templates/base.html:223
+msgid ""
+"An open source tool for making transcripts really easy to read, search and "
+"share on the modern web"
+msgstr ""
+"它是一個開放碼工具，在網路時代中它可以用於製作文字記錄，以方便閱讀，搜尋和分"
+"享。"
+
+#: templates/base.html:228
+msgid "Blog"
+msgstr "部落格"
+
+#: templates/base.html:229
+msgid "Twitter"
+msgstr "Twitter"
+
+#: templates/base.html:230
+msgid "Facebook"
+msgstr "Facebook"
+
+#: templates/base.html:231
+msgid "GitHub"
+msgstr "GitHub"
+
+#: templates/base.html:236
+msgid "Get involved"
+msgstr "參加"
+
+#: templates/base.html:238
+msgid "Developers"
+msgstr "開發者"
+
+#: templates/base.html:239
+msgid "Transcripts"
+msgstr "逐字稿"
+
+#: templates/base.html:244
+msgid "The Leveson Inquiry"
+msgstr "Leveson事件調查"
+
+#: templates/base.html:245
+msgid "Charles Taylor Trial"
+msgstr "Charles Taylor 案審理"
+
+#: templates/base.html:246
+msgid "Plays of Shakespeare"
+msgstr "莎士比亞劇作"
+
+#: templates/base.html:252
+msgid "mySociety"
+msgstr "mySociety"
+
+#: templates/base.html:253
+msgid "A mySociety project"
+msgstr "mySociety 項目"
+
+#: templates/base.html:256
+msgid "Poplus"
+msgstr "Poplus"
+
+#: templates/base.html:257
+msgid "A Poplus component"
+msgstr "Poplis元件"
+
+#: templates/instance_invite_existing_message.txt:1
+#, python-format
+msgid ""
+"%(inviter)s has invited you to help edit \"%(instance_title)s\" on SayIt.\n"
+"\n"
+"As you're already a SayIt user, you can log in with your existing "
+"credentials,\n"
+"and get stuck in immediately. Just go to:\n"
+"\n"
+"%(instance_url)s\n"
+"\n"
+"Yours,\n"
+"The SayIt Team\n"
+msgstr ""
+"%(inviter)s 邀請你協助編輯SayIt 上的 \"%(instance_title)s\" \n"
+"\n"
+"因為你已是SayIt 使用者，請用自己的認證方式登入\n"
+"立即上工啦，走吧！\n"
+"\n"
+"%(instance_url)s\n"
+"\n"
+"The SayIt 團隊\n"
+"敬上\n"
+
+#: templates/instance_invite_existing_subject.txt:3
+#, python-format
+msgid "You've been invited to help edit \"%(instance_title)s\" on SayIt!"
+msgstr "你受邀一起進行協助SayIt\"%(instance_title)s\"之編輯"
+
+#: templates/base.html:8 templates/base.html.py:14 templates/base.html:15
+#: templates/base.html.py:99 templates/base.html:132
+#: templates/base.html.py:222
+msgid "SayIt"
+msgstr "SayIt"
+
+#: templates/base.html:16
+msgid "Transcripts for the modern internet"
+msgstr ""
+
 #: templates/base.html:87
 msgid ""
 "This is a staging site &ndash; any data saved here <strong>may be deleted</"
@@ -107,12 +726,6 @@ msgstr ""
 #: templates/base.html:109
 msgid "Log out"
 msgstr "登出"
-
-#: templates/base.html:112 templates/account/login.html:10
-#: templates/account/login.html.py:17 templates/account/login.html:55
-#: templates/registration/login.html:6 templates/registration/login.html:10
-msgid "Log in"
-msgstr "登入"
 
 #: templates/base.html:114
 msgid "Other SayIt sites"
@@ -154,10 +767,6 @@ msgstr ""
 msgid "Back to top"
 msgstr "回到頂端"
 
-#: templates/base.html:222
-msgid "SayIt"
-msgstr "SayIt"
-
 #: templates/base.html:223
 msgid ""
 "An open source tool for making transcripts really easy to read, search and "
@@ -183,10 +792,6 @@ msgstr "GitHub"
 #: templates/base.html:236
 msgid "Get involved"
 msgstr "參加"
-
-#: templates/base.html:237 templates/about/questions.html:12
-msgid "Help"
-msgstr "說明文件"
 
 #: templates/base.html:238
 msgid "Developers"
@@ -244,6 +849,243 @@ msgstr ""
 msgid "You've been invited to help edit \"%(instance_title)s\" on SayIt!"
 msgstr ""
 
+#: templates/instances/index.html:5
+msgid "SayIt: Bringing transcripts into the Internet age"
+msgstr "SayIt: 把文字抄本帶入網路年代　"
+
+#: templates/instances/index.html:13
+msgid "Bringing transcripts<br>into the Internet&nbsp;age"
+msgstr "SayIt: 把文字記錄帶入網路年代　"
+
+#: templates/instances/index.html:14
+msgid ""
+"SayIt is a whole new way to organise, publish,<br>and share your transcripts "
+"– and it’s free."
+msgstr "SayIt是一種全新的方式來整理，發表與分享你的文字記錄，而且它完全免費。"
+
+#: templates/instances/index.html:15
+msgid "Start using SayIt"
+msgstr "開始使用SayIt"
+
+#: templates/instances/index.html:22
+msgid ""
+"Whether you want to <b>upload whole transcripts</b>, or throw together a "
+"<b>collection of individual quotes</b>, SayIt&nbsp;takes the hassle out of "
+"organizing and browsing your spoken and written&nbsp;content."
+msgstr ""
+"不管你是想<b>上傳整個文字記錄</b>, 或是拋出<b>到個別引言的合集</b>, "
+"SayIt&nbsp; 讓這些爭吵整理起來，瀏覧你說過的內容。"
+
+#: templates/instances/index.html:29
+msgid "For campaigners and community&nbsp;groups"
+msgstr "給社運人士和社區組織　"
+
+#: templates/instances/index.html:30
+msgid ""
+"Publish transcripts from meetings or share statements from those in power. "
+"Anyone can use SayIt, alone or in collaboration with others."
+msgstr ""
+"發表會議記錄或是分享當權者的聲明。任何人可以使用SayIt 不管是獨力或是協同合"
+"作。"
+
+#: templates/instances/index.html:31
+msgid ""
+"With SayIt, it’s easy to browse, search or share any statement online – "
+"helping you spread your message further."
+msgstr "利用SayIt 它方便瀏覧，搜尋與分享任何線上聲明，協助你進一步傳佈訊息。"
+
+#: templates/instances/index.html:32 templates/instances/index.html.py:45
+#: templates/instances/index.html:58 templates/instances/index.html.py:70
+msgid "See an example:"
+msgstr "請見示範:"
+
+#: templates/instances/index.html:32
+msgid "Quotes about West Pier, Brighton"
+msgstr "來自Brighton 有關西岸碼頭的引述"
+
+#: templates/instances/index.html:35
+msgid "SayIt containing individual quotes about West Pier in Brighton"
+msgstr "SayIt 包括來自Brighton 有關西岸碼頭的個別引述"
+
+#: templates/instances/index.html:42
+msgid "For councils and organisations that hold public&nbsp;meetings"
+msgstr "讓地方政府與在地組織可以舉公開集會　"
+
+#: templates/instances/index.html:43
+msgid ""
+"Still publishing meeting transcripts on PDFs? SayIt makes it easier for your "
+"readers to find the parts that really interest them."
+msgstr ""
+"仍使用PDF 檔案整理會議發言記錄? SayIt 讓你的讀者更方便找出他們感興趣的資訊"
+
+#: templates/instances/index.html:44
+msgid ""
+"Unlike crusty old PDFs, SayIt works beautifully on every device from a phone "
+"to a tablet to a desktop. And it’s acccessible for screenreaders and "
+"assistive devices."
+msgstr ""
+"不像惱人的PDF檔案，從手機到桌機，SayIt在任何平台上都能完美呈現，而且它對輔　"
+"助機具與螢幕閱讀的可親性也很高。　"
+
+#: templates/instances/index.html:45
+msgid "The Leveson Inquiry transcripts"
+msgstr "Leveson事件調查的文件抄本"
+
+#: templates/instances/index.html:48
+msgid "Screenshot of the SayIt speech editing interface"
+msgstr "SayIt發言編輯的螢幕截圖"
+
+#: templates/instances/index.html:55
+msgid "For researchers, historians, and&nbsp;journalists"
+msgstr "歷史學者，研究人員與新聞記者的用途"
+
+#: templates/instances/index.html:56
+msgid "Forget those dusty folders – SayIt organises your interviews for you."
+msgstr "忘了那些老舊的檔案櫃吧，SayIt幫助你整理你做過的採訪　"
+
+#: templates/instances/index.html:57
+msgid ""
+"Search by keyword, across your entire canon or within just one interview. "
+"Browse by date, speaker or segment. Link to and share one statement, or "
+"entire interviews, with ease."
+msgstr ""
+"透過關鍵字可搜尋整個資料庫或單一訪談。可依日期，講者或部門瀏覧，方便容易地連"
+"結或分享某一個聲明或整個訪談。"
+
+#: templates/instances/index.html:58
+msgid "The Nixon Watergate tapes"
+msgstr "尼克森水門案錄音帶　"
+
+#: templates/instances/index.html:61
+msgid "President Nixon’s profile page in the Watergate Tapes SayIt"
+msgstr "尼克森總統在SayIt上的檔案頁－水門案錄音帶"
+
+#: templates/instances/index.html:67
+msgid "And lots, lots more!"
+msgstr "還有更多更多"
+
+#: templates/instances/index.html:68
+msgid ""
+"SayIt isn’t just for work: it’s for anyone who wants to collect statements "
+"on any subject, or publish any form of spoken word."
+msgstr ""
+"SayIt不只用於工作，它還可以用來收集任何主題之言論或是出版任何形式之發言"
+
+#: templates/instances/index.html:69
+msgid ""
+"From wartime love-letters to local history projects, SayIt is a wonderful, "
+"easy-access way to organise transcripts."
+msgstr "從戰時的情書到當地文史計畫，SayIt 是一個完美，好用的方式來保存文字副本"
+
+#: templates/instances/index.html:70
+msgid "The complete works of Shakespeare"
+msgstr "莎士比亞全集"
+
+#: templates/instances/index.html:76
+msgid "Create your own SayIt and get started in seconds!"
+msgstr "一分鐘內創建你自己的SayIt"
+
+#: templates/instances/index.html:77
+msgid "Start collecting speeches with SayIt"
+msgstr "開始利用SayIt 收集政治人物發言"
+
+#: templates/instances/index.html:84
+msgid "Or integrate the SayIt Component into your own website"
+msgstr "或把SayIt元件整合入你的網站"
+
+#: templates/instances/index.html:89
+msgid ""
+"The code that runs SayIt is also a <a href=\"http://poplus.org\">Poplus "
+"Component</a>, which means you can quickly host it on your own server, "
+"customise the look and feel, or build it into an existing website."
+msgstr ""
+"SayIt 的原始碼可在<a href=\"http://poplus.org\">Poplus 元件</a>找到, 你可以快"
+"速地將其安裝在自己的網站上，調整它的版型外觀，或者把它架設入一個現有的網站"
+"下。"
+
+#: templates/instances/index.html:92
+msgid "Develop with SayIt"
+msgstr "SayIt 開發　"
+
+#: templates/instances/instance_form.html:6
+#: templates/instances/instance_form.html:20
+msgid "Edit instance"
+msgstr "編輯引述"
+
+#: templates/instances/instance_form.html:8
+msgid "New instance"
+msgstr "新的引述"
+
+#: templates/instances/instance_form.html:22
+msgid "Start a new SayIt"
+msgstr "開始新的SayIt"
+
+#: templates/instances/instance_form.html:26
+msgid ""
+"SayIt gives you your own site for publishing and sharing speeches and "
+"statements."
+msgstr "SayIt 讓你的網站可以發表與分享演說或聲明"
+
+#: templates/instances/instance_form.html:27
+msgid ""
+"You could use it to publish transcripts of individual meetings, or rag-bag "
+"databases of everything said by a certain person or group of people (e.g. "
+"statements by political candidates). It&rsquo;s free and constantly "
+"improving."
+msgstr ""
+"你可以利用它發表個別會議之記錄，或是某一團體/個人任何曾經有過的發言資料庫(例"
+"如某政黨候選人之聲明)，它為免費而且有專人維護更新"
+
+#: templates/instances/instance_form.html:52
+msgid "roman-senate"
+msgstr "羅馬時代參議院"
+
+#: templates/instances/instance_form.html:66
+msgid "Speeches by Ancient Roman Senators"
+msgstr "古時羅馬參議員的演說"
+
+#: templates/instances/instance_form.html:75
+msgid "Selected speeches from roughly 700 BC to 400 AD"
+msgstr "選擇大約西元前700年到西元後400年間的演說"
+
+#: templates/instances/instance_form.html:84
+msgid "Update instance"
+msgstr "更新引述"
+
+#: templates/instances/your_instances.html:26
+msgid "(no description)"
+msgstr "(無描述)"
+
+#: templates/instances/your_instances.html:41
+msgid "(created by you)"
+msgstr "(你所創建)"
+
+#: templates/instances/your_instances.html:52
+#, python-format
+msgid ""
+"You have don't yet have any instances. Would you like to <a "
+"href='%(create_instance_url)s'>create one</a>?"
+msgstr ""
+"你尚未創建任何記錄。你想要 <a href='%(create_instance_url)s'>立即創建</a>嗎?"
+
+#: templates/messages/accept_invite_success.txt:2
+msgid "Password set. You can now create and edit speeches and sections."
+msgstr "已設定好密碼，你現在可以創建與編輯內文和章節了"
+
+#: templates/share_instance_with_collaborators.html:12
+msgid "Share your SayIt"
+msgstr "分享你的 SayIt"
+
+#: templates/share_instance_with_collaborators.html:14
+msgid ""
+"Enter the e-mail address of someone you&rsquo;d like to be able to create "
+"and edit speeches and sections"
+msgstr "輸入某人的電子郵件，你可以創建或編輯發言或章節"
+
+#: templates/share_instance_with_collaborators.html:23
+msgid "Send invite"
+msgstr "送出邀請"
+
 #: templates/share_instance_with_collaborators.html:12
 msgid "Share your SayIt"
 msgstr "分享你的 SayIt"
@@ -258,520 +1100,6 @@ msgstr ""
 msgid "Send invite"
 msgstr "送出邀請"
 
-#: templates/about/community.html:7
-msgid "Community"
-msgstr "社群"
-
-#: templates/about/questions.html:6
-msgid "Questions about SayIt"
-msgstr ""
-
-#: templates/about/questions.html:16
-#, fuzzy
-msgid "What is SayIt?"
-msgstr "分享你的 SayIt"
-
-#: templates/about/questions.html:20
-msgid ""
-"It’s an open source tool for making transcripts easy to read, search and "
-"share on the modern internet."
-msgstr ""
-
-#: templates/about/questions.html:23
-msgid "What is a Poplus Component?"
-msgstr ""
-
-#: templates/about/questions.html:28
-msgid ""
-"<a href=\"http://poplus.org/\">Poplus</a> is a global collaboration of "
-"groups that believe it is currently too difficult and expensive to build "
-"effective new digital tools to help citizens exert power over institutions. "
-"Poplus Components are loosely joined tools, mostly structured as web "
-"services, that can be used to radically decrease the development time of "
-"empowerment sites and apps."
-msgstr ""
-
-#: templates/about/questions.html:32
-msgid "Why try to make transcripts better?"
-msgstr ""
-
-#: templates/about/questions.html:37
-msgid ""
-"Transcripts are a kind of oil that greases the wheels of well-functioning "
-"societies. They let people discover when powerful people have made "
-"pronouncements that affect less powerful people. We believe that by making "
-"transcripts function better, more people will end up learning about "
-"decisions and opinions that affect their lives."
-msgstr ""
-
-#: templates/about/questions.html:41
-msgid "What sort of people or organisations can SayIt help?"
-msgstr ""
-
-#: templates/about/questions.html:45
-msgid "Lots, including:"
-msgstr ""
-
-#: templates/about/questions.html:47
-msgid ""
-"Journalists, who want to store, search and publish both the transcripts of "
-"specific events, and databases of speeches and statements by politicians."
-msgstr ""
-
-#: templates/about/questions.html:48
-msgid ""
-"Officials in courts, who want to produce transcripts that are quicker and "
-"easier to use."
-msgstr ""
-
-#: templates/about/questions.html:49
-msgid ""
-"Official in parliaments and other assemblies, who want to make transcripts "
-"that the public and politicians can more easily make use of."
-msgstr ""
-
-#: templates/about/questions.html:50
-msgid ""
-"Researchers who have records of interviews with subjects, who want that data "
-"to be quick and easy to access, even if private."
-msgstr ""
-
-#: templates/about/questions.html:51
-msgid ""
-"Campaigners and activists who want to track what certain people say about "
-"key issues."
-msgstr ""
-
-#: templates/about/questions.html:55
-msgid "Why is a SayIt transcript better than a PDF version?"
-msgstr ""
-
-#: templates/about/questions.html:59
-msgid "SayIt has several advantages over classic paper or PDF versions:"
-msgstr ""
-
-#: templates/about/questions.html:61
-msgid ""
-"The design is mobile responsive to make reading and navigation pleasant "
-"across devices, large and small"
-msgstr ""
-
-#: templates/about/questions.html:62
-msgid ""
-"Search within an entire database of speeches, for example a whole trial, or "
-"everything said by an elected assembly &ndash; better than opening hundreds "
-"of PDFs and searching manually."
-msgstr ""
-
-#: templates/about/questions.html:63
-msgid ""
-"Search within one person’s speeches, even if they only speak occasionally; "
-"and each speech is linked to a person, making it easy to see everything "
-"someone has said."
-msgstr ""
-
-#: templates/about/questions.html:64
-msgid ""
-"Easily share links to a single session (for example at a trial), or even a "
-"single speech within a session."
-msgstr ""
-
-#: templates/about/questions.html:65
-msgid "Make your transcripts more likely to show up clearly in search engines."
-msgstr ""
-
-#: templates/about/questions.html:66
-msgid "There’s an API for people who want to do more advanced text processing."
-msgstr ""
-
-#: templates/about/questions.html:70
-msgid "How do I get a transcript online using SayIt?"
-msgstr ""
-
-#: templates/about/questions.html:75
-msgid ""
-"You could convert your data to the right format, and work with us to get it "
-"uploaded to an instance here on sayit.mysociety.org. You could log in and "
-"author transcripts directly through this web interface, sharing your "
-"instance with others to help. Or you could install SayIt on your own server "
-"in your own project. <a href=\"/about/transcripts\">More details</a>."
-msgstr ""
-
-#: templates/about/questions.html:79
-msgid "Why do you call this a Beta?"
-msgstr ""
-
-#: templates/about/questions.html:84
-msgid ""
-"In web development, ‘Beta’ is the name for a release of a piece of software "
-"which is in progress. In the case of SayIt, we are launching early so that "
-"we can learn more about what features people want us to build, and which are "
-"less important."
-msgstr ""
-
-#: templates/about/questions.html:89
-msgid "Aren’t transcripts sort of old fashioned? Isn’t everything video now?"
-msgstr ""
-
-#: templates/about/questions.html:94
-msgid ""
-"Online video is definitely amazing stuff. But text transcripts offer certain "
-"virtues too, which makes them valuable in different ways. If you want to "
-"know whether a committee has been talking about you, or you want to "
-"subscribe to be sent alerts when your street gets mentioned by powerful "
-"people, then written transcripts, made of nicely structured data, are hard "
-"to beat. The ideal system would clearly mix written words, audio and video, "
-"and being open source we hope that SayIt can be integrated with other "
-"systems that specialise in AV. We&rsquo;re keen to talk to people running "
-"projects in this field."
-msgstr ""
-
-#: templates/about/questions.html:98
-msgid "Is SayIt open source? Does it use open standards or open data?"
-msgstr ""
-
-#: templates/about/questions.html:103
-msgid ""
-"SayIt is open source, licensed under the Affero GPL, and you can check out "
-"the code in <a href=\"https://github.com/mysociety/sayit\">our GitHub repo</"
-"a>. The data standard we use is a <a href=\"/about/developers\">subset of "
-"the Akoma Ntoso</a> data standard  &ndash; a standard developed specifically "
-"for use in parliaments and assemblies."
-msgstr ""
-
-#: templates/about/questions.html:107
-msgid ""
-"Can I write a parser that loads data directly into SayIt on a daily or "
-"weekly basis?"
-msgstr ""
-
-#: templates/about/questions.html:111
-msgid ""
-"Yes &ndash; we’re keen to see people use the site like this. Please contact "
-"us so we can discuss how best to implement this so it works well for you and "
-"us."
-msgstr ""
-
-#: templates/about/questions.html:114
-msgid "Does SayIt support languages other than English?"
-msgstr ""
-
-#: templates/about/questions.html:119
-msgid ""
-"Yes. Transcripts can be authored in any language, and we welcome "
-"translations of the interface at <a href=\"https://www.transifex.com/"
-"projects/p/sayit/\">our project on Transifex</a>. Do <a href=\"/about/"
-"community\">contact us</a> if you want to help us launch a non-English SayIt "
-"site."
-msgstr ""
-
-#: templates/about/questions.html:123
-msgid ""
-"I’m a developer who thinks this is cool. What’s the best thing for me to do?"
-msgstr ""
-
-#: templates/about/questions.html:128
-msgid ""
-"There are plenty of options! Please see our dedicated <a href=\"/about/"
-"developers\">page for developers</a>."
-msgstr ""
-
-#: templates/about/questions.html:131
-msgid "Can SayIt sites be made private?"
-msgstr ""
-
-#: templates/about/questions.html:136
-msgid ""
-"Yes, please <a href=\"/about/community\">contact us</a> if you want to "
-"discuss this feature. We understand that some organisations, for example "
-"newspapers, might want to run private databases of speeches for business "
-"purposes."
-msgstr ""
-
-#: templates/about/questions.html:140
-msgid "Can SayIt be used to track speeches made in more than one place?"
-msgstr ""
-
-#: templates/about/questions.html:145
-msgid ""
-"Yes, you don’t just have to record one event, like a trial or a focus group. "
-"You can build up nicely structured database of quotes made by people across "
-"media sources, or from books and papers. We would like to see people use "
-"SayIt to build sites like ‘all public statements by the Prime Minister’."
-msgstr ""
-
-#: templates/about/questions.html:149
-msgid "Who built this?"
-msgstr ""
-
-#: templates/about/questions.html:154
-msgid ""
-"SayIt was mainly built by <a href=\"http://mysociety.org\">mySociety</a>, "
-"and more specifically by Matthew Somerville, a senior developer. It was "
-"designed by Martin Wright and project managed by Tom Steinberg."
-msgstr ""
-
-#: templates/about/questions.html:158
-msgid "Who funded it?"
-msgstr ""
-
-#: templates/about/questions.html:163
-msgid ""
-"mySociety gets funding from various places, such as the <a href=\"http://www."
-"opensocietyfoundations.org/\">Open Society Foundation</a>, the <a href="
-"\"http://www.omidyar.com/\">Omidyar Network</a> and profits from our own "
-"commercial work. SayIt was mostly funded by a grant from <a href=\"http://"
-"www.google.com/giving/\">Google.org</a>, though, for which we are very "
-"grateful."
-msgstr ""
-
-#: templates/account/login.html:37
-msgid "Need an account?"
-msgstr "需要帳號？"
-
-#: templates/account/login.html:38
-msgid "Username or e-mail"
-msgstr "使用者名稱或是電子郵件"
-
-#: templates/account/login.html:46
-msgid "Forgot password?"
-msgstr "忘記密碼？"
-
-#: templates/account/signup.html:9 templates/account/signup.html.py:16
-#: templates/account/signup.html:62 templates/instances/instance_form.html:10
-#: templates/instances/instance_form.html:24
-#: templates/instances/instance_form.html:88
-msgid "Sign up"
-msgstr "註冊"
-
-#: templates/account/signup.html:37
-msgid "Your e-mail address:"
-msgstr "您的電子郵件地址："
-
-#: templates/account/signup.html:45
-msgid "(No spaces please)"
-msgstr "(請勿留空)"
-
-#: templates/account/signup.html:46
-msgid "Pick a username:"
-msgstr "挑個使用者名稱："
-
-#: templates/account/signup.html:55
-msgid "Pick a password:"
-msgstr "設定密碼："
-
-#: templates/admin/base_site.html:28 templates/admin/base_site.html.py:31
-msgid "SayIt administration"
-msgstr ""
-
-#: templates/instances/index.html:5
-msgid "SayIt: Bringing transcripts into the Internet age"
-msgstr ""
-
-#: templates/instances/index.html:13
-msgid "Bringing transcripts<br>into the Internet&nbsp;age"
-msgstr ""
-
-#: templates/instances/index.html:14
-msgid ""
-"SayIt is a whole new way to organise, publish,<br>and share your transcripts "
-"– and it’s free."
-msgstr ""
-
-#: templates/instances/index.html:15
-msgid "Start using SayIt"
-msgstr ""
-
-#: templates/instances/index.html:22
-msgid ""
-"Whether you want to <b>upload whole transcripts</b>, or throw together a "
-"<b>collection of individual quotes</b>, SayIt&nbsp;takes the hassle out of "
-"organizing and browsing your spoken and written&nbsp;content."
-msgstr ""
-
-#: templates/instances/index.html:29
-msgid "For campaigners and community&nbsp;groups"
-msgstr ""
-
-#: templates/instances/index.html:30
-msgid ""
-"Publish transcripts from meetings or share statements from those in power. "
-"Anyone can use SayIt, alone or in collaboration with others."
-msgstr ""
-
-#: templates/instances/index.html:31
-msgid ""
-"With SayIt, it’s easy to browse, search or share any statement online – "
-"helping you spread your message further."
-msgstr ""
-
-#: templates/instances/index.html:32 templates/instances/index.html.py:45
-#: templates/instances/index.html:58 templates/instances/index.html.py:70
-msgid "See an example:"
-msgstr ""
-
-#: templates/instances/index.html:32
-msgid "Quotes about West Pier, Brighton"
-msgstr ""
-
-#: templates/instances/index.html:35
-msgid "SayIt containing individual quotes about West Pier in Brighton"
-msgstr ""
-
-#: templates/instances/index.html:42
-msgid "For councils and organisations that hold public&nbsp;meetings"
-msgstr ""
-
-#: templates/instances/index.html:43
-msgid ""
-"Still publishing meeting transcripts on PDFs? SayIt makes it easier for your "
-"readers to find the parts that really interest them."
-msgstr ""
-
-#: templates/instances/index.html:44
-msgid ""
-"Unlike crusty old PDFs, SayIt works beautifully on every device from a phone "
-"to a tablet to a desktop. And it’s acccessible for screenreaders and "
-"assistive devices."
-msgstr ""
-
-#: templates/instances/index.html:45
-msgid "The Leveson Inquiry transcripts"
-msgstr ""
-
-#: templates/instances/index.html:48
-msgid "Screenshot of the SayIt speech editing interface"
-msgstr ""
-
-#: templates/instances/index.html:55
-msgid "For researchers, historians, and&nbsp;journalists"
-msgstr ""
-
-#: templates/instances/index.html:56
-msgid "Forget those dusty folders – SayIt organises your interviews for you."
-msgstr ""
-
-#: templates/instances/index.html:57
-msgid ""
-"Search by keyword, across your entire canon or within just one interview. "
-"Browse by date, speaker or segment. Link to and share one statement, or "
-"entire interviews, with ease."
-msgstr ""
-
-#: templates/instances/index.html:58
-msgid "The Nixon Watergate tapes"
-msgstr ""
-
-#: templates/instances/index.html:61
-msgid "President Nixon’s profile page in the Watergate Tapes SayIt"
-msgstr ""
-
-#: templates/instances/index.html:67
-msgid "And lots, lots more!"
-msgstr ""
-
-#: templates/instances/index.html:68
-msgid ""
-"SayIt isn’t just for work: it’s for anyone who wants to collect statements "
-"on any subject, or publish any form of spoken word."
-msgstr ""
-
-#: templates/instances/index.html:69
-msgid ""
-"From wartime love-letters to local history projects, SayIt is a wonderful, "
-"easy-access way to organise transcripts."
-msgstr ""
-
-#: templates/instances/index.html:70
-msgid "The complete works of Shakespeare"
-msgstr ""
-
-#: templates/instances/index.html:76
-msgid "Create your own SayIt and get started in seconds!"
-msgstr ""
-
-#: templates/instances/index.html:77
-msgid "Start collecting speeches with SayIt"
-msgstr ""
-
-#: templates/instances/index.html:84
-msgid "Or integrate the SayIt Component into your own website"
-msgstr ""
-
-#: templates/instances/index.html:89
-msgid ""
-"The code that runs SayIt is also a <a href=\"http://poplus.org\">Poplus "
-"Component</a>, which means you can quickly host it on your own server, "
-"customise the look and feel, or build it into an existing website."
-msgstr ""
-
-#: templates/instances/index.html:92
-msgid "Develop with SayIt"
-msgstr ""
-
-#: templates/instances/instance_form.html:6
-#: templates/instances/instance_form.html:20
-msgid "Edit instance"
-msgstr ""
-
-#: templates/instances/instance_form.html:8
-msgid "New instance"
-msgstr ""
-
-#: templates/instances/instance_form.html:22
-#, fuzzy
-msgid "Start a new SayIt"
-msgstr "分享你的 SayIt"
-
-#: templates/instances/instance_form.html:26
-msgid ""
-"SayIt gives you your own site for publishing and sharing speeches and "
-"statements."
-msgstr ""
-
-#: templates/instances/instance_form.html:27
-msgid ""
-"You could use it to publish transcripts of individual meetings, or rag-bag "
-"databases of everything said by a certain person or group of people (e.g. "
-"statements by political candidates). It&rsquo;s free and constantly "
-"improving."
-msgstr ""
-
-#: templates/instances/instance_form.html:52
-msgid "roman-senate"
-msgstr ""
-
-#: templates/instances/instance_form.html:66
-msgid "Speeches by Ancient Roman Senators"
-msgstr ""
-
-#: templates/instances/instance_form.html:75
-msgid "Selected speeches from roughly 700 BC to 400 AD"
-msgstr ""
-
-#: templates/instances/instance_form.html:84
-msgid "Update instance"
-msgstr ""
-
-#: templates/instances/your_instances.html:26
-msgid "(no description)"
-msgstr ""
-
-#: templates/instances/your_instances.html:41
-msgid "(created by you)"
-msgstr ""
-
-#: templates/instances/your_instances.html:52
-#, python-format
-msgid ""
-"You have don't yet have any instances. Would you like to <a "
-"href='%(create_instance_url)s'>create one</a>?"
-msgstr ""
-
-#: templates/messages/accept_invite_success.txt:2
-msgid "Password set. You can now create and edit speeches and sections."
-msgstr ""
-
 #: templates/speeches/home.html:6
 msgid "Invite friends to help"
 msgstr "邀請朋友來幫忙"
@@ -779,26 +1107,19 @@ msgstr "邀請朋友來幫忙"
 #: templates/speeches/home.html:13 templates/speeches/parentless_list.html:8
 #: templates/speeches/speaker_list.html:8
 msgid "This is a brand new SayIt site."
-msgstr ""
+msgstr "這是一個全新的 SayIt 網站"
 
 #: templates/speeches/home.html:14 templates/speeches/parentless_list.html:9
 #: templates/speeches/speaker_list.html:9
 msgid ""
 "Its creator hasn&rsquo;t yet added any speeches or statements for you to see."
-msgstr ""
+msgstr "它的原創者尚未加入任何記錄或聲明可供你查看"
 
 #: templates/speeches/home.html:15 templates/speeches/parentless_list.html:10
 #: templates/speeches/speaker_list.html:10
-#, fuzzy
 msgid "Learn more about SayIt"
-msgstr "分享你的 SayIt"
+msgstr "更深入了解SayIt"
 
 #: templates/speeches/speech_form.html:5
 msgid "Invite some friends to help you"
 msgstr "邀請一些朋友來幫忙"
-
-#~ msgid "Add a new speech"
-#~ msgstr "增加談話"
-
-#~ msgid "Add a section"
-#~ msgstr "增加小節"

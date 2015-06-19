@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: sayit.mysociety.org\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-01-06 09:55+0000\n"
-"PO-Revision-Date: 2014-11-10 17:21+0000\n"
+"POT-Creation-Date: 2015-06-19 15:08+0100\n"
+"PO-Revision-Date: 2015-01-06 11:28+0000\n"
 "Last-Translator: mySociety <transifex@mysociety.org>\n"
 "Language-Team: Hungarian (Hungary) (http://www.transifex.com/projects/p/"
 "sayitmysocietyorg/language/hu_HU/)\n"
@@ -23,245 +23,16 @@ msgstr ""
 msgid "E-mail"
 msgstr ""
 
-#: templates/accept_invitation.html:5 templates/accept_invitation.html.py:9
-msgid "Welcome to SayIt"
-msgstr ""
-
-#: templates/accept_invitation.html:12
-msgid "Bad Token"
-msgstr ""
-
-#: templates/accept_invitation.html:14
-#, python-format
-msgid ""
-"The invite link was invalid, possibly because it has already been used.  "
-"Please try requesting a <a href=\"%(passwd_reset_url)s\">password reset</a>."
-msgstr ""
-
-#: templates/accept_invitation.html:17
-msgid "Please set a password"
-msgstr ""
-
-#: templates/accept_invitation.html:21
-msgid "Take me to the speeches!"
-msgstr ""
-
-#: templates/accept_invitation.html:24
-msgid "Your password is now changed."
-msgstr ""
-
-#: templates/accept_invite_message.txt:1
-#, python-format
-msgid ""
-"Hello %(invitee)s,\n"
-"\n"
-"Here's something - %(inviter)s has invited you to help edit\n"
-"\"%(instance_title)s\" on SayIt.\n"
-"\n"
-"SayIt is a very simple way of storing and publishing speeches and "
-"transcripts\n"
-"online. Getting started is easy.\n"
-"\n"
-"As a first step, please go to %(password_reset_url)s to set up your "
-"account,\n"
-"and then you can start adding speeches.\n"
-"\n"
-"Yours,\n"
-"The SayIt Team\n"
-msgstr ""
-
-#: templates/accept_invite_subject.txt:3
-#, python-format
-msgid "You've been invited to help edit \"%(instance_title)s\"!"
-msgstr ""
-
-#: templates/base.html:87
-msgid ""
-"This is a staging site &ndash; any data saved here <strong>may be deleted</"
-"strong>."
-msgstr ""
-
-#: templates/base.html:99
-msgid "Modern transcripts"
-msgstr ""
-
-#: templates/base.html:102 templates/base.html.py:207
-msgid "About"
-msgstr ""
-
-#: templates/base.html:103
-msgid "Contact"
-msgstr ""
-
-#: templates/base.html:104 templates/instances/instance_form.html:86
-msgid "Create New SayIt"
-msgstr ""
-
-#: templates/base.html:108 templates/instances/your_instances.html:4
-#: templates/instances/your_instances.html:10
-msgid "Your Instances"
-msgstr ""
-
-#: templates/base.html:109
-msgid "Log out"
-msgstr ""
-
-#: templates/base.html:112 templates/account/login.html:10
-#: templates/account/login.html.py:17 templates/account/login.html:55
-#: templates/registration/login.html:6 templates/registration/login.html:10
-msgid "Log in"
-msgstr ""
-
-#: templates/base.html:114
-msgid "Other SayIt sites"
-msgstr "További SayIt oldalak"
-
-#: templates/base.html:129
-msgid "Edit"
-msgstr ""
-
-#: templates/base.html:141
-msgid "More&hellip;"
-msgstr ""
-
-#: templates/base.html:150
-msgid "Menu"
-msgstr ""
-
-#: templates/base.html:154
-msgid "Home"
-msgstr ""
-
-#: templates/base.html:155
-msgid "Speakers"
-msgstr ""
-
-#: templates/base.html:160 templates/base.html.py:162 templates/base.html:164
-msgid "Speeches"
-msgstr ""
-
-#: templates/base.html:172
-msgid "Search"
-msgstr ""
-
-#: templates/base.html:173
-msgid "Go"
-msgstr ""
-
-#: templates/base.html:213
-msgid "Back to top"
-msgstr ""
-
-#: templates/base.html:222
-msgid "SayIt"
-msgstr ""
-
-#: templates/base.html:223
-msgid ""
-"An open source tool for making transcripts really easy to read, search and "
-"share on the modern web"
-msgstr ""
-
-#: templates/base.html:228
-msgid "Blog"
-msgstr ""
-
-#: templates/base.html:229
-msgid "Twitter"
-msgstr ""
-
-#: templates/base.html:230
-msgid "Facebook"
-msgstr ""
-
-#: templates/base.html:231
-msgid "GitHub"
-msgstr ""
-
-#: templates/base.html:236
-msgid "Get involved"
-msgstr ""
-
-#: templates/base.html:237 templates/about/questions.html:12
-msgid "Help"
-msgstr ""
-
-#: templates/base.html:238
-msgid "Developers"
-msgstr ""
-
-#: templates/base.html:239
-msgid "Transcripts"
-msgstr ""
-
-#: templates/base.html:244
-msgid "The Leveson Inquiry"
-msgstr ""
-
-#: templates/base.html:245
-msgid "Charles Taylor Trial"
-msgstr ""
-
-#: templates/base.html:246
-msgid "Plays of Shakespeare"
-msgstr ""
-
-#: templates/base.html:252
-msgid "mySociety"
-msgstr ""
-
-#: templates/base.html:253
-msgid "A mySociety project"
-msgstr ""
-
-#: templates/base.html:256
-msgid "Poplus"
-msgstr ""
-
-#: templates/base.html:257
-msgid "A Poplus component"
-msgstr ""
-
-#: templates/instance_invite_existing_message.txt:1
-#, python-format
-msgid ""
-"%(inviter)s has invited you to help edit \"%(instance_title)s\" on SayIt.\n"
-"\n"
-"As you're already a SayIt user, you can log in with your existing "
-"credentials,\n"
-"and get stuck in immediately. Just go to:\n"
-"\n"
-"%(instance_url)s\n"
-"\n"
-"Yours,\n"
-"The SayIt Team\n"
-msgstr ""
-
-#: templates/instance_invite_existing_subject.txt:3
-#, python-format
-msgid "You've been invited to help edit \"%(instance_title)s\" on SayIt!"
-msgstr ""
-
-#: templates/share_instance_with_collaborators.html:12
-msgid "Share your SayIt"
-msgstr ""
-
-#: templates/share_instance_with_collaborators.html:14
-msgid ""
-"Enter the e-mail address of someone you&rsquo;d like to be able to create "
-"and edit speeches and sections"
-msgstr ""
-
-#: templates/share_instance_with_collaborators.html:23
-msgid "Send invite"
-msgstr ""
-
 #: templates/about/community.html:7
 msgid "Community"
 msgstr ""
 
 #: templates/about/questions.html:6
 msgid "Questions about SayIt"
+msgstr ""
+
+#: templates/about/questions.html:12 templates/base.html:237
+msgid "Help"
 msgstr ""
 
 #: templates/about/questions.html:16
@@ -406,11 +177,11 @@ msgid ""
 "less important."
 msgstr ""
 
-#: templates/about/questions.html:89
+#: templates/about/questions.html:88
 msgid "Aren’t transcripts sort of old fashioned? Isn’t everything video now?"
 msgstr ""
 
-#: templates/about/questions.html:94
+#: templates/about/questions.html:93
 msgid ""
 "Online video is definitely amazing stuff. But text transcripts offer certain "
 "virtues too, which makes them valuable in different ways. If you want to "
@@ -423,11 +194,11 @@ msgid ""
 "projects in this field."
 msgstr ""
 
-#: templates/about/questions.html:98
+#: templates/about/questions.html:97
 msgid "Is SayIt open source? Does it use open standards or open data?"
 msgstr ""
 
-#: templates/about/questions.html:103
+#: templates/about/questions.html:102
 msgid ""
 "SayIt is open source, licensed under the Affero GPL, and you can check out "
 "the code in <a href=\"https://github.com/mysociety/sayit\">our GitHub repo</"
@@ -436,24 +207,24 @@ msgid ""
 "for use in parliaments and assemblies."
 msgstr ""
 
-#: templates/about/questions.html:107
+#: templates/about/questions.html:106
 msgid ""
 "Can I write a parser that loads data directly into SayIt on a daily or "
 "weekly basis?"
 msgstr ""
 
-#: templates/about/questions.html:111
+#: templates/about/questions.html:110
 msgid ""
 "Yes &ndash; we’re keen to see people use the site like this. Please contact "
 "us so we can discuss how best to implement this so it works well for you and "
 "us."
 msgstr ""
 
-#: templates/about/questions.html:114
+#: templates/about/questions.html:113
 msgid "Does SayIt support languages other than English?"
 msgstr ""
 
-#: templates/about/questions.html:119
+#: templates/about/questions.html:118
 msgid ""
 "Yes. Transcripts can be authored in any language, and we welcome "
 "translations of the interface at <a href=\"https://www.transifex.com/"
@@ -462,22 +233,22 @@ msgid ""
 "site."
 msgstr ""
 
-#: templates/about/questions.html:123
+#: templates/about/questions.html:122
 msgid ""
 "I’m a developer who thinks this is cool. What’s the best thing for me to do?"
 msgstr ""
 
-#: templates/about/questions.html:128
+#: templates/about/questions.html:127
 msgid ""
 "There are plenty of options! Please see our dedicated <a href=\"/about/"
 "developers\">page for developers</a>."
 msgstr ""
 
-#: templates/about/questions.html:131
+#: templates/about/questions.html:130
 msgid "Can SayIt sites be made private?"
 msgstr ""
 
-#: templates/about/questions.html:136
+#: templates/about/questions.html:135
 msgid ""
 "Yes, please <a href=\"/about/community\">contact us</a> if you want to "
 "discuss this feature. We understand that some organisations, for example "
@@ -485,11 +256,11 @@ msgid ""
 "purposes."
 msgstr ""
 
-#: templates/about/questions.html:140
+#: templates/about/questions.html:139
 msgid "Can SayIt be used to track speeches made in more than one place?"
 msgstr ""
 
-#: templates/about/questions.html:145
+#: templates/about/questions.html:144
 msgid ""
 "Yes, you don’t just have to record one event, like a trial or a focus group. "
 "You can build up nicely structured database of quotes made by people across "
@@ -497,22 +268,22 @@ msgid ""
 "SayIt to build sites like ‘all public statements by the Prime Minister’."
 msgstr ""
 
-#: templates/about/questions.html:149
+#: templates/about/questions.html:148
 msgid "Who built this?"
 msgstr ""
 
-#: templates/about/questions.html:154
+#: templates/about/questions.html:153
 msgid ""
 "SayIt was mainly built by <a href=\"http://mysociety.org\">mySociety</a>, "
 "and more specifically by Matthew Somerville, a senior developer. It was "
 "designed by Martin Wright and project managed by Tom Steinberg."
 msgstr ""
 
-#: templates/about/questions.html:158
+#: templates/about/questions.html:157
 msgid "Who funded it?"
 msgstr ""
 
-#: templates/about/questions.html:163
+#: templates/about/questions.html:162
 msgid ""
 "mySociety gets funding from various places, such as the <a href=\"http://www."
 "opensocietyfoundations.org/\">Open Society Foundation</a>, the <a href="
@@ -520,6 +291,64 @@ msgid ""
 "commercial work. SayIt was mostly funded by a grant from <a href=\"http://"
 "www.google.com/giving/\">Google.org</a>, though, for which we are very "
 "grateful."
+msgstr ""
+
+#: templates/accept_invitation.html:5 templates/accept_invitation.html.py:9
+msgid "Welcome to SayIt"
+msgstr ""
+
+#: templates/accept_invitation.html:12
+msgid "Bad Token"
+msgstr ""
+
+#: templates/accept_invitation.html:14
+#, python-format
+msgid ""
+"The invite link was invalid, possibly because it has already been used.  "
+"Please try requesting a <a href=\"%(passwd_reset_url)s\">password reset</a>."
+msgstr ""
+
+#: templates/accept_invitation.html:17
+msgid "Please set a password"
+msgstr ""
+
+#: templates/accept_invitation.html:21
+msgid "Take me to the speeches!"
+msgstr ""
+
+#: templates/accept_invitation.html:24
+msgid "Your password is now changed."
+msgstr ""
+
+#: templates/accept_invite_message.txt:1
+#, python-format
+msgid ""
+"Hello %(invitee)s,\n"
+"\n"
+"Here's something - %(inviter)s has invited you to help edit\n"
+"\"%(instance_title)s\" on SayIt.\n"
+"\n"
+"SayIt is a very simple way of storing and publishing speeches and "
+"transcripts\n"
+"online. Getting started is easy.\n"
+"\n"
+"As a first step, please go to %(password_reset_url)s to set up your "
+"account,\n"
+"and then you can start adding speeches.\n"
+"\n"
+"Yours,\n"
+"The SayIt Team\n"
+msgstr ""
+
+#: templates/accept_invite_subject.txt:3
+#, python-format
+msgid "You've been invited to help edit \"%(instance_title)s\"!"
+msgstr ""
+
+#: templates/account/login.html:10 templates/account/login.html.py:17
+#: templates/account/login.html:55 templates/base.html:112
+#: templates/registration/login.html:6 templates/registration/login.html:10
+msgid "Log in"
 msgstr ""
 
 #: templates/account/login.html:37
@@ -559,6 +388,169 @@ msgstr ""
 
 #: templates/admin/base_site.html:28 templates/admin/base_site.html.py:31
 msgid "SayIt administration"
+msgstr ""
+
+#: templates/base.html:8 templates/base.html.py:14 templates/base.html:15
+#: templates/base.html.py:99 templates/base.html:132
+#: templates/base.html.py:222
+msgid "SayIt"
+msgstr ""
+
+#: templates/base.html:16
+msgid "Transcripts for the modern internet"
+msgstr ""
+
+#: templates/base.html:87
+msgid ""
+"This is a staging site &ndash; any data saved here <strong>may be deleted</"
+"strong>."
+msgstr ""
+
+#: templates/base.html:99
+msgid "Modern transcripts"
+msgstr ""
+
+#: templates/base.html:102 templates/base.html.py:207
+msgid "About"
+msgstr ""
+
+#: templates/base.html:103
+msgid "Contact"
+msgstr ""
+
+#: templates/base.html:104 templates/instances/instance_form.html:86
+msgid "Create New SayIt"
+msgstr ""
+
+#: templates/base.html:108 templates/instances/your_instances.html:4
+#: templates/instances/your_instances.html:10
+msgid "Your Instances"
+msgstr ""
+
+#: templates/base.html:109
+msgid "Log out"
+msgstr ""
+
+#: templates/base.html:114
+msgid "Other SayIt sites"
+msgstr "További SayIt oldalak"
+
+#: templates/base.html:129
+msgid "Edit"
+msgstr ""
+
+#: templates/base.html:141
+msgid "More&hellip;"
+msgstr ""
+
+#: templates/base.html:150
+msgid "Menu"
+msgstr ""
+
+#: templates/base.html:154
+msgid "Home"
+msgstr ""
+
+#: templates/base.html:155
+msgid "Speakers"
+msgstr ""
+
+#: templates/base.html:160 templates/base.html.py:162 templates/base.html:164
+msgid "Speeches"
+msgstr ""
+
+#: templates/base.html:172
+msgid "Search"
+msgstr ""
+
+#: templates/base.html:173
+msgid "Go"
+msgstr ""
+
+#: templates/base.html:213
+msgid "Back to top"
+msgstr ""
+
+#: templates/base.html:223
+msgid ""
+"An open source tool for making transcripts really easy to read, search and "
+"share on the modern web"
+msgstr ""
+
+#: templates/base.html:228
+msgid "Blog"
+msgstr ""
+
+#: templates/base.html:229
+msgid "Twitter"
+msgstr ""
+
+#: templates/base.html:230
+msgid "Facebook"
+msgstr ""
+
+#: templates/base.html:231
+msgid "GitHub"
+msgstr ""
+
+#: templates/base.html:236
+msgid "Get involved"
+msgstr ""
+
+#: templates/base.html:238
+msgid "Developers"
+msgstr ""
+
+#: templates/base.html:239
+msgid "Transcripts"
+msgstr ""
+
+#: templates/base.html:244
+msgid "The Leveson Inquiry"
+msgstr ""
+
+#: templates/base.html:245
+msgid "Charles Taylor Trial"
+msgstr ""
+
+#: templates/base.html:246
+msgid "Plays of Shakespeare"
+msgstr ""
+
+#: templates/base.html:252
+msgid "mySociety"
+msgstr ""
+
+#: templates/base.html:253
+msgid "A mySociety project"
+msgstr ""
+
+#: templates/base.html:256
+msgid "Poplus"
+msgstr ""
+
+#: templates/base.html:257
+msgid "A Poplus component"
+msgstr ""
+
+#: templates/instance_invite_existing_message.txt:1
+#, python-format
+msgid ""
+"%(inviter)s has invited you to help edit \"%(instance_title)s\" on SayIt.\n"
+"\n"
+"As you're already a SayIt user, you can log in with your existing "
+"credentials,\n"
+"and get stuck in immediately. Just go to:\n"
+"\n"
+"%(instance_url)s\n"
+"\n"
+"Yours,\n"
+"The SayIt Team\n"
+msgstr ""
+
+#: templates/instance_invite_existing_subject.txt:3
+#, python-format
+msgid "You've been invited to help edit \"%(instance_title)s\" on SayIt!"
 msgstr ""
 
 #: templates/instances/index.html:5
@@ -766,6 +758,20 @@ msgstr ""
 
 #: templates/messages/accept_invite_success.txt:2
 msgid "Password set. You can now create and edit speeches and sections."
+msgstr ""
+
+#: templates/share_instance_with_collaborators.html:12
+msgid "Share your SayIt"
+msgstr ""
+
+#: templates/share_instance_with_collaborators.html:14
+msgid ""
+"Enter the e-mail address of someone you&rsquo;d like to be able to create "
+"and edit speeches and sections"
+msgstr ""
+
+#: templates/share_instance_with_collaborators.html:23
+msgid "Send invite"
 msgstr ""
 
 #: templates/speeches/home.html:6

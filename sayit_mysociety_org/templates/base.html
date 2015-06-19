@@ -5,15 +5,15 @@
           {% if request.instance %}
             :: {% filter force_escape %}{% firstof request.instance.title request.instance.label %}{% endfilter %}
           {% endif %}
-            :: SayIt{% endblock %}</title>
+            :: {% trans "SayIt" %}{% endblock %}</title>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
         {% block opengraph %}
           <meta property="og:url" content="{% block og_url %}{{ request.build_absolute_uri }}{% endblock %}">
-          <meta property="og:title" content="{% block og_title %}{% if title %}{{ title }} ::{% endif %}{% if request.instance %}{% filter force_escape %}{% firstof request.instance.title request.instance.label %}{% endfilter %} :: {% endif %}SayIt{% endblock %}">
-          <meta property="og:site_name" content="{% block og_site_name %}SayIt{% endblock %}">
-          <meta property="og:description" content="{% block og_description %}Transcripts for the modern internet{% endblock %}">
+          <meta property="og:title" content="{% block og_title %}{% if title %}{{ title }} ::{% endif %}{% if request.instance %}{% filter force_escape %}{% firstof request.instance.title request.instance.label %}{% endfilter %} :: {% endif %}{% trans "SayIt" %}{% endblock %}">
+          <meta property="og:site_name" content="{% block og_site_name %}{% trans "SayIt" %}{% endblock %}">
+          <meta property="og:description" content="{% block og_description %}{% trans "Transcripts for the modern internet" %}{% endblock %}">
           <meta property="og:type" content="{% block og_type %}website{% endblock %}">
           <meta property="og:image" content="{% block og_image %}http{% if request.is_secure %}s{% endif %}://{{ request.get_host }}{% static "speeches/img/apple-touch-icon-152x152.png" %}{% endblock %}">
 
@@ -96,7 +96,7 @@
       <header class="brand-header">
         <div class="brand-header__row">
           <div class="brand-header__title-unit">
-              <h1 class="brand-header__title"><a href="{{ BASE_URL }}">SayIt <span class="subtitle js-typewriter">&mdash; {% trans "Modern transcripts" %}</span></a></h1>
+              <h1 class="brand-header__title"><a href="{{ BASE_URL }}">{% trans "SayIt" %} <span class="subtitle js-typewriter">&mdash; {% trans "Modern transcripts" %}</span></a></h1>
           </div>
           <nav class="brand-header__navigation">
             <a href="{{ BASE_URL }}/about/questions">{% trans 'About' %}</a>
@@ -129,7 +129,7 @@
                       <a class="instance-header__edit-instance" href="{% url 'instance-edit' %}">{% trans 'Edit' %}</a>
                     {% endif %}
                   {% else %}
-                    <a href="{{ BASE_URL }}">SayIt</a>
+                    <a href="{{ BASE_URL }}">{% trans "SayIt" %}</a>
                   {% endif %}
                 </h1>
               </div>
