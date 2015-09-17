@@ -13,7 +13,7 @@ project:
 * [The plays of Shakespeare](http://shakespeare.sayit.mysociety.org/)
 
 SayIt is a [Poplus component](http://poplus.org/) by
-[mySociety](http://www.mysociety.org/). It is a Django application that can be
+[mySociety](https://www.mysociety.org/). It is a Django application that can be
 included in your own Django project, or run standalone. If you want to host
 your own transcripts in SayIt, please see the
 [Sayit repository](https://github.com/mysociety/sayit); this repository is a
