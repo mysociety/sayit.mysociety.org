@@ -1,4 +1,4 @@
-{% load staticfiles %}{% load url from future %}{% load i18n %}{% load compressed %}<!DOCTYPE html>
+{% load staticfiles %}{% load i18n %}{% load pipeline %}<!DOCTYPE html>
 <html class="no-js">
     <head>
         <title>{% block fulltitle %}{% block title %}{{ title }}{% endblock %}
@@ -43,13 +43,13 @@
 
         {% block extra_css %}
         {% if request.instance.label == 'shakespeare' %}
-            {% compressed_css 'sayit-shakespeare' %}
+            {% stylesheet 'sayit-shakespeare' %}
         {% elif request.instance.label == 'labour-speeches' %}
-            {% compressed_css 'sayit-labour' %}
+            {% stylesheet 'sayit-labour' %}
         {% elif request.instance.label == 'conservative-speeches' %}
-            {% compressed_css 'sayit-conservative' %}
+            {% stylesheet 'sayit-conservative' %}
         {% else %}
-            {% compressed_css 'sayit-default' %}
+            {% stylesheet 'sayit-default' %}
         {% endif %}
         <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,400italic' rel='stylesheet' type='text/css'>
         {% endblock extra_css %}
@@ -58,7 +58,7 @@
             var docEl = document.documentElement;
             docEl.className = docEl.className.replace(/\bno-js\b/,'') + ' js';
         </script>
-        {% compressed_js 'sayit-default-head' %}
+        {% javascript 'sayit-default-head' %}
         <script src="{% static "javascripts/vendor/custom.modernizr.js" %}"></script>
         {% block extra_js_head %}{% endblock %}
         {% if settings.GOOGLE_ANALYTICS_ACCOUNT %}
@@ -260,7 +260,7 @@
           </div>
         </footer>
 
-        {% compressed_js 'sayit-default' %}
+        {% javascript 'sayit-default' %}
         {% block extra_js %}{% endblock %}
 
         <script>

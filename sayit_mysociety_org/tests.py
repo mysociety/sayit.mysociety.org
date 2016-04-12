@@ -281,7 +281,7 @@ class ShareInstanceTests(InstanceTestCase):
 
         # Check that sharee is now logged in, following
         # http://stackoverflow.com/a/6013115/517418
-        self.assertEqual(self.client.session['_auth_user_id'], sharee.pk)
+        self.assertEqual(self.client.session['_auth_user_id'], str(sharee.pk))
 
         # Check we can log out and in again with the new credentials
         self.client.logout()

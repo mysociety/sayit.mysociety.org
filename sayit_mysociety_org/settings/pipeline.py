@@ -29,25 +29,25 @@ STATICFILES_FINDERS = (
     'django.contrib.staticfiles.finders.FileSystemFinder',
     'django.contrib.staticfiles.finders.AppDirectoriesFinder',
     # 'django.contrib.staticfiles.finders.DefaultStorageFinder',
-    # 'pipeline.finders.PipelineFinder',
+    'pipeline.finders.PipelineFinder',
     # 'pipeline.finders.CachedFileFinder',
 )
 
-# Compress the css and js using yui-compressor.
-PIPELINE_CSS_COMPRESSOR = 'pipeline.compressors.yui.YUICompressor'
-PIPELINE_JS_COMPRESSOR = 'pipeline.compressors.yui.YUICompressor'
-PIPELINE_COMPILERS = (
-    'pipeline_compass.compass.CompassCompiler',
-)
 import speeches
-PIPELINE_COMPASS_BINARY = os.path.join(PARENT_DIR, 'gem-bin', 'compass')
-PIPELINE_COMPASS_ARGUMENTS = '-I %s -r zurb-foundation' % os.path.join(speeches.__path__[0], 'static')
+PIPELINE = {
+    # Compress the css and js using yui-compressor.
+    'CSS_COMPRESSOR': 'pipeline.compressors.yui.YUICompressor',
+    'JS_COMPRESSOR': 'pipeline.compressors.yui.YUICompressor',
+    'COMPILERS': (
+        'pipeline_compass.compass.CompassCompiler',
+    ),
+    # On some platforms this might be called "yuicompressor", so it may be
+    # necessary to symlink it into your PATH as "yui-compressor".
+    'YUI_BINARY': '/usr/bin/env yui-compressor',
+    'COMPASS_BINARY': os.path.join(PARENT_DIR, 'gem-bin', 'compass'),
+    'COMPASS_ARGUMENTS': [ '-I', os.path.join(speeches.__path__[0], 'static'), '-r', 'zurb-foundation' ],
 
-# On some platforms this might be called "yuicompressor", so it may be
-# necessary to symlink it into your PATH as "yui-compressor".
-PIPELINE_YUI_BINARY = '/usr/bin/env yui-compressor'
-
-PIPELINE_CSS = {
+  'STYLESHEETS': {
     'sayit-default': {
         'source_filenames': (
             'sass/project.scss',
@@ -72,9 +72,8 @@ PIPELINE_CSS = {
         ),
         'output_filename': 'css/project-conservative.css',
     },
-}
-
-PIPELINE_JS = {
+  },
+  'JAVASCRIPT': {
     # Some things in document body (e.g. media player set up) call $()
     'sayit-default-head': {
         'source_filenames': (
@@ -119,4 +118,5 @@ PIPELINE_JS = {
         ),
         'output_filename': 'javascripts/sayit.upload.min.js',
     },
+  },
 }

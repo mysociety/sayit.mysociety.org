@@ -92,11 +92,9 @@ TEMPLATE_DIRS = (
 )
 
 TEMPLATE_CONTEXT_PROCESSORS = global_settings.TEMPLATE_CONTEXT_PROCESSORS + (
-    "django.core.context_processors.request",
+    "django.template.context_processors.request",
     "sayit_mysociety_org.context_processors.add_settings",
     "sayit_mysociety_org.context_processors.nav_section",
-    "allauth.account.context_processors.account",
-    "allauth.socialaccount.context_processors.socialaccount",
 )
 
 INSTALLED_APPS = [
@@ -114,13 +112,11 @@ INSTALLED_APPS = [
     'allauth.socialaccount',
     'allauth.socialaccount.providers.twitter',
     'haystack',
-    'south',
     'django_select2',
     'easy_thumbnails',
     'tastypie',
     'django_bleach',
     'pipeline',
-    'popit',
     'popolo',
     'instances',
     'speeches',
@@ -184,15 +180,6 @@ LOGGING = {
 PAGINATION_DEFAULT_WINDOW = 2
 
 APPEND_SLASH = False
-
-# South
-# Don't use migrations in testing - makes things faster and avoids
-# errors with difference between sqlite and postgres
-SOUTH_TESTS_MIGRATE = False
-
-SOUTH_MIGRATION_MODULES = {
-    'easy_thumbnails': 'easy_thumbnails.south_migrations',
-}
 
 AUTHENTICATION_BACKENDS = (
     'login_token.auth_backend.LoginTokenBackend',
