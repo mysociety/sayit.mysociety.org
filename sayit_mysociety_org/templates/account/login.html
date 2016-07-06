@@ -4,7 +4,7 @@
 {# We've forked it so that we can customise the login form and hide the green instance-header #}
 
 {% load i18n %}
-{% load account %}
+{% load account socialaccount %}
 
 {% block title %}{% trans "Log in" %}{% endblock %}
 
@@ -55,7 +55,9 @@
               <label><input type="checkbox" tabindex="3" name="remember"> {{ form.remember.label }}</label>
           </div>
       </form>
-    {% if socialaccount.providers  %}
+    {% get_providers as socialaccount_providers %}
+
+    {% if socialaccount_providers  %}
       <ul class="socialaccount_providers">
           {% include "socialaccount/snippets/provider_list.html" with process="login" %}
       </ul>
