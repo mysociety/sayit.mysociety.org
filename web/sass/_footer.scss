@@ -1,0 +1,82 @@
+$mysoc-footer-background-color: #333;
+$mysoc-footer-text-color: #acacac;
+$mysoc-footer-site-name-text-color: #fff;
+
+$mysoc-footer-link-text-color: #fff;
+$mysoc-footer-link-hover-text-color: #fff;
+
+$mysoc-footer-divider-color: #4b4b4b;
+
+$mysoc-footer-donate-background-color: #434343;
+$mysoc-footer-donate-text-color: #fff;
+$mysoc-footer-donate-button-background-color: #E04B4B;
+
+$mysoc-footer-legal-text-color: #9a9a9a;
+
+@import "mysoc-footer";
+
+.mysoc-footer__part-one {
+  @include grid-column(12);
+  @media (min-width: $large-screen) {
+    @include grid-column(5);
+  }
+}
+
+.mysoc-footer__part-two {
+  @include grid-column(12);
+  @media (min-width: $medium-screen) {
+    @include grid-column(6);
+  }
+  @media (min-width: $large-screen) {
+    @include grid-column(4);
+  }
+}
+
+.mysoc-footer__part-three {
+  @include grid-column(12);
+  @media (min-width: $medium-screen) {
+    @include grid-column(6);
+  }
+  @media (min-width: $large-screen) {
+    @include grid-column(3);
+  }
+}
+
+.mysoc-footer__part-four {
+  @include grid-column(12);
+  @media (min-width: $medium-screen) {
+    //@include grid-column(6);
+  }
+  @media (min-width: $large-screen) {
+    @include grid-column(5);
+  }
+}
+
+.mysoc-footer__part-five {
+  @include grid-column(12);
+  @media (min-width: $medium-screen) {
+    @include grid-column(8);
+  }
+  @media (min-width: $large-screen) {
+    @include grid-column(4);
+  }
+}
+
+.mysoc-footer__part-six {
+  @include grid-column(12);
+  @media (min-width: $medium-screen) {
+    @include grid-column(4);
+  }
+  @media (min-width: $large-screen) {
+    @include grid-column(3);
+  }
+}
+
+.mysoc-footer__org__logo--poplus {
+width: 175px;
+background: transparent url('#{$mysoc-footer-image-path}poplus-logo.png') 0 0 no-repeat;
+background-size: 175px 32px;
+@media ($high-dpi-screen) {
+  background-image: url('#{$mysoc-footer-image-path}poplus-logo@2.png');
+}
+}
