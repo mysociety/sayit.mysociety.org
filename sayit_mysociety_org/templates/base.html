@@ -216,49 +216,74 @@
           </div>
         </footer>
       {% endif %}
-        <footer class="footer brand-footer">
-          <div class="brand-footer__row">
-              <div class="about-sayit">
-                <h2>{% trans "SayIt" %}</h2>
-                <p>{% trans "An open source tool for making transcripts really easy to read, search and share on the modern web" %}</p>
-              </div>
-              <div class="footer-links">
-                <div class="footer-links__column">
-                  <ul>
-                    <li><a href="https://www.mysociety.org/category/projects/sayit/">{% trans "Blog" %}</a></li>
-                    <li><a href="https://twitter.com/mySocietyIntl">{% trans "Twitter" %}</a></li>
-                    <li><a href="https://www.facebook.com/mySocietyInternational">{% trans "Facebook" %}</a></li>
-                    <li><a href="https://github.com/mysociety/sayit">{% trans "GitHub" %}</a></li>
-                  </ul>
+      <div class="mysoc-footer" role="contentinfo">
+        <div class="container">
+            <div class="row">
+
+                <div class="mysoc-footer__part-one">
+                    <h2 class="mysoc-footer__site-name">SayIt</h2>
+                    <div class="mysoc-footer__site-description">
+                        <p>An open source tool for making transcripts really easy to read, search and share on the modern web</p>
+                    </div>
                 </div>
-                <div class="footer-links__column">
-                  <ul>
-                    <li><a href="{{ BASE_URL }}/about/community">{% trans "Get involved" %}</a></li>
-                    <li><a href="{{ BASE_URL }}/about/questions">{% trans "Help" %}</a></li>
-                    <li><a href="{{ BASE_URL }}/about/developers">{% trans "Developers" %}</a></li>
-                    <li><a href="{{ BASE_URL }}/about/transcripts">{% trans "Transcripts" %}</a></li>
-                  </ul>
+
+                <div class="mysoc-footer__part-two">
+                    <nav class="mysoc-footer__links">
+                        <ul>
+                            <li role="presentation"><a href="http://sayit.mysociety.org/about/community">Get involved</a></li>
+                            <li role="presentation"><a href="http://sayit.mysociety.org/about/developers">Developers</a></li>
+                            <li role="presentation"><a href="http://sayit.mysociety.org/about/transcripts">Transcripts</a></li>
+                            <li role="presentation"><a href="http://sayit.mysociety.org/about/questions">Help</a></li>
+                        </ul>
+                        <ul>
+                            <li role="presentation"><a href="http://leveson.sayit.mysociety.org/">The Leveson Inquiry</a></li>
+                            <li role="presentation"><a href="http://charles-taylor.sayit.mysociety.org/">Charles Taylor Trial</a></li>
+                            <li role="presentation"><a href="http://shakespeare.sayit.mysociety.org/">Plays of Shakespeare</a></li>
+                        </ul>
+                    </nav>
                 </div>
-                <div class="footer-links__column">
-                  <ul>
-                    <li><a href="http://leveson.sayit.mysociety.org">{% trans "The Leveson Inquiry" %}</a></li>
-                    <li><a href="http://charles-taylor.sayit.mysociety.org">{% trans "Charles Taylor Trial" %}</a></li>
-                    <li><a href="http://shakespeare.sayit.mysociety.org">{% trans "Plays of Shakespeare" %}</a></li>
-                  </ul>
+
+                <div class="mysoc-footer__part-three">
+                    <div class="mysoc-footer__donate">
+                        <p>Your donations keep this site and others like it running</p>
+                        <a href="https://www.mysociety.org/donate" class="mysoc-footer__donate__button">Donate now</a>
+                    </div>
                 </div>
-              </div>
-              <div class="footer-logos">
-                <div class="footer-logos__column">
-                  <a href="http://mysociety.org" class="footer-logo footer-logo--mysociety">{% trans "mySociety" %}</a>
-                  <p>{% trans "A mySociety project" %}</p>
+
+            </div>
+            <hr class="mysoc-footer__divider" role="presentation">
+            <div class="row">
+
+                <div class="mysoc-footer__part-four">
+                    <div class="mysoc-footer__orgs">
+                        <p class="mysoc-footer__org">
+                            Built by
+                            <a href="https://www.mysociety.org" class="mysoc-footer__org__logo mysoc-footer__org__logo--mysociety">mySociety</a>
+                        </p>
+                        <p class="mysoc-footer__org">
+                            A <a href="http://poplus.org">Poplus</a> component
+                            <a href="http://poplus.org" class="mysoc-footer__org__logo mysoc-footer__org__logo--poplus">Poplus</a>
+                        </p>
+                    </div>
                 </div>
-                <div class="footer-logos__column">
-                  <a href="http://poplus.org/" class="footer-logo footer-logo--poplus">{% trans "Poplus" %}</a>
-                  <p>{% trans "A Poplus component" %}</p>
+
+                <div class="mysoc-footer__part-five">
+                    <div class="mysoc-footer__legal">
+                        <p>mySociety Limited is a project of UK Citizens Online Democracy, a registered charity in England and Wales. For full details visit <a href="https://www.mysociety.org">mysociety.org</a>.</p>
+                    </div>
                 </div>
-              </div>
-          </div>
-        </footer>
+
+                <div class="mysoc-footer__part-six">
+                    <ul class="mysoc-footer__badges">
+                        <li role="presentation"><a href="https://github.com/mysociety/sayit" class="mysoc-footer__badge mysoc-footer__badge--github">Github</a></li>
+                        <li role="presentation"><a href="https://twitter.com/mySociety" class="mysoc-footer__badge mysoc-footer__badge--twitter">Twitter</a></li>
+                        <li role="presentation"><a href="https://www.facebook.com/mySociety" class="mysoc-footer__badge mysoc-footer__badge--facebook">Facebook</a></li>
+                    </ul>
+                </div>
+
+            </div>
+        </div>
+      </div>
 
         {% javascript 'sayit-default' %}
         {% block extra_js %}{% endblock %}
