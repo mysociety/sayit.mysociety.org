@@ -6,7 +6,7 @@ django-pipeline>=1.6,<1.7
 # Fork to cope with newer pipeline
 mysociety-django-pipeline-compass-rubygem
 python-memcached
-django-tastypie
+django-tastypie>=0.13.3
 
 # Scrapers
 beautifulsoup4
