@@ -768,12 +768,12 @@ msgstr ""
 #: templates/instances/index.html:44
 msgid ""
 "Unlike crusty old PDFs, SayIt works beautifully on every device from a phone "
-"to a tablet to a desktop. And it’s acccessible for screenreaders and "
+"to a tablet to a desktop. And it’s accessible for screenreaders and "
 "assistive devices."
 msgstr ""
 "A diferencia de los viejos archivos PDF, SayIt funciona de maravilla en "
 "todos los dispositivos desde un teléfono a una tableta a un PC escritorio. Y "
-"es acccessible para los lectores de pantalla y los dispositivos de "
+"es accessible para los lectores de pantalla y los dispositivos de "
 "asistencia."
 
 #: templates/instances/index.html:45
