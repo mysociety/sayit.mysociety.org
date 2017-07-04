@@ -702,7 +702,7 @@ msgstr ""
 #: templates/instances/index.html:44
 msgid ""
 "Unlike crusty old PDFs, SayIt works beautifully on every device from a phone "
-"to a tablet to a desktop. And it’s acccessible for screenreaders and "
+"to a tablet to a desktop. And it’s accessible for screenreaders and "
 "assistive devices."
 msgstr ""
 "不像惱人的PDF檔案，從手機到桌機，SayIt在任何平台上都能完美呈現，而且它對輔　"
