@@ -25,7 +25,7 @@ Installation
 
 You will need to have the following installed:
 
-* [elasticsearch](http://elasticsearch.org/)
+* [elasticsearch](http://elasticsearch.org/) (version 5 is not yet supported)
 
 * PostgreSQL
 
