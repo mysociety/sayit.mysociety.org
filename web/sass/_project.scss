@@ -174,51 +174,6 @@ label {
     margin-bottom: 0;
     border: none;
 }
-/* mySociety header */
-.ms-header {
-    background: transparent;
-    border-top: 4px solid #424242;
-}
-
-.ms-header__row {
-    @include grid-row;
-    position: relative;
-}
-
-.ms-header__logo {
-    @extend .image-replacement;
-    display: block;
-    position: absolute;
-    right: 0.75em;
-    top: 0;
-    background-color: #424242;
-    background-repeat: no-repeat;
-    height: 38px;
-    width: 44px;
-    @include border-radius(0 0 0.75em 0.75em);
-    @include background-size(22px);
-    background-position: 11px 7px ;
-    background-image: url('../img/mysociety-bloom.png');
-
-    @media (-webkit-min-device-pixel-ratio: 1.5), (min-resolution: 144dpi) {
-        background-image: url('../img/mysociety-bloom@2.png');
-    }
-
-    @media (min-width: $medium-screen) {
-        @include border-radius(0 0 1.25em 1.25em);
-        background-position: 16px 10px ;
-        @include background-size(93px 19px);
-        background-image: url('../img/mysociety-logo.png');
-        width: 125px;
-        height: 39px;
-
-        @media (-webkit-min-device-pixel-ratio: 1.5), (min-resolution: 144dpi) {
-            background-image: url('../img/mysociety-logo@2.png');
-        }
-    }
-
-
-}
 
 /* Brand header */
 .brand-header {
@@ -244,12 +199,8 @@ label {
     font-size: emCalc(24);
     font-weight: $weight_bold;
     letter-spacing: 0;
-/*
-    height: 1.42em; //prevents a little jump before the JS ticker fires
-    @media (min-width: $medium-screen) {
-        height: auto;
-    }
-*/
+    margin: 0.5em 0;
+
     .subtitle {
         font-size: .458333333em; /* 11px */
         @media (min-width: $medium-screen) {
@@ -272,13 +223,12 @@ label {
         display: block;
     }
     float: right;
-    margin-top: 0.2em;
-    margin-right: 145px;
+    margin-top: 0.4em;
 
     a {
         display: inline-block;
         margin-right: 1em;
-        font-size: 0.8125em;
+        font-size: emCalc(15);
         letter-spacing: 0.02em;
         line-height: 3em;
     }
