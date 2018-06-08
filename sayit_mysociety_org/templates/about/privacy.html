@@ -1,0 +1,110 @@
+{% extends "base.html" %}
+{% load i18n %}
+{% block body_class %}content-page{% endblock %}
+{% block instanceheader %}{% endblock %}
+{% block title %}
+{% trans "Privacy" %}
+{% endblock %}
+
+{% block content %}
+
+<div class="page-header">
+    <h1>{% trans "Privacy" %}</h1>
+</div>
+<dl>
+  <dt id="information">
+    {% trans "What personal data we collect" %}
+    <a href="#information">#</a>
+  </dt>
+  <dd>
+    <p>
+      {% blocktrans %}When you register with SayIt, we store your email address and password.{% endblocktrans %}
+    </p>
+  </dd>
+  <dt id="use">
+    {% trans "How we use your data" %}
+    <a href="#use">#</a>
+  </dt>
+  <dd>
+    <p>
+      {% blocktrans %}This data is used only for the administration of your account. We may contact you if there is an important update about the service, but this is not a common occurrence.{% endblocktrans %}
+    </p>
+    <p>
+      {% blocktrans %}We will never share your personal data with anyone else.{% endblocktrans %}
+    </p>
+  </dd>
+  <dt id="access">
+    {% trans "Your right to access" %}
+    <a href="#access">#</a>
+  </dt>
+  <dd>
+    <p>
+      {% blocktrans %}You may contact us at any time to ask to see what personal data we hold about you.{% endblocktrans %}
+    </p>
+  </dd>
+  <dt id="retention">
+    {% trans "Retention period" %}
+    <a href="#retention">#</a>
+  </dt>
+  <dd>
+    <p>
+      {% blocktrans %}At the moment there is no set retention period for this data. However, you may request that we delete your details at any time: see the next point.{% endblocktrans %}
+    </p>
+  </dd>
+  <dt id="erasure">
+    {% trans "Your right to erasure" %}
+    <a href="#erasure">#</a>
+  </dt>
+  <dd>
+    <p>
+      {% blocktrans %}You may contact us at any time to request that we remove your details from our database. This can leave your SayIt instances up, but not associated with you, or remove them from the site.{% endblocktrans %}
+    </p>
+  </dd>
+  <dt id="law">
+    {% trans "Legal basis for processing" %}
+    <a href="#law">#</a>
+  </dt>
+  <dd>
+    <p>
+      {% blocktrans %}When you use SayIt we are processing your personal data under the legal basis 6(1)(f) – legitimate interests. We assert that we have a legitimate charitable interest in running a service that allows people to publish transcripts in a simple, public, shareable form. {% endblocktrans %}
+    </p>
+  </dd>
+  <dt id="objection">
+    {% trans "Your right to object" %}
+    <a href="#objection">#</a>
+  </dt>
+  <dd>
+    <p>
+      {% blocktrans %}The General Data Protection Regulation gives you the right to object to our processing of your personal information and to ask us to stop processing it. However, it also gives us the right to continue to process it if we can demonstrate compelling legitimate grounds for the processing that override your interests, rights and freedoms. To exercise your right to object, you can <a href="mailto:sayit@mysociety.org">contact us</a>, giving specific reasons why you are objecting to the processing of your personal data. These reasons should be based upon your particular situation.{% endblocktrans %}
+    </p>
+  </dd>
+  <dt id="complain">
+    {% trans "Your right to complain" %}
+    <a href="#complain">#</a>
+  </dt>
+  <dd>
+    <p>
+      {% blocktrans %}If you believe that we have mishandled your data, you have the right to lodge a complaint with the Information Commissioner’s Office. You can <a href="https://ico.org.uk/concerns/handling/">report a concern here</a> (but do contact us first, so that we can try and help).{% endblocktrans %}
+    </p>
+  </dd>
+  <dt id="us">
+    {% trans "About us" %}
+    <a href="#us">#</a>
+  </dt>
+  <dd>
+    <p>
+      {% blocktrans %}SayIt is run by mySociety, a UK not-for-profit social enterprise. Our registered address is:{% endblocktrans %}
+    </p>
+    <p style="white-space: pre-line">mySociety
+      483 Green Lanes
+      London
+      N13 4BS
+      United Kingdom
+    </p>
+    <p>
+      {% blocktrans %}…and we can also be contacted at <a href="mailto:sayit@mysociety.org">sayit@mysociety.org</a>.{% endblocktrans %}
+    </p>
+  </dd>
+</dl>
+
+{% endblock %}
