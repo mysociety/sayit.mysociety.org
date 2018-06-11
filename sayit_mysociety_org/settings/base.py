@@ -48,18 +48,6 @@ MEDIA_URL = '/media/'
 # All uploaded files world-readable
 FILE_UPLOAD_PERMISSIONS = 0644
 
-# List of callables that know how to import templates from various sources.
-loaders = (
-    'django.template.loaders.filesystem.Loader',
-    'django.template.loaders.app_directories.Loader',
-    'apptemplates.Loader',
-    # 'django.template.loaders.eggs.Loader',
-)
-if not DEBUG:
-    loaders = (('django.template.loaders.cached.Loader', loaders),)
-
-TEMPLATE_LOADERS = loaders
-
 MIDDLEWARE_CLASSES = [
     'django.middleware.gzip.GZipMiddleware',
     'sayit_mysociety_org.middleware.UpdateCacheMiddleware',
@@ -84,18 +72,33 @@ ROOT_URLCONF_HOST = 'sayit_mysociety_org.urls-host'
 # Python dotted path to the WSGI application used by Django's runserver.
 WSGI_APPLICATION = 'sayit_mysociety_org.wsgi.application'
 
-TEMPLATE_DIRS = (
-    # Put strings here, like "/home/html/django_templates" or "C:/www/django/templates".
-    # Always use forward slashes, even on Windows.
-    # Don't forget to use absolute paths, not relative paths.
-    os.path.join(PROJECT_DIR, 'templates'),
+loaders = (
+    'django.template.loaders.filesystem.Loader',
+    'django.template.loaders.app_directories.Loader',
+    'apptemplates.Loader',
 )
+if not DEBUG:
+    loaders = (('django.template.loaders.cached.Loader', loaders),)
 
-TEMPLATE_CONTEXT_PROCESSORS = global_settings.TEMPLATE_CONTEXT_PROCESSORS + (
-    "django.template.context_processors.request",
-    "sayit_mysociety_org.context_processors.add_settings",
-    "sayit_mysociety_org.context_processors.nav_section",
-)
+TEMPLATES = [
+    {
+        'BACKEND': 'django.template.backends.django.DjangoTemplates',
+        'DIRS': (
+            os.path.join(PROJECT_DIR, 'templates'),
+        ),
+        'OPTIONS': {
+            'context_processors': (
+                'django.template.context_processors.debug',
+                'django.contrib.auth.context_processors.auth',
+                'django.contrib.messages.context_processors.messages',
+                "django.template.context_processors.request",
+                "sayit_mysociety_org.context_processors.add_settings",
+                "sayit_mysociety_org.context_processors.nav_section",
+            ),
+            'loaders': loaders,
+        },
+    },
+]
 
 INSTALLED_APPS = [
     'django.contrib.auth',

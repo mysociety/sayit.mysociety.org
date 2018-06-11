@@ -264,11 +264,11 @@ class ShareInstanceTests(InstanceTestCase):
         self.assertEqual(parsed_link.netloc, self.client.defaults['HTTP_HOST'])
 
         self.client.logout()
-        resp = self.client.get(parsed_link.path)
+        resp = self.client.get(parsed_link.path, follow=True)
         self.assertContains(resp, 'Welcome to SayIt')
 
         resp = self.client.post(
-            parsed_link.path,
+            resp.redirect_chain[-1][0],
             {'password1': 'password', 'password2': 'password'},
             follow=True,
             )

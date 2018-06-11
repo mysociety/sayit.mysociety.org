@@ -3,15 +3,13 @@ import sys
 
 from django.conf import settings
 from django.conf.urls.static import static
-from django.conf.urls import patterns, include, url
+from django.conf.urls import include, url
 from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 from django.views.generic.base import RedirectView
+import django.views.static
 
 from instances.views import InstanceUpdate
-
-# Admin section
-from django.contrib import admin
-admin.autodiscover()
+import login_token.views
 
 from views import ShareWithCollaborators, AcceptInvite
 
@@ -23,33 +21,29 @@ urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 # would do.
 if 'test' in sys.argv:
     static_url = re.escape(settings.STATIC_URL.lstrip('/'))
-    urlpatterns += patterns(
-        '',
-        url(r'^%s(?P<path>.*)$' % static_url, 'django.views.static.serve', {
+    urlpatterns += [
+        url(r'^%s(?P<path>.*)$' % static_url, django.views.static.serve, {
             'document_root': settings.STATIC_ROOT,
         }),
-        url('^(?P<path>favicon\.ico)$', 'django.views.static.serve', {
+        url('^(?P<path>favicon\.ico)$', django.views.static.serve, {
             'document_root': settings.STATIC_ROOT,
         }),
-    )
+    ]
 
 if settings.DEBUG and settings.DEBUG_TOOLBAR:
     import debug_toolbar
-    urlpatterns += patterns(
-        '',
+    urlpatterns += [
         url(r'^__debug__/', include(debug_toolbar.urls)),
-    )
+    ]
 
-urlpatterns += patterns(
-    '',
-
+urlpatterns += [
     # For an instance domain, redirect to the instance home on login.
-    ('^accounts/profile/', RedirectView.as_view(url='/', permanent=False)),
-    (r'^accounts/', include('allauth.urls')),
+    url('^accounts/profile/', RedirectView.as_view(url='/', permanent=False)),
+    url(r'^accounts/', include('allauth.urls')),
 
     url(r'^instance/edit$', InstanceUpdate.as_view(), name='instance-edit'),
     url(r'^instance/token$',
-        'login_token.views.login_tokens_for_user',
+        login_token.views.login_tokens_for_user,
         name='tokens'),
 
     url(r'^instance/share$',
@@ -59,7 +53,7 @@ urlpatterns += patterns(
         AcceptInvite.as_view(),
         name='instance_accept_invite'),
 
-    (r'^about', include('about.urls')),
+    url(r'^about', include('about.urls')),
     url(r'^',
         include('speeches.urls', app_name='speeches', namespace='speeches')),
-)
+]

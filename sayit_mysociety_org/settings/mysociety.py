@@ -10,7 +10,6 @@ with open(config_file) as f:
     config = yaml.load(f)
 
 DEBUG = bool(int(config.get('STAGING')))
-TEMPLATE_DEBUG = DEBUG
 try:
     import debug_toolbar  # noqa
     DEBUG_TOOLBAR = DEBUG

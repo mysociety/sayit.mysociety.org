@@ -1,5 +1,5 @@
 from django.conf import settings
-from django.conf.urls import patterns, include, url
+from django.conf.urls import include, url
 
 from tastypie.resources import ModelResource
 from tastypie.api import Api
@@ -8,10 +8,9 @@ from instances.models import Instance
 from instances.views import YourInstances
 
 from views import InstanceCreate
+import login_token.views
 
-# Admin section
 from django.contrib import admin
-admin.autodiscover()
 
 
 class InstanceResource(ModelResource):
@@ -27,27 +26,25 @@ class InstanceResource(ModelResource):
 v01_api = Api(api_name='v0.1')
 v01_api.register(InstanceResource())
 
-urlpatterns = patterns(
-    '',
-    (r'^admin/doc/', include('django.contrib.admindocs.urls')),
-    (r'^admin/', include(admin.site.urls)),
+urlpatterns = [
+    url(r'^admin/doc/', include('django.contrib.admindocs.urls')),
+    url(r'^admin/', include(admin.site.urls)),
 
-    url(r'^accounts/tokens/?$', 'login_token.views.login_tokens_for_user', name='tokens'),
-    (r'^accounts/mobile-login', 'login_token.views.check_login_token'),
+    url(r'^accounts/tokens/?$', login_token.views.login_tokens_for_user, name='tokens'),
+    url(r'^accounts/mobile-login', login_token.views.check_login_token),
     url(r'^accounts/profile/', YourInstances.as_view(), name='your_instances'),
-    (r'^accounts/', include('allauth.urls')),
+    url(r'^accounts/', include('allauth.urls')),
 
     url(r'^instances/add', InstanceCreate.as_view(), name='create_instance'),
 
-    (r'^api/', include(v01_api.urls)),
-    (r'^about', include('about.urls')),
+    url(r'^api/', include(v01_api.urls)),
+    url(r'^about', include('about.urls')),
 
-    (r'^', include('instances.urls')),
-)
+    url(r'^', include('instances.urls')),
+]
 
 if settings.DEBUG and settings.DEBUG_TOOLBAR:
     import debug_toolbar
-    urlpatterns += patterns(
-        '',
+    urlpatterns += [
         url(r'^__debug__/', include(debug_toolbar.urls)),
-    )
+    ]
