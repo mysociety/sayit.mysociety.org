@@ -1,0 +1,13 @@
+#!/bin/bash
+
+source "script/venv.sh"
+
+script/bootstrap $@
+
+# make sure that there is no old code (the .py files may have been git deleted)
+find . -name '*.pyc' -delete
+
+./manage.py migrate
+./manage.py collectstatic --noinput
+./manage.py compilemessages
+

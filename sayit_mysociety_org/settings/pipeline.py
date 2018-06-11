@@ -44,7 +44,7 @@ PIPELINE = {
     # On some platforms this might be called "yuicompressor", so it may be
     # necessary to symlink it into your PATH as "yui-compressor".
     'YUI_BINARY': '/usr/bin/env yui-compressor',
-    'COMPASS_BINARY': os.path.join(PARENT_DIR, 'gem-bin', 'compass'),
+    'COMPASS_BINARY': os.path.join(PROJECT_ROOT, 'vendor', 'bundle', 'bin', 'compass'),
     'COMPASS_ARGUMENTS': [ '-I', os.path.join(speeches.__path__[0], 'static'), '-r', 'zurb-foundation' ],
 
   'STYLESHEETS': {

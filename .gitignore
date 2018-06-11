@@ -17,3 +17,4 @@ chromedriver.log
 *.swo
 django_sayit.egg-info
 .bundle
+/vendor

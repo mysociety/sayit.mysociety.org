@@ -1,0 +1,6 @@
+#!/bin/bash
+
+source "script/venv.sh"
+
+# Same as update for now
+script/update

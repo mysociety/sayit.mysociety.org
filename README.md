@@ -29,11 +29,7 @@ You will need to have the following installed:
 
 * PostgreSQL
 
-* The compass and zurb-foundation gems. It's easiest if you install bundler,
-  and run something like the following, which places binaries in the expected
-  place: `bundle install --deployment --path ../gems --binstubs ../gem-bin`
-
-* pip, virtualenv and yui-compressor.
+* bundler, pip, virtualenv and yui-compressor
 
 * The development files for libffi and libssl
   (if you're installing on a Mac, you might want to look at
@@ -55,34 +51,22 @@ Create a PostgreSQL database and user:
     postgres=# CREATE DATABASE sayit WITH OWNER sayit;
     CREATE DATABASE
 
-Set up a python virtual environment, activate it, and install the required
-python packages:
+You can run the bootstrap script directly, it will set up a virtualenv for you,
+or set up/activate your own virtualenv first if you prefer:
 
-    virtualenv virtualenv-sayit
-    source virtualenv-sayit/bin/activate
-    cd sayit.mysociety.org
-    pip install --requirement requirements.txt
+    script/bootstraop
 
 Alter the settings to match your setup:
 
     cp conf/general.yml-example conf/general.yml
 
-Set up the database:
+Set up the database, static files and language .mo files:
 
-    ./manage.py syncdb
-    ./manage.py migrate
+    script/update
 
 The development server should now run fine:
 
-    ./manage.py runserver
+    script/server
 
 You'll want to use http://127.0.0.1.xip.io:8000/ and instances can be seen at
 e.g. http://default.127.0.0.1.xip.io:8000/
-
-To gather all the static files together in deployment, you'll use:
-
-    ./manage.py collectstatic --noinput
-
-And to compile language .mo files:
-
-    ./manage.py compilemessages
