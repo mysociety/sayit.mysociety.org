@@ -28,9 +28,9 @@
 
         {% if 'sayit.staging.mysociety.org' in request.get_host %}
             {% if request.instance %}
-                <link rel="canonical" href="http://{{ request.instance.label }}.sayit.mysociety.org{{ request.get_full_path }}">
+                <link rel="canonical" href="https://{{ request.instance.label }}.sayit.mysociety.org{{ request.get_full_path }}">
             {% else %}
-                <link rel="canonical" href="http://sayit.mysociety.org{{ request.get_full_path }}">
+                <link rel="canonical" href="https://sayit.mysociety.org{{ request.get_full_path }}">
             {% endif %}
         {% endif %}
 
@@ -225,16 +225,16 @@
                 <div class="mysoc-footer__part-two">
                     <nav class="mysoc-footer__links">
                         <ul>
-                            <li role="presentation"><a href="http://sayit.mysociety.org/about/community">Get involved</a></li>
-                            <li role="presentation"><a href="http://sayit.mysociety.org/about/developers">Developers</a></li>
-                            <li role="presentation"><a href="http://sayit.mysociety.org/about/transcripts">Transcripts</a></li>
-                            <li role="presentation"><a href="http://sayit.mysociety.org/about/questions">Help</a></li>
-                            <li role="presentation"><a href="http://sayit.mysociety.org/about/privacy">Privacy</a></li>
+                            <li role="presentation"><a href="{{ BASE_URL }}/about/community">Get involved</a></li>
+                            <li role="presentation"><a href="{{ BASE_URL }}/about/developers">Developers</a></li>
+                            <li role="presentation"><a href="{{ BASE_URL }}/about/transcripts">Transcripts</a></li>
+                            <li role="presentation"><a href="{{ BASE_URL }}/about/questions">Help</a></li>
+                            <li role="presentation"><a href="{{ BASE_URL }}/about/privacy">Privacy</a></li>
                         </ul>
                         <ul>
-                            <li role="presentation"><a href="http://leveson.sayit.mysociety.org/">The Leveson Inquiry</a></li>
-                            <li role="presentation"><a href="http://charles-taylor.sayit.mysociety.org/">Charles Taylor Trial</a></li>
-                            <li role="presentation"><a href="http://shakespeare.sayit.mysociety.org/">Plays of Shakespeare</a></li>
+                            <li role="presentation"><a href="https://leveson.sayit.mysociety.org/">The Leveson Inquiry</a></li>
+                            <li role="presentation"><a href="https://charles-taylor.sayit.mysociety.org/">Charles Taylor Trial</a></li>
+                            <li role="presentation"><a href="https://shakespeare.sayit.mysociety.org/">Plays of Shakespeare</a></li>
                         </ul>
                     </nav>
                 </div>
@@ -265,7 +265,7 @@
 
                 <div class="mysoc-footer__part-five">
                     <div class="mysoc-footer__legal">
-                        <p>mySociety Limited is a project of UK Citizens Online Democracy, a registered charity in England and Wales. For full details visit <a href="https://www.mysociety.orghttps://www.mysociety.org/donate?utm_source=sayit.mysociety.org&utm_content=footer+full+legal+details&utm_medium=link&utm_campaign=mysoc_footer">mysociety.org</a>.</p>
+                        <p>mySociety Limited is a project of UK Citizens Online Democracy, a registered charity in England and Wales. For full details visit <a href="https://www.mysociety.org/?utm_source=sayit.mysociety.org&utm_content=footer+full+legal+details&utm_medium=link&utm_campaign=mysoc_footer">mysociety.org</a>.</p>
                     </div>
                 </div>
 

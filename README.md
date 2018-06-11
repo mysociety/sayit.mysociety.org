@@ -8,9 +8,9 @@ service for transcripts, presenting them in a modern, searchable format.
 Examples of transcripts hosted by mySociety's deployment of this hosting
 project:
 
-* [The Leveson Inquiry](http://leveson.sayit.mysociety.org/)
-* [The Charles Taylor trial](http://charles-taylor.sayit.mysociety.org/)
-* [The plays of Shakespeare](http://shakespeare.sayit.mysociety.org/)
+* [The Leveson Inquiry](https://leveson.sayit.mysociety.org/)
+* [The Charles Taylor trial](https://charles-taylor.sayit.mysociety.org/)
+* [The plays of Shakespeare](https://shakespeare.sayit.mysociety.org/)
 
 SayIt is a [Poplus component](http://poplus.org/) by
 [mySociety](https://www.mysociety.org/). It is a Django application that can be

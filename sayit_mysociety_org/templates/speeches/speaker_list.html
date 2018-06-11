@@ -7,6 +7,6 @@
   {% else %}
     <h1>{% trans 'This is a brand new SayIt site.' %}</h1>
     <p class="lead">{% trans 'Its creator hasn&rsquo;t yet added any speeches or statements for you to see.' %}</p>
-    <p><a href="http://sayit.mysociety.org" class="button">{% trans 'Learn more about SayIt' %}</a></p>
+    <p><a href="{{ BASE_URL }}" class="button">{% trans 'Learn more about SayIt' %}</a></p>
   {% endif %}
 {% endblock %}
