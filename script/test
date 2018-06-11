@@ -1,0 +1,5 @@
+#!/bin/sh
+
+source "script/venv.sh"
+
+python manage.py test $@

@@ -1,0 +1,8 @@
+#!/bin/sh
+
+source "script/venv.sh"
+
+pip install --requirement requirements.txt
+
+bundle install --path vendor/bundle --binstubs vendor/bundle/bin $@
+
