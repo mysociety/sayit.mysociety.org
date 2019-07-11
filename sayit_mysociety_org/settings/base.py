@@ -48,7 +48,7 @@ MEDIA_URL = '/media/'
 # All uploaded files world-readable
 FILE_UPLOAD_PERMISSIONS = 0644
 
-MIDDLEWARE_CLASSES = [
+MIDDLEWARE = [
     'django.middleware.gzip.GZipMiddleware',
     'sayit_mysociety_org.middleware.UpdateCacheMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
@@ -251,7 +251,7 @@ CACHES = {
 
 if DEBUG_TOOLBAR:
     DEBUG_TOOLBAR_PATCH_SETTINGS = False
-    MIDDLEWARE_CLASSES.append('debug_toolbar.middleware.DebugToolbarMiddleware')
+    MIDDLEWARE.append('debug_toolbar.middleware.DebugToolbarMiddleware')
     INSTALLED_APPS.append('debug_toolbar')
 
 # Allow local changes of settings

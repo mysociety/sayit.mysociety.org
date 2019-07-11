@@ -4,9 +4,10 @@
 from django.db.models import signals
 from django.utils.functional import curry
 from django.middleware.cache import UpdateCacheMiddleware as DjangoUpdateCacheMiddleware
+from django.utils.deprecation import MiddlewareMixin
 
 
-class WhoDidMiddleware(object):
+class WhoDidMiddleware(MiddlewareMixin):
     def process_request(self, request):
         if request.method not in ('GET', 'HEAD', 'OPTIONS', 'TRACE'):
             if hasattr(request, 'user') and request.user.is_authenticated():
