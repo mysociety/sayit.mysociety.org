@@ -7,23 +7,25 @@ python-virtualenv
 bundler
 yui-compressor
 
-# Database stuff
-postgresql
+# Database stuff.
+# If you're running on a fully standalone machine you'll
+# need to have the PostgreSQL server packages installed.
+postgresql-client
 python-psycopg2
 libpq-dev
 
 # Face recognition thumbnails
 python-opencv
 # Needed for Pillow to be able to handle various image types.
-libjpeg8-dev
+libjpeg-dev
 zlib1g-dev
-libpng12-dev
+libpng-dev
 
 # MPG/OGG/3GP -> WAV conversion tools
 # Note that these both need to be relatively recent versions
 # The versions from squeeze-backports or ubuntu 12.04 (0.8.3 and 0.8.4) are good
 ffmpeg
-libavcodec-extra-53
+libavcodec-extra
 
 # If you want to run this on a headless server, or eg: in vagrant
 # you'll also need a browser and a display setup too
