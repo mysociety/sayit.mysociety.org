@@ -10,16 +10,21 @@
 #     AuthName "Private beta I'm afraid."
 #     AuthUserFile htpasswdfile
 #     Require valid-user
-#     Order deny,allow
-#     Deny from all
-#     Satisfy any
 # </Location>
 
 # Replace the following below:
 #   'example.com', 'exampleuser', 'examplegroup'
 
 Alias /media /data/vhost/example.com/uploads
+<Directory /data/vhost/example.com/uploads>
+  Require all granted
+</Directory>
+
 Alias /static /data/vhost/example.com/collected_static
+<Directory /data/vhost/example.com/collected_static>
+  Require all granted
+</Directory>
+
 Alias /robots.txt /data/vhost/example.com/sayit.mysociety.org/web/robots.txt
 Alias /favicon.ico /data/vhost/example.com/sayit.mysociety.org/web/favicon.ico
 
@@ -34,3 +39,8 @@ WSGIDaemonProcess example.com \
 WSGIProcessGroup example.com
 
 WSGIScriptAlias / /data/vhost/example.com/sayit.mysociety.org/sayit_mysociety_org/wsgi.py
+<Directory /data/vhost/example.com/sayit.mysociety.org/sayit_mysociety_org>
+  <Files wsgi.py>
+    Require all granted
+  </Files>
+</Directory>
