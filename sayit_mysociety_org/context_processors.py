@@ -14,7 +14,6 @@ def add_settings(request):
 
     return {
         'settings': {
-            'GOOGLE_ANALYTICS_ACCOUNT': settings.GOOGLE_ANALYTICS_ACCOUNT,
             'DEBUG': settings.DEBUG,
             'BASE_HOST': settings.BASE_HOST,
         },
